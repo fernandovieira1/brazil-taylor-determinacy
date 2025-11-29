@@ -129,12 +129,3 @@ GitHub repository.
 
 This project is released under the MIT License.  
 You are free to use, modify, distribute, and build upon the material, provided that proper credit is given.
-
----
-
-## Contact
-
-**Fernando Souza de Vieira**  
-Doutorando em Economia Aplicada – FEA-RP/USP  
-Email: fernando.svieira@usp.br  
-GitHub: @fernandosvieira
