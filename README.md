@@ -1,131 +1,177 @@
 # brazil-taylor-determinacy
 
-Empirical and theoretical analysis of whether Brazilian monetary policy has satisfied the **Taylor Principle** and delivered **equilibrium determinacy** under the inflation-targeting regime (1999–2024).  
-This repository contains all replication materials for the article:
+Análise empírica e teórica sobre se a política monetária brasileira tem satisfeito o **Princípio de Taylor** e garantido **determinacy do equilíbrio** sob o regime de metas para a inflação (1999–2024).  
+Este repositório contém todos os materiais de replicação para o artigo:
 
 **“Determinacy and Monetary Policy in Brazil: An Empirical Assessment of the Taylor Principle (1999–2024)”**  
-by *Fernando Souza de Vieira – FEA-RP/USP*.
+por *Fernando Souza de Vieira – FEA-RP/USP*.
 
 ---
 
-## Overview
+## Visão Geral
 
-The project evaluates if the Brazilian Central Bank’s response to inflation has been strong enough to ensure a unique and stable equilibrium in the **New Keynesian model**, in line with the conditions of:
+O projeto avalia se a resposta do Banco Central do Brasil à inflação tem sido forte o suficiente para assegurar um equilíbrio único e estável no **modelo Novo Keynesiano**, em linha com as condições de:
 
 - Blanchard & Kahn (1980)
 - Taylor (1993, 1999)
 - Clarida, Galí & Gertler (2000)
 - Bullard & Mitra (2002)
 
-The analysis combines:
+A análise combina:
 
-- Estimation of Taylor rules (OLS, GMM)
-- Determinacy tests using NK theory
-- Structural break analysis
-- Optional Dynare simulations
-- Complete LaTeX source of the article
-
----
-
-## Repository Structure
-
-Inserir depois
-
+- Estimação de regras de Taylor (MQO, GMM)
+- Testes de determinacy usando teoria NK
+- Análise de quebras estruturais
+- Simulações em Dynare (opcional)
+- Código-fonte LaTeX completo do artigo
 
 ---
 
-## Data Sources
-
-All data used in the project are publicly available:
-
-- Banco Central do Brasil (SGS): Selic, inflation expectations, output gap series
-- IBGE: IPCA, quarterly GDP
-- FGV/IBRE: alternative measures of the output gap
-- Focus Survey: expected inflation (12 months ahead)
-
-The `data/` folder includes raw files and preprocessed versions, as well as scripts that download SGS data automatically.
+## Estrutura do Repositório
+```
+data/                # Dados brutos e processados
+notebooks/           # Exploração e estimativas interativas (Jupyter)
+src/                 # Código-fonte
+  brazil_taylor/     # Pacote Python principal
+    __init__.py
+    model.py         # Stub inicial para regra de Taylor / determinacy
+requirements.txt     # Dependências Python
+LICENSE
+README.md
+```
 
 ---
 
-## Methodology
+## Fontes de Dados
 
-### 1. Taylor Rule Estimation
-- Backward-looking
-- Forward-looking (CGG)
-- Hybrid with interest rate smoothing
+Todos os dados utilizados no projeto são de acesso público:
 
-Techniques used:
-- OLS with Newey–West standard errors
-- GMM with internal instruments
-- Subsample estimation by BCB presidency
+- Banco Central do Brasil (SGS): Selic, expectativas de inflação, séries de hiato do produto
+- IBGE: IPCA, PIB trimestral
+- FGV/IBRE: medidas alternativas de hiato do produto
+- Focus (Pesquisa Focus): inflação esperada (12 meses à frente)
 
-### 2. Determinacy Tests
+| Série                           | Código SGS / Tabela | Fonte        | Uso no Artigo                            | Periodicidade Padrão                     |
+| ------------------------------- | ------------------- | ------------ | ---------------------------------------- | ---------------------------------------- |
+| Selic – Meta                    | 4390                | BCB / SGS    | Juros na regra de Taylor (i_t)           | Mensal                                   |
+| Selic – Efetiva                 | 4189                | BCB / SGS    | Alternativa para i_t                     | Mensal                                   |
+| IPCA – Variação Mensal          | IBGE 1737 433 (bcb)          | IBGE / SIDRA | Inflação (π_t)                           | Mensal                                   |
+| Expectativas de IPCA – 12 meses | — (API Focus)       | BCB / Focus  | Inflação esperada (E_t π_{t+1})          | Diária (agregado para mensal/trimestral) |
+| PIB Real – Contas Trimestrais   | IBGE 1620           | IBGE / SIDRA | Hiato do produto (base para y_t)         | Trimestral                               |
+| Hiato do Produto (modelo BCB)   | 3904                | BCB / SGS    | Hiato do produto (ŷ_t)                   | Trimestral                               |
+| Taxa de Juros Natural           | 13758               | BCB / SGS    | r_t^n na IS dinâmica (opcional)          | Trimestral                               |
+| IBC-Br (atividade econômica)    | 24363               | BCB / SGS    | Proxy mensal do PIB (robustez)           | Mensal                                   |
+| Meta de Inflação                | —                   | BCB          | Construção da variável "inflação x meta" | Anual                                    |
+| Banda de Tolerância da Meta     | —                   | BCB          | Robustez / controles                     | Anual                                    |
 
-Using the estimated parameters $(\hat\phi_\pi, \hat\phi_y)$:
+
+A pasta `data/` inclui arquivos brutos e versões processadas, além de scripts que baixam dados SGS automaticamente.
+
+---
+
+## Metodologia
+
+### 1. Estimação da Regra de Taylor
+- Retrospectiva (backward-looking)
+- Prospectiva (forward-looking, CGG)
+- Híbrida com suavização da taxa de juros
+
+Técnicas utilizadas:
+- MQO com erros-padrão Newey–West
+- GMM com instrumentos internos
+- Estimação por subsamplos (presidências do BCB)
+
+### 2. Testes de Determinacy
+
+Usando os parâmetros estimados $(\hat\phi_\pi, \hat\phi_y)$:
 
 \[
 \kappa(\hat\phi_\pi - 1) + (1-\beta)\hat\phi_y > 0
 \]
 
-as in Bullard–Mitra (2002).
+como em Bullard–Mitra (2002).
 
-### 3. Structural Breaks
-- Bai–Perron multiple breakpoint tests
-- Institutional break dates: 2003, 2011, 2016, 2019
+### 3. Quebras Estruturais
+- Testes de múltiplos pontos de quebra (Bai–Perron)
+- Datas institucionais: 2003, 2011, 2016, 2019
 
-### 4. Dynare (Optional)
-Simulation of the basic NK model under alternative Taylor rule coefficients.
+### 4. Dynare (Opcional)
+Simulação do modelo NK básico sob coeficientes alternativos da regra de Taylor.
 
 ---
 
-## How to Run the Code
+## Como Executar o Código
 
-### R or Python environment
+### Ambiente R ou Python
 
-Dependencies are listed in:
+As dependências estão listadas em:
+`requirements.txt`
 
-Inserir depois
+### Criando ambiente Python (venv)
 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python -m ipykernel install --user --name brazil-taylor --display-name "Python (brazil-taylor)"
+```
 
-### To replicate all results:
+### Teste rápido
 
+```bash
+python -c "from src.brazil_taylor.model import TaylorRuleModel; import pandas as pd; m=TaylorRuleModel(pd.DataFrame()); print(m.determinacy_condition())"
+```
+
+Resultado esperado: `(True, valor)` indicando condição fictícia de determinacy.
+
+### Para replicar todos os resultados:
+
+```bash
 git clone https://github.com/fernandosvieira/brazil-taylor-determinacy
-
 cd brazil-taylor-determinacy
+```
 
+Em seguida execute:
 
-Then run:
-
-- `src/main.R` (if using R)
-- `src/main.py` (if using Python)
-- `dynare/nk_model.mod` (in Octave/MATLAB)
-
----
-
-## Article Source (LaTeX)
-
-The full article is located in:
-
-paper/main.tex
-
-
-including all figures, tables, bibliography and appendices (derivations, matrix forms, robustness checks).
+- `src/main.R` (R)
+- `src/main.py` (Python)
+- `dynare/nk_model.mod` (Octave/MATLAB)
 
 ---
 
-## Citation
+## Fonte do Artigo (LaTeX)
 
-If you use this repository, please cite as:
+O artigo completo está localizado em:
+
+`paper/main.tex`
+
+incluindo todas as figuras, tabelas, bibliografia e apêndices (derivações, formas matriciais, testes de robustez).
+
+---
+
+## Citação
+
+Se você utilizar este repositório, cite como:
 
 Vieira, Fernando S. (2025).
-brazil-taylor-determinacy: Replication materials for
+brazil-taylor-determinacy: Materiais de replicação para
 “Determinacy and Monetary Policy in Brazil”.
-GitHub repository.
+Repositório GitHub.
 
+```
+@misc{vieira2025brazil,
+  author = {Fernando Souza de Vieira},
+  title = {Determinacy and Monetary Policy in Brazil: Replication Materials},
+  year = {2025},
+  howpublished = {GitHub repository},
+  url = {https://github.com/fernandosvieira/brazil-taylor-determinacy}
+}
+```
 
 ---
 
-## License
+## Licença
 
-This project is released under the MIT License.  
-You are free to use, modify, distribute, and build upon the material, provided that proper credit is given.
+Este projeto é distribuído sob a Licença MIT.  
+Você é livre para usar, modificar, distribuir e desenvolver sobre o material, desde que seja dado o devido crédito.
