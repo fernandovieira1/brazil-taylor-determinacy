@@ -1,0 +1,6 @@
+.venv
+*.js
+*.py
+*.css
+venv/
+*.woff
