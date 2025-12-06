@@ -63,11 +63,13 @@ def build_nk_system(beta=0.99, kappa=0.1, sigma=1.0,
 
     Parâmetros:
     -----------
-    beta  : fator de desconto (0 < β < 1)
-    kappa : parâmetro de sensibilidade da inflação ao hiato
-    sigma : aversão ao risco / elasticidade intertemporal de substituição
-    phi_pi: resposta da taxa de juros à inflação na Regra de Taylor
-    phi_x : resposta da taxa de juros ao hiato na Regra de Taylor
+    ## Afetam como choques propagam-se pela economia. É como a economia funciona.
+    kappa : parâmetro de sensibilidade da inflação ao hiato; inclinação da curva de Phillips
+    sigma : aversão ao risco / elasticidade intertemporal de substituição; elasticidade intertemporal
+    
+    ## Afetam como o BC decide reagir a esses choques. É como o Banco Central escolhe reagir
+    phi_pi: resposta da taxa de juros à inflação na Regra de Taylor; resposta da política monetária à inflação
+    phi_x : resposta da taxa de juros ao hiato na Regra de Taylor; resposta da política monetária ao hiato
 
     Retorna:
     --------
