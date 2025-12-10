@@ -9,6 +9,11 @@
 2) Decisões das famílias → DIS (Equação IS dinâmica)
 3) Decisão do Banco Central → Regra de Taylor
 
+Notas Preliminares:
+    - Blanchard & Kahn (1980): Focam em expectativas racionais (RE).
+    - Bullard & Mitra (2002): Focam em aprendizagem adaptativa (learning).
+
+
 =============================================================
 Mapa mental / Resumo econômico do modelo e do script
 =============================================================
