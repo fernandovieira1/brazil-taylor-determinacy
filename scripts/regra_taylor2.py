@@ -19,7 +19,7 @@ Mapa mental / Resumo econômico do modelo e do script
 =============================================================
 MODELO NOVO-KEYNESIANO (NK)
 │
-├── 1. FIRMAS: FORMAÇÃO DE PREÇOS (rigidez Calvo)
+├── 1. FIRMAS (NKPC): FORMAÇÃO DE PREÇOS (rigidez Calvo)
 │      │
 │      ├─ Preços são rígidos → algumas firmas não podem ajustar
 │      │
@@ -33,7 +33,7 @@ MODELO NOVO-KEYNESIANO (NK)
 │         (Inflação = expectativas futuras + pressão de demanda)
 │
 │
-├── 2. FAMÍLIAS: CONSUMO INTERTEMPORAL (condição de Euler)
+├── 2. FAMÍLIAS (DIS): CONSUMO INTERTEMPORAL (condição de Euler)
 │      │
 │      ├─ Decisão: consumir hoje OU amanhã?
 │      │
@@ -51,7 +51,7 @@ MODELO NOVO-KEYNESIANO (NK)
 │         (Hiato = expectativas futuras − efeito do juro real)
 │
 │
-├── 3. BANCO CENTRAL: REGRA DE REAÇÃO (Taylor)
+├── 3. BANCO CENTRAL (TAYLOR): REGRA DE REAÇÃO
 │      │
 │      ├─ O Banco Central ajusta a taxa nominal de juros i_t
 │      │
@@ -93,7 +93,44 @@ MODELO NOVO-KEYNESIANO (NK)
        │       |λ_1| < 1 e |λ_2| < 1
        │
        └─ Condição de Bullard–Mitra:
-               κ(φ_π − 1) + (1 − β)φ_y > 0
+               κ(φ_π - 1) + (1 - β)φ_y > 0
+
+# Famílias
+
+Euler / consumo intertemporal
+
+Oferta de trabalho ou poupança
+
+## Firmas
+
+FOCs
+
+Margens / rigidez / produtividade
+
+## Mercados
+
+Market clearing
+
+Ativos / bens / trabalho
+
+## Dinâmica
+
+Equação de transição
+
+Choques (AR(1))
+
+## Fechamento
+
+Política (Taylor, regra fiscal)
+
+Condição de estabilidade
+
+De forma ainda mais resumida:
+* Famílias → Euler
+* Firmas → FOCs
+* Mercados → Clearing
+* Dinâmica → Choques
+* Fechamento → Política / estabilidade
 
 =============================================================
 Resumo econômico das condições do modelo NK básico

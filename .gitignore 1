@@ -1,0 +1,5 @@
+.venv
+*.js
+*.css
+venv/
+*.woff
