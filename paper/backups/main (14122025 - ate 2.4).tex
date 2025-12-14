@@ -1,0 +1,464 @@
+%!TEX program = pdflatex
+
+\documentclass[12pt,a4paper,alf]{abntex2}
+\AtBeginDocument{\selectlanguage{brazilian}}
+\emergencystretch=2em
+\raggedbottom
+
+% Teste vscode para github para overleaf
+% remove o "capítulo." das seções
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% ================== CODIFICAÇÃO ==================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ================== PACOTES MATEMÁTICOS E GRÁFICOS ==================
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+% ================== FORMATAÇÃO ==================
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{margin=2.5cm}
+\OnehalfSpacing
+
+% ================== CITAÇÕES E REFERÊNCIAS ==================
+\usepackage[alf]{abntex2cite}
+
+% ================== TEXTO E LINKS ==================
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+% ================== INFORMAÇÕES DO ARTIGO ==================
+\title{Determinância e Política Monetária no Brasil:\\
+Uma Avaliação Empírica do Princípio de Taylor (1999--2024)}
+\author{
+Fernando Souza de Vieira\\
+Rafaela Dezidério Rocha
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este artigo investiga em que medida a política monetária brasileira, sob o regime de metas de inflação vigente desde 1999, tem seguido regras compatíveis com o Princípio de Taylor e com a determinância do equilíbrio em modelos Novo-Keynesianos. O estudo estima diferentes especificações da Regra de Taylor — \textit{backward-looking}, \textit{forward-looking} no estilo Clarida--Galí--Gertler e versões híbridas com suavização da taxa de juros — utilizando dados da taxa Selic, inflação (IPCA), hiato do produto e expectativas de inflação (Focus), no período 1999--2024. A metodologia combina MQO com erros robustos, GMM com instrumentos defasados, testes de quebras estruturais (Bai--Perron) e avaliação formal da condição de Bullard--Mitra, que relaciona os parâmetros estimados à determinância do modelo Novo-Keynesiano. Os resultados permitem identificar se, e em quais subperíodos, a reação da política monetária à inflação foi suficientemente forte ($\phi_\pi > 1$) para garantir unicidade do equilíbrio e ancoragem das expectativas. A contribuição central do artigo consiste em estabelecer um diálogo sistemático entre o arcabouço Novo-Keynesiano e a experiência brasileira recente, destacando como diferentes regimes de política monetária se relacionam com a estabilidade nominal e a credibilidade do Banco Central.
+\end{abstract}
+
+% ===========================================================
+\section{Introdução}
+% ===========================================================
+
+Desde 1999, o regime de metas para a inflação consolidou um novo arcabouço de política monetária no Brasil, ancorado na transparência da atuação do Banco Central e na necessidade de compatibilizar estabilidade nominal e crescimento econômico. Ao longo desse período, a condução da taxa Selic passou a ser orientada por uma lógica sistemática de resposta a desvios da inflação em relação à meta e, em menor medida, a flutuações no hiato do produto \cite{carrara2012regime}. Embora tal lógica nem sempre seja explicitada em regras formais, a literatura reconhece que o comportamento histórico do Banco Central brasileiro aproxima-se de uma função de reação do tipo Taylor \cite{de2013modified}.
+
+Conforme será argumentado teoricamente na Seção 3.3, a Regra de Taylor especifica que a taxa básica de juros reage sistematicamente ao desvio da inflação em relação à meta e ao hiato do produto, elevando-se quando inflação e atividade estão acima de seus níveis desejados e reduzindo-se no caso oposto. O Princípio de Taylor, por sua vez, formaliza uma exigência mínima de estabilização: para que a política monetária evite equilíbrios múltiplos e trajetórias instáveis, o coeficiente de resposta da taxa de juros à inflação deve exceder a unidade. Essa condição, aparentemente simples, é decisiva em modelos Novo-Keynesianos, nos quais a dinâmica macroeconômica depende criticamente de expectativas e de rigidez nominal \cite{taylor1993}.
+
+\subsection{Contexto e Motivação}
+
+Segundo \citeonline[p.~120]{balbinoPoliticaMonetariaBrasileira2011}, a credibilidade da autoridade monetária, elemento central do regime de metas, está diretamente associada à capacidade de reagir de forma consistente a choques inflacionários. Nesse sentido, a violação do Princípio de Taylor pode gerar instabilidade nominal, indeterminação do equilíbrio e sensibilidade excessiva a choques exógenos e revisões nas expectativas. Essa necessidade de reação consistente conecta-se diretamente à estabilidade dinâmica discutida na literatura Novo-Keynesiana: quando a autoridade monetária não reage de forma suficientemente forte à inflação, abre-se espaço para desancoragem de expectativas e equilíbrios autorrealizáveis \cite{woodford2003interest,bullard2002learning}.
+
+Um elemento adicional que condiciona a eficácia da política monetária é o risco de dominância fiscal. Quando a dinâmica da dívida pública restringe o espaço de atuação do Banco Central, aumentos da taxa Selic podem comprometer a sustentabilidade fiscal, reduzindo a autonomia da política monetária e dificultando a implementação de respostas agressivas à inflação. Em tais cenários, a condição $\phi_{\pi} > 1$ pode tornar-se inviável na prática, ainda que desejável do ponto de vista teórico \cite{kumhof2010simple}.
+
+\subsection{Problema de Pesquisa}
+
+O problema de pesquisa que orienta este artigo pode ser sintetizado da seguinte forma:
+
+\begin{itemize}
+\item[] \textbf{Até que ponto a política monetária brasileira, no período 1999--2024, reagiu à inflação de forma suficientemente forte para satisfazer o Princípio de Taylor e garantir determinância no sentido do modelo Novo-Keynesiano?} Ademais, como esse padrão de reação variou entre os diferentes presidentes do Banco Central?
+\end{itemize}
+
+\subsection{Objeto do Estudo}
+
+O objeto deste estudo consiste na estimativa da função de reação da taxa Selic à inflação e ao hiato do produto no regime de metas de inflação brasileiro, a partir de diferentes formulações empíricas da Regra de Taylor: retrospectivas, prospectivas e híbridas com inércia. Essa função de reação é empregada para verificar a validade empírica do Princípio de Taylor e, de forma complementar, avaliar se os parâmetros obtidos asseguram determinância do equilíbrio no modelo Novo-Keynesiano.
+
+\subsection{Objetivos}
+
+\subsubsection*{Objetivo Geral}
+
+Avaliar empiricamente se a política monetária brasileira tem satisfeito o Princípio de Taylor e se os parâmetros estimados são compatíveis com a determinância do equilíbrio no modelo Novo-Keynesiano.
+
+\subsubsection*{Objetivos Específicos}
+
+\begin{itemize}
+\item Estimar diferentes especificações da Regra de Taylor.
+\item Verificar se os coeficientes estimados satisfazem $\hat{\phi}_\pi > 1$.
+\item Avaliar a condição de Bullard--Mitra para os parâmetros estimados.
+\item Explorar implicações dinâmicas por meio de simulações em modelo NK.
+\end{itemize}
+
+\subsection{Estrutura do Artigo}
+
+\textbf{Além desta introdução, o artigo organiza-se em três partes. A primeira parte reúne as Seções 2, 3 e 4}: a Seção 2 revisa a literatura sobre regras monetárias e determinância, com ênfase em evidência internacional e para o Brasil, apresentando como as diferentes formulações da Regra de Taylor têm sido utilizadas e estimadas empiricamente; a Seção 3, por sua vez, desenvolve o arcabouço Novo-Keynesiano que fundamenta a análise, mostrando como essas mesmas regras operam dentro do modelo, em particular sua interação com a NKPC, a equação IS e a condição de Bullard--Mitra; e a Seção 4 contextualiza o regime de metas brasileiro, descrevendo presidentes do Banco Central, regimes de política monetária e fatos estilizados que motivam a estratificação da análise. \textbf{A segunda parte compreende as Seções 5, 6 e 7}: a Seção 5 detalha dados e metodologia, a Seção 6 apresenta os resultados empíricos e a Seção 7 discute suas implicações para credibilidade, dominância fiscal e estabilidade monetária. \textbf{A terceira parte contém a Seção 8}, com as conclusões e considerações finais.
+
+% ===========================================================
+\section{Regras de Política e Estabilidade: Evidências Teóricas e Empíricas}
+% ===========================================================
+
+A presente seção organiza a discussão de política monetária a partir das diferentes formulações da Regra de Taylor, que ajudam a entender como bancos centrais ajustam juros em função da inflação e da atividade. Em seguida, são apresentadas as contribuições sobre determinância e estabilidade, que delimitam quando essas respostas são suficientes para garantir um equilíbrio único no modelo Novo-Keynesiano. Evidências internacionais e brasileiras complementam esse panorama, mostrando como esses mecanismos se manifestaram em distintos regimes e períodos. Essa sequência, da formulação das regras às suas implicações teóricas e empíricas, busca oferecer o enquadramento necessário para interpretar os resultados estimados posteriormente, com base no arcabouço teórico, que os formaliza em maior profundidade na seção 3.
+
+\subsection{Regras de Política Monetária}
+
+As contribuições de \citeonline{taylor1993}, que, juntamente com a Curva de Phillips Novo-Keynesiana e a equação IS dinâmica, compõem o núcleo da análise moderna de política monetária ao fornecerem o mecanismo de fechamento do modelo, podem ser compreendidas no contexto da transição metodológica produzida pela crítica de Lucas e pela consolidação dos modelos com expectativas racionais. Taylor enfatiza que a avaliação \textit{ex ante} de regras de política só se tornou factível quando a literatura reconheceu as limitações dos modelos tradicionais, bem como os avanços teóricos que demonstravam a superioridade de regras sistemáticas sobre a discricionariedade. É nesse contexto que ele identifica os principais fatores que motivaram a formulação de regras de política operacionalizáveis, afirmando que “\textit{the Lucas critique showing that traditional econometric policy evaluation was flawed, the recognition that rational expectations does not imply monetary policy ineffectiveness, and the finding that credibility has empirically significant benefits}” foram determinantes para esse avanço \cite{taylor1993}, p. 195-196).
+
+Essas motivações e alicerces teóricos dão sentido à formulação da Regra de Taylor: uma especificação simples e operacional que relaciona a taxa básica de juros a desvios da inflação e do hiato do produto, oferecendo uma resposta sistemática e previsível em contraste com o “\textit{feeling}” discricionário. Em sua análise histórica subsequente, \citeonline{taylor1999} mostrou que períodos em que a política monetária reagiu de forma insuficiente aos desvios da inflação, isto é, com coeficientes $\phi_{\pi}$ persistentemente inferiores à unidade, coincidiram com maior instabilidade macroeconômica, ao passo que períodos caracterizados por respostas mais agressivas estiveram associados a maior estabilidade. Assim, o conjunto de seus trabalhos estabelece não apenas uma regra prática, mas um arcabouço conceitual que vincula credibilidade, expectativas e determinância do equilíbrio, desempenhando papel central no fechamento dos modelos Novo-Keynesianos.
+
+Aprofundando essa análise sob a ótica das expectativas racionais, \citeonline{clarida2000monetary} expandiram o arcabouço de Taylor ao estimar uma função de reação \textit{forward-looking} (quando a autoridade monetária reage às expectativas de inflação futura e não aos dados passados) para a economia dos EUA, dividindo a amostra nas eras pré-Volcker (1960--1979) e Volcker-Greenspan (1979--1996). Os autores demonstraram formalmente que a instabilidade macroeconômica do primeiro período decorreu de uma violação sistemática do Princípio de Taylor ($\phi_{\pi} < 1$), o que permitiu a emergência de equilíbrios indeterminados sujeitos a \textit{sunspots}\space (profecias autorrealizáveis). A contribuição crucial desse trabalho reside na incorporação explícita das expectativas de inflação futura na função de reação do Banco Central, estabelecendo que a estabilidade não depende apenas da resposta aos dados observados, mas da capacidade da autoridade monetária de ancorar as expectativas dos agentes através de uma postura agressiva ($\phi_{\pi} > 1$) diante de choques inflacionários previstos. Essa abordagem fundamenta diretamente a estratégia empírica do presente estudo, que busca testar se a condução da política monetária no Brasil, ao reagir às expectativas de inflação (Focus), cumpriu as condições de determinância exigidas para evitar a propagação de instabilidade não fundamental.
+
+Uma síntese natural das contribuições anteriores encontra-se em \citeonline{woodford2003interest}, cuja formulação microfundamentada do modelo Novo-Keynesiano apresenta o arcabouço teórico dominante para a análise de política monetária. Woodford demonstrou que a eficácia das regras de política depende crucialmente do modo como elas ancoram expectativas, não somente de inflação futura, mas também do próprio estado da economia ao longo do tempo. Em seu tratamento normativo, a autoridade monetária minimiza a perda social derivada de fundamentos microeconômicos, o que leva a regras ótimas caracterizadas por forte resposta às expectativas de inflação e por um compromisso intertemporal capaz de eliminar equilíbrios indeterminados. Assim, embora a Regra de Taylor represente uma aproximação reduzida dessas regras ótimas, Woodford mostra que, de fato, políticas que reagem de maneira suficientemente agressiva à inflação (p. ex., $\phi_{\pi}$ >1) são as que garantem a unicidade do equilíbrio e a estabilidade macroeconômica. Desse modo, a contribuição de Woodford consolida o elo conceitual entre microfundamentação, expectativas e determinância, oferecendo a justificativa teórica definitiva para o uso de regras de Taylor na avaliação empírica da política monetária.
+
+\subsection{Determinância e Estabilidade}
+
+A análise da eficácia das regras de política monetária em modelos dinâmicos exige, além da especificação da função de reação da autoridade monetária, a verificação das condições sob as quais o sistema econômico converge para uma trajetória estável e única. Nesse contexto, a contribuição de \citeonline{blanchard1980solution} estabeleceu o arcabouço matemático fundamental para a solução de modelos lineares com expectativas racionais, permitindo a verificação formal da estabilidade de regras como a de Taylor. 
+
+Os autores demonstraram que a existência e a unicidade do equilíbrio dependem da relação entre o número de autovalores explosivos da matriz de transição do sistema e o número de variáveis não predeterminadas (\textit{forward-looking}). Especificamente, para que haja determinância (equilíbrio único e estável), o número de raízes instáveis, isto é, os componentes dinâmicos que levariam o sistema a uma trajetória explosiva, deve ser exatamente igual ao número de variáveis de salto, ou seja, aquelas que podem mudar de valor instantaneamente e de forma \enquote{livre} em resposta a novas informações ou choques, porque dependem inteiramente das expectativas futuras dos agentes, como no caso da inflação e o hiato do produto. Caso essa condição não seja satisfeita, o modelo pode apresentar indeterminação, permitindo múltiplos equilíbrios e flutuações guiadas por \textit{sunspots}, ou inexistência de solução estável (trajetórias explosivas).
+
+Avançando sobre essa base, \citeonline{bullard2002learning} investigaram a estabilidade do equilíbrio Novo-Keynesiano sob a hipótese de que os agentes não possuem conhecimento perfeito da estrutura da economia, mas formam expectativas através de processos de aprendizagem adaptativa (\textit{adaptive learning}). Ao analisarem diferentes especificações da regra de juros, os autores derivaram a condição de estabilidade (\textit{E-stability}), que, para regras \textit{forward-looking}, exige que a resposta da política monetária satisfaça a desigualdade:
+
+\begin{equation}
+\kappa(\phi_\pi - 1) + (1-\beta)\phi_y > 0
+\end{equation}
+
+Essa expressão formaliza analiticamente o Princípio de Taylor no contexto de modelos microfundamentados: para garantir a determinância e a convergência da aprendizagem dos agentes para o equilíbrio de expectativas racionais, a autoridade monetária deve reagir à inflação de forma agressiva ($\phi_\pi > 1$), ajustada pela resposta da autoridade monetária ao hiato do produto ($\phi_y$) e pelos parâmetros estruturais da economia, como o fator de desconto ($\beta$) e a inclinação da Curva de Phillips ($\kappa$). 
+
+Posto isso, o trabalho de Bullard e Mitra é central para este estudo, pois conecta a estimação empírica dos coeficientes $\phi_\pi$ e $\phi_y$ à capacidade efetiva do Banco Central de ancorar expectativas e evitar a propagação de instabilidade não fundamental. No contexto empírico deste artigo, essa condição será utilizada para avaliar se os coeficientes 
+$\hat{\phi}_{\pi}$ e $\hat{\phi}_{y}$, estimados a partir de diferentes especificações da Regra de Taylor, 
+são compatíveis com a determinância do equilíbrio NK.
+
+\subsection{Evidências Internacionais}
+
+A literatura empírica internacional, ao aplicar o arcabouço de regras de Taylor em economias avançadas, consolidou o entendimento de que a estabilidade macroeconômica depende crucialmente do cumprimento do Princípio de Taylor. Trabalhos como o de \citeonline{smets2007shocks}, utilizando um modelo DSGE estimado por métodos bayesianos para a economia norte-americana no período pós--1984 (``Grande Moderação''), encontraram coeficientes de reação à inflação significativamente superiores à unidade (em torno de 2,0 no longo prazo), corroborando a hipótese de que uma política monetária ativa foi determinante para a ancoragem das expectativas e a redução da volatilidade do produto. Essa evidência contrasta com os resultados para o período da ``Grande Inflação'' (pré--1979), onde estimativas de \citeonline{lubik2004testing} indicam que a política monetária situava-se na região de indeterminação, permitindo flutuações guiadas por profecias autorrealizáveis (\textit{sunspots}).
+
+Complementarmente, a aplicação de regras de Taylor em outros contextos regionais reforça, com nuances importantes, o papel central da resposta sistemática à inflação, ao mesmo tempo em que amplia a agenda para incluir também riscos de instabilidade financeira. \citeonline{moura2010can} mostram que, em economias latino-americanas como Chile, México e Brasil, estimativas de regras de Taylor frequentemente apontam para $\phi_\pi > 1$ em regimes de metas de inflação mais consolidados, mas revelam forte heterogeneidade temporal e institucional, sugerindo que a aderência ao Princípio de Taylor é mais frágil em ambientes de maior vulnerabilidade fiscal e cambial. Em paralelo, \citeonline{kahn2010taylor} e \citeonline{kafer2014taylor} destacam que desvios persistentes em relação à regra de Taylor podem estar associados à formação de desequilíbrios financeiros, defendendo a incorporação de variáveis financeiras nas funções de reação, em particular no contexto do Federal Reserve e da área do euro. Esses resultados situam a problemática deste artigo em um quadro mais amplo: ainda que o foco aqui recaia sobre determinância e ancoragem de expectativas em modelos Novo-Keynesianos, a força da reação da política monetária à inflação, medida por $\phi_\pi$, também dialoga com o debate contemporâneo sobre a compatibilização entre estabilidade de preços, estabilidade financeira e credibilidade em economias avançadas e emergentes.
+
+Além da magnitude da resposta à inflação, a literatura também enfatiza a importância da informação utilizada pelo Banco Central. \citeonline{orphanides2001monetary} demonstrou que avaliações de regras de política baseadas em dados revisados (\textit{ex post}) podem levar a conclusões enganosas sobre a conduta da autoridade monetária, uma vez que as decisões são tomadas com base em dados em tempo real. Seus resultados indicam que especificações \textit{forward-looking}, que incorporam as previsões disponíveis no momento da decisão, descrevem com maior precisão o comportamento histórico do \textit{Federal Reserve}. Essa constatação reforça a relevância de utilizar medidas de expectativas de mercado, como as do Boletim Focus no caso brasileiro, para capturar adequadamente o conjunto de informações que condiciona a reação da política monetária e a determinação do equilíbrio.
+
+\subsection{Evidências para o Brasil}
+
+Ecoando a consolidação internacional do arcabouço de regras de Taylor, a literatura empírica brasileira também produziu um vasto corpo de evidências sobre a condução da política monetária sob o regime de metas, buscando verificar se o Banco Central do Brasil aderiu aos princípios de estabilização consagrados nos modelos Novo-Keynesianos. Desde a implementação do regime, discutida normativamente por \citeonline{giambiagi2002metas} como um mecanismo de disciplina intertemporal para a estabilidade de preços, artigos como o de \citeonline{minella2003inflation} documentaram uma reação vigorosa da taxa Selic aos desvios das expectativas de inflação ($\phi_\pi > 1$). Essa evidência inicial sugeriu que, a exemplo das economias avançadas durante a ``Grande Moderação'', a autoridade monetária brasileira internalizou rapidamente a necessidade de uma postura ativa para construir credibilidade e ancorar as expectativas nominais, achado corroborado em estudos mais recentes, como \citeonline{vanzelotti2023estimando}, para amostras ampliadas.
+
+Entretanto, diferentemente do caso norte-americano ou europeu, a aplicação da Regra de Taylor ao contexto brasileiro exige a consideração de idiossincrasias estruturais de uma economia emergente. \citeonline{barbosa2016taxa}, por exemplo, argumentam que a postura da política monetária deve ser avaliada à luz de uma taxa de juros natural variável e historicamente elevada, influenciada pelo risco-país e pelas condições externas. Adicionalmente, \citeonline{aragon2010nonlinearities} demonstraram que a função de reação do Banco Central pode apresentar não linearidades, caracterizada por preferências assimétricas que toleram menos desvios positivos da inflação do que quedas no produto. Essas nuances são reforçadas por \citeonline{areosa2007inflation}, que destacam como a forte inércia inflacionária e o repasse cambial no Brasil impõem restrições mais severas à calibração da regra de juros do que as observadas em modelos de economia fechada.
+
+Apesar desses avanços robustos na caracterização das especificidades locais, observa-se uma lacuna importante quando se compara a literatura nacional à fronteira da pesquisa internacional descrita na seção anterior: a conexão explícita entre as estimativas empíricas e as condições teóricas de estabilidade dinâmica. Enquanto autores como \citeonline{lubik2004testing} testam formalmente a determinância do equilíbrio para os EUA, poucos estudos no Brasil transpõem a estimação dos coeficientes $\phi_\pi$ e $\phi_y$ para uma avaliação rigorosa da condição de \citeonline{bullard2002learning}. Em particular, carece-se de uma análise sistemática que segmente os mandatos presidenciais do Banco Central para verificar se, em cada gestão específica, a combinação de parâmetros satisfez as condições de unicidade do equilíbrio, evitando a vulnerabilidade da economia a flutuações guiadas por profecias autorrealizáveis. É justamente nessa interseção entre a evidência econométrica dos regimes brasileiros e a teoria de estabilidade sob aprendizagem que este artigo se insere.
+
+% ===========================================================
+\section{Arcabouço Teórico}
+% ===========================================================
+
+\subsection{Curva de Phillips Novo-Keynesiana (NKPC)}
+
+\[
+\pi_t = \beta E_t \pi_{t+1} + \kappa \tilde y_t.
+\]
+
+Nesta subseção, serão definidas as variáveis de inflação e hiato do produto e apresentada, de forma sintética, a derivação da NKPC a partir de rigidez nominal à Calvo, destacando o papel das expectativas na dinâmica inflacionária.
+
+\noindent\textbf{Materiais sugeridos:}
+\begin{itemize}
+    \item Galí (2015), \textit{Monetary Policy, Inflation and the Business Cycle}, Cap. 3.
+    \item Woodford (2003), \textit{Interest and Prices}, Cap. 3.
+    \item Slides da Aula 5 -- \textit{The Basic NK Model} (FEARP/USP).
+    \item Lista de exercícios sobre Rotemberg vs. Calvo.
+    \item Mankiw \& Reis (2002), \textit{Sticky Information} (opcional).
+\end{itemize}
+
+% -----------------------------------------------------------
+
+\subsection{Equação IS Dinâmica}
+
+\[
+\tilde y_t = E_t \tilde y_{t+1}
+    - \frac{1}{\sigma} \big( i_t - E_t \pi_{t+1} - r_t^n \big).
+\]
+
+A equação IS dinâmica relaciona o hiato do produto à taxa de juros real ex-ante e ao hiato futuro, interpretando $\sigma$ como elasticidade intertemporal do consumo e $r_t^n$ como a taxa de juros natural consistente com o produto potencial.
+
+\noindent\textbf{Materiais sugeridos:}
+\begin{itemize}
+    \item Galí (2015), Cap. 3.
+    \item Woodford (2003), Cap. 4.
+    \item Slides da Aula 5 -- \textit{The Basic NK Model}.
+    \item Slides da Aula 6 -- \textit{Policy Design in the Basic NK Model}.
+\end{itemize}
+
+% -----------------------------------------------------------
+
+\subsection{Regras de Taylor}
+
+Serão consideradas três classes de regras de juros:
+
+\begin{itemize}
+    \item Princípio de Taylor.
+    \item Regra de Taylor canônica:
+    \[
+    i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde y_t + \varepsilon_t.
+    \]
+    \item Regra forward-looking (CGG):
+    \[
+    i_t = \rho + \phi_\pi E_t\pi_{t+1} + \phi_y \tilde y_t + \varepsilon_t.
+    \]
+    \item Regra híbrida com suavização:
+    \[
+    i_t = \theta i_{t-1} + (1-\theta)(\rho + \phi_\pi \pi_t + \phi_y \tilde y_t) + \varepsilon_t.
+    \]
+\end{itemize}
+
+\noindent\textbf{Materiais sugeridos:}
+\begin{itemize}
+    \item Taylor (1993; 1999).
+    \item Clarida, Galí e Gertler (2000).
+    \item Galí (2015), Cap. 4.
+    \item Woodford (2003), Cap. 6.
+    \item Slides da Aula 5 -- \textit{Interest Rate Rule}.
+    \item Slides da Aula 7 -- \textit{Discretion vs. Commitment}.
+\end{itemize}
+
+% -----------------------------------------------------------
+
+\subsection{Condições de Determinância}
+
+\[
+\kappa(\phi_\pi - 1) + (1-\beta)\phi_y > 0.
+\]
+
+A condição acima, derivada em \citeonline{bullard2002learning}, caracteriza quando a combinação entre resposta da taxa de juros à inflação e ao hiato do produto garante determinância em modelos NK com aprendizagem. O papel central de $\phi_\pi > 1$ é evitar equilíbrios múltiplos e trajetórias explosivas para inflação e produto, conectando o Princípio de Taylor à unicidade do equilíbrio.
+
+\noindent\textbf{Materiais sugeridos:}
+\begin{itemize}
+    \item Blanchard \& Kahn (1980).
+    \item Bullard \& Mitra (2002).
+    \item Galí (2015), Caps. 3--4.
+    \item Slides da Aula 5 -- derivação da matriz $A_T$.
+    \item Slides da Aula 6 -- regras forward-looking e limites de determinância.
+    \item Christiano, Eichenbaum \& Johannsen (2018).
+\end{itemize}
+
+% -----------------------------------------------------------
+
+\subsection{Representação Matricial e Implementação em Dynare (Opcional)}
+
+\begin{itemize}
+    \item Representação do sistema na forma $X_t = A E_t X_{t+1} + B u_t$.
+    \item Descrição da simulação de funções de resposta a impulso (IRFs) via Dynare.
+\end{itemize}
+
+\noindent\textbf{Materiais sugeridos:}
+\begin{itemize}
+    \item Slides da Aula 5 -- representação matricial do modelo NK.
+    \item Galí (2015), Apêndice técnico.
+    \item Lubik \& Schorfheide (2004), teste de determinância via DSGE estimado.
+    \item Smets \& Wouters (2007), modelo DSGE estimado com Regra de Taylor.
+    \item Manual do Dynare (opcional).
+\end{itemize}
+
+% ===========================================================
+\section{Contexto Institucional e Fatos Estilizados}
+% ===========================================================
+
+\subsection{Regimes de Política Monetária e Presidentes do Banco Central}
+
+\begin{itemize}
+    \item Descrever brevemente a adoção do regime de metas de inflação em 1999 e suas principais características (meta para o IPCA, bandas de tolerância, horizonte relevante).
+    \item Listar os presidentes do Banco Central no período (Fraga, Meirelles, Tombini, Goldfajn, Campos Neto) e os contextos macroeconômicos associados a cada gestão (desinflação inicial, boom de commodities, crise global, recessão 2015--2016, pandemia, choques recentes).
+    \item Destacar eventuais mudanças de regime percebidas na prática: maior ou menor peso dado à inflação, ao hiato do produto e à estabilidade financeira em diferentes períodos.
+    \item Conectar, de forma qualitativa, esses regimes com a lógica do arcabouço NK: estabilidade de preços como objetivo primário e papel da taxa de juros como instrumento.
+\end{itemize}
+
+\subsection{Estatísticas Descritivas das Variáveis-Chave}
+
+\begin{itemize}
+    \item Apresentar tabelas descritivas (médias, desvios-padrão, mínimos, máximos) para inflação (IPCA), taxa Selic, hiato do produto e expectativas de inflação (Focus).
+    \item Incluir gráficos de série temporal para o período 1999--2024, destacando visualmente as mudanças de presidente do Banco Central (linhas verticais) e episódios relevantes (crise de 2002, crise de 2008, recessão 2015--2016, pandemia de 2020 etc.).
+    \item Discutir, de forma não causal, padrões observados: períodos de inflação acima/abaixo da meta, fases de juros muito altos ou muito baixos, episódios de hiato fortemente negativo ou positivo.
+    \item Ressaltar que esses padrões são apenas descritivos e servem como motivação preliminar para a análise econométrica da Regra de Taylor e do Princípio de Taylor.
+\end{itemize}
+
+\subsection{Fatos Estilizados por Regimes de Política Monetária}
+
+A análise descritiva por regimes de presidência do Banco Central é particularmente relevante em uma economia emergente como a brasileira, marcada por forte exposição a choques externos e a episódios de elevada incerteza global. Evidências recentes, como as de \citeonline{barros2023geopolitical}, mostram que choques de risco geopolítico internacional afetam de forma significativa atividade, inflação, taxa de juros e prêmio de risco no Brasil, reforçando a importância de investigar se diferentes regimes de política monetária responderam a esses choques com graus distintos de agressividade.
+
+
+\begin{itemize}
+    \item Comparar, de forma descritiva, a média e a volatilidade da inflação, da taxa Selic e do hiato do produto em cada regime de presidência do Banco Central.
+    \item Verificar se, à primeira vista, alguns regimes parecem reagir mais agressivamente à inflação (juros mais altos quando a inflação sobe) do que outros.
+    \item Relacionar esses fatos estilizados com a lógica do Princípio de Taylor: sugerir, de forma preliminar, em quais regimes se espera encontrar $\hat{\phi}_\pi > 1$ e em quais isso é menos provável.
+    \item Destacar que a análise descritiva não é suficiente para concluir sobre determinância, servindo apenas como \textit{benchmark} visual e histórico a ser formalmente testado pela metodologia econométrica nas seções seguintes.
+\end{itemize}
+
+% ===========================================================
+\section{Metodologia}
+% ===========================================================
+
+\subsection{Dados}
+
+\subsubsection{Variáveis}
+
+\begin{itemize}
+    \item Taxa Selic ($i_t$).
+    \item Inflação (IPCA).
+    \item PIB real e cálculo do hiato do produto.
+    \item Expectativas de inflação (Focus).
+\end{itemize}
+
+\subsubsection{Fontes}
+
+\begin{itemize}
+    \item Banco Central do Brasil (SGS).
+    \item IBGE.
+    \item FGV/IBRE.
+\end{itemize}
+
+\subsubsection{Tratamento dos Dados}
+
+\begin{itemize}
+    \item Frequência (mensal ou trimestral).
+    \item Ajuste sazonal.
+    \item Período amostral e janelas de crise.
+\end{itemize}
+
+\subsection{Especificação das Equações}
+
+\begin{itemize}
+    \item Regras de Taylor backward (MQO/GLS).
+    \item Regras forward (GMM).
+    \item Regra híbrida com defasagens de juros (suavização).
+\end{itemize}
+
+\subsection{Estratégia Econométrica}
+
+\begin{itemize}
+    \item Justificar MQO com erros robustos (Newey--West).
+    \item GMM com instrumentos defasados.
+    \item Estimação por subperíodos (regimes/presidentes do BCB).
+\end{itemize}
+
+\subsection{Teste do Princípio de Taylor e da Condição de Bullard--Mitra}
+
+\begin{itemize}
+    \item Verificar empiricamente se $\hat\phi_\pi > 1$.
+    \item Avaliar a condição $\kappa(\hat\phi_\pi - 1) + (1-\beta)\hat\phi_y > 0$.
+\end{itemize}
+
+\subsection{Quebras Estruturais}
+
+\begin{itemize}
+    \item Testes de Bai--Perron.
+    \item Datas-chave: 2003, 2011, 2016, 2019.
+\end{itemize}
+
+\subsection{Simulações em Dynare (Opcional)}
+
+A implementação computacional do modelo Novo-Keynesiano no software Dynare desempenha um papel complementar à análise econométrica, funcionando como um laboratório para avaliar a dinâmica teórica implícita nos parâmetros estimados. Seus objetivos específicos são:
+
+\begin{itemize}
+    \item \textbf{Verificação das Condições de Estabilidade (Blanchard--Kahn):} Utilizar o algoritmo do Dynare para testar computacionalmente se os conjuntos de parâmetros estimados para cada regime ($\hat{\phi}_\pi, \hat{\phi}_y$) satisfazem as condições de existência e unicidade do equilíbrio racional. Isso permite confirmar se regimes com $\hat{\phi}_\pi < 1$ geram, de fato, diagnósticos de indeterminação ou trajetórias explosivas no modelo teórico.
+    
+    \item \textbf{Análise Dinâmica via Funções de Resposta ao Impulso (IRFs):} Simular a trajetória da inflação, do produto e dos juros diante de choques exógenos (oferta e demanda) sob diferentes regras de política. O objetivo é visualizar como a agressividade da resposta monetária (ou a falta dela) altera a velocidade de convergência da inflação para a meta e a volatilidade do ciclo econômico.
+    
+    \item \textbf{Exercícios Contrafactuais:} Avaliar cenários hipotéticos, como o comportamento da inflação em períodos de crise caso a regra de política monetária adotada fosse a de um regime de maior credibilidade (ex: aplicar os parâmetros do período $T_2$ aos choques do período $T_1$). Isso ajuda a isolar a contribuição da conduta do Banco Central para a estabilidade macroeconômica, segregando-a dos choques estruturais.
+\end{itemize}
+
+
+\begin{itemize}
+    \item Equações: NKPC, IS, Regra de Taylor.
+    \item Calibração de $\beta, \sigma, \kappa, \phi_\pi, \phi_y$.
+    \item Funções de resposta a impulso (IRFs) sob diferentes regimes.
+\end{itemize}
+
+% ===========================================================
+\section{Resultados}
+% ===========================================================
+
+\subsection{Estimações da Regra de Taylor}
+
+\begin{itemize}
+    \item Tabelas com $\hat\phi_\pi$, $\hat\phi_y$, termo constante e, se incluída, inércia na taxa de juros.
+    \item Resultados para a amostra completa (1999--2024).
+\end{itemize}
+
+\subsection{Teste do Princípio de Taylor}
+
+\begin{itemize}
+    \item Verificação de $\hat\phi_\pi > 1$ na amostra completa.
+    \item Discussão sobre significância estatística e intervalos de confiança.
+\end{itemize}
+
+\subsection{Resultados por Regimes de Política Monetária}
+
+\begin{itemize}
+    \item Estimações separadas por presidente do Banco Central: Fraga, Meirelles, Tombini, Goldfajn e Campos Neto.
+    \item Comparação dos coeficientes $\hat\phi_\pi$ e $\hat\phi_y$ entre regimes.
+    \item Identificação de mudanças na força da reação da política monetária ao longo do tempo.
+    \item Verificação do cumprimento (ou não) do Princípio de Taylor em cada regime.
+    \item Implicações para a condição de determinância do modelo em subperíodos distintos.
+\end{itemize}
+
+\subsection{Simulações (Opcional)}
+
+\begin{itemize}
+    \item IRFs para choques monetários sob diferentes valores de $\phi_\pi$ e $\phi_y$.
+    \item Comparação entre regimes determinantes e indeterminantes.
+\end{itemize}
+
+% ===========================================================
+\section{Discussão}
+% ===========================================================
+
+\subsection{Interpretação Econômica}
+
+\begin{itemize}
+    \item Implicações de $\phi_\pi > 1$ para credibilidade e eficácia da política monetária.
+    \item Relação entre reação da taxa de juros, estabilização da inflação e volatilidade do hiato do produto.
+\end{itemize}
+
+\subsection{Discussão dos Resultados por Regimes}
+
+\begin{itemize}
+    \item Interpretação econômica das diferenças entre regimes.
+    \item Relação entre arcabouço institucional, composição do Copom e parâmetros estimados.
+    \item Possíveis explicações para mudanças na força da reação à inflação.
+    \item Implicações para credibilidade, transparência e comunicação da política monetária.
+    \item Comparação com a literatura brasileira de política monetária por períodos.
+\end{itemize}
+
+\subsection{Comparação com a Literatura}
+
+\begin{itemize}
+    \item Convergência ou divergência dos resultados com estudos prévios para o Brasil.
+    \item Diferenças metodológicas em relação à literatura internacional (CGG, Bullard--Mitra etc.).
+\end{itemize}
+
+\subsection{Implicações de Política}
+
+\begin{itemize}
+    \item Relevância da forte reação à inflação em regimes de metas.
+    \item Papel da comunicação, \textit{forward guidance} e credibilidade na sustentação de $\phi_\pi > 1$.
+\end{itemize}
+
+\subsection{Limitações}
+
+\begin{itemize}
+    \item Medição do hiato do produto.
+    \item Qualidade e horizonte das expectativas de inflação.
+    \item Simplicidade da regra estimada frente a modelos DSGE completos.
+\end{itemize}
+
+% ===========================================================
+\section{Considerações Finais}
+% ===========================================================
+
+\begin{itemize}
+    \item Responder ao problema de pesquisa, sintetizando em que medida a política monetária brasileira satisfez o Princípio de Taylor e a condição de determinância.
+    \item Avaliar a compatibilidade do regime de metas com a determinância ao longo dos diferentes regimes de política monetária.
+    \item Destacar a contribuição teórica e empírica do artigo para o debate sobre estabilidade nominal, credibilidade e dominância fiscal.
+    \item Sugerir extensões (DSGE estimado, interação fiscal-monetária, comparações internacionais).
+\end{itemize}
+
+\bibliographystyle{abntex2-alf}
+\bibliography{library}
+
+\end{document}
