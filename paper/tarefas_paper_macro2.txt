@@ -27,8 +27,8 @@ EXECUÇÃO
 * ( ) Seção 2 / Revisão da Literatura - De 08 a 14/12/2025.
     [x] Seção 2.1 - 09/12
     [x] Seção 2.2 - 10/12
-    [x] Seção 2.3 - 10/12
-    [x] Seção 2.4 - 10/12
+    [x] Seção 2.3 - 10/12 (revisado e aperfeiçoado em 14/12)
+    [x] Seção 2.4 - 10/12 (revisado e aperfeiçoado em 14/12)
     
 * ( ) Seção 3 / Arcabouço Teórico - De 08 a 14/12/2025.
     [ ] Seção 3.1
