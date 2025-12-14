@@ -1,0 +1,56 @@
+================================
+TAREFAS PAPER FERNANDO E RAFAELA
+** MACROECONOMIA II **
+================================
+
+PREPARAÇÃO
+---------------------
+* (x) Definir tema.
+* (x) Estrutura do artigo.
+* (x) Estudar problema, objetivos e metodologia.
+* (x) Verificar bases de dados possíveis.
+* (x) Criar Overlaf.
+* ( ) Obter dados/séries - De 08 a 14/12/2025.
+
+%%% Bases de dados necessárias %%%
+- IPCA mensal — fonte: IBGE.
+- Selic meta mensal — fonte: Banco Central (SGS).
+- Selic efetiva mensal (over) — Banco Central (SGS).
+- PIB real trimestral — IBGE.
+- Expectativas de IPCA — Focus/BCB.
+
+EXECUÇÃO
+---------------------
+* (x) Rascunho do Abstract (mudar ao final)
+* (x) Seção 1 / Introdução.
+
+* ( ) Seção 2 / Revisão da Literatura - De 08 a 14/12/2025.
+    [x] Seção 2.1 - 09/12
+    [x] Seção 2.2 - 10/12
+    [x] Seção 2.3 - 10/12
+    [x] Seção 2.4 - 10/12
+    
+* ( ) Seção 3 / Arcabouço Teórico - De 08 a 14/12/2025.
+    [ ] Seção 3.1
+    [ ] Seção 3.2
+    [ ] Seção 3.3
+    [ ] Seção 3.4
+    [ ] Seção 3.5
+
+* ( ) Seção 4 / Contexto Institucional e Fatos Estilizados - De 15 a 21/12/2025.
+* ( ) Seção 5 / Metodologia - De 15 a 21/12/2025.
+
+* ( ) Codificar e Rodar modelos (R/Python) - De 27/12/2025 a 04/01/2026.
+* ( ) Seção 6 / Resultados - De 05/01 a 11/01/2026.
+
+%%% Talvez juntar seções 6 e 7 %%%
+
+* ( ) Seção 7 / Discussão - De 05/01 a 11/01/2026.
+* ( ) Seção 8 / Considerações Finais - De 12/01 a 14/01/2026.
+
+FINALIZAÇÃO
+---------------------
+* ( ) Versão final do Abstract - De 12/01 a 14/01/2026.
+* ( ) Revisão e Formatação final - 15/01/2026.
+
+* ( ) Envio - 16/01/2026.
