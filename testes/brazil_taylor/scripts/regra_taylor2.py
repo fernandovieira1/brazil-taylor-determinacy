@@ -171,6 +171,8 @@ Estrutura teórica (Galí, cap. 3–4; Soave, Aula 5/6):
 % múltiplas soluções ou nenhuma solução, baseado na comparação entre o número de variáveis 
 % forward-looking e o número de autovalores estáveis do sistema.
 
+% O método de Blanchard & Kahn é a ferramenta que os pesquisadores modernos usam para checar se a Regra de Taylor % funciona em um modelo teórico (determinância).
+
  Combinação → sistema à la Blanchard–Kahn:
 
    [ x_t ]   = A_T [ E_t x_{t+1} ]
