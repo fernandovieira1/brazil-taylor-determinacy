@@ -35,7 +35,7 @@ EXECUÇÃO
     [x] Seção 3.2 - 14/12
     [x] Seção 3.3 - 15/12
     [x] Seção 3.4 - 15/12
-    [ ] Seção 3.5 - cancelado (já existirá a subseção Simulações em Dynare, na seção 5 Metodologia)
+    [x] Seção 3.5 - cancelado (já existirá a subseção Simulações em Dynare, na seção 5 Metodologia)
 
 * ( ) Seção 4 / Contexto Institucional e Fatos Estilizados - De 15 a 21/12/2025.
 * ( ) Seção 5 / Metodologia - De 15 a 21/12/2025.
