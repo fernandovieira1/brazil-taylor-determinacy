@@ -103,7 +103,7 @@ A presente seção organiza a discussão de política monetária a partir das di
 
 \subsection{Regras de Política Monetária}
 
-As contribuições de \citeonline{taylor1993}, que, juntamente com a Curva de Phillips Novo-Keynesiana e a equação IS dinâmica, compõem o núcleo da análise moderna de política monetária ao fornecerem o mecanismo de fechamento do modelo, podem ser compreendidas no contexto da transição metodológica produzida pela crítica de Lucas e pela consolidação dos modelos com expectativas racionais. Taylor enfatiza que a avaliação \textit{ex ante} de regras de política só se tornou factível quando a literatura reconheceu as limitações dos modelos tradicionais, bem como os avanços teóricos que demonstravam a superioridade de regras sistemáticas sobre a discricionariedade. É nesse contexto que ele identifica os principais fatores que motivaram a formulação de regras de política operacionalizáveis, afirmando que “\textit{the Lucas critique showing that traditional econometric policy evaluation was flawed, the recognition that rational expectations does not imply monetary policy ineffectiveness, and the finding that credibility has empirically significant benefits}” foram determinantes para esse avanço \cite{taylor1993}, p. 195-196).
+As contribuições de \citeonline{taylor1993}, que, juntamente com a Curva de Phillips Novo-Keynesiana e a equação IS dinâmica, compõem o núcleo da análise moderna de política monetária ao fornecerem o mecanismo de fechamento do modelo, podem ser compreendidas no contexto da transição metodológica produzida pela crítica de Lucas e pela consolidação dos modelos com expectativas racionais. Taylor enfatiza que a avaliação \textit{ex ante} de regras de política só se tornou factível quando a literatura reconheceu as limitações dos modelos tradicionais, bem como os avanços teóricos que demonstravam a superioridade de regras sistemáticas sobre a discricionariedade. É nesse contexto que ele identifica os principais fatores que motivaram a formulação de regras de política operacionalizáveis, afirmando que “\textit{the Lucas critique showing that traditional econometric policy evaluation was flawed, the recognition that rational expectations does not imply monetary policy ineffectiveness, and the finding that credibility has empirically significant benefits}” foram determinantes para esse avanço (\cite{taylor1993}, p. 195-196).
 
 Essas motivações e alicerces teóricos dão sentido à formulação da Regra de Taylor: uma especificação simples e operacional que relaciona a taxa básica de juros a desvios da inflação e do hiato do produto, oferecendo uma resposta sistemática e previsível em contraste com o “\textit{feeling}” discricionário. Em sua análise histórica subsequente, \citeonline{taylor1999} mostrou que períodos em que a política monetária reagiu de forma insuficiente aos desvios da inflação, isto é, com coeficientes $\phi_{\pi}$ persistentemente inferiores à unidade, coincidiram com maior instabilidade macroeconômica, ao passo que períodos caracterizados por respostas mais agressivas estiveram associados a maior estabilidade. Assim, o conjunto de seus trabalhos estabelece não apenas uma regra prática, mas um arcabouço conceitual que vincula credibilidade, expectativas e determinância do equilíbrio, desempenhando papel central no fechamento dos modelos Novo-Keynesianos.
 
@@ -205,77 +205,90 @@ A equação \eqref{eq:dis} difere fundamentalmente da curva IS tradicional em do
 
 Essa estrutura teórica destaca que a estabilização macroeconômica exige que o Banco Central monitore e acompanhe as flutuações de $r_t^n$, ajustando a taxa nominal $i_t$ para evitar desvios persistentes em relação ao juro natural. A forma como a autoridade monetária operacionaliza esses ajustes em resposta à inflação e ao produto é descrita pelas Regras de Taylor, detalhadas a seguir.
 
-
+Assim sendo, esse aspecto decorre do fato de que as equações centrais do modelo novo-keynesiano são intrinsecamente prospectivas. A inflação corrente depende das expectativas de inflação futura, enquanto o hiato do produto é determinado pela expectativa do hiato à frente e pela taxa de juros real esperada. Assim, a política monetária afeta o equilíbrio macroeconômico não apenas por meio de seus efeitos contemporâneos sobre a taxa de juros nominal, mas sobretudo pela forma como influencia a formação de expectativas privadas acerca da trajetória futura da economia.
 
 % -----------------------------------------------------------
 
-\subsection{Regras de Taylor}
+\subsection{Regra de Taylor}
 
-Serão consideradas três classes de regras de juros:
+A condução da política monetária no modelo Novo-Keynesiano (NK) é tipicamente descrita por meio de uma regra de juros que especifica como o banco central ajusta a taxa de juros nominal em resposta a desvios da inflação e do produto em relação aos seus níveis-alvo. \citeonline{taylor1993} propôs uma regra simples que captura o comportamento sistemático da política monetária nos Estados Unidos, estabelecendo que a taxa de juros nominal deve responder positivamente aos desvios da inflação em relação à meta e ao hiato do produto. Este \textit{framework} foi posteriormente generalizado por \citeonline{clarida2000monetary} para incorporar expectativas \textit{forward-looking} e suavização da taxa de juros, alinhando a regra de política monetária à estrutura intertemporal do modelo NK.
 
-\begin{itemize}
-    \item Princípio de Taylor.
-    \item Regra de Taylor canônica:
-    \[
-    i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde y_t + \varepsilon_t.
-    \]
-    \item Regra forward-looking (CGG):
-    \[
-    i_t = \rho + \phi_\pi E_t\pi_{t+1} + \phi_y \tilde y_t + \varepsilon_t.
-    \]
-    \item Regra híbrida com suavização:
-    \[
-    i_t = \theta i_{t-1} + (1-\theta)(\rho + \phi_\pi \pi_t + \phi_y \tilde y_t) + \varepsilon_t.
-    \]
-\end{itemize}
+\subsubsection{Princípio de Taylor}
 
-\noindent\textbf{Materiais sugeridos:}
-\begin{itemize}
-    \item Taylor (1993; 1999).
-    \item Clarida, Galí e Gertler (2000).
-    \item Galí (2015), Cap. 4.
-    \item Woodford (2003), Cap. 6.
-    \item Slides da Aula 5 -- \textit{Interest Rate Rule}.
-    \item Slides da Aula 7 -- \textit{Discretion vs. Commitment}.
-\end{itemize}
+O Princípio de Taylor estabelece uma condição fundamental para a estabilidade macroeconômica sob uma regra de juros: o banco central deve ajustar a taxa de juros nominal mais que proporcionalmente a variações na inflação esperada, de modo que a taxa de juros real se eleve quando há pressões inflacionárias. Formalmente, considerando a regra de juros
+\[
+i_t = \rho + \phi_\pi E_t\pi_{t+1} + \phi_y \tilde{y}_t,
+\]
+o Princípio de Taylor requer que \(\phi_\pi > 1\). Em sua forma mais simples, esta condição assegura a determinação do equilíbrio e evita flutuações auto-realizáveis (\textit{sunspot fluctuations}), ao garantir que aumentos na inflação esperada sejam acompanhados por elevações mais que proporcionais da taxa de juros nominal.
+
+A intuição por trás deste princípio é direta: quando \(\phi_\pi < 1\), um aumento na inflação esperada leva o banco central a elevar a taxa nominal em magnitude insuficiente, resultando em queda da taxa real de juros \(r_t = i_t - E_t\pi_{t+1}\). Esta redução estimula a demanda agregada, validando e amplificando as expectativas inflacionárias iniciais. Em contraste, quando \(\phi_\pi > 1\), o banco central eleva a taxa real de juros, contraindo a demanda e contribuindo para a estabilização da inflação. Em modelos mais gerais, com resposta explícita ao hiato do produto e regras antecipativas, a condição de determinância passa a depender de combinações entre \(\phi_\pi\), \(\phi_y\), \(\kappa\) e \(\beta\), conforme discutido por \citeonline{bullard2002learning}. 
+
+Cabe notar que, em modelos novo-keynesianos com expectativas racionais, a introdução de uma regra de política monetária não esgota, por si só, a caracterização do equilíbrio. Embora a regra de Taylor forneça um mecanismo sistemático de reação da autoridade monetária a desvios da inflação e do produto, sua presença não garante, a priori, que o sistema dinâmico resultante admita uma única trajetória de equilíbrio consistente com as expectativas dos agentes. Em particular, em ambientes forward-looking, regras de juros insuficientemente reativas podem ser compatíveis com múltiplos equilíbrios racionais, fenômeno associado à possibilidade de trajetórias autorrealizáveis para inflação e produto.
+
+
+\subsubsection{Especificações da Regra de Taylor}
+
+Consideramos três especificações principais da regra de juros, que diferem quanto ao horizonte de previsão e ao grau de inércia da taxa de juros.
+
+\paragraph{Regra \textit{Backward-Looking}}
+
+A formulação original de \citeonline{taylor1993} especifica a taxa de juros como função da inflação corrente e do hiato do produto corrente:
+\[
+i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t,
+\]
+onde \(\rho\) é a taxa de juros real de equilíbrio, \(\pi_t\) é a taxa de inflação no período \(t\), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes — \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) — calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 (\cite{taylor1993}, p. 202).
+
+\paragraph{Regra \textit{Forward-Looking}}
+
+De forma alternativa, \citeonline{clarida2000monetary} argumentam que a política monetária deve ser descrita por uma regra \textit{forward-looking}, na qual o banco central responde não à inflação e ao hiato do produto correntes, mas às suas expectativas:
+\[
+i_t^* = \rho + \phi_\pi E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q} + \varepsilon_t,
+\]
+onde \(i_t^*\) denota a taxa de juros alvo, e \(k\) e \(q\) representam os horizontes de previsão para inflação e produto, respectivamente. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. Na prática, a literatura frequentemente assume \(k=q=1\), embora horizontes mais longos possam ser considerados.
+
+\paragraph{Regra com Suavização de Juros}
+
+Evidências empíricas indicam que bancos centrais ajustam suas taxas de juros de forma gradual, evitando mudanças abruptas. Para capturar este comportamento, \citeonline{clarida2000monetary} propõem uma especificação com suavização parcial:
+\[
+i_t = \theta i_{t-1} + (1-\theta)\left[\rho + \phi_\pi E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q}\right] + \varepsilon_t,
+\]
+onde \(\theta \in [0,1)\) captura o grau de suavização. Quando \(\theta = 0\), recupera-se a regra sem inércia; quando \(\theta\) é próximo de 1, observa-se forte persistência nos ajustes da taxa de juros.
+
+Complementando o que foi discutido na Seção 2, \citeonline{clarida2000monetary} estimam valores de \(\theta\) entre 0.7 e 0.9 para os Estados Unidos, sugerindo substancial gradualismo na condução da política monetária. A suavização pode refletir incerteza quanto aos efeitos da política, preocupação com a volatilidade dos mercados financeiros ou ainda uma estratégia ótima para o gerenciamento das expectativas em um ambiente \textit{forward-looking}.
+
+\subsubsection{Regra Híbrida e Interpretação da Taxa Real Alvo}
+
+Combinando as características anteriores, a regra híbrida mais geral pode ser escrita como:
+\[
+i_t = \theta i_{t-1} + (1-\theta)\left[\rho + \phi_\pi E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q}\right] + \varepsilon_t.
+\]
+Definindo a taxa real de juros alvo implícita na regra como \(r_t^* \equiv i_t^* - E_t\pi_{t+1}\), obtém-se:
+\[
+r_t^* = \rho + (\phi_\pi - 1)E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q}.
+\]
+Note-se que \(r_t^*\) não corresponde, em geral, à taxa natural de juros no sentido wickselliano (isto é, à taxa real consistente com inflação estável e com o produto em seu nível natural, determinada exclusivamente por fatores reais da economia), mas à taxa real induzida pela reação sistemática da política monetária. Esta expressão evidencia o papel central do Princípio de Taylor: quando \(\phi_\pi > 1\), um aumento na inflação esperada eleva a taxa real de juros, produzindo efeito contracionista; quando \(\phi_\pi < 1\), a política torna-se acomodatícia, com a taxa real caindo em resposta a pressões inflacionárias.
+
+No contexto do modelo Novo-Keynesiano, a regra de Taylor deve ser interpretada não como uma descrição ad hoc da política monetária, mas como o mecanismo de fechamento do sistema dinâmico formado pela Curva de Phillips Novo-Keynesiana e pela equação IS. A capacidade dessa regra de garantir um equilíbrio localmente único e estável depende, portanto, das condições de determinância associadas à estrutura expectacional do modelo, tema ao qual nos voltamos na próxima seção por meio das condições de Blanchard–Kahn e do critério de Bullard–Mitra.
+
+Nesse contexto, a análise do equilíbrio deixa de se restringir à existência de soluções consistentes com as condições de otimalidade e de mercado, passando a envolver a questão da unicidade e da estabilidade dinâmica dessas soluções. Em particular, torna-se central investigar se a regra de política monetária adotada é capaz de selecionar uma única trajetória expectacional compatível com o equilíbrio racional, ou se, alternativamente, o modelo admite múltiplos equilíbrios locais. A próxima subseção dedica-se, portanto, à formalização das condições sob as quais o sistema novo-keynesiano apresenta um equilíbrio determinado.
 
 % -----------------------------------------------------------
 
 \subsection{Condições de Determinância}
 
+A existência de um equilíbrio único e estável no modelo Novo-Keynesiano depende crucialmente da regra de política monetária adotada e de sua capacidade de ancorar as expectativas dos agentes. Formalmente, a dinâmica do sistema linearizado pode ser representada na forma canônica de \citeonline{blanchard1980solution}, onde a unicidade do equilíbrio exige que o número de autovalores instáveis (módulo superior a um) da matriz de transição seja igual ao número de variáveis não-predeterminadas (\textit{forward-looking}), como a inflação e o hiato do produto.
+
+Para uma regra de Taylor que responde a variáveis contemporâneas, a condição necessária e suficiente para a determinância, conforme demonstrado em \citeonline{bullard2002learning}, é dada por:
+
 \[
 \kappa(\phi_\pi - 1) + (1-\beta)\phi_y > 0.
 \]
 
-A condição acima, derivada em \citeonline{bullard2002learning}, caracteriza quando a combinação entre resposta da taxa de juros à inflação e ao hiato do produto garante determinância em modelos NK com aprendizagem. O papel central de $\phi_\pi > 1$ é evitar equilíbrios múltiplos e trajetórias explosivas para inflação e produto, conectando o Princípio de Taylor à unicidade do equilíbrio.
+Nesta inequação, derivada da análise dos autovalores da matriz $A_T$ do sistema dinâmico, $\kappa$ representa a inclinação da Curva de Phillips Novo-Keynesiana e $\beta$ o fator de desconto intertemporal. A condição estabelece um \textit{trade-off} entre a resposta à inflação ($\phi_\pi$) e ao hiato do produto ($\phi_y$). O Princípio de Taylor, caracterizado por $\phi_\pi > 1$, é uma condição suficiente para a determinância sempre que $\phi_y \geq 0$, garantindo que a taxa de juros real suba diante de pressões inflacionárias, o que contrai a demanda agregada e estabiliza os preços.
 
-\noindent\textbf{Materiais sugeridos:}
-\begin{itemize}
-    \item Blanchard \& Kahn (1980).
-    \item Bullard \& Mitra (2002).
-    \item Galí (2015), Caps. 3--4.
-    \item Slides da Aula 5 -- derivação da matriz $A_T$.
-    \item Slides da Aula 6 -- regras forward-looking e limites de determinância.
-    \item Christiano, Eichenbaum \& Johannsen (2018).
-\end{itemize}
+Além de assegurar a unicidade sob expectativas racionais, \citeonline{bullard2002learning} e \citeonline{christiano2018does} argumentam que essa mesma condição é fundamental para a estabilidade sob aprendizagem (\textit{E-stability}). Em modelos onde os agentes não possuem conhecimento perfeito da estrutura da economia e formam expectativas via algoritmos de aprendizagem adaptativa, o cumprimento dessa condição evita trajetórias explosivas e garante a convergência para o Equilíbrio de Expectativas Racionais (REE). A violação dessa regra, por outro lado, abre espaço para a indeterminação real e múltiplos equilíbrios, incluindo trajetórias de \textit{sunspots} onde choques não fundamentais afetam a economia real.
 
 % -----------------------------------------------------------
-
-\subsection{Representação Matricial e Implementação em Dynare (Opcional)}
-
-\begin{itemize}
-    \item Representação do sistema na forma $X_t = A E_t X_{t+1} + B u_t$.
-    \item Descrição da simulação de funções de resposta a impulso (IRFs) via Dynare.
-\end{itemize}
-
-\noindent\textbf{Materiais sugeridos:}
-\begin{itemize}
-    \item Slides da Aula 5 -- representação matricial do modelo NK.
-    \item Galí (2015), Apêndice técnico.
-    \item Lubik \& Schorfheide (2004), teste de determinância via DSGE estimado.
-    \item Smets \& Wouters (2007), modelo DSGE estimado com Regra de Taylor.
-    \item Manual do Dynare (opcional).
-\end{itemize}
 
 % ===========================================================
 \section{Contexto Institucional e Fatos Estilizados}
