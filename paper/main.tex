@@ -149,41 +149,63 @@ Apesar desses avanços robustos na caracterização das especificidades locais, 
 \section{Arcabouço Teórico}
 % ===========================================================
 
+Esta seção apresenta o modelo Novo-Keynesiano padrão que fundamenta a análise empírica, estruturando as relações dinâmicas entre inflação, produto e taxa de juros. Inicialmente, descreve-se a oferta agregada da economia por meio da Curva de Phillips Novo-Keynesiana (NKPC), derivada de fundamentos microeconômicos de rigidez de preços, seguida pela demanda agregada representada pela equação IS dinâmica. Com o sistema econômico definido, discutem-se as diferentes especificações da Regra de Taylor que fecham o modelo, detalhando como a reação do Banco Central a choques condiciona a estabilidade macroeconômica. Por fim, formalizam-se as condições de determinância de Bullard e Mitra (2002), estabelecendo o critério teórico exato para avaliar se os parâmetros estimados na seção empírica são compatíveis com a unicidade do equilíbrio ou se permitem instabilidade.
+
 \subsection{Curva de Phillips Novo-Keynesiana (NKPC)}
 
-\[
-\pi_t = \beta E_t \pi_{t+1} + \kappa \tilde y_t.
-\]
+No modelo Novo-Keynesiano, a dinâmica da oferta agregada é descrita pela Curva de Phillips Novo-Keynesiana (NKPC), que relaciona a inflação corrente às expectativas de inflação futura e ao hiato do produto. Essa relação é derivada a partir de fundamentos microeconômicos, resultando do problema de precificação intertemporal das firmas em um ambiente com concorrência monopolística e rigidez nominal de preços.
 
-Nesta subseção, serão definidas as variáveis de inflação e hiato do produto e apresentada, de forma sintética, a derivação da NKPC a partir de rigidez nominal à Calvo, destacando o papel das expectativas na dinâmica inflacionária.
+Seguindo \citeonline{gali2015monetary}, assume-se rigidez de preços à la \citeonline{calvo1983staggered}: em cada período, apenas uma fração $(1-\theta)$ das firmas pode reajustar seus preços de forma ótima, enquanto a fração $\theta$ mantém os preços previamente fixados. O parâmetro $\theta \in [0,1)$ mede o grau de rigidez nominal da economia, determinando a duração esperada dos contratos de preços.
 
-\noindent\textbf{Materiais sugeridos:}
-\begin{itemize}
-    \item Galí (2015), \textit{Monetary Policy, Inflation and the Business Cycle}, Cap. 3.
-    \item Woodford (2003), \textit{Interest and Prices}, Cap. 3.
-    \item Slides da Aula 5 -- \textit{The Basic NK Model} (FEARP/USP).
-    \item Lista de exercícios sobre Rotemberg vs. Calvo.
-    \item Mankiw \& Reis (2002), \textit{Sticky Information} (opcional).
-\end{itemize}
+As firmas que reajustam seus preços escolhem um preço ótimo maximizando o valor presente esperado dos lucros, levando em conta que esse preço poderá vigorar por vários períodos. A agregação dessas decisões e a log-linearização em torno de um estado estacionário de inflação nula conduzem à seguinte expressão para a dinâmica inflacionária:
+
+\begin{equation}
+\pi_t = \beta E_t \pi_{t+1} + \kappa \tilde{y}_t,
+\label{eq:nkpc}
+\end{equation}
+
+\noindent onde $\pi_t$ é a inflação no período $t$, $E_t \pi_{t+1}$ representa a expectativa racional da inflação futura e $\tilde{y}_t \equiv y_t - y_t^n$ denota o hiato do produto, definido como a diferença entre o produto efetivo e o produto natural sob preços flexíveis.
+
+A NKPC evidencia dois mecanismos centrais. Primeiro, a inflação é um fenômeno essencialmente prospectivo: como os preços permanecem fixos por múltiplos períodos, as expectativas de inflação futura afetam diretamente a inflação corrente. Segundo, o hiato do produto influencia a inflação por meio de seu impacto sobre os custos marginais reais, refletindo pressões de demanda na economia.
+
+O coeficiente $\kappa$ mede a sensibilidade da inflação ao ciclo econômico e é determinado estruturalmente por:
+\begin{equation}
+\kappa \equiv \lambda \left(\sigma + \frac{\varphi + \alpha}{1 - \alpha}\right),
+\qquad
+\lambda \equiv \frac{(1-\theta)(1-\beta\theta)}{\theta},
+\end{equation}
+onde $\sigma$ é o inverso da elasticidade intertemporal de substituição do consumo, $\varphi$ é o inverso da elasticidade de Frisch da oferta de trabalho e $\alpha$ mede o grau de rendimentos decrescentes do trabalho na função de produção.
+
+Quanto maior a rigidez nominal (isto é, quanto mais $\theta$ se aproxima de 1), menor é $\kappa$, reduzindo a resposta da inflação às flutuações do hiato do produto. Essa característica tem implicações diretas para a condução da política monetária: quanto menor $\kappa$, maior o papel das expectativas na determinação da inflação e maior a necessidade de regras de política que assegurem a estabilidade do equilíbrio macroeconômico, tema explorado na seção seguinte.
 
 % -----------------------------------------------------------
 
 \subsection{Equação IS Dinâmica}
 
-\[
-\tilde y_t = E_t \tilde y_{t+1}
-    - \frac{1}{\sigma} \big( i_t - E_t \pi_{t+1} - r_t^n \big).
-\]
+A demanda agregada do modelo é descrita pela Equação IS Dinâmica, que relaciona o hiato do produto à taxa de juros real e às expectativas de atividade futura. Essa relação é obtida diretamente da log-linearização da equação de Euler do consumidor representativo, combinada com a condição de equilíbrio no mercado de bens, conforme detalhado em \citeonline{gali2015monetary}.
 
-A equação IS dinâmica relaciona o hiato do produto à taxa de juros real ex-ante e ao hiato futuro, interpretando $\sigma$ como elasticidade intertemporal do consumo e $r_t^n$ como a taxa de juros natural consistente com o produto potencial.
+Formalmente, a maximização da utilidade intertemporal das famílias implica que o consumo corrente depende negativamente da taxa de juros real ex-ante e positivamente do consumo esperado para o futuro (suavização do consumo). Reescrevendo essa condição em termos de desvios do estado estacionário e expressando o produto em função de seu nível natural, chega-se à seguinte expressão para o hiato do produto:
 
-\noindent\textbf{Materiais sugeridos:}
+\begin{equation}
+\tilde{y}_t = E_t \tilde{y}_{t+1} - \frac{1}{\sigma} \big( i_t - E_t \pi_{t+1} - r_t^n \big),
+\label{eq:dis}
+\end{equation}
+
+\noindent onde $\tilde{y}_t$ é o hiato do produto, $i_t$ é a taxa de juros nominal fixada pelo Banco Central, $E_t \pi_{t+1}$ é a inflação esperada e $\sigma$ representa o inverso da elasticidade de substituição intertemporal do consumo (ou coeficiente de aversão relativa ao risco).
+
+A variável $r_t^n$ denota a \textbf{taxa de juros natural} (ou Wickselliana), definida por \citeonline{woodford2005interest} como a taxa de juros real de equilíbrio que prevaleceria na economia se os preços fossem totalmente flexíveis. No modelo básico, $r_t^n$ é determinada inteiramente por choques reais (como produtividade ou preferências) e independe da política monetária.
+
+A equação \eqref{eq:dis} difere fundamentalmente da curva IS tradicional em dois aspectos:
+
 \begin{itemize}
-    \item Galí (2015), Cap. 3.
-    \item Woodford (2003), Cap. 4.
-    \item Slides da Aula 5 -- \textit{The Basic NK Model}.
-    \item Slides da Aula 6 -- \textit{Policy Design in the Basic NK Model}.
+    \item \textbf{Natureza \textit{Forward-Looking}:} O hiato corrente $\tilde{y}_t$ depende não apenas dos juros hoje, mas da expectativa de hiato futuro $E_t \tilde{y}_{t+1}$. Isso significa que a política monetária afeta a economia tanto pela taxa de juros corrente quanto pela sua trajetória esperada (canal das expectativas).
+    
+    \item \textbf{O Juro Natural como Referência:} O termo relevante para a demanda agregada é o \textit{hiato da taxa de juros} $(i_t - E_t \pi_{t+1} - r_t^n)$. A política monetária é expansionista apenas se a taxa real de juros ($i_t - E_t \pi_{t+1}$) for fixada abaixo da taxa natural $r_t^n$. Caso o Banco Central mantenha a taxa real igual à taxa natural em todos os períodos, o hiato do produto será nulo ($\tilde{y}_t = 0$) e a inflação permanecerá estável, isolando a economia de choques de demanda ineficientes.
 \end{itemize}
+
+Essa estrutura teórica destaca que a estabilização macroeconômica exige que o Banco Central monitore e acompanhe as flutuações de $r_t^n$, ajustando a taxa nominal $i_t$ para evitar desvios persistentes em relação ao juro natural. A forma como a autoridade monetária operacionaliza esses ajustes em resposta à inflação e ao produto é descrita pelas Regras de Taylor, detalhadas a seguir.
+
+
 
 % -----------------------------------------------------------
 

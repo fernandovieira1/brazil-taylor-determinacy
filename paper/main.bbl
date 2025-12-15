@@ -40,6 +40,11 @@
 {BULLARD, J.; MITRA, K. Learning about monetary policy rules.
 \emph{Journal of Monetary Economics}, Elsevier, v.~49, n.~6, p. 1105--1129, 2002.}
 
+\bibitem[Calvo 1983]{calvo1983staggered}
+\abntrefinfo{Calvo}{CALVO}{1983}
+{CALVO, G.~A. Staggered prices in a utility-maximizing framework.
+\emph{Journal of monetary Economics}, Elsevier, v.~12, n.~3, p. 383--398, 1983.}
+
 \bibitem[Carrara e Correa 2012]{carrara2012regime}
 \abntrefinfo{Carrara e Correa}{CARRARA; CORREA}{2012}
 {CARRARA, A.~F.; CORREA, A.~L. O regime de metas de infla{\c{c}}{\~a}o no brasil: uma an{\'a}lise emp{\'\i}rica do ipca.
@@ -49,6 +54,10 @@
 \abntrefinfo{Clarida, Gal{\'\i} e Gertler}{CLARIDA; GAL{\'I}; GERTLER}{2000}
 {CLARIDA, R.; GAL{\'I}, J.; GERTLER, M. Monetary policy rules and macroeconomic stability: Evidence and some theory.
 \emph{The Quarterly Journal of Economics}, MIT Press, v.~115, n.~1, p. 147--180, 2000.}
+
+\bibitem[Gal{\'\i} 2015]{gali2015monetary}
+\abntrefinfo{Gal{\'\i}}{GAL{\'I}}{2015}
+{GAL{\'I}, J. \emph{Monetary Policy, Inflation, and the Business Cycle: An Introduction to the New Keynesian Framework and Its Applications}. 2. ed. Princeton: Princeton University Press, 2015.}
 
 \bibitem[Giambiagi e Carvalho 2002]{giambiagi2002metas}
 \abntrefinfo{Giambiagi e Carvalho}{GIAMBIAGI; CARVALHO}{2002}
@@ -117,5 +126,10 @@ MAGKS Joint Discussion Paper Series in Economics, 2014.}
 \bibitem[Woodford 2003]{woodford2003interest}
 \abntrefinfo{Woodford}{WOODFORD}{2003}
 {WOODFORD, M. \emph{Interest and Prices: Foundations of a Theory of Monetary Policy}. Princeton: Princeton University Press, 2003.}
+
+\bibitem[Woodford e Walsh 2005]{woodford2005interest}
+\abntrefinfo{Woodford e Walsh}{WOODFORD; WALSH}{2005}
+{WOODFORD, M.; WALSH, C.~E. Interest and prices: Foundations of a theory of monetary policy.
+\emph{Macroeconomic Dynamics}, Cambridge University Press, v.~9, n.~3, p. 462--468, 2005.}
 
 \end{thebibliography}

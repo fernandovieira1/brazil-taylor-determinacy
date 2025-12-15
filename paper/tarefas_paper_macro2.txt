@@ -31,8 +31,8 @@ EXECUÇÃO
     [x] Seção 2.4 - 10/12 (revisado e aperfeiçoado em 14/12)
     
 * ( ) Seção 3 / Arcabouço Teórico - De 08 a 14/12/2025.
-    [ ] Seção 3.1
-    [ ] Seção 3.2
+    [x] Seção 3.1 - 14/12
+    [x] Seção 3.2 - 14/12
     [ ] Seção 3.3
     [ ] Seção 3.4
     [ ] Seção 3.5
