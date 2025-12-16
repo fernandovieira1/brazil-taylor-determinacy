@@ -37,7 +37,7 @@ EXECUÇÃO
     [x] Seção 3.4 - 15/12
     [x] Seção 3.5 - cancelado (já existirá a subseção Simulações em Dynare, na seção 5 Metodologia)
 
-* ( ) Seção 4 / Contexto Institucional e Fatos Estilizados - De 15 a 21/12/2025.
+* ( ) Seção 4 / Política Monetária no Brasil entre entre 1999 e 2024 - De 15 a 21/12/2025.
 * ( ) Seção 5 / Metodologia - De 15 a 21/12/2025.
 
 * ( ) Codificar e Rodar modelos (R/Python) - De 27/12/2025 a 04/01/2026.
