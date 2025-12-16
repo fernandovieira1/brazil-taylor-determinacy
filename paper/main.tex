@@ -1,5 +1,11 @@
 %!TEX program = pdflatex
 
+%% ORGANIZAÇÃO DO PAPER
+% Seções 2–3: o que a teoria diz que deveria acontecer
+% Seção 4: o que parece ter acontecido nos dados
+% Seção 5: como vamos testar isso formalmente
+% Seção 6: o que os testes mostram
+
 \documentclass[12pt,a4paper,alf]{abntex2}
 \AtBeginDocument{\selectlanguage{brazilian}}
 \emergencystretch=2em
@@ -304,37 +310,44 @@ Além de assegurar a unicidade sob expectativas racionais, \citeonline{bullard20
 % ***********************************************************
 
 % ===========================================================
-\section{Contexto Institucional e Fatos Estilizados}
+\section{Política Monetária no Brasil entre entre 1999 e 2024}
 % ===========================================================
 
-\subsection{Regimes de Política Monetária e Presidentes do Banco Central}
+
+% -----------------------------------------------------------
+\subsection{Regime de Metas de Inflação}
 
 \begin{itemize}
-    \item Descrever brevemente a adoção do regime de metas de inflação em 1999 e suas principais características (meta para o IPCA, bandas de tolerância, horizonte relevante).
-    \item Listar os presidentes do Banco Central no período (Fraga, Meirelles, Tombini, Goldfajn, Campos Neto) e os contextos macroeconômicos associados a cada gestão (desinflação inicial, boom de commodities, crise global, recessão 2015--2016, pandemia, choques recentes).
+    \item Descrever brevemente a adoção do regime de metas de inflação em 1999: contexto da época, motivações e objetivos.
+    \item Arquitetura institucional: meta de inflação, bandas, horizonte relevante, accountability, papel do Copom.
+    \item Sistemática de funcionamento: uso da taxa Selic como instrumento, comunicação com o mercado, transparência.
     \item Destacar eventuais mudanças de regime percebidas na prática: maior ou menor peso dado à inflação, ao hiato do produto e à estabilidade financeira em diferentes períodos.
-    \item Conectar, de forma qualitativa, esses regimes com a lógica do arcabouço NK: estabilidade de preços como objetivo primário e papel da taxa de juros como instrumento.
 \end{itemize}
 
-\subsection{Estatísticas Descritivas das Variáveis-Chave}
-
-\begin{itemize}
-    \item Apresentar tabelas descritivas (médias, desvios-padrão, mínimos, máximos) para inflação (IPCA), taxa Selic, hiato do produto e expectativas de inflação (Focus).
-    \item Incluir gráficos de série temporal para o período 1999--2024, destacando visualmente as mudanças de presidente do Banco Central (linhas verticais) e episódios relevantes (crise de 2002, crise de 2008, recessão 2015--2016, pandemia de 2020 etc.).
-    \item Discutir, de forma não causal, padrões observados: períodos de inflação acima/abaixo da meta, fases de juros muito altos ou muito baixos, episódios de hiato fortemente negativo ou positivo.
-    \item Ressaltar que esses padrões são apenas descritivos e servem como motivação preliminar para a análise econométrica da Regra de Taylor e do Princípio de Taylor.
-\end{itemize}
-
-\subsection{Fatos Estilizados por Regimes de Política Monetária}
+% -----------------------------------------------------------
+\subsection{Evolução Macroeconômica}
 
 A análise descritiva por regimes de presidência do Banco Central é particularmente relevante em uma economia emergente como a brasileira, marcada por forte exposição a choques externos e a episódios de elevada incerteza global. Evidências recentes, como as de \citeonline{barros2023geopolitical}, mostram que choques de risco geopolítico internacional afetam de forma significativa atividade, inflação, taxa de juros e prêmio de risco no Brasil, reforçando a importância de investigar se diferentes regimes de política monetária responderam a esses choques com graus distintos de agressividade.
+
+\begin{itemize}
+    \item Listar os presidentes do Banco Central no período (Fraga, Meirelles, Tombini, Goldfajn, Campos Neto) e os contextos macroeconômicos associados a cada gestão (desinflação inicial, boom de commodities, crise global, recessão 2015--2016, pandemia, choques recentes).
+    \item Apresentar tabelas descritivas (médias, desvios-padrão, mínimos, máximos) para PIB, inflação (IPCA), taxa Selic, hiato do produto e expectativas de inflação (Focus).
+    \item Incluir gráficos de série temporal para o período 1999--2024, destacando visualmente as mudanças de presidente do Banco Central (linhas verticais) e episódios relevantes / choques (crise de 2002, crise de 2008, recessão 2015--2016, pandemia de 2020 etc.).
+\end{itemize}
+
+% -----------------------------------------------------------
+\subsection{Fatos Estilizados por Regimes de Política Monetária}
 
 
 \begin{itemize}
     \item Comparar, de forma descritiva, a média e a volatilidade da inflação, da taxa Selic e do hiato do produto em cada regime de presidência do Banco Central.
     \item Verificar se, à primeira vista, alguns regimes parecem reagir mais agressivamente à inflação (juros mais altos quando a inflação sobe) do que outros.
     \item Relacionar esses fatos estilizados com a lógica do Princípio de Taylor: sugerir, de forma preliminar, em quais regimes se espera encontrar $\hat{\phi}_\pi > 1$ e em quais isso é menos provável.
+    \item Conectar, de forma qualitativa, esses regimes com a lógica do arcabouço NK: estabilidade de preços como objetivo primário e papel da taxa de juros como instrumento.
     \item Destacar que a análise descritiva não é suficiente para concluir sobre determinância, servindo apenas como \textit{benchmark} visual e histórico a ser formalmente testado pela metodologia econométrica nas seções seguintes.
+    \item Ressaltar que esses padrões são apenas descritivos e servem como motivação preliminar para a análise econométrica da Regra de Taylor e do Princípio de Taylor.
+    \item Discutir, de forma não causal, padrões observados: períodos de inflação acima/abaixo da meta, fases de juros muito altos ou muito baixos, episódios de hiato fortemente negativo ou positivo.
+    \item Vincular o que foi dito nesta seção ao problema e objetivos do paper, fazendo um arco para a metodologia a ser apresentada na próxima seção.
 \end{itemize}
 
 % ***********************************************************
