@@ -3,3 +3,23 @@
 *.css
 venv/
 *.woff
+
+# Ambiente virtual atual
+artmacro2/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

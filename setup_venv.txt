@@ -1,0 +1,8 @@
+# Criar o ambiente virtual (nomeado artmacro2)
+python3 -m venv artmacro2
+
+# Ativar o ambiente virtual
+source artmacro2/bin/activate
+
+# Instalar dependências
+pip install -r requirements.txt
