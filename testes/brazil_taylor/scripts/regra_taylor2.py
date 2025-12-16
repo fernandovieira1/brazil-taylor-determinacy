@@ -13,6 +13,9 @@ Notas Preliminares:
     - Blanchard & Kahn (1980): Focam em expectativas racionais (RE).
     - Bullard & Mitra (2002): Focam em aprendizagem adaptativa (learning).
 
+    - Princípio de Taylor (condição intuitiva).
+    - Blanchard–Kahn (existência/unicidade).
+    - Bullard–Mitra (determinância + E-stability).
 
 =============================================================
 Mapa mental / Resumo econômico do modelo e do script
