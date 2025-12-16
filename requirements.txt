@@ -6,3 +6,5 @@ matplotlib
 jupyter
 ipykernel
 sidrapy
+plotnine
+openpyxl
