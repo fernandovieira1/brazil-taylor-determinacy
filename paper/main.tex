@@ -340,21 +340,60 @@ A condução da política monetária ao longo desse intervalo foi marcada por ci
 
 Para a identificação dos episódios de ruptura, adotou-se um critério duplo: a cronologia oficial de recessões estabelecida pelo Comitê de Datação de Ciclos Econômicos \cite{codace2020} para a delimitação temporal, combinada à caracterização da natureza dos choques predominante na literatura especializada, conforme a caracterização predominante na literatura especializada, exemplificada por \citeonline{barbosa2017} para a crise doméstica recente. Sob essa métrica, destacam-se quatro eventos estruturais: a \textbf{crise de confiança de 2002} (\emph{jun/2002--jan/2003}), associada à incerteza eleitoral e à parada súbita de capitais; a \textbf{Crise Financeira Global de 2008} (\emph{set/2008--mar/2009}), que impôs um severo choque de liquidez externa; a \textbf{recessão doméstica de 2015--2016} (\emph{jan/2015--dez/2016}), deflagrada por desajustes fiscais e realinhamento de preços administrados; e a \textbf{pandemia de Covid-19} (\emph{mar/2020--dez/2020}), choque sanitário que exigiu estímulos monetários extraordinários.
 
+\subsection{Comportamento dos Indicadores}
 
-\subsubsection{Comportamento dos Indicadores}
-% PIB (Sidrap)
-% Inflação (IPCA)
-% Taxa Selic
-% Hiato do Produto
-% Expectativas de Inflação (Focus)
+A Figura \ref{fig:series_macro} apresenta a evolução das principais variáveis macroeconômicas brasileiras — inflação (IPCA), taxa Selic, expectativas de inflação e produto — ao longo do período de vigência do Regime de Metas (1999--2024). A inspeção visual das séries temporais permite identificar padrões distintos de volatilidade e persistência, marcados pela alternância de presidências do Banco Central e pela ocorrência de choques exógenos e domésticos. Observa-se que a política monetária reagiu de forma contracíclica na maior parte da amostra, elevando a taxa básica de juros (Selic) em resposta a desvios da inflação em relação à meta e a choques de expectativas, comportamento condizente com o mandato de estabilidade de preços.
 
-São apresentados gráficos de séries temporais e estatísticas descritivas para o produto, a inflação (IPCA), a taxa Selic, o hiato do produto e as expectativas de inflação no período 1999--2024. As figuras destacam visualmente os períodos associados às diferentes presidências do Banco Central e os principais episódios de choque, permitindo uma análise descritiva dos padrões observados, como períodos de inflação acima ou abaixo da meta, fases de política monetária mais restritiva ou acomodatícia e episódios de hiatos do produto significativamente negativos ou positivos. Ressalta-se que essa análise tem caráter estritamente descritivo e não permite conclusões sobre determinância ou causalidade.
+\begin{figure}[htbp]
+    \centering
+    \caption{Dinâmica da Inflação, Taxa de Juros, Expectativas e PIB (1999--2024)}
+    \includegraphics[width=1\textwidth]{/home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/series_macroeconomicas.png}
+    \label{fig:series_macro}
+    \footnotesize
+    \vspace{0.2cm}
+    \textbf{Fonte:} Bacen e IBGE; Pacotes Python (sidrapy e python-bcb).\\
+\end{figure}
 
-Incluir gráficos de série temporal e tabelas para o período 1999--2024, destacando, se for o caso, visualmente as mudanças de presidente do Banco Central (linhas verticais) e episódios relevantes / choques (crise de 2002, crise de 2008, recessão 2015--2016, pandemia de 2020 etc.).
+O início da amostra é caracterizado pela ``Crise de Confiança'' de 2002/2003, período de transição entre as gestões de Armínio Fraga e Henrique Meirelles. A forte depreciação cambial desse período pressionou o IPCA, que atingiu picos superiores a 15\% a.a., e desancorou as expectativas, conforme ilustrado no painel central da Figura \ref{fig:series_macro}. A resposta da autoridade monetária foi uma elevação abrupta da taxa Selic para patamares próximos a 25\% a.a., movimento que, somado à consolidação fiscal, logrou reconvergir a inflação para a meta nos anos subsequentes. Esse episódio estabeleceu um \textit{benchmark} histórico de atuação do Banco Central em momentos de forte estresse financeiro e desancoragem.
 
-Discutir, de forma não causal, padrões observados: períodos de inflação acima/abaixo da meta, fases de juros muito altos ou muito baixos, episódios de hiato fortemente negativo ou positivo.
+\begin{table}[htbp]
+\centering
+\caption{Estatísticas Descritivas das Variáveis Macroeconômicas (1999--2024)}
+\begin{tabular}{lrrrrr}
+\toprule
+ & IPCA (Mensal) & IPCA (12m) & Selic (Meta) & Focus & PIB (Indice) \\
+\midrule
+count & 9437.00 & 9437.00 & 9434.00 & 9132.00 & 9437.00 \\
+mean & 0.51 & 6.25 & 12.69 & 5.63 & 143.19 \\
+std & 0.39 & 2.72 & 5.55 & 1.93 & 23.25 \\
+min & $-$0.68 & 1.65 & 2.00 & 1.61 & 99.26 \\
+25\% & 0.26 & 4.48 & 9.00 & 4.24 & 120.84 \\
+50\% & 0.46 & 5.91 & 12.25 & 5.50 & 153.66 \\
+75\% & 0.69 & 7.35 & 16.00 & 6.42 & 161.34 \\
+max & 3.02 & 17.24 & 45.00 & 12.41 & 179.53 \\
+\bottomrule
+\end{tabular}
+\label{tab:desc_stats}
+\end{table}
 
-Destacar que a análise descritiva não é suficiente para concluir sobre determinância, servindo apenas como \textit{benchmark} visual e histórico a ser formalmente testado pela metodologia econométrica nas seções seguintes.
+Após um período de relativa estabilidade e crescimento do produto entre 2004 e 2010 — interrompido brevemente pela Crise Financeira Global de 2008, que gerou uma queda aguda, porém curta, no PIB —, a economia brasileira adentrou uma fase de deterioração a partir de 2014. O período compreendido entre 2015 e 2016, destacado nos gráficos como ``Recessão Doméstica'', exibe um fenômeno de estagflação: o hiato do produto tornou-se profundamente negativo (ver Figura \ref{fig:hiato_produto}), enquanto a inflação permaneceu persistentemente acima do teto da meta, impulsionada por preços administrados e inércia inflacionária. A gestão de Alexandre Tombini e a transição para Ilan Goldfajn em meados de 2016 ilustram a dificuldade de condução da política monetária quando a dominância fiscal e a desancoragem de expectativas se sobrepõem à ociosidade da economia.
+
+O final da amostra captura os efeitos da pandemia de Covid-19, iniciada em março de 2020. Este choque sem precedentes provocou a maior contração do nível de atividade da série histórica e abriu um hiato do produto significativamente negativo, visível em todas as métricas apresentadas na Figura \ref{fig:hiato_produto}. A resposta monetária inicial, sob a gestão de Roberto Campos Neto, envolveu a redução da Selic ao mínimo histórico de 2\% a.a. Contudo, a reabertura econômica e os choques de oferta globais subsequentes reverteram rapidamente o cenário, levando a uma nova escalada inflacionária em 2021--2022 e a um ciclo de aperto monetário robusto para reancorar as expectativas que haviam se deteriorado novamente.
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Estimativas de Hiato do Produto sob Diferentes Metodologias (1999--2024)}
+    \includegraphics[width=1\textwidth]{/home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/hiato_produto.png}
+    \label{fig:hiato_produto}
+    \footnotesize
+    \vspace{0.2cm}
+    \textbf{Fonte:} Elaboração própria.\\
+    \textbf{Nota:} Comparativo entre Filtro HP, Filtro de Hamilton, Tendência Linear, Quadrática e estimativa da IFI. Valores negativos indicam ociosidade da economia.
+\end{figure}
+
+A Figura \ref{fig:hiato_produto} detalha as estimativas do hiato do produto sob diferentes metodologias de filtragem (HP, Hamilton, Tendência Linear e IFI). A comparação visual revela que, embora haja divergência na magnitude do ciclo entre os métodos — com o Filtro de Hamilton apresentando maior volatilidade em relação ao Filtro HP —, a direção e os \textit{turning points} dos ciclos econômicos são consistentes entre as medidas, especialmente nos grandes episódios recessivos (2015--2016 e 2020). Essa correlação visual sugere que, a despeito da incerteza inerente à mensuração do produto potencial, os sinais de aquecimento ou desaquecimento da economia foram inequivocamente captados pelas diversas métricas.
+
+Por fim, é importante ressaltar que a análise gráfica apresentada nesta seção possui caráter estritamente descritivo. Embora a correlação visual entre a elevação da taxa de juros e a posterior queda da inflação seja sugestiva de um mecanismo de transmissão ativo, e a resposta do Banco Central aos choques pareça alinhada aos objetivos do regime, a inspeção visual não permite inferir causalidade ou determinância. A existência de defasagens (\textit{lags}) na política monetária e a simultaneidade entre as variáveis exigem a abordagem econométrica formal que será desenvolvida nas seções seguintes, onde testaremos se a calibração da regra de juros foi suficiente para garantir o equilíbrio determinado em cada um desses subperíodos.
 
 % -----------------------------------------------------------
 \subsection{Fatos Estilizados por Regimes de Política Monetária}

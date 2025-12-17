@@ -6,6 +6,7 @@ matplotlib
 jupyter
 ipykernel
 sidrapy
+python-bcb
 plotnine
 openpyxl
 python-bcb
