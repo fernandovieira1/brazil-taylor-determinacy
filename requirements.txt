@@ -8,3 +8,4 @@ ipykernel
 sidrapy
 plotnine
 openpyxl
+python-bcb

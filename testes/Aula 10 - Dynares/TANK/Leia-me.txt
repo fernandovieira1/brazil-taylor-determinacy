@@ -1,0 +1,10 @@
+Após instalar o Dynare e configurá-lo corretamente no Matlab (Set Path, C:\Dynare\versão\matlab), 
+execute:
+
+
+dynare tank_model2.mod
+
+Em seguida, execute
+plot_tank_irfs
+
+

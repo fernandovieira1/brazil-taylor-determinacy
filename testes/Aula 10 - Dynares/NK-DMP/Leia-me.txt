@@ -1,0 +1,9 @@
+Após instalar o Dynare e configurá-lo corretamente no Matlab (Set Path, C:\Dynare\versão\matlab), 
+execute:
+
+
+dynare nk_dmp.mod
+
+Em seguida, execute
+plot_nk_dmp
+

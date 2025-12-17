@@ -13,6 +13,8 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: library.bib
+Warning--entry type for "brasil1999decreto" isn't style-file defined
+--line 382 of file library.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -22,44 +24,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 35 entries,
+You've used 36 entries,
             6714 wiz_defined-function locations,
-            1414 strings with 15393 characters,
-and the built_in function-call counts, 30291 in all, are:
-= -- 2368
+            1421 strings with 15667 characters,
+and the built_in function-call counts, 31863 in all, are:
+= -- 2579
 > -- 1110
-< -- 128
-+ -- 485
+< -- 183
++ -- 540
 - -- 333
-* -- 2287
-:= -- 3985
-add.period$ -- 108
-call.type$ -- 35
-change.case$ -- 372
-chr.to.int$ -- 113
-cite$ -- 34
-duplicate$ -- 1577
-empty$ -- 2055
+* -- 2369
+:= -- 4145
+add.period$ -- 113
+call.type$ -- 36
+change.case$ -- 378
+chr.to.int$ -- 114
+cite$ -- 35
+duplicate$ -- 1770
+empty$ -- 2128
 format.name$ -- 1562
-if$ -- 7016
+if$ -- 7335
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 618
-newline$ -- 176
+missing$ -- 636
+newline$ -- 182
 num.names$ -- 171
-pop$ -- 781
+pop$ -- 810
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 141
 quote$ -- 0
-skip$ -- 1642
+skip$ -- 1836
 stack$ -- 1
-substring$ -- 1454
-swap$ -- 812
-text.length$ -- 70
+substring$ -- 1528
+swap$ -- 879
+text.length$ -- 71
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 1
 warning$ -- 0
-while$ -- 280
+while$ -- 282
 width$ -- 0
-write$ -- 578
+write$ -- 594
+(There was 1 warning)
