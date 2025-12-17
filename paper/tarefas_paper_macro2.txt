@@ -40,6 +40,11 @@ EXECUÇÃO
 * ( ) Seção 4 / Política Monetária no Brasil entre entre 1999 e 2024 - De 15 a 21/12/2025.
     [x] Seção 4.1 - 16/12
     [ ] Seção 4.2
+        [x] Intro - 16/12
+        [x] subseção 4.2.1 - 16/12
+        [x] baixar dados descritiva (4.2.2)
+        [ ] gerar gráficos e tabelas descritiva (4.2.2)
+        [ ] subseção 4.2.2
     [ ] Seção 4.3
 
 * ( ) Seção 5 / Metodologia - De 15 a 21/12/2025.
