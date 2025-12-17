@@ -249,7 +249,7 @@ colors = {'blue': '#282f6b',
         y="%",
         x='',
         color="",
-        caption="Elaboração: analisemacro.com.br | Fonte: IBGE, BCB, IFI \n Nota: hiatos medido como a diferença % do PIB efetivo em relação ao potencial."
+        caption="Fonte: IBGE, BCB, IFI \n Nota: hiatos medido como a diferença % do PIB efetivo em relação ao potencial."
     )
 )
 
