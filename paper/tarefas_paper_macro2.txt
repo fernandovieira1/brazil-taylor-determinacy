@@ -24,24 +24,24 @@ EXECUÇÃO
 * (x) Rascunho do Abstract (mudar ao final)
 * (x) Seção 1 / Introdução.
 
-* ( ) Seção 2 / Revisão da Literatura - De 08 a 14/12/2025.
+* (x) Seção 2 / Revisão da Literatura - De 08 a 14/12/2025.
     [x] Seção 2.1 - 09/12
     [x] Seção 2.2 - 10/12
     [x] Seção 2.3 - 10/12 (revisado e aperfeiçoado em 14/12)
     [x] Seção 2.4 - 10/12 (revisado e aperfeiçoado em 14/12)
     
-* ( ) Seção 3 / Arcabouço Teórico - De 08 a 14/12/2025.
+* (x) Seção 3 / Arcabouço Teórico - De 08 a 14/12/2025.
     [x] Seção 3.1 - 14/12
     [x] Seção 3.2 - 14/12
     [x] Seção 3.3 - 15/12
     [x] Seção 3.4 - 15/12
     [x] Seção 3.5 - cancelado (já existirá a subseção Simulações em Dynare, na seção 5 Metodologia)
 
-* ( ) Seção 4 / Política Monetária no Brasil entre entre 1999 e 2024 - De 15 a 21/12/2025.
+* (x) Seção 4 / Política Monetária no Brasil entre entre 1999 e 2024 - De 15 a 21/12/2025.
     [x] Seção 4.1 - 16/12
-    [ ] Seção 4.2 - 17/12
-    [ ] Seção 4.3 - 18/12
-    [ ] Seção 4.4
+    [x] Seção 4.2 - 17/12
+    [x] Seção 4.3 - 18/12
+    [x] Seção 4.4
         [x] Intro - 16/12
         [x] subseção 4.2.1 - 16/12
         [x] baixar dados descritiva (4.2.2) - 17/12
