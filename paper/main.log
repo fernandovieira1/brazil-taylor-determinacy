@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.14)  18 DEC 2025 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.14)  18 DEC 2025 15:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -702,25 +702,25 @@ Package babel Info: Hyphen rules for 'brazilian' set to \l@portuguese
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-Package hyperref Info: Link coloring OFF on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+Package hyperref Info: Link coloring OFF on input line 55.
 \myptabbox=\box61
 \myptabboxwidth=\skip264
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -776,28 +776,28 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
-</home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/series_macroeconomicas.png, id=293, 1011.78pt x 1084.05pt>
-File: /home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/series_macroeconomicas.png Graphic file (type png)
-<use /home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/series_macroeconomicas.png>
-Package pdftex.def Info: /home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/series_macroeconomicas.png  used on input line 385.
+<graficos/series_macroeconomicas.png, id=293, 1011.78pt x 1084.05pt>
+File: graficos/series_macroeconomicas.png Graphic file (type png)
+<use graficos/series_macroeconomicas.png>
+Package pdftex.def Info: graficos/series_macroeconomicas.png  used on input line 388.
 (pdftex.def)             Requested size: 455.24411pt x 487.76837pt.
- [19] [20 </home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/series_macroeconomicas.png>]
-</home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/hiato_produto.png, id=323, 1011.78pt x 505.89pt>
-File: /home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/hiato_produto.png Graphic file (type png)
-<use /home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/hiato_produto.png>
-Package pdftex.def Info: /home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/hiato_produto.png  used on input line 401.
+ [19] [20 <./graficos/series_macroeconomicas.png>]
+<graficos/hiato_produto.png, id=323, 1011.78pt x 505.89pt>
+File: graficos/hiato_produto.png Graphic file (type png)
+<use graficos/hiato_produto.png>
+Package pdftex.def Info: graficos/hiato_produto.png  used on input line 404.
 (pdftex.def)             Requested size: 455.24411pt x 227.62523pt.
- [21 </home/fernando/Documentos/dev/brazil-taylor-determinacy/paper/graficos/hiato_produto.png>] [22] [23] [24] [25] [26] (./main.bbl
+ [21 <./graficos/hiato_produto.png>] [22] [23] [24] [25] [26] (./main.bbl
 bibitemlist
 [1
 
@@ -810,7 +810,7 @@ L3 programming layer <2020/03/25>
  ) 
 Here is how much of TeX's memory you used:
  17884 strings out of 467538
- 282147 string characters out of 5419551
+ 281279 string characters out of 5419551
  755928 words of memory out of 5000000
  46426 multiletter control sequences out of 15000+600000
  651001 words of font info for 94 fonts, out of 8000000 for 9000
