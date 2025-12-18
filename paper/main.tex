@@ -6,19 +6,40 @@
 % Seção 5: como vamos testar isso formalmente
 % Seção 6: o que os testes mostram
 
-\documentclass[12pt,a4paper,alf]{abntex2}
-\AtBeginDocument{\selectlanguage{brazilian}}
+\documentclass[12pt,a4paper]{abntex2}
+
+% --- CITAÇÕES E REFERÊNCIAS ---
+% Pacote para citações no padrão ABNT, necessário para \citeonline
+\usepackage[alf]{abntex2cite}
+
+% --- CONFIGURAÇÃO DE IDIOMA E LEGENDAS ---
+% Observação: em algumas combinações de TeXLive/babel/abntex2, o idioma pode
+% ser ativado como 'brazil' (deprecated) em vez de 'brazilian'. Por isso,
+% aplicamos a configuração para ambos.
+\addto\captionsbrazilian{%
+\renewcommand{\figurename}{Gráfico}%
+\renewcommand{\listfigurename}{Lista de Gráficos}%
+}
+\addto\captionsbrazil{%
+\renewcommand{\figurename}{Gráfico}%
+\renewcommand{\listfigurename}{Lista de Gráficos}%
+}
+
+% Força o texto do rótulo no caption (independe de \figurename).
+\makeatletter
+\AtBeginDocument{%
+    \renewcommand{\fnum@figure}{Gráfico~\thefigure}%
+}
+\makeatother
+
+% --- ESTRUTURA DO DOCUMENTO ---
 \emergencystretch=2em
 \raggedbottom
 
-% Teste vscode para github para overleaf
-% remove o "capítulo." das seções
+% Remove o "capítulo." das seções
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
-
-% Altera o nome "Figura" para "Gráfico"
-\renewcommand{\figurename}{Gráfico}
 
 % ================== CODIFICAÇÃO ==================
 \usepackage[T1]{fontenc}
@@ -35,18 +56,15 @@
 \geometry{margin=2.5cm}
 \OnehalfSpacing
 
-% ================== CITAÇÕES E REFERÊNCIAS ==================
-\usepackage[alf]{abntex2cite}
-
 % ================== TEXTO E LINKS ==================
 \usepackage{csquotes}
 \usepackage{hyperref}
 
 % ================== INFORMAÇÕES DO ARTIGO ==================
-\title{Determinância e Política Monetária no Brasil:\\
+\title{Determinância e Política Monetária no Brasil:\
 Uma Avaliação Empírica do Princípio de Taylor (1999--2024)}
 \author{
-Fernando Souza de Vieira\\
+Fernando Souza de Vieira\
 Rafaela Dezidério Rocha
 }
 \date{}
@@ -345,9 +363,9 @@ Para a identificação dos episódios de ruptura, adotou-se um critério duplo: 
 
 \subsection{Indicadores Econômicos}
 
-Esta subseção descreve, de forma sintética, a evolução conjunta de inflação, taxa de juros, expectativas e atividade ao longo do regime de metas, com ênfase nos principais episódios de ruptura destacados na Figura \ref{fig:series_macro}. O objetivo é registrar fatos estilizados e motivar a estratificação por subperíodos na etapa econométrica, sem antecipar inferências causais.
+Esta subseção descreve, de forma sintética, a evolução conjunta de inflação, taxa de juros, expectativas e atividade ao longo do regime de metas, com ênfase nos principais episódios de ruptura destacados no Gráfico \ref{fig:series_macro}. O objetivo é registrar fatos estilizados e motivar a estratificação por subperíodos na etapa econométrica, sem antecipar inferências causais.
 
-Antes de discutir os episódios, convém explicitar uma dimensão operacional dos dados. A Tabela \ref{tab:desc_stats} resume estatísticas descritivas das séries utilizadas, construídas a partir de bases do BCB e do IBGE. Em particular, parte das variáveis é observada originalmente em frequência mensal ou trimestral (p.ex., IPCA e PIB), enquanto outras são observadas com maior granularidade (p.ex., Selic-meta e expectativas). Para uniformizar o painel e viabilizar comparações e gráficos ao longo do tempo, as séries foram alinhadas em uma base temporal comum, com replicação do valor observado dentro do período correspondente quando necessário. Esse procedimento explica as contagens elevadas (\textit{count}) reportadas na tabela, sem alterar a interpretação econômica das trajetórias ilustradas nas figuras.
+Antes de discutir os episódios, convém explicitar uma dimensão operacional dos dados. A Tabela \ref{tab:desc_stats} resume estatísticas descritivas das séries utilizadas, construídas a partir de bases do BCB e do IBGE. Em particular, parte das variáveis é observada originalmente em frequência mensal ou trimestral (p.ex., IPCA e PIB), enquanto outras são observadas com maior granularidade (p.ex., Selic-meta e expectativas). Para uniformizar o painel e viabilizar comparações e Gráficos ao longo do tempo, as séries foram alinhadas em uma base temporal comum, com replicação do valor observado dentro do período correspondente quando necessário. Esse procedimento explica as contagens elevadas (\textit{count}) reportadas na tabela, sem alterar a interpretação econômica das trajetórias ilustradas nos Gráficos.
 
 \begin{table}[htbp]
 \centering
@@ -374,13 +392,13 @@ max & 3.02 & 17.24 & 45.00 & 12.41 & 179.53 \\
 \end{table}
 
 % Crise de Confiança 2002-2003
-No início da amostra, destaca-se a chamada \enquote{Crise de Confiança} de 2002--2003, associada à transição do governo Fernando Henrique Cardoso para o governo Luiz Inácio Lula da Silva e ao ajuste de expectativas que se refletiu em forte depreciação cambial. Conforme indicado na Figura \ref{fig:series_macro}, observa-se elevação acentuada da inflação acumulada em 12 meses e aumento expressivo da taxa Selic no período sombreado (jun/2002--jan/2003), em paralelo à deterioração das expectativas medidas pelo Focus. Do ponto de vista descritivo, esse episódio é caracterizado por uma reação monetária contracionista em um ambiente de desancoragem de expectativas, seguida por reconvergência gradual da inflação e das expectativas no ciclo subsequente. Essa dinâmica sugere, como hipótese a ser testada formalmente, que a autoridade monetária buscou reancorar expectativas por meio de um aumento relevante da taxa real ex-ante, compatível com a lógica do Princípio de Taylor no arcabouço novo-keynesiano.
+No início da amostra, destaca-se a chamada \enquote{Crise de Confiança} de 2002--2003, associada à transição do governo Fernando Henrique Cardoso para o governo Luiz Inácio Lula da Silva e ao ajuste de expectativas que se refletiu em forte depreciação cambial. Conforme indicado no Gráfico \ref{fig:series_macro}, observa-se elevação acentuada da inflação acumulada em 12 meses e aumento expressivo da taxa Selic no período sombreado (jun/2002--jan/2003), em paralelo à deterioração das expectativas medidas pelo Focus. Do ponto de vista descritivo, esse episódio é caracterizado por uma reação monetária contracionista em um ambiente de desancoragem de expectativas, seguida por reconvergência gradual da inflação e das expectativas no ciclo subsequente. Essa dinâmica sugere, como hipótese a ser testada formalmente, que a autoridade monetária buscou reancorar expectativas por meio de um aumento relevante da taxa real ex-ante, compatível com a lógica do Princípio de Taylor no arcabouço novo-keynesiano.
 
 % Crise Financeira Global de 2008--2009
-Entre 2004 e 2010, a Figura \ref{fig:series_macro} sugere um intervalo de relativa estabilidade macroeconômica, com crescimento do produto e inflação moderada na maior parte do período, interrompido pela Crise Financeira Global de 2008--2009. O choque externo aparece como queda do nível de atividade e elevação transitória da incerteza, seguida por recuperação relativamente rápida do PIB. Do ponto de vista descritivo, o comportamento da Selic no episódio é consistente com uma resposta contracíclica: redução da taxa nominal em ambiente de desaceleração, com expectativas que, em geral, permanecem mais próximas do alvo quando comparadas aos episódios de maior desancoragem observados em outros momentos da amostra.
+Entre 2004 e 2010, o Gráfico \ref{fig:series_macro} sugere um intervalo de relativa estabilidade macroeconômica, com crescimento do produto e inflação moderada na maior parte do período, interrompido pela Crise Financeira Global de 2008--2009. O choque externo aparece como queda do nível de atividade e elevação transitória da incerteza, seguida por recuperação relativamente rápida do PIB. Do ponto de vista descritivo, o comportamento da Selic no episódio é consistente com uma resposta contracíclica: redução da taxa nominal em ambiente de desaceleração, com expectativas que, em geral, permanecem mais próximas do alvo quando comparadas aos episódios de maior desancoragem observados em outros momentos da amostra.
 
 % Recessão Doméstica de 2015--2016
-A partir de 2014, observa-se uma mudança de regime marcada pela recessão doméstica de 2015--2016. Na Figura \ref{fig:series_macro}, o período sombreado (jan/2015--dez/2016) combina queda persistente do produto com inflação elevada e expectativas pressionadas, configurando um ambiente próximo à estagflação. Essa combinação é particularmente relevante para o objetivo do artigo: em termos de interpretação novo-keynesiana, um cenário com hiato negativo coexistindo com inflação alta é compatível com a presença de choques de oferta, realinhamentos de preços relativos ou deterioração do componente expectacional, fatores que podem reduzir a efetividade de uma resposta monetária convencional. Ainda assim, os dados sugerem uma postura contracionista em parte do intervalo, com juros elevados em meio à inflação e expectativas acima do desejado, motivando investigar se a resposta estimada à inflação foi suficiente para satisfazer $\hat{\phi}_\pi>1$ nesse subperíodo.
+A partir de 2014, observa-se uma mudança de regime marcada pela recessão doméstica de 2015--2016. No Gráfico \ref{fig:series_macro}, o período sombreado (jan/2015--dez/2016) combina queda persistente do produto com inflação elevada e expectativas pressionadas, configurando um ambiente próximo à estagflação. Essa combinação é particularmente relevante para o objetivo do artigo: em termos de interpretação novo-keynesiana, um cenário com hiato negativo coexistindo com inflação alta é compatível com a presença de choques de oferta, realinhamentos de preços relativos ou deterioração do componente expectacional, fatores que podem reduzir a efetividade de uma resposta monetária convencional. Ainda assim, os dados sugerem uma postura contracionista em parte do intervalo, com juros elevados em meio à inflação e expectativas acima do desejado, motivando investigar se a resposta estimada à inflação foi suficiente para satisfazer $\hat{\phi}_\pi>1$ nesse subperíodo.
 
 \begin{figure}[htbp]
     \centering
@@ -393,14 +411,15 @@ A partir de 2014, observa-se uma mudança de regime marcada pela recessão domé
 \end{figure}
 
 % Pandemia de Covid-19
-O último grande choque da amostra corresponde à pandemia de Covid-19 (mar/2020--dez/2020). A Figura \ref{fig:series_macro} mostra a contração abrupta do nível de atividade e a resposta inicial de redução da Selic em um contexto de forte queda do produto. Em seguida, a normalização parcial do PIB e a reversão inflacionária de 2021--2022 vêm acompanhadas por elevação expressiva dos juros e por deterioração temporária das expectativas, sugerindo um ciclo de aperto robusto voltado à reancoragem nominal. A avaliação quantitativa da intensidade dessa reação, contudo, depende da estimação formal da função de reação e será tratada na Seção 6.
+O último grande choque da amostra corresponde à pandemia de Covid-19 (mar/2020--dez/2020). O Gráfico \ref{fig:series_macro} mostra a contração abrupta do nível de atividade e a resposta inicial de redução da Selic em um contexto de forte queda do produto. Em seguida, a normalização parcial do PIB e a reversão inflacionária de 2021--2022 vêm acompanhadas por elevação expressiva dos juros e por deterioração temporária das expectativas, sugerindo um ciclo de aperto robusto voltado à reancoragem nominal. A avaliação quantitativa da intensidade dessa reação, contudo, depende da estimação formal da função de reação e será tratada na Seção 6.
 
-A Figura \ref{fig:hiato_produto} reforça um ponto metodológico central: embora as estimativas de hiato difiram quanto à magnitude e à volatilidade (notadamente no Filtro de Hamilton), os sinais e os pontos de inflexão do ciclo são amplamente coincidentes \footnote{As estimativas de hiato do produto diferem conforme o critério estatístico adotado para separar tendência e componente cíclico. O filtro de Hodrick--Prescott (HP) extrai a tendência como solução de um problema de suavização penalizando variações na segunda diferença do produto, sendo amplamente utilizado em aplicações macroeconômicas, embora sensível à escolha do parâmetro de suavização e a problemas de viés nas extremidades da amostra \cite{hodrick1997postwar}. O filtro de Baxter--King (BK), por sua vez, é um filtro "passa-banda" que isola flutuações em frequências associadas ao ciclo de negócios, ao custo de perda de observações no início e no fim da amostra \cite{baxter1999measuring}. Por fim, o método proposto por \citeonline{hamilton2018filtering} evita a extração explícita de tendência ao estimar previsões autorregressivas do produto e interpretar os resíduos como componente cíclico, reduzindo vieses de ponta, mas produz séries de hiato tipicamente mais voláteis.}. Em particular, os episódios recessivos de 2015--2016 e 2020 aparecem de forma robusta nas diferentes metodologias, sugerindo que, apesar da incerteza inerente à mensuração do produto potencial, o diagnóstico qualitativo sobre o estado cíclico da economia é relativamente estável.
+O Gráfico \ref{fig:hiato_produto} reforça um ponto metodológico central: embora as estimativas de hiato difiram quanto à magnitude e à volatilidade (notadamente no Filtro de Hamilton), os sinais e os pontos de inflexão do ciclo são amplamente coincidentes \footnote{As estimativas de hiato do produto diferem conforme o critério estatístico adotado para separar tendência e componente cíclico. O filtro de Hodrick--Prescott (HP) extrai a tendência como solução de um problema de suavização penalizando variações na segunda diferença do produto, sendo amplamente utilizado em aplicações macroeconômicas, embora sensível à escolha do parâmetro de suavização e a problemas de viés nas extremidades da amostra \cite{hodrick1997postwar}. O filtro de Baxter--King (BK), por sua vez, é um filtro "passa-banda" que isola flutuações em frequências associadas ao ciclo de negócios, ao custo de perda de observações no início e no fim da amostra \cite{baxter1999measuring}. Por fim, o método proposto por \citeonline{hamilton2018filtering} evita a extração explícita de tendência ao estimar previsões autorregressivas do produto e interpretar os resíduos como componente cíclico, reduzindo vieses de ponta, mas produz séries de hiato tipicamente mais voláteis.}. Em particular, os episódios recessivos de 2015--2016 e 2020 aparecem de forma robusta nas diferentes metodologias, sugerindo que, apesar da incerteza inerente à mensuração do produto potencial, o diagnóstico qualitativo sobre o estado cíclico da economia é relativamente estável.
 
-Por fim, ressalta-se que a análise aqui permanece estritamente descritiva. A co-movimentação entre inflação, expectativas, produto e taxa de juros documentada nas Figuras \ref{fig:series_macro} e \ref{fig:hiato_produto} é consistente com os mecanismos previstos pelo modelo novo-keynesiano, mas não permite inferências causais nem conclusões sobre determinância do equilíbrio. A presença de defasagens, simultaneidade e o papel das expectativas requerem uma abordagem econométrica formal, desenvolvida nas seções seguintes, na qual se testará explicitamente se a resposta da política monetária, em diferentes subperíodos, foi consistente com as condições teóricas de unicidade e estabilidade do equilíbrio.
+Por fim, ressalta-se que a análise aqui permanece estritamente descritiva. A co-movimentação entre inflação, expectativas, produto e taxa de juros documentada nos Gráficos \ref{fig:series_macro} e \ref{fig:hiato_produto} é consistente com os mecanismos previstos pelo modelo novo-keynesiano, mas não permite inferências causais nem conclusões sobre determinância do equilíbrio. A presença de defasagens, simultaneidade e o papel das expectativas requerem uma abordagem econométrica formal, desenvolvida nas seções seguintes, na qual se testará explicitamente se a resposta da política monetária, em diferentes subperíodos, foi consistente com as condições teóricas de unicidade e estabilidade do equilíbrio.
 
 \begin{figure}[htbp]
     \centering
+    \caption{Estimativas de Hiato do Produto sob Diferentes Metodologias (1999--2024)}
     \includegraphics[width=1\textwidth]{graficos/hiato_produto.png}
     \caption{Estimativas de Hiato do Produto sob Diferentes Metodologias (1999--2024)}
     \label{fig:hiato_produto}
@@ -409,7 +428,7 @@ Por fim, ressalta-se que a análise aqui permanece estritamente descritiva. A co
     \textit{\textbf{Nota:} Comparativo entre Filtro HP, Filtro de Hamilton, Tendência Linear, Quadrática e estimativa da IFI. Valores negativos indicam ociosidade da economia.}
 \end{figure}
 
-Os padrões documentados nesta seção sugerem que a condução da política monetária brasileira ao longo do regime de metas não foi invariável no tempo, apresentando diferenças sistemáticas na forma e na intensidade da resposta da taxa de juros a desvios da inflação, do hiato do produto e das expectativas. A evidência descritiva (ver Figura~\ref{fig:series_macro} e Tabela \ref{tab:desc_stats}) aponta para episódios em que o aperto monetário foi suficientemente agressivo para conter processos de desancoragem das expectativas inflacionárias, como no início do regime de metas, em 2002--2003, e mais recentemente no ciclo de alta iniciado em 2021, quando a taxa Selic foi elevada de forma rápida e persistente em resposta à deterioração das expectativas captadas pelo boletim Focus. 
+Os padrões documentados nesta seção sugerem que a condução da política monetária brasileira ao longo do regime de metas não foi invariável no tempo, apresentando diferenças sistemáticas na forma e na intensidade da resposta da taxa de juros a desvios da inflação, do hiato do produto e das expectativas. A evidência descritiva (ver Gráfico~\ref{fig:series_macro} e Tabela \ref{tab:desc_stats}) aponta para episódios em que o aperto monetário foi suficientemente agressivo para conter processos de desancoragem das expectativas inflacionárias, como no início do regime de metas, em 2002--2003, e mais recentemente no ciclo de alta iniciado em 2021, quando a taxa Selic foi elevada de forma rápida e persistente em resposta à deterioração das expectativas captadas pelo boletim Focus. 
 
 Por outro lado, os dados também indicam períodos em que choques adversos de demanda ou de oferta impuseram trade-offs mais severos à estabilização macroeconômica, como durante a crise financeira internacional de 2008--2009 e a pandemia de COVID-19, quando a política monetária operou em ambiente de elevada incerteza e forte contração do produto, bem como no episódio de 2015--2016, caracterizado por inflação elevada, recessão profunda e dificuldades adicionais de coordenação entre política monetária e fiscal. No entanto, tais inferências não podem ser estabelecidas de forma conclusiva a partir de inspeção visual das séries, uma vez que inflação, atividade, expectativas e juros são determinados de forma conjunta, dinâmica e endógena, com defasagens relevantes. Diante disso, a Seção 5 propõe uma estratégia de identificação formal baseada na estimação de diferentes especificações da Regra de Taylor (retrospectiva, prospectiva e híbrida) explorando segmentações temporais e possíveis quebras estruturais, com o objetivo de avaliar se os parâmetros estimados satisfazem o Princípio de Taylor e são compatíveis com as condições de determinância de \citeonline{bullard2002learning}.
 
