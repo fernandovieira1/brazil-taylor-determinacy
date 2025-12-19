@@ -1,8 +1,16 @@
-# Criar o ambiente virtual (nomeado artmacro2)
-python3 -m venv artmacro2
+## Criar o ambiente virtual (nomeado artmacro2) com Python 3.11
+py -3.11 -m venv artmacro2
 
-# Ativar o ambiente virtual
-source artmacro2/bin/activate
+## Ativar o ambiente virtual
 
-# Instalar dependências
+# No PowerShell:
+artmacro2\Scripts\Activate.ps1
+
+# No CMD:
+# artmacro2\Scripts\activate.bat
+
+# No Linux/Mac:
+# source artmacro2/bin/activate
+
+## Instalar dependências
 pip install -r requirements.txt
