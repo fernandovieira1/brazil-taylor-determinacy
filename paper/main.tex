@@ -437,82 +437,78 @@ Por outro lado, os dados também indicam períodos em que choques adversos de de
 \section{Metodologia}
 % ===========================================================
 
-Rodar em R ou em Python?? 
+Esta seção apresenta a estratégia empírica adotada para investigar a condução da política monetária brasileira no período de vigência do regime de metas de inflação. Conforme discutido na Seção~1, o objeto do trabalho é a reação sistemática do Banco Central do Brasil às flutuações da inflação e da atividade econômica, enquanto o problema central consiste em avaliar se essa reação foi compatível com a estabilidade macroeconômica no sentido do modelo NK. Os objetivos gerais e específicos delineados naquela seção orientam diretamente a abordagem empírica aqui desenvolvida, a qual busca verificar se os parâmetros que caracterizam a política monetária observada satisfazem o Princípio de Taylor e as condições de determinância associadas à unicidade do equilíbrio.
 
-\subsection{Dados}
+A estratégia empírica fundamenta-se no arcabouço teórico apresentado nas Seções~2 e~3, nas quais são formalizadas as equações estruturais do modelo Novo-Keynesiano e as condições necessárias para a determinação do equilíbrio, em particular a condição de Bullard--Mitra. A perspectiva é traduzir os conceitos em especificações econométricas com dados observáveis, por meio da estimação de diferentes versões da regra de Taylor. A seção está organizada da seguinte forma: inicialmente, descrevem-se a base de dados, as variáveis utilizadas, suas fontes e o tratamento das séries; em seguida, apresentam-se as especificações econométricas e a estratégia de estimação adotada; posteriormente, detalham-se os testes empíricos do Princípio de Taylor e da condição de determinância; por fim, discutem-se as extensões relacionadas à análise por regimes e às quebras estruturais.
 
+% -----------------------------------------------------------
+\subsection{Base de Dados}
+% -----------------------------------------------------------
+
+% -----------------------------------------------------------
 \subsubsection{Variáveis}
+% -----------------------------------------------------------
 
+O conjunto de variáveis selecionado para a estimação reflete a estrutura canônica do modelo Novo-Keynesiano adaptada à frequência e às particularidades da economia brasileira. A taxa de juros nominal ($i_t$) é representada pela meta da taxa Selic definida pelo COPOM, acumulada no período de referência para garantir consistência temporal com a medida de inflação. A variável de inflação ($\pi_t$) corresponde à variação acumulada em 12 meses do Índice de Preços ao Consumidor Amplo (IPCA), servindo como proxy observável para o alvo do regime de metas. Para capturar o estado cíclico da economia ($y_t$), utiliza-se o Índice de Volume do PIB (base 1999=100) como medida de produto real; dado que o produto potencial não é observável, o hiato do produto é estimado por meio de diferentes metodologias de filtragem estatística — incluindo o filtro Hodrick-Prescott (HP), o filtro de Hamilton e tendências determinísticas (linear e quadrática) —, conforme ilustrado na análise de sensibilidade dos dados, permitindo mitigar a incerteza inerente a essa variável não observável. Por fim, as expectativas inflacionárias ($E_t \pi_{t+1}$), cruciais para as especificações forward-looking, são representadas pela mediana das projeções de mercado do Relatório Focus para o IPCA do ano corrente, capturando a formação de expectativas em tempo real diante de choques como a Crise Financeira Global de 2008 e a Pandemia de Covid-19.
+
+% -----------------------------------------------------------
+\subsubsection{Fontes de Dados}
+% -----------------------------------------------------------
+
+A base de dados foi construída a partir de fontes oficiais de alta confiabilidade institucional, amplamente consagradas na literatura empírica nacional. As séries referentes à política monetária e expectativas foram extraídas do Sistema Gerenciador de Séries Temporais (SGS) do Banco Central do Brasil (BCB), abrangendo o histórico da meta da taxa Selic e as medianas diárias do Sistema Expectativas de Mercado (Focus). Os dados de atividade econômica e preços provêm do Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente as séries históricas do Índice Nacional de Preços ao Consumidor Amplo (IPCA) e os números índices do Produto Interno Bruto (PIB). Complementarmente, indicadores de atividade auxiliar e métricas de hiato calculadas por instituições independentes (como o IFI) e pelo próprio corpo técnico do Banco Central foram considerados para fins de robustez. A amostra cobre o período de consolidação do regime de metas, estendendo-se de janeiro de 1999 até o final de 2024, englobando diversos ciclos de aperto e relaxamento monetário sob diferentes administrações da autoridade monetária.
+
+% -----------------------------------------------------------
+\subsubsection{Tratamento das Séries}
+% -----------------------------------------------------------
+
+A análise empírica adota a frequência trimestral para todas as variáveis, escolha condicionada pela periodicidade oficial de divulgação das Contas Nacionais (PIB) pelo IBGE e adequada para capturar a dinâmica de médio prazo das decisões do Copom. As séries de atividade econômica foram submetidas ao procedimento de ajuste sazonal X-13ARIMA-SEATS para isolar flutuações intra-anuais recorrentes antes da extração de seus componentes cíclicos. Para evitar o problema de regressão espúria, comum em séries macroeconômicas persistentes, a estacionariedade das variáveis de inflação, juros e hiato foi verificada por meio dos testes de raiz unitária Augmented Dickey-Fuller (ADF) e KPSS. O período amostral compreende o intervalo entre o primeiro trimestre de 1999 e o quarto trimestre de 2024, capturando a integralidade do Regime de Metas de Inflação, embora os primeiros meses de 1999 exijam cautela analítica devido à volatilidade da transição cambial. Dada a não observabilidade do produto potencial e a sensibilidade das estimativas de gap, o hiato do produto foi extraído utilizando o Filtro Hodrick-Prescott (HP) como especificação baseline ($\lambda=1600$), mas a robustez dos resultados é testada alternativamente com o Filtro de Hamilton, tendências lineares e quadráticas, e estimativas da IFI e do próprio BCB, reconhecendo explicitamente a incerteza de mensuração inerente a esta variável fundamental.
+
+% -----------------------------------------------------------
+\subsection{Especificação Econométrica}
+% -----------------------------------------------------------
 \begin{itemize}
-    \item Taxa Selic ($i_t$).
-    \item Inflação (IPCA).
-    \item PIB real e cálculo do hiato do produto.
-    \item Expectativas de inflação (Focus).
+    \item Apresentar as diferentes formas da regra de Taylor consideradas: \textit{backward-looking} (reagindo a dados passados), \textit{forward-looking} (reagindo a expectativas) e híbrida (com componentes inerciais).
+    \item Explicitar matematicamente as equações a serem estimadas, mostrando como cada especificação se relaciona com o arcabouço teórico das Seções 2 e 3.
+    \item Discutir o papel do parâmetro de suavização da taxa de juros ($\rho$) e a distinção teórica entre inércia deliberada da política monetária e persistência serial dos choques.
+    \item Indicar quais parâmetros ($\phi_\pi$, $\phi_y$) são de interesse central para os testes de hipótese subsequentes.
 \end{itemize}
 
-\subsubsection{Fontes}
-
+% -----------------------------------------------------------
+\subsection{Estratégia de Estimação}
+% -----------------------------------------------------------
 \begin{itemize}
-    \item Banco Central do Brasil (SGS).
-    \item IBGE.
-    \item FGV/IBRE.
+    \item Justificar o uso de Mínimos Quadrados Ordinários (MQO) como especificação \textit{baseline} para regras \textit{backward-looking}, aplicando correção de Newey-West para autocorrelação e heterocedasticidade nos erros (HAC).
+    \item Descrever a utilização do Método dos Momentos Generalizados (GMM) nas especificações \textit{forward-looking} para tratar a endogeneidade das expectativas e a correlação entre o termo de erro e as variáveis explicativas futuras.
+    \item Definir explicitamente o conjunto de instrumentos do GMM: defasagens da taxa de juros, da inflação, do hiato do produto e, potencialmente, variáveis externas (como índice de commodities ou taxa de câmbio) para isolar choques de oferta.
+    \item Discutir os testes de validade dos instrumentos: Teste J de Hansen (sobreidentificação) e testes de instrumentos fracos.
+    \item Argumentar a favor do uso complementar de expectativas observadas (Focus) diretamente na regressão como alternativa ao GMM, dada a disponibilidade desses dados em tempo real.
 \end{itemize}
 
-\subsubsection{Tratamento dos Dados}
-
+% -----------------------------------------------------------
+\subsection{Testes do Princípio de Taylor e da Determinância}
+% -----------------------------------------------------------
 \begin{itemize}
-    \item Frequência (mensal ou trimestral).
-    \item Ajuste sazonal.
-    \item Período amostral e janelas de crise.
+    \item Descrever o teste de Wald para verificar a hipótese nula $H_0: \phi_\pi \leq 1$ contra a alternativa $H_1: \phi_\pi > 1$ (Princípio de Taylor).
+    \item Apresentar a metodologia para avaliar a condição de Bullard--Mitra: inserir os coeficientes estimados pontuais ($\hat{\phi}_\pi, \hat{\phi}_y$) na desigualdade derivada do modelo teórico ($\kappa(\phi_\pi - 1) + (1-\beta)\phi_y > 0$).
+    \item Enfatizar a interpretação econômica dos testes: diferenciar regiões de determinância (equilíbrio único) de regiões de indeterminância (múltiplos equilíbrios/sunspots) e suas implicações para a estabilidade.
 \end{itemize}
 
-\subsection{Especificação das Equações}
-
+% -----------------------------------------------------------
+\subsection{Análise por Regimes e Quebras Estruturais}
+% -----------------------------------------------------------
 \begin{itemize}
-    \item Regras de Taylor backward (MQO/GLS).
-    \item Regras forward (GMM).
-    \item Regra híbrida com defasagens de juros (suavização).
+    \item Justificar a estimação do modelo em subperíodos, segmentando a amostra conforme os mandatos presidenciais do Banco Central (Arminio Fraga, Henrique Meirelles, Alexandre Tombini, Ilan Goldfajn, Roberto Campos Neto).
+    \item Descrever o uso do teste de Bai-Perron para identificar endogenamente a existência e a data de quebras estruturais nos parâmetros da regra de política, validando estatisticamente a escolha dos subperíodos.
+    \item Explicar como a comparação dos coeficientes entre regimes permite avaliar a evolução da credibilidade e da aversão à inflação do BCB ao longo do tempo.
 \end{itemize}
 
-\subsection{Estratégia Econométrica}
-
+% -----------------------------------------------------------
+\subsection{Considerações Finais da Metodologia}
+% -----------------------------------------------------------
 \begin{itemize}
-    \item Justificar MQO com erros robustos (Newey--West).
-    \item GMM com instrumentos defasados.
-    \item Estimação por subperíodos (regimes/presidentes do BCB).
-\end{itemize}
-
-\subsection{Teste do Princípio de Taylor e da Condição de Bullard--Mitra}
-
-\begin{itemize}
-    \item Verificar empiricamente se $\hat\phi_\pi > 1$.
-    \item Avaliar a condição $\kappa(\hat\phi_\pi - 1) + (1-\beta)\hat\phi_y > 0$.
-\end{itemize}
-
-\subsection{Quebras Estruturais}
-
-\begin{itemize}
-    \item Testes de Bai--Perron.
-    \item Datas-chave: 2003, 2011, 2016, 2019.
-\end{itemize}
-
-\subsection{Simulações em Dynare (Opcional)}
-
-A implementação computacional do modelo Novo-Keynesiano no software Dynare desempenha um papel complementar à análise econométrica, funcionando como um laboratório para avaliar a dinâmica teórica implícita nos parâmetros estimados. Seus objetivos específicos são:
-
-\begin{itemize}
-    \item \textbf{Verificação das Condições de Estabilidade (Blanchard--Kahn):} Utilizar o algoritmo do Dynare para testar computacionalmente se os conjuntos de parâmetros estimados para cada regime ($\hat{\phi}_\pi, \hat{\phi}_y$) satisfazem as condições de existência e unicidade do equilíbrio racional. Isso permite confirmar se regimes com $\hat{\phi}_\pi < 1$ geram, de fato, diagnósticos de indeterminação ou trajetórias explosivas no modelo teórico.
-    
-    \item \textbf{Análise Dinâmica via Funções de Resposta ao Impulso (IRFs):} Simular a trajetória da inflação, do produto e dos juros diante de choques exógenos (oferta e demanda) sob diferentes regras de política. O objetivo é visualizar como a agressividade da resposta monetária (ou a falta dela) altera a velocidade de convergência da inflação para a meta e a volatilidade do ciclo econômico.
-    
-    \item \textbf{Exercícios Contrafactuais:} Avaliar cenários hipotéticos, como o comportamento da inflação em períodos de crise caso a regra de política monetária adotada fosse a de um regime de maior credibilidade (ex: aplicar os parâmetros do período $T_2$ aos choques do período $T_1$). Isso ajuda a isolar a contribuição da conduta do Banco Central para a estabilidade macroeconômica, segregando-a dos choques estruturais.
-\end{itemize}
-
-
-\begin{itemize}
-    \item Equações: NKPC, IS, Regra de Taylor.
-    \item Calibração de $\beta, \sigma, \kappa, \phi_\pi, \phi_y$.
-    \item Funções de resposta a impulso (IRFs) sob diferentes regimes.
+    \item Retomar a coerência entre teoria (modelo NK), dados (Brasil 1999-2024) e estratégia empírica (GMM e Testes de Quebra).
+    \item Antecipar a transição para a seção de resultados empíricos.
+    \item Destacar as limitações metodológicas (como a não observabilidade do juro natural em tempo real) e o papel das análises de robustez para mitigar esses problemas.
 \end{itemize}
 
 % ***********************************************************
