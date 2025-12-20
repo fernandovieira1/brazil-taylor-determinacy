@@ -7,10 +7,10 @@ py -3.11 -m venv artmacro2
 artmacro2\Scripts\Activate.ps1
 
 # No CMD:
-# artmacro2\Scripts\activate.bat
+artmacro2\Scripts\activate.bat
 
 # No Linux/Mac:
-# source artmacro2/bin/activate
+source artmacro2/bin/activate
 
 ## Instalar dependências
 pip install -r requirements.txt
