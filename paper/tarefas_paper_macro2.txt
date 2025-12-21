@@ -10,14 +10,14 @@ PREPARAÇÃO
 * (x) Estudar problema, objetivos e metodologia.
 * (x) Verificar bases de dados possíveis.
 * (x) Criar Overlaf.
-* ( ) Obter dados/séries - De 08 a 14/12/2025.
 
-%%% Bases de dados necessárias %%%
-- IPCA mensal — fonte: IBGE.
-- Selic meta mensal — fonte: Banco Central (SGS).
-- Selic efetiva mensal (over) — Banco Central (SGS).
-- PIB real trimestral — IBGE.
-- Expectativas de IPCA — Focus/BCB.
+* (x) Obter dados/séries - De 08 a 14/12/2025. - 17/12
+% Bases de dados necessárias %%%
+    - IPCA mensal — fonte: IBGE.
+    - Selic meta mensal — fonte: Banco Central (SGS).
+    - Selic efetiva mensal (over) — Banco Central (SGS).
+    - PIB real trimestral — IBGE.
+    - Expectativas de IPCA — Focus/BCB.
 
 EXECUÇÃO
 ---------------------
@@ -51,6 +51,12 @@ EXECUÇÃO
 * (x) Revisão Seções 1, 2, 3 e 4 - 18/12
 
 * ( ) Seção 5 / Metodologia - De 15 a 21/12/2025.
+    [x] Intro - 19/12
+    [x] 5.1 intro - 19/12
+        [x] 5.1.1 - 20/12
+        [ ] 5.1.2
+    [ ] 5.2
+    [ ] 5.3
 
 * ( ) Codificar e Rodar modelos (R/Python) - De 27/12/2025 a 04/01/2026.
 * ( ) Seção 6 / Resultados - De 05/01 a 11/01/2026.
