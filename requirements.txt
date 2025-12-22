@@ -9,5 +9,4 @@ sidrapy
 python-bcb
 plotnine
 openpyxl
-python-bcb
 seaborn

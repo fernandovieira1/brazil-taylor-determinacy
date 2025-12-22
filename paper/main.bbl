@@ -65,9 +65,9 @@
 {BOGDANSKI, J.; TOMBINI, A.~A.; WERLANG, S. R. d.~C. Implementing inflation targeting in brazil.
 \emph{Werlang, Sergio R., Implementing Inflation Targeting in Brazil (July 2000). Banco Central do Brasil Working Paper}, n.~1, 2000.}
 
-\bibitem[Brasil 1999]{brasil1999decreto}
-\abntrefinfo{Brasil}{BRASIL}{1999}
-{BRASIL. \emph{Decreto n.º 3.088, de 21 de junho de 1999}. Brasília, DF, 1999.
+\bibitem[{Brasil} 1999]{brasil1999decreto}
+\abntrefinfo{{Brasil}}{{Brasil}}{1999}
+{{Brasil}. \emph{Decreto n.º 3.088, de 21 de junho de 1999}. 1999. Diário Oficial da União.
 Estabelece a sistemática de "metas para a inflação" como diretriz para fixação do regime de política monetária.
 Dispon{\'\i}vel em: \url{http://www.planalto.gov.br/ccivil\_03/decreto/d3088.htm}.}
 
@@ -107,6 +107,11 @@ Dispon{\'\i}vel em: \url{http://www.planalto.gov.br/ccivil\_03/decreto/d3088.htm
 Fundação Getulio Vargas (FGV/IBRE).
 Dispon{\'\i}vel em: \url{https://portalibre.fgv.br/codace}.}
 
+\bibitem[Dickey e Fuller 1979]{dickey1979distribution}
+\abntrefinfo{Dickey e Fuller}{DICKEY; FULLER}{1979}
+{DICKEY, D.~A.; FULLER, W.~A. Distribution of the estimators for autoregressive time series with a unit root.
+\emph{Journal of the American Statistical Association}, v.~74, n.~366, p. 427--431, 1979.}
+
 \bibitem[Gal{\'\i} 2015]{gali2015monetary}
 \abntrefinfo{Gal{\'\i}}{GAL{\'I}}{2015}
 {GAL{\'I}, J. \emph{Monetary Policy, Inflation, and the Business Cycle: An Introduction to the New Keynesian Framework and Its Applications}. 2. ed. Princeton: Princeton University Press, 2015.}
@@ -118,8 +123,8 @@ Dispon{\'\i}vel em: \url{https://portalibre.fgv.br/codace}.}
 
 \bibitem[Hamilton 2018]{hamilton2018filtering}
 \abntrefinfo{Hamilton}{HAMILTON}{2018}
-{HAMILTON, J.~D. Why you should never use the hodrick--prescott filter.
-\emph{The Review of Economics and Statistics}, MIT Press, v.~100, n.~5, p. 831--843, 2018.}
+{HAMILTON, J.~D. Why you should never use the {H}odrick--{P}rescott filter.
+\emph{Review of Economics and Statistics}, v.~100, n.~5, p. 831--843, 2018.}
 
 \bibitem[Hammond 2012]{hammond2012state}
 \abntrefinfo{Hammond}{HAMMOND}{2012}
@@ -161,6 +166,11 @@ MAGKS Joint Discussion Paper Series in Economics, 2014.}
 {KUMHOF, M.; NUNES, R.; YAKADINA, I. Simple monetary rules under fiscal dominance.
 \emph{Journal of Money, Credit and Banking}, Wiley Online Library, v.~42, n.~1, p. 63--92, 2010.}
 
+\bibitem[Kwiatkowski et al. 1992]{kwiatkowski1992testing}
+\abntrefinfo{Kwiatkowski et al.}{KWIATKOWSKI et al.}{1992}
+{KWIATKOWSKI, D. et al. Testing the null hypothesis of stationarity against the alternative of a unit root.
+\emph{Journal of Econometrics}, v.~54, n.~1--3, p. 159--178, 1992.}
+
 \bibitem[Kydland e Prescott 1990]{kydlandprescott1990}
 \abntrefinfo{Kydland e Prescott}{KYDLAND; PRESCOTT}{1990}
 {KYDLAND, F.~E.; PRESCOTT, E.~C. Business cycles: Real facts and a monetary myth.
@@ -200,6 +210,11 @@ MAGKS Joint Discussion Paper Series in Economics, 2014.}
 \abntrefinfo{Orphanides}{ORPHANIDES}{2001}
 {ORPHANIDES, A. Monetary policy rules based on real-time data.
 \emph{American Economic Review}, American Economic Association, v.~91, n.~4, p. 964--985, 2001.}
+
+\bibitem[Sax e Eddelbuettel 2018]{sax2018seasonal}
+\abntrefinfo{Sax e Eddelbuettel}{SAX; EDDELBUETTEL}{2018}
+{SAX, C.; EDDELBUETTEL, D. Seasonal adjustment by x-13arima-seats in r.
+\emph{Journal of Statistical Software}, v.~87, p. 1--17, 2018.}
 
 \bibitem[Smets e Wouters 2007]{smets2007shocks}
 \abntrefinfo{Smets e Wouters}{SMETS; WOUTERS}{2007}

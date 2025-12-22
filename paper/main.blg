@@ -13,8 +13,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: library.bib
-Warning--entry type for "brasil1999decreto" isn't style-file defined
---line 382 of file library.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -24,45 +22,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 46 entries,
+You've used 49 entries,
             6714 wiz_defined-function locations,
-            1476 strings with 17048 characters,
-and the built_in function-call counts, 39732 in all, are:
-= -- 3158
-> -- 1370
-< -- 215
-+ -- 632
-- -- 413
-* -- 2956
-:= -- 5179
-add.period$ -- 145
-call.type$ -- 46
-change.case$ -- 472
-chr.to.int$ -- 148
-cite$ -- 45
-duplicate$ -- 2190
-empty$ -- 2709
-format.name$ -- 1936
-if$ -- 9174
+            1497 strings with 17599 characters,
+and the built_in function-call counts, 42560 in all, are:
+= -- 3363
+> -- 1493
+< -- 226
++ -- 677
+- -- 450
+* -- 3181
+:= -- 5571
+add.period$ -- 155
+call.type$ -- 49
+change.case$ -- 510
+chr.to.int$ -- 160
+cite$ -- 48
+duplicate$ -- 2327
+empty$ -- 2872
+format.name$ -- 2114
+if$ -- 9810
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 810
-newline$ -- 232
-num.names$ -- 221
-pop$ -- 1005
+missing$ -- 864
+newline$ -- 247
+num.names$ -- 241
+pop$ -- 1070
 preamble$ -- 1
-purify$ -- 177
+purify$ -- 190
 quote$ -- 0
-skip$ -- 2243
+skip$ -- 2383
 stack$ -- 1
-substring$ -- 1919
-swap$ -- 1107
-text.length$ -- 95
+substring$ -- 2058
+swap$ -- 1182
+text.length$ -- 103
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 1
 warning$ -- 0
-while$ -- 366
+while$ -- 398
 width$ -- 0
-write$ -- 766
-(There was 1 warning)
+write$ -- 815

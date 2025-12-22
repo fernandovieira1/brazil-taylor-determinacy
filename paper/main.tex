@@ -390,7 +390,7 @@ max & 3.02 & 17.24 & 45.00 & 12.41 & 179.53 \\
 \footnotesize
 
 \vspace{0.2cm}
-\textbf{Fontes:} Bacen e IBGE, via pacotes Python (sidrapy e python-Bacen).
+\textbf{Fontes:} Bacen e IBGE, via pacotes Python (sidrapy e python-bcb).
 \end{table}
 
 % Crise de Confiança 2002-2003
@@ -409,7 +409,7 @@ A partir de 2014, observa-se uma mudança de regime marcada pela recessão domé
     \label{fig:series_macro}
     \footnotesize
     \vspace{0.2cm}
-    \textbf{Fontes:} Bacen e IBGE, via pacotes Python (sidrapy e python-Bacen).\\
+    \textbf{Fontes:} Bacen e IBGE, via pacotes Python (sidrapy e python-bcb).\\
 \end{figure}
 
 % Pandemia de Covid-19
@@ -425,7 +425,7 @@ Por fim, ressalta-se que a análise aqui permanece estritamente descritiva. A co
     \includegraphics[width=1\textwidth]{graficos/hiato_produto.png}
     \label{fig:hiato_produto}
     \footnotesize
-    \textbf{Fonte:} Elaboração própria, baseada em dados do Bacen, coletados via pacotes Python (python-Bacen).\\
+    \textbf{Fonte:} Elaboração própria, baseada em dados do Bacen, coletados via pacotes Python (python-bcb).\\
     \textit{\textbf{Nota:} Comparativo entre Filtro HP, Filtro de Hamilton, Tendência Linear, Quadrática e estimativa da IFI. Valores negativos indicam ociosidade da economia.}
 \end{figure}
 
@@ -456,7 +456,7 @@ A estratégia empírica fundamenta-se no arcabouço teórico apresentado nas Se�
 \subsection{Base de Dados}
 % -----------------------------------------------------------
 
-A base de dados foi construída a partir de fontes oficiais de alta confiabilidade institucional, amplamente consagradas na literatura empírica nacional \footnote{O meio de captura dos dados se deu via bibliotecas Python (sidrapy e python-Bacen).}. As séries referentes à política monetária e expectativas foram extraídas do Sistema Gerenciador de Séries Temporais (SGS) do Banco Central do Brasil (Bacen), abrangendo o histórico da meta da taxa Selic e as medianas diárias do Sistema Expectativas de Mercado (Focus). Os dados de atividade econômica e preços provêm do Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente as séries históricas do Índice Nacional de Preços ao Consumidor Amplo (IPCA) e os números índices do Produto Interno Bruto (PIB). Complementarmente, indicadores de atividade auxiliar e métricas de hiato calculadas por instituições independentes (como o IFI) e pelo próprio corpo técnico do Banco Central foram considerados para fins de robustez. A amostra cobre o período de consolidação do regime de metas, estendendo-se de janeiro de 1999 até dezembro de 2024, englobando diversos ciclos de aperto e relaxamento monetário sob diferentes administrações da autoridade monetária, consoante contetualização feita na Seção~4.
+A base de dados foi construída a partir de fontes oficiais de alta confiabilidade institucional, amplamente consagradas na literatura empírica nacional \footnote{O meio de captura dos dados se deu via bibliotecas Python (sidrapy e python-bcb).}. As séries referentes à política monetária e expectativas foram extraídas do Sistema Gerenciador de Séries Temporais (SGS) do Banco Central do Brasil (Bacen), abrangendo o histórico da meta da taxa Selic e as medianas diárias do Sistema Expectativas de Mercado (Focus). Os dados de atividade econômica e preços provêm do Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente as séries históricas do Índice Nacional de Preços ao Consumidor Amplo (IPCA) e os números índices do Produto Interno Bruto (PIB). Complementarmente, indicadores de atividade auxiliar e métricas de hiato calculadas por instituições independentes (como o IFI) e pelo próprio corpo técnico do Banco Central foram considerados para fins de robustez. A amostra cobre o período de consolidação do regime de metas, estendendo-se de janeiro de 1999 até dezembro de 2024, englobando diversos ciclos de aperto e relaxamento monetário sob diferentes administrações da autoridade monetária, consoante contetualização feita na Seção~4.
 
 % -----------------------------------------------------------
 \subsubsection{Variáveis}
@@ -468,23 +468,23 @@ O conjunto de variáveis selecionado para a estimação reflete a estrutura can�
 \subsubsection{Tratamento das Séries}
 % -----------------------------------------------------------
 
-Todas as variáveis são analisadas em frequência trimestral, compatibilizando a periodicidade do PIB, utilizado na construção do hiato do produto, com as séries de inflação, taxa de juros e expectativas. Essa escolha assegura coerência temporal entre as variáveis do modelo e é consistente com o horizonte de transmissão da política monetária, no qual os efeitos das decisões do Copom sobre a atividade e os preços tendem a se materializar ao longo de vários trimestres, e não em flutuações mensais de alta frequência.
+Todas as variáveis são analisadas em \textbf{frequência trimestral}, compatibilizando a periodicidade do PIB, utilizado na construção do hiato do produto (vide subseção 4.4), com as séries de inflação, taxa de juros e expectativas. Essa escolha assegura coerência temporal entre as variáveis do modelo e é consistente com o horizonte de transmissão da política monetária, no qual os efeitos das decisões do Copom sobre a atividade e os preços tendem a se materializar ao longo de vários trimestres, e não em flutuações mensais de alta frequência. As séries de atividade econômica foram ajustadas sazonalmente com o objetivo de remover padrões intra-anuais sistemáticos, como efeitos de calendário, que não estão associados ao ciclo econômico nem à condução da política monetária, facilitando a identificação das flutuações cíclicas relevantes para o estudo do hiato do produto \cite{woodford2003interest, gali2015monetary}.
 
-As séries de atividade econômica foram previamente ajustadas sazonalmente por meio do procedimento X-13ARIMA-SEATS, metodologia amplamente adotada na análise macroeconômica aplicada. O ajuste sazonal permite remover padrões intra-anuais sistemáticos, como efeitos de calendário, que não estão associados ao ciclo econômico nem à condução da política monetária, facilitando a identificação das flutuações cíclicas relevantes para o estudo do hiato do produto.
+% ARIMA
+O \textbf{ajuste sazonal} das séries de atividade econômica foi realizado por meio do procedimento X-13-ARIMA-SEATS, metodologia adotada por instituições oficiais e pela literatura empírica \citeonline{sax2018seasonal}. O método combina pré-ajustes determinísticos via modelagem regARIMA com técnicas de filtragem do tipo X-11, permitindo remover efeitos sazonais e de calendário, bem como reduzir problemas de borda e revisões excessivas das estimativas correntes.\footnote{Os detalhes formais do procedimento, incluindo a especificação do modelo regARIMA, a decomposição multiplicativa e os filtros empregados, são apresentados no Apêndice~A.}
 
-- CITAR PAPER E FORMALIZAÇÃO MATEMÁTICA DISSO.
+% Teste de Estacionariedade / Raiz Unitária
+Em seguida, avaliou-se a propriedade de \textbf{estacionariedade} das séries de inflação, taxa de juros e hiato do produto por meio dos testes de raiz unitária Augmented Dickey--Fuller (ADF) e KPSS. Esses testes são empregados de forma complementar na literatura de séries temporais macroeconômicas, uma vez que partem de hipóteses nulas opostas \cite{dickey1979distribution}. Sua utilização conjunta permite verificar se as transformações adotadas são compatíveis com a modelagem dinâmica implícita no arcabouço Novo-Keynesiano, no qual inflação e hiato são tratados como variáveis estacionárias em torno de seus valores de equilíbrio de longo prazo \cite{kwiatkowski1992testing}.
 
-Em seguida, avaliou-se a propriedade de estacionariedade das séries de inflação, taxa de juros e hiato do produto por meio dos testes de raiz unitária Augmented Dickey-Fuller (ADF) e KPSS. Esses testes são empregados de forma complementar na literatura de séries temporais macroeconômicas, uma vez que partem de hipóteses nulas opostas. Sua utilização conjunta permite verificar se as transformações adotadas são compatíveis com a modelagem dinâmica implícita no arcabouço Novo-Keynesiano, no qual inflação e hiato são tratados como variáveis estacionárias em torno de seus valores de equilíbrio de longo prazo.
+% Filtro HP
+Em específico, dada a natureza não observável do produto potencial, o hiato do produto foi obtido por meio de procedimentos de \textbf{filtragem estatística}. A especificação adota o filtro de \citeonline{hodrick1997postwar}, com parâmetro de suavização $\lambda = 1600$, padrão para dados trimestrais. O filtro define o componente de tendência como a solução do problema de minimização:
+\begin{equation}
+\min_{\{\tau_t\}} \sum_{t=1}^{T} (y_t - \tau_t)^2 
+\;+\; \lambda \sum_{t=2}^{T-1} \left[(\tau_{t+1}-\tau_t)-(\tau_t-\tau_{t-1})\right]^2,
+\end{equation}
+onde $y_t$ denota o produto observado e $\tau_t$ sua tendência suavizada.
 
-- CITAR PAPERS E FORMALIZAÇÃO MATEMÁTICA DISSO.
-- SITUAR MELHOR ISSO EM RELAÇÃO AO NOSSO ARTIGO.
-
-Com já afirmado, o período amostral compreende o intervalo entre o primeiro trimestre de 1999 e o quarto trimestre de 2024, cobrindo integralmente a vigência do Regime de Metas de Inflação no Brasil. Porém, os primeiros trimestres de 1999, contudo, são analisados com cautela, dada a elevada volatilidade associada à transição cambial e ao processo de consolidação institucional do novo regime monetário.
-
-Dada a natureza não observável do produto potencial e a reconhecida sensibilidade das estimativas do hiato do produto ao método empregado, a medida de hiato utilizada como especificação baseline é obtida por meio do filtro Hodrick--Prescott, com parâmetro de suavização $\lambda = 1600$, padrão para dados trimestrais. A robustez dos resultados é avaliada por meio de especificações alternativas, incluindo o filtro de Hamilton, tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil. Essa estratégia permite reconhecer explicitamente a incerteza de mensuração inerente ao hiato do produto, ao mesmo tempo em que avalia a estabilidade qualitativa dos resultados empíricos frente a diferentes procedimentos de extração do componente cíclico.
-
-- CITAR PAPERS E FORMALIZAÇÃO MATEMÁTICA DISSO.
-- LIGAR ESTE PARÁGRAFO À NOTA DE RODAPÉ DA SEÇÃO 4.
+Reconhecendo a sensibilidade das estimativas do hiato ao método empregado, a robustez dos resultados é avaliada por meio de especificações alternativas, incluindo o filtro de \citeonline{hamilton2018filtering}, tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil. Essa estratégia permite tratar explicitamente a incerteza de mensuração associada ao hiato do produto, avaliando a estabilidade qualitativa dos resultados empíricos frente a diferentes procedimentos de extração do componente cíclico, conforme discutido na Seção~4.
 
 % -----------------------------------------------------------
 \subsection{Especificação Econométrica}
