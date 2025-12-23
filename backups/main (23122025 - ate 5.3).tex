@@ -486,147 +486,27 @@ onde $y_t$ denota o produto observado e $\tau_t$ sua tendência suavizada.
 
 Reconhecendo a sensibilidade das estimativas do hiato ao método empregado, a robustez dos resultados é avaliada por meio de especificações alternativas, incluindo o filtro de \citeonline{hamilton2018filtering}, tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil. Essa estratégia permite tratar explicitamente a incerteza de mensuração associada ao hiato do produto, avaliando a estabilidade qualitativa dos resultados empíricos frente a diferentes procedimentos de extração do componente cíclico, conforme discutido na Seção~4.
 
-\subsection{Especificação econométrica}
-\label{subsec:especificacao_econometrica}
+% -----------------------------------------------------------
+\subsection{Especificação Econométrica}
+% -----------------------------------------------------------
 
-Esta subseção traduz para o plano econométrico as regras de política discutidas na Seção~\ref{subsec:regra_taylor}, especificando as equações efetivamente estimadas e a estratégia de identificação. Em todas as variantes, a taxa Selic segue uma regra de Taylor com suavização, na qual os parâmetros de reação à inflação e ao hiato do produto têm a mesma interpretação teórica dos coeficientes \(\phi_\pi\) e \(\phi_y\) que entram na condição de determinância apresentada na Seção~\ref{subsec:condicoes_determinancia}.
+- DEIXAR MAIS ESTATÍSTICO. 
 
-\subsubsection*{Regras estimadas}
+Para testar as hipóteses de pesquisa, estimam-se três classes de funções de reação: \textit{backward-looking} (resposta a dados passados), \textit{forward-looking} (resposta a expectativas) e especificações híbridas com suavização da taxa de juros. A equação geral a ser estimada, que aninha essas diferentes hipóteses, é dada por:
 
-A forma estimável da regra de juros é escrita diretamente em termos de regressões lineares, às quais se impõe posteriormente a interpretação estrutural de longo prazo.
-
-\paragraph{Regra backward-looking (MQO).}
-
-Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato do produto correntes, consistentes com a regra backward apresentada em \ref{subsec:regra_taylor_backward}. A equação estimada é:
 \begin{equation}
-  i_t
-  =
-  \beta_0
-  +
-  \beta_1 i_{t-1}
-  +
-  \beta_2 \pi_t
-  +
-  \beta_3 \tilde y_t
-  +
-  u_t,
-  \label{eq:regra_backward_mqo}
+    i_t = (1-\rho)\left[ \alpha + \phi_\pi E_t\{\pi_{t+k}\} + \phi_y E_t\{\tilde{y}_{t+q}\} \right] + \rho i_{t-1} + \varepsilon_t
 \end{equation}
-onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\). 
 
-A comparação com a forma teórica com suavização (Seção~\ref{subsec:taylor_hibrida}) permite interpretar
-\[
-\rho = \beta_1,\qquad
-\phi_\pi = \frac{\beta_2}{1-\beta_1},\qquad
-\phi_y = \frac{\beta_3}{1-\beta_1},
-\]
-de modo que \(\phi_\pi\) e \(\phi_y\) são coeficientes de reação de longo prazo à inflação e ao hiato. A estimação é realizada por MQO com matriz de covariância robusta de Newey--West, para acomodar heterocedasticidade e autocorrelação em \(u_t\).
+\noindent onde $\rho \in [0, 1)$ é o parâmetro de suavização (inércia da política monetária), $\phi_\pi$ e $\phi_y$ medem, respectivamente, a reação de longo prazo da autoridade monetária à inflação e ao hiato do produto, e $\varepsilon_t$ é o choque exógeno de política monetária.
 
-\paragraph{Regra forward-looking (GMM).}
+Quando $k=q=0$ e $\rho=0$, recupera-se a regra de \citeonline{taylor1993}. Para $k>0$ e $\rho>0$, tem-se a especificação \textit{forward-looking} com inércia, conforme \citeonline{clarida2000monetary}, que constitui a especificação \textit{baseline} deste estudo dada a natureza prospectiva do regime de metas.
 
-Na especificação prospectiva, a autoridade monetária reage às expectativas de inflação e de hiato do produto, em consonância com a estrutura forward-looking da NKPC e da equação IS discutidas nas Seções~\ref{subsec:nkpc} e~\ref{subsec:is_dinamica} e com a regra de Clarida--Galí--Gertler da Seção~\ref{subsec:regra_taylor_forward}. A equação estimada é
-\begin{equation}
-  i_t
-  =
-  \gamma_0
-  +
-  \gamma_1 i_{t-1}
-  +
-  \gamma_2 E_t\{\pi_{t+1}\}
-  +
-  \gamma_3 E_t\{\tilde y_{t+1}\}
-  +
-  e_t,
-  \label{eq:regra_forward_gmm}
-\end{equation}
-onde \(E_t\{\pi_{t+1}\}\) é aproximado pela mediana das expectativas Focus para o IPCA em doze meses e \(E_t\{\tilde y_{t+1}\}\) por medidas de hiato prospectivo ou, em especificações restritas, pelo hiato contemporâneo como proxy de informação disponível.
+- LINKAR COM O QUE FOI DITO EM SEÇÕES 2 E 3.
 
-A interpretação de longo prazo segue a mesma lógica:
-\[
-\rho = \gamma_1,\qquad
-\phi_\pi = \frac{\gamma_2}{1-\gamma_1},\qquad
-\phi_y = \frac{\gamma_3}{1-\gamma_1},
-\]
-de forma que \(\phi_\pi\) e \(\phi_y\) podem ser diretamente inseridos na condição de Bullard--Mitra descrita em \ref{subsec:condicoes_determinancia}.
+A estratégia de estimação varia conforme a especificação. Para as regras \textit{backward-looking}, utiliza-se o método de Mínimos Quadrados Ordinários (MQO) com matriz de covariância robusta de Newey-West (HAC), corrigindo para autocorrelação e heterocedasticidade nos resíduos. Para as regras \textit{forward-looking}, nas quais as variáveis explicativas (expectativas) são endógenas ou mensuradas com erro, emprega-se o Método dos Momentos Generalizados (GMM). O conjunto de instrumentos $Z_t$ inclui defasagens da taxa de juros, inflação, hiato do produto e índice de \textit{commodities} (IC-Br), variáveis ortogonais ao erro de previsão das expectativas racionais ($E[Z_t (\pi_{t+k} - E_t\pi_{t+k})] = 0$). A validade dos instrumentos é avaliada pelo teste $J$ de Hansen para sobreidentificação.
 
-\paragraph{Regra híbrida com suavização (GMM).}
-
-Para capturar simultaneamente a resposta à inflação corrente e esperada, bem como a inércia da taxa de juros, estima-se uma regra híbrida alinhada à formulação geral da Seção~\ref{subsec:taylor_hibrida}:
-\begin{equation}
-  i_t
-  =
-  \delta_0
-  +
-  \delta_1 i_{t-1}
-  +
-  \delta_2 \pi_t
-  +
-  \delta_3 E_t\{\pi_{t+1}\}
-  +
-  \delta_4 \tilde y_t
-  +
-  v_t.
-  \label{eq:regra_hibrida_gmm}
-\end{equation}
-Neste caso, define-se \(\rho = \delta_1\) e os coeficientes de reação de longo prazo como
-\[
-\phi_\pi^{b} = \frac{\delta_2}{1-\delta_1},\qquad
-\phi_\pi^{f} = \frac{\delta_3}{1-\delta_1},\qquad
-\phi_y = \frac{\delta_4}{1-\delta_1},
-\]
-de modo que \(\phi_\pi = \phi_\pi^{b} + \phi_\pi^{f}\) sintetiza a agressividade total da política monetária em relação à inflação, combinando componentes backward e forward.
-
-\subsubsection*{Estratégia de estimação}
-
-A escolha do estimador reflete a forma como as variáveis no lado direito se relacionam com o erro de política e com a informação disponível no instante \(t\).
-
-\paragraph{MQO para a regra backward.}
-
-Na equação \eqref{eq:regra_backward_mqo}, assume-se que \(\pi_t\) e \(\tilde y_t\) são, no horizonte trimestral, predeterminados em relação a \(u_t\), de forma que \(E(u_t|\pi_t,\tilde y_t,i_{t-1},\mathcal F_{t-1})=0\). Sob essa hipótese, MQO fornece estimadores consistentes, e a correção HAC garante inferência robusta à autocorrelação serial na série da Selic.
-
-\paragraph{GMM para regras forward e híbrida.}
-
-Nas equações \eqref{eq:regra_forward_gmm} e \eqref{eq:regra_hibrida_gmm}, as variáveis de expectativas \(E_t\{\pi_{t+1}\}\) e \(E_t\{\tilde y_{t+1}\}\) são potencialmente endógenas, tanto por incorporarem erros de previsão como por refletirem a reação simultânea do mercado às decisões do Comitê de Política Monetária. Seguindo Clarida, Galí e Gertler (2000) e a crítica de Orphanides (2001), a estimação é realizada por Método dos Momentos Generalizados (GMM), com condições de momento
-\begin{equation}
-  E\!\big[Z_t\,e_t(\theta)\big] = 0
-  \quad\text{e}\quad
-  E\!\big[Z_t\,v_t(\theta)\big] = 0,
-  \label{eq:momentos_gmm_simplificado}
-\end{equation}
-em que \(Z_t\) é um vetor de instrumentos formado por defasagens de variáveis observáveis:
-\begin{equation}
-  Z_t
-  =
-  \big(
-    1,\,
-    i_{t-1}, i_{t-2},\,
-    \pi_{t-1}, \pi_{t-2},\,
-    \tilde y_{t-1}, \tilde y_{t-2},\,
-    ICBr_{t-1},\dots
-  \big)',
-  \label{eq:instrumentos_simplificado}
-\end{equation}
-e \(\theta\) reúne os parâmetros de interesse em cada especificação. A validade dos instrumentos e a sobre-identificação são avaliadas pelo teste \(J\) de Hansen, padrão em aplicações de GMM com regras de Taylor forward-looking.
-
-\subsubsection*{Princípio de Taylor e condição de Bullard--Mitra}
-
-Os parâmetros de reação de longo prazo \(\phi_\pi\) e \(\phi_y\) obtidos a partir das equações \eqref{eq:regra_backward_mqo}--\eqref{eq:regra_hibrida_gmm} são utilizados diretamente para testar as implicações centrais do modelo Novo-Keynesiano.
-
-Em primeiro lugar, o Princípio de Taylor é avaliado por meio do teste de Wald unilateral
-\begin{equation}
-  H_0:\ \phi_\pi \le 1
-  \qquad \text{versus} \qquad
-  H_1:\ \phi_\pi > 1,
-  \label{eq:test_taylor_simplificado}
-\end{equation}
-onde \(\phi_\pi\) mede a resposta de longo prazo da taxa Selic à inflação, conforme definido na Seção~\ref{subsec:principio_taylor}.
-
-Em segundo lugar, os pares \((\hat\phi_\pi,\hat\phi_y)\) são inseridos na condição de Bullard--Mitra para o modelo NK canônico,
-\begin{equation}
-  \kappa(\phi_\pi -1) + (1-\beta)\phi_y > 0,
-  \label{eq:bullard_mitra_empirica_simplificada}
-\end{equation}
-em que \(\kappa\) e \(\beta\) são calibrados com base em parâmetros usuais da economia brasileira, conforme discutido na Seção~\ref{subsec:condicoes_determinancia}. Essa desigualdade permite classificar cada especificação e subperíodo da amostra como pertencentes ou não à região de determinância local e estabilidade sob aprendizagem do modelo Novo-Keynesiano.
+- CITAR PAPERS E FORMALIZAÇÃO MATEMÁTICA DISSO.
 
 % -----------------------------------------------------------
 \subsection{Testes de Determinância e Quebras Estruturais}
