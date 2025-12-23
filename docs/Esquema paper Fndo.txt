@@ -1,0 +1,104 @@
+
+V1
+====================================
+
+O trabalho basicamente reside nisto:
+ **Objeto**: Reação sistemática da política monetária brasileira (1999-2024).
+ **Problema**: Avaliar se a reação da política monetária foi compatível com a estabilidade macroeconômica no modelo NK.
+ **Objetivo geral**: Testar o Princípio de Taylor e a condição de determinância.
+ **Objetivos específicos**:
+     (i) Estimar diferentes especificações da Regra de Taylor.
+     (ii) Verificar se o Princípio de Taylor ($\hat{\phi}_\pi > 1$) é satisfeito.
+     (iii) Avaliar a condição de Bullard--Mitra.
+     (iv) Explorar implicações dinâmicas via simulações em modelo NK calibrado.
+
+O modelo NK, que gravita em torno do comportamento dos preços (inflação) e como estes afetam e são afetados por oferta e demanda do produto total, inclusive market clearing, juros e choques exógenos, é composto pelos núcleos: 
+- (1) firmas (oferta: curva de Phillips), 
+- (2) famílias (demanda: consumo via Euler - FOCs -- e hiato) e 
+- (3) banco central (juros: Princípio de Taylor e Regra de Taylor).
+
+Fechando este sistema todo, temos que:
+- A condição de Bullard--Mitra identifica quando o modelo NK básico possui equilíbrio único.
+- O método de Blanchard & Kahn é a ferramenta que os pesquisadores modernos usam para checar se a Regra de Taylor % funciona em um modelo teórico (determinância)
+
+V2
+====================================
+
+-------------------------------------
+1. Modelo NK
+-------------------------------------
+- O modelo NK é um “roteiro” da economia com três blocos:
+  - Firmas: escolhem preços com rigidez (Calvo) → geram a curva de Phillips nova (inflação depende do ciclo e das expectativas).
+  - Famílias: escolhem consumo hoje versus amanhã (Euler) → geram a equação IS dinâmica (hiato responde ao juro real esperado).
+  - Banco Central: ajusta a taxa de juros seguindo uma regra de resposta à inflação e ao hiato (Regra de Taylor).
+
+-------------------------------------
+2. Regra de Taylor
+-------------------------------------
+- A Regra de Taylor é a forma disciplinada de descrever a política monetária:
+  - juros sobem quando inflação e atividade estão acima do “normal”;
+  - juros caem quando estão abaixo.
+- Em vez de “o BC faz o que der na cabeça”, o modelo supõe que ele segue uma regra relativamente estável, que fecha o sistema com firmas e famílias.
+
+-------------------------------------
+3. Princípio de Taylor
+-------------------------------------
+- O Princípio de Taylor diz: não basta o BC reagir à inflação, tem que reagir forte.
+- Intuição:
+  - se a inflação sobe e o BC reage pouco, o juro real cai, a demanda acelera e a inflação piora;
+  - se reage forte, o juro real sobe, a demanda esfria e a inflação volta para perto da meta.
+
+-------------------------------------
+4. Blanchard & Kahn
+
+- (equilíbrio e único)
+- BK = teste geral, abstrato
+- Blanchard–Kahn → 
+propriedade do modelo dado
+-------------------------------------
+
+- Dado o modelo completo (oferta, demanda, regra de juros), Blanchard & Kahn dão o critério geral para saber:
+  - se existe um equilíbrio;
+  - se esse equilíbrio é único e estável.
+- É o “teste padrão” que o pessoal usa em DSGE para classificar: solução única, múltiplas soluções ou trajetória explosiva.
+
+Anedota:
+* Imagine o modelo NK como um sistema de trilhos para a economia: inflação, hiato e juros andam nesses trilhos ao longo do tempo.
+* Blanchard & Kahn respondem: “se eu empurrar hoje, existe um único caminho que essas variáveis podem seguir sem explodir ou ficar sem rumo?”.
+* Tecnicamente, dado o modelo linearizado, eles olham para a “matriz de dinâmica” e dizem:
+* tem caminho estável ou não;
+* se esse caminho é único ou se há infinitos caminhos possíveis.
+* Por isso é o teste padrão em DSGE: você roda o modelo e ele te diz “regime determinado” (caminho único), “indeterminado” (vários caminhos possíveis, abre espaço para sunspots) ou “sem solução estável” (explode).
+
+* Em termos de intuição:
+    - Blanchard & Kahn = teste geral, abstrato (olha a máquina por dentro).
+
+-------------------------------------
+5. Bullard & Mitra
+
+- (estabilidade, determinância,
+zona segura)
+- BM = tradução operacional para 
+regras de juros
+- Bullard–Mitra → 
+propriedade do modelo + 
+regra específica + aprendizado
+-------------------------------------
+
+- Bullard & Mitra pegam o modelo NK básico com regra de Taylor e transformam o teste de estabilidade em uma condição simples sobre:
+  - quão forte o BC reage à inflação;
+  - quão forte reage ao hiato;
+  - dados os parâmetros estruturais da economia.
+- Intuição:
+  - eles desenham a “zona segura” onde:
+    - o equilíbrio é único;
+    - e os agentes, mesmo aprendendo aos poucos, convergem para esse equilíbrio, em vez de cair em bolhas e equilíbrios esquisitos guiados só por expectativas.
+
+Anedota:
+* Agora, pega esse mesmo modelo NK simples com regra de Taylor e pergunta: “em vez de olhar para a matriz inteira (coisa chata), dá pra resumir a condição de estar na zona boa em algo intuitivo, tipo: quanto o BC reage à inflação e ao hiato?”.
+* Bullard & Mitra fazem exatamente isso: eles mostram que, para esse modelo específico, existe uma “região” de combinações de respostas do BC (à inflação e ao hiato) onde:
+* o critério de Blanchard & Kahn cai na parte boa (equilíbrio único e estável);
+* e, além disso, se os agentes aprendem aos poucos, eles conseguem convergir para esse equilíbrio.
+
+* Em termos de intuição:
+    - Bullard & Mitra = pegam esse teste e traduzem em: “se o BC reagir assim e assado, você está na zona segura; se reagir fraco demais ou de um jeito esquisito, sai da zona segura e abre espaço para indeterminação e expectativas malucas”.
