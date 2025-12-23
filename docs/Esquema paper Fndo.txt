@@ -51,7 +51,7 @@ V2
 -------------------------------------
 4. Blanchard & Kahn
 
-- (equilíbrio e único)
+- (determinância única)
 - BK = teste geral, abstrato
 - Blanchard–Kahn → 
 propriedade do modelo dado
@@ -76,8 +76,7 @@ Anedota:
 -------------------------------------
 5. Bullard & Mitra
 
-- (estabilidade, determinância,
-zona segura)
+- (determinância única no LP: zona segura)
 - BM = tradução operacional para 
 regras de juros
 - Bullard–Mitra → 
