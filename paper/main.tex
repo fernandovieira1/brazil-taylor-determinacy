@@ -494,6 +494,10 @@ Esta Seção~apresenta a estratégia empírica adotada para investigar a conduç
 
 A estratégia empírica fundamenta-se no arcabouço teórico apresentado nas Seções~\ref{sec:regras_politica_estabilidade} e~\ref{sec:arcabouco_teorico}, nas quais são formalizadas as equações estruturais do modelo Novo-Keynesiano e as condições necessárias para a determinação do equilíbrio, em particular a condição de Bullard--Mitra. A perspectiva é traduzir os conceitos em especificações econométricas com dados observáveis, por meio da estimação de diferentes versões da regra de Taylor. A Seção está organizada da seguinte forma: inicialmente, descrevem-se a base de dados, as variáveis utilizadas, suas fontes e o tratamento das séries; em seguida, apresentam-se as especificações econométricas e a estratégia de estimação adotada; posteriormente, detalham-se os testes empíricos do Princípio de Taylor e da condição de determinância; por fim, discutem-se as extensões relacionadas à análise por regimes e às quebras estruturais.
 
+% ///////////////////////////
+%% PREPARAÇÃO DAS SÉRIES
+% ///////////////////////////
+
 % -----------------------------------------------------------
 \subsection{Bases de Dados}
 % -----------------------------------------------------------
@@ -530,6 +534,12 @@ Em específico, dada a natureza não observável do produto potencial, o hiato d
 onde $y_t$ denota o produto observado e $\tau_t$ sua tendência suavizada.
 
 Reconhecendo a sensibilidade das estimativas do hiato ao método empregado, a robustez dos resultados é avaliada por meio de especificações alternativas, incluindo o filtro de \citeonline{hamilton2018filtering}, tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil. Essa estratégia permite tratar explicitamente a incerteza de mensuração associada ao hiato do produto, avaliando a estabilidade qualitativa dos resultados empíricos frente a diferentes procedimentos de extração do componente cíclico, conforme discutido na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}.
+
+% ///////////////////////////
+%% MODELAGEM ECONOMÉTRICA
+% ///////////////////////////
+
+% Deixar claro em cada subseção qual objetivo (geral ou específico) está sendo tratado
 
 % -----------------------------------------------------------
 \subsection{Especificação econométrica}
@@ -715,6 +725,8 @@ Por fim, para capturar a heterogeneidade da política monetária ao longo dos di
 \section{Resultados}
 % ===========================================================
 \label{sec:resultados}
+
+% Explicar que vai usar Dynare para simular o modelo NK com os parâmetros estimados, pra ver as IRFs e comparar regimes determinantes e indeterminantes.
 
 \subsection{Estimações da Regra de Taylor}
 \label{subsec:estimacoes_regra_taylor}
