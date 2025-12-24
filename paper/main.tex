@@ -551,9 +551,10 @@ Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato
   u_t,
   \label{eq:regra_backward_mqo}
 \end{equation}
-onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\). 
+onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\), dado que o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$. Neste sentido, a condição $E(u_t \mid \mathcal{F}_{t-1}) = 0$ implica que o erro de política captura apenas choques não antecipáveis à luz da informação disponível antes da decisão do Copom.
 
-A comparação com a forma teórica com suavização (Seção~\ref{subsec:taylor_hibrida}) permite interpretar
+
+Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{subsec:taylor_hibrida}) permite interpretar
 \[
 \rho = \beta_1,\qquad
 \phi_\pi = \frac{\beta_2}{1-\beta_1},\qquad
