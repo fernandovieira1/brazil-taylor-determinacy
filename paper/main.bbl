@@ -141,10 +141,15 @@ Dispon{\'\i}vel em: \url{https://portalibre.fgv.br/codace}.}
 {HODRICK, R.~J.; PRESCOTT, E.~C. Postwar u.s. business cycles: An empirical investigation.
 \emph{Journal of Money, Credit and Banking}, Ohio State University Press, v.~29, n.~1, p. 1--16, 1997.}
 
-\bibitem[{Instituição Fiscal Independente} 2024]{ifi_hiato_produto}
-\abntrefinfo{{Instituição Fiscal Independente}}{{Instituição Fiscal Independente}}{2024}
-{{Instituição Fiscal Independente}. \emph{Estimativas do Hiato do Produto}. 2024. \url{https://www12.senado.leg.br/ifi/dados/arquivos/estimativas-do-hiato-do-produto-ifi.xlsx}.
+\bibitem[{IFI -- Instituição Fiscal Independente} 2024]{ifi_hiato_produto}
+\abntrefinfo{{IFI -- Instituição Fiscal Independente}}{{IFI -- Instituição Fiscal Independente}}{2024}
+{{IFI -- Instituição Fiscal Independente}. \emph{Estimativas do Hiato do Produto}. 2024. \url{https://www12.senado.leg.br/ifi/dados/arquivos/estimativas-do-hiato-do-produto-ifi.xlsx}.
 Base de dados eletrônica. Senado Federal, Brasília.}
+
+\bibitem[Jayawickrema 2019]{jayawickrema2019monetary}
+\abntrefinfo{Jayawickrema}{JAYAWICKREMA}{2019}
+{JAYAWICKREMA, V. Monetary policy rules and macroeconomic stability.
+\emph{MPRA -- Munich Personal RePEc Archive}, 2019.}
 
 \bibitem[K{\"a}fer 2014]{kafer2014taylor}
 \abntrefinfo{K{\"a}fer}{K{\"A}FER}{2014}
