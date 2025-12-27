@@ -720,23 +720,20 @@ Logo depois, a análise de estabilidade é aprofundada inserindo os pares estima
 Nesta desigualdade, os parâmetros estruturais \(\kappa\) (inclinação da Curva de Phillips) e \(\beta\) (fator de desconto) são calibrados conforme os valores discutidos na Seção~\ref{subsec:condicoes_determinancia}. Essa verificação permite classificar se, em cada especificação e subperíodo amostral, a condução da política monetária foi compatível com a unicidade do equilíbrio (determinância) e com a estabilidade sob aprendizagem (\textit{E-stability}).
 
 % -----------------------------------------------------------
-\subsection{Testes de Determinância e Quebras Estruturais}
+\subsubsection{Testes de hipótese, determinância e instabilidade paramétrica}
+\label{subsubsec:testes_determinancia_quebras}
 % -----------------------------------------------------------
-\label{subsec:testes_determinancia_quebras}
 
-- DEIXAR MAIS ESTATÍSTICO. 
+Os parâmetros estruturais \(\phi_\pi\) e \(\phi_y\), recuperados via Método Delta conforme discutido anteriormente, são submetidos a três procedimentos de validação empírica.
 
-A avaliação do Princípio de Taylor é realizada inicialmente por meio de um teste de Wald unilateral para a hipótese nula $H_0: \phi_\pi \leq 1$ contra a alternativa $H_1: \phi_\pi > 1$. A rejeição da nula indica que o Banco Central cumpre a condição necessária de estabilidade. Contudo, conforme discutido na Seção~\ref{sec:arcabouco_teorico}, a determinância no modelo Novo-Keynesiano exige a satisfação conjunta dos parâmetros na condição de Bullard--Mitra. Assim, verificamos empiricamente se os coeficientes estimados pontuais ($\hat{\phi}_\pi, \hat{\phi}_y$) satisfazem a desigualdade:
-
+Primeiro, avalia-se o cumprimento estrito do Princípio de Taylor via teste de Wald unilateral ($H_0: \phi_\pi \le 1$). Segundo, verifica-se a condição necessária e suficiente para a determinância do equilíbrio no modelo NK, dada pela desigualdade de \citeonline{bullard2002learning}:
 \begin{equation}
-    \kappa(\hat{\phi}_\pi - 1) + (1-\beta)\hat{\phi}_y > 0
+    \kappa(\hat{\phi}_\pi - 1) + (1-\beta)\hat{\phi}_y > 0.
+    \label{eq:bullard_mitra_empirica}
 \end{equation}
+Nesta expressão, os parâmetros profundos são calibrados para a economia brasileira seguindo \citeonline{kanczuk2004choques} e \citeonline{machado2014phillips}, assumindo-se valores consistentes com a frequência trimestral dos dados ($\beta \approx 0.985$, $\kappa \approx 0.05$).
 
-\noindent utilizando os parâmetros estruturais $\kappa$ e $\beta$ calibrados para a economia brasileira conforme \citeonline{kanczuk2004choques} e OUTRO AUTOR -- JUSTIFICAR.
-
-Por fim, para capturar a heterogeneidade da política monetária ao longo dos diferentes mandatos presidenciais descritos na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}, aplicamos o teste de quebra estrutural de Bai-Perron (\cite{bai1998estimating}; \cite{bai2003computation}). Esse procedimento permite identificar endogenamente os pontos de mudança nos parâmetros da regra de Taylor, validando estatisticamente a segmentação da amostra em subperíodos (Fraga, Meirelles, Tombini, Goldfajn, Campos Neto). A comparação dos coeficientes entre esses regimes permitirá inferir sobre a evolução da aversão à inflação e o compromisso com a determinância ao longo das últimas duas décadas.
-
-- JUSTIFICAR MELHOR, FIZ SÓ O RASCUNHO PRA ORGANIZAR A IDEIA.
+Por fim, para investigar a estabilidade dos parâmetros ao longo do tempo e validar a segmentação da amostra proposta na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}, aplica-se o teste de quebras estruturais endógenas de \citeonline{bai1998estimating} e \citeonline{bai2003computation}. Esse procedimento permite identificar, sem imposição a priori de datas, se as mudanças na condução da política monetária coincidem estatisticamente com as trocas de comando no Banco Central (Fraga, Meirelles, Tombini, Goldfajn, Campos Neto), oferecendo robustez à análise comparativa dos regimes de política.
 
 % ***********************************************************
 
