@@ -120,7 +120,7 @@ O problema de pesquisa que orienta este artigo pode ser sintetizado da seguinte 
 \subsection{Objetivos}
 \label{subsec:objetivos}
 
-Antes de explicitar os objetivos do estudo, é importante delimitar o escopo e a natureza da contribuição pretendida. Este artigo não tem como objetivo propor extensões teóricas ao arcabouço Novo-Keynesiano nem desenvolver uma nova regra de política monetária. Em vez disso, busca aplicar de forma rigorosa e transparente o modelo ao caso brasileiro, conforme apresentado na literatura e discutido ao longo da disciplina, combinando fundamentação teórica, evidência empírica e análise de determinância do equilíbrio.
+Antes de explicitar os objetivos do estudo, é importante delimitar o escopo e a natureza da contribuição pretendida. Por óbvio, este artigo não tem como objetivo propor extensões teóricas ao arcabouço Novo-Keynesiano nem desenvolver uma nova regra de política monetária. O que se busca é investigar empiricamente o modelo NK aplicado no contexto institucional brasileiro, conforme apresentado na revisão da literatura (seções 2 e 3) e discutido ao longo da disciplina, combinando fundamentação teórica, evidência empírica e análise de determinância do equilíbrio. O foco não é avaliar a optimalidade da política monetária brasileira, mas verificar se a reação estimada é compatível com a unicidade e estabilidade do equilíbrio no modelo Novo-Keynesiano.
 
 \subsubsection{Objetivo Geral}
 \label{subsubsec:objetivo_geral}
@@ -205,7 +205,7 @@ Apesar desses avanços robustos na caracterização das especificidades locais, 
 % ***********************************************************
 
 % ===========================================================
-\section{Arcabouço Teórico}
+\section{Arcabouço Formal do Modelo Novo-Keynesiano}
 % ===========================================================
 \label{sec:arcabouco_teorico}
 
@@ -535,7 +535,7 @@ Em específico, dada a natureza não observável do produto potencial, o hiato d
 \end{equation}
 onde $y_t$ denota o produto observado e $\tau_t$ sua tendência suavizada.
 
-Reconhecendo a sensibilidade das estimativas do hiato ao método empregado, a robustez dos resultados é avaliada por meio de especificações alternativas, incluindo o filtro de \citeonline{hamilton2018filtering}, tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil. Essa estratégia permite tratar explicitamente a incerteza de mensuração associada ao hiato do produto, avaliando a estabilidade qualitativa dos resultados empíricos frente a diferentes procedimentos de extração do componente cíclico, conforme discutido na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}.
+Reconhecendo a sensibilidade das estimativas do hiato ao método empregado, a robustez dos resultados econométricos é avaliada por meio de especificações alternativas, nas quais o hiato do produto é operacionalizado a partir do filtro de \citeonline{hamilton2018filtering}, de tendências determinísticas lineares e quadráticas, bem como de estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil. Essa estratégia permite tratar explicitamente a incerteza de mensuração associada ao hiato do produto, avaliando a estabilidade qualitativa dos resultados empíricos frente a diferentes procedimentos de extração do componente cíclico, conforme discutido na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}.
 
 % ///////////////////////////
 %% MODELAGEM ECONOMÉTRICA
@@ -582,7 +582,7 @@ Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{su
 \]
 de modo que \(\phi_\pi\) e \(\phi_y\) são coeficientes de reação de longo prazo à inflação e ao hiato. A estimação é realizada por MQO com matriz de covariância robusta de Newey--West, para acomodar heterocedasticidade e autocorrelação em \(u_t\) \cite{smith1994newey}.
 
-A escolha do método de estimação, inspirado em \citeonline{hubert2019role}, está diretamente relacionada à natureza informacional de cada especificação da regra de política monetária. No caso da regra \textit{backward-looking}, os regressores correspondem a variáveis contemporâneas ou defasadas observáveis no momento da decisão, de modo que, sob a hipótese padrão de que o erro de política representa um choque não antecipável, vale a condição de exogeneidade $E(u_t \mid \mathcal F_{t-1})=0$. Nessas circunstâncias, a estimação por MQO é consistente, sendo a correção de Newey--West suficiente para acomodar heterocedasticidade e autocorrelação serial no termo de erro \footnote{Note-se que, no contexto institucional brasileiro, a decisão do Copom é tomada com base em informações consolidadas referentes ao período anterior e em indicadores de inflação acumulada (ver: https://www.bcb.gov.br/controleinflacao/copom), de modo que a inflação corrente utilizada na estimação deve ser interpretada como observável e predeterminada no horizonte da decisão de política.}.
+A escolha do método de estimação, inspirado em \citeonline{hubert2019role}, está diretamente relacionada à natureza informacional de cada especificação da regra de política monetária. No caso da regra \textit{backward-looking}, os regressores correspondem a variáveis contemporâneas ou defasadas observáveis no momento da decisão, de modo que, sob a hipótese padrão de que o erro de política representa um choque não antecipável, vale a condição de exogeneidade $E(u_t \mid \mathcal F_{t-1})=0$. Nessas circunstâncias, a estimação por MQO é consistente, sendo a correção de Newey--West suficiente para acomodar heterocedasticidade e autocorrelação serial no termo de erro \footnote{Note-se que, no contexto institucional brasileiro, a decisão do Copom é tomada com base em informações consolidadas referentes ao período anterior e em indicadores de inflação acumulada (ver: https://www.bcb.gov.br/controleinflacao/copom), de modo que a inflação corrente utilizada na estimação deve ser interpretada como observável e predeterminada no horizonte da decisão de política. Saliente-se também que, ainda que a inflação corrente possa refletir revisões posteriores, a prática institucional do Copom e o uso de indicadores acumulados justificam sua interpretação como predeterminada no horizonte trimestral.}.
 
 % -----------------------------------------------------------
 \subsubsection{Regra \textit{forward-looking} (GMM)}
@@ -706,7 +706,7 @@ Os parâmetros de reação de longo prazo \(\phi_\pi\) e \(\phi_y\), derivados d
 
 Contudo, como esses parâmetros representam transformações não-lineares dos coeficientes estimados (p. ex.: \(\phi_\pi = \gamma_2/(1-\gamma_1)\)), a inferência estatística direta não é imediata. Para contornar isso, emprega-se o Método Delta, que aproxima a matriz de covariância assintótica dos parâmetros estruturais via expansão de Taylor de primeira ordem, viabilizando a construção dos erros-padrão e a realização dos testes de Wald subsequentes \cite{greene2003econometric}.
 
-Sendo assim, então se avalia o cumprimento do Princípio de Taylor por meio do teste de Wald unilateral:
+Sendo assim, então se avalia o cumprimento do Princípio de Taylor por meio do teste de Wald unilateral \footnote{Registre-se que o teste de Wald avalia evidência estatística, enquanto Bullard–Mitra avalia consistência estrutural do modelo.}:
 \begin{equation}
   H_0:\ \phi_\pi \le 1
   \qquad \text{,} \qquad
