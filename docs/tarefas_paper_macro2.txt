@@ -50,16 +50,26 @@ EXECUÇÃO
 
 * (x) Revisão Seções 1, 2, 3 e 4 - 18/12
 
-* ( ) Seção 5 / Metodologia - De 15 a 21/12/2025.
+* (x) Seção 5 / Metodologia - De 15 a 21/12/2025.
     [x] Intro - 19/12
-    [x] 5.1 intro - 19/12
-        [x] 5.1.1 - 20/12
-        [ ] 5.1.2
-    [ ] 5.2
-    [ ] 5.3
+    [x] 5.1 - 19/12
+    [x] 5.2 - 20/12
+    [x] 5.3 - 22/12
+    [x] 5.4 - 24/12
+        [x] 5.4.1 - 22/12
+        [x] 5.4.2 - 23/12
+        [x] 5.4.3 - 22/12
+        [x] 5.4.4 - 24/12
+    [x] 5.5 - 27/12
+        [x] 5.5.1 - 24/12
+        [x] 5.5.2 - 25/12
+        [x] 5.5.3 - 26/12
+        [x] 5.5.4 - 27/12
 
-* ( ) Codificar e Rodar modelos (R/Python) - De 27/12/2025 a 04/01/2026.
-* ( ) Seção 6 / Resultados - De 05/01 a 11/01/2026.
+* ( ) Seção 6 (código) / Codificar e Rodar modelos (Python) - De 27/12/2025 a 04/01/2026.
+    - De tão complexo, criei To Do próprio (tarefas_modelagem_secao_6.md)
+
+* ( ) Seção 6 (escrita) / Resultados - De 05/01 a 11/01/2026.
 
 %%% Talvez juntar seções 6 e 7 %%%
 
