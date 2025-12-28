@@ -744,42 +744,101 @@ Por fim, para investigar a estabilidade dos parâmetros ao longo do tempo e vali
 % ===========================================================
 \label{sec:resultados}
 
-% Explicar que vai usar Dynare para simular o modelo NK com os parâmetros estimados, pra ver as IRFs e comparar regimes determinantes e indeterminantes.
+Esta Seção apresenta os resultados empíricos da estimação das diferentes especificações da Regra de Taylor para a economia brasileira no período 1999--2024, bem como os testes associados ao Princípio de Taylor e à condição de determinância do equilíbrio no modelo Novo-Keynesiano. Em consonância com a estratégia empírica delineada na Seção~\ref{sec:metodologia}, os resultados são organizados de forma a distinguir entre as diferentes especificações econométricas, avaliar a robustez das estimativas a alternativas de mensuração do hiato do produto e explorar a estabilidade dos parâmetros ao longo do tempo.
 
+% -----------------------------------------------------------
 \subsection{Estimações da Regra de Taylor}
 \label{subsec:estimacoes_regra_taylor}
+% -----------------------------------------------------------
 
+Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nas subseções~\ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Para cada especificação, reportam-se os coeficientes estimados de curto prazo, bem como os parâmetros de reação de longo prazo à inflação e ao hiato do produto, obtidos a partir da reparametrização com suavização da taxa de juros.
+
+Em particular, as tabelas apresentam:
 \begin{itemize}
-    \item Tabelas com $\hat\phi_\pi$, $\hat\phi_y$, termo constante e, se incluída, inércia na taxa de juros.
-    \item Resultados para a amostra completa (1999--2024).
+    \item os coeficientes estimados das equações de juros, incluindo o termo constante e o grau de inércia da taxa de juros;
+    \item os parâmetros estruturais de longo prazo \(\hat{\phi}_\pi\) e \(\hat{\phi}_y\), acompanhados de erros-padrão e intervalos de confiança obtidos via Método Delta;
+    \item estatísticas de diagnóstico relevantes, incluindo, no caso das especificações estimadas por GMM, o teste de sobre-identificação de Hansen.
 \end{itemize}
 
+Os resultados são inicialmente discutidos para a amostra completa (1999--2024), permitindo uma avaliação agregada da reação sistemática da política monetária brasileira ao longo do regime de metas de inflação.
+
+% -----------------------------------------------------------
 \subsection{Teste do Princípio de Taylor}
 \label{subsec:teste_principio_taylor}
+% -----------------------------------------------------------
 
+Com base nos parâmetros de reação de longo prazo estimados, avalia-se o cumprimento do Princípio de Taylor por meio do teste de Wald unilateral, conforme descrito na Seção~\ref{subsubsec:principio_taylor_bullard_mitra}. Em particular, testa-se a hipótese nula de que o coeficiente de reação à inflação não excede a unidade, contra a alternativa de que a política monetária reage de forma mais que proporcional a desvios da inflação em relação à meta.
+
+A análise considera:
 \begin{itemize}
-    \item Verificação de $\hat\phi_\pi > 1$ na amostra completa.
-    \item Discussão sobre significância estatística e intervalos de confiança.
+    \item a significância estatística de \(\hat{\phi}_\pi\);
+    \item os intervalos de confiança associados, construídos a partir do Método Delta;
+    \item a consistência dos resultados entre diferentes especificações econométricas da regra de Taylor.
 \end{itemize}
 
+Essa evidência permite avaliar se, do ponto de vista estatístico, a condução da política monetária brasileira esteve alinhada ao Princípio de Taylor no período analisado.
+
+% -----------------------------------------------------------
+\subsection{Determinância e Condição de Bullard--Mitra}
+\label{subsec:resultados_bullard_mitra}
+% -----------------------------------------------------------
+
+Para além da evidência estatística fornecida pelo teste de Wald, a análise é aprofundada por meio da verificação da condição de determinância do equilíbrio no modelo Novo-Keynesiano. Seguindo Bullard e Mitra (2002), os pares estimados \((\hat{\phi}_\pi,\hat{\phi}_y)\) são inseridos na condição necessária e suficiente para a unicidade do equilíbrio e para a estabilidade sob aprendizagem.
+
+Essa abordagem permite distinguir entre:
+\begin{itemize}
+    \item evidência estatística de reação mais que proporcional à inflação;
+    \item consistência estrutural da regra monetária estimada com a determinância do equilíbrio.
+\end{itemize}
+
+Os resultados são apresentados para cada especificação da regra de Taylor, permitindo avaliar se a política monetária brasileira foi compatível com um regime determinante ao longo da amostra completa.
+
+% -----------------------------------------------------------
+\subsection{Robustez às Medidas do Hiato do Produto}
+\label{subsec:robustez_hiato}
+% -----------------------------------------------------------
+
+Reconhecendo a incerteza inerente à mensuração do hiato do produto, esta subseção avalia a robustez dos resultados empíricos a diferentes procedimentos de extração do componente cíclico do produto. Em particular, as estimações são replicadas utilizando medidas de hiato obtidas a partir do filtro Hodrick--Prescott, do filtro de Hamilton, de tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil.
+
+A comparação entre essas especificações permite verificar:
+\begin{itemize}
+    \item a estabilidade qualitativa dos coeficientes estimados;
+    \item a sensibilidade do cumprimento do Princípio de Taylor ao método de mensuração do hiato;
+    \item a robustez das conclusões sobre determinância frente a diferentes medidas do produto potencial.
+\end{itemize}
+
+% -----------------------------------------------------------
 \subsection{Resultados por Regimes de Política Monetária}
 \label{subsec:resultados_regimes_politica_monetaria}
+% -----------------------------------------------------------
 
+Por fim, investiga-se a estabilidade temporal da condução da política monetária por meio da estimação das regras de Taylor em subperíodos associados às diferentes presidências do Banco Central do Brasil (Fraga, Meirelles, Tombini, Goldfajn e Campos Neto). Essa segmentação permite analisar se a intensidade da reação da política monetária à inflação e ao hiato do produto variou sistematicamente ao longo do tempo.
+
+Em cada regime, são avaliados:
 \begin{itemize}
-    \item Estimações separadas por presidente do Banco Central: Fraga, Meirelles, Tombini, Goldfajn e Campos Neto.
-    \item Comparação dos coeficientes $\hat\phi_\pi$ e $\hat\phi_y$ entre regimes.
-    \item Identificação de mudanças na força da reação da política monetária ao longo do tempo.
-    \item Verificação do cumprimento (ou não) do Princípio de Taylor em cada regime.
-    \item Implicações para a condição de determinância do modelo em subperíodos distintos.
+    \item os coeficientes de reação estimados;
+    \item o cumprimento do Princípio de Taylor;
+    \item a compatibilidade da regra monetária com a condição de determinância do modelo.
 \end{itemize}
 
-\subsection{Simulações (Opcional)}
+Quando pertinente, os resultados são confrontados com evidência de quebras estruturais endógenas, conforme discutido na Seção~\ref{subsubsec:testes_determinancia_quebras}, de modo a avaliar a coerência entre mudanças institucionais e alterações estatisticamente identificáveis na condução da política monetária.
+
+% -----------------------------------------------------------
+\subsection{Implicações Dinâmicas e Simulações (Dynare)}
 \label{subsec:simulacoes_opcional}
+% -----------------------------------------------------------
+
+Como extensão da análise empírica, explora-se o comportamento dinâmico do modelo Novo-Keynesiano sob diferentes configurações da regra monetária estimada. Para esse fim, os parâmetros estimados são incorporados a um modelo NK calibrado para a economia brasileira, permitindo a análise das respostas a choques monetários e a comparação entre regimes determinantes e indeterminantes. As simulações dinâmicas utilizam exclusivamente os valores estimados dos parâmetros da regra de política monetária, tratados como exógenos ao modelo, com o objetivo de ilustrar as implicações dinâmicas associadas a regimes determinantes e indeterminantes.
+
+Essa análise tem caráter complementar e busca ilustrar as implicações dinâmicas das estimativas obtidas, sem pretensão de avaliar a optimalidade da política monetária. As simulações são conduzidas no ambiente Dynare, que facilita a resolução numérica de modelos DSGE e a geração de funções de resposta ao impulso. A análise concentra-se em:
 
 \begin{itemize}
-    \item IRFs para choques monetários sob diferentes valores de $\phi_\pi$ e $\phi_y$.
-    \item Comparação entre regimes determinantes e indeterminantes.
+    \item comparação das respostas da inflação, do hiato do produto e da taxa de juros a choques monetários sob diferentes regras de Taylor;
+    \item avaliação das diferenças dinâmicas entre regimes determinantes e indeterminantes;
+    \item ilustração das implicações práticas do cumprimento ou violação do Princípio de Taylor.
 \end{itemize}
+
+
 
 % ***********************************************************
 
