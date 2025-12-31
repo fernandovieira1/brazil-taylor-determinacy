@@ -5,39 +5,39 @@
 ---
 
 ## 0) Setup do projeto e convenções *(Seção 5 — abertura; Subsec. 5.3)*
-- [ ] Definir nomes:
-  - [ ] `selic` → `i_t`
-  - [ ] `ipca12` → `pi_t`
-  - [ ] `pib` / `ln_pib`
-  - [ ] `gap_*` (HP, Hamilton, TL, TQ, IFI, BCB)
-  - [ ] `focus_ipca` → proxy de `E_t pi_{t+1}`
+- [x] Definir nomes:
+  - [x] `selic` → `i_t`
+  - [x] `ipca12` → `pi_t`
+  - [x] `pib` / `ln_pib`
+  - [x] `gap_*` (HP, Hamilton, TL, TQ, IFI, BCB)
+  - [x] `focus_ipca` → proxy de `E_t pi_{t+1}`
 
 ---
 
 ## 1) Importação e padronização dos dados *(Subsec. 5.1 Bases de Dados)*
 ### 1.1 Importar séries brutas
-- [ ] Selic (SGS/BCB):
-  - [ ] baixar série (meta COPOM)
-  - [ ] padronizar nome: `selic`
-- [ ] Inflação (SGS/BCB ou IBGE):
-  - [ ] baixar IPCA mensal e/ou IPCA 12m
-  - [ ] padronizar nome: `ipca` e/ou `ipca12`
-- [ ] Expectativas (Focus):
-  - [ ] baixar série de expectativa IPCA (mediana)
-  - [ ] filtrar indicador `"IPCA"`
-  - [ ] padronizar nome: `focus_ipca`
-- [ ] PIB trimestral (SIDRA 1621):
-  - [ ] coletar índice encadeado (média 1999 = 100)
-  - [ ] padronizar nome: `pib`
+- [x] Selic (SGS/BCB):
+  - [x] baixar série (meta COPOM)
+  - [x] padronizar nome: `selic`
+- [x] Inflação (SGS/BCB ou IBGE):
+  - [x] baixar IPCA mensal e/ou IPCA 12m
+  - [x] padronizar nome: `ipca` e/ou `ipca12`
+- [x] Expectativas (Focus):
+  - [x] baixar série de expectativa IPCA (mediana)
+  - [x] filtrar indicador `"IPCA"`
+  - [x] padronizar nome: `focus_ipca`
+- [x] PIB trimestral (SIDRA 1621):
+  - [x] coletar índice encadeado (média 1999 = 100)
+  - [x] padronizar nome: `pib`
 
 ### 1.2 Limpeza de tipos e datas
-- [ ] Converter datas para `datetime`:
-  - [ ] `df["data"] = pd.to_datetime(df["data"])` ou `to_period("Q")`
-- [ ] Converter valores para `float`:
-  - [ ] `df["valor"] = df["valor"].astype(float)`
-- [ ] Ordenar e filtrar amostra:
-  - [ ] `df = df.sort_values("data")`
-  - [ ] `df = df[(df.data >= start) & (df.data <= end)]`
+- [x] Converter datas para `datetime`:
+  - [x] `df["data"] = pd.to_datetime(df["data"])` ou `to_period("Q")`
+- [x] Converter valores para `float`:
+  - [x] `df["valor"] = df["valor"].astype(float)`
+- [x] Ordenar e filtrar amostra:
+  - [x] `df = df.sort_values("data")`
+  - [x] `df = df[(df.data >= start) & (df.data <= end)]`
 
 ### 1.3 Construir dataframe master (grade trimestral)
 - [ ] Criar grade trimestral:
