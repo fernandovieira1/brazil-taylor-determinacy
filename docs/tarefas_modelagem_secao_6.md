@@ -40,14 +40,14 @@
   - [x] `df = df[(df.data >= start) & (df.data <= end)]`
 
 ### 1.3 Construir dataframe master (grade trimestral)
-- [ ] Criar grade trimestral:
-  - [ ] `grid = pd.period_range(start=start, end=end, freq="Q").to_timestamp()`
-- [ ] Inicializar `df_master = pd.DataFrame({"data": grid})`
-- [ ] Fazer merges (left join) das séries:
-  - [ ] Selic
-  - [ ] IPCA / IPCA12
-  - [ ] Focus
-  - [ ] PIB
+- [x] Criar grade trimestral:
+  - [x] `grid = pd.period_range(start=start, end=end, freq="Q").to_timestamp()`
+- [x] Inicializar `df_master = pd.DataFrame({"data": grid})`
+- [x] Fazer merges (left join) das séries:
+  - [x] Selic
+  - [x] IPCA / IPCA12
+  - [x] Focus
+  - [x] PIB
 - [ ] Checar NA e interseção temporal:
   - [ ] `df_master.isna().sum()`
   - [ ] cortar amostra comum (se necessário)
