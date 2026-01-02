@@ -331,7 +331,7 @@ onde \(i_t^*\) denota a taxa de juros alvo, e \(h_\pi\) e \(h_y\) representam, r
 \paragraph{Regra Híbrida com Suavização (Inércia)}
 \label{par:taylor_hibrida}
 
-Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de juros de forma gradual, evitando variações abruptas que poderiam amplificar a volatilidade macroeconômica e financeira. Para capturar esse comportamento, \citeonline{clarida2000monetary} propõem uma regra de política monetária com ajuste parcial, na qual a taxa nominal observada converge gradualmente para uma taxa-alvo implícita. Formalmente, define-se a taxa nominal alvo como:
+Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de juros de forma gradual, evitando variações abruptas que poderiam amplificar a volatilidade macroeconômica e financeira. Para capturar esse comportamento, \citeonline{clarida2000monetary} propõem uma regra de política monetária com ajuste parcial, na qual a taxa nominal observada converge gradualmente para uma taxa-alvo implícita. Formalmente, define-se a taxa nominal alvo ($i_t^*$) como:
 
 \begin{equation}
 i_t^* = \rho + \phi_\pi E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}],
@@ -343,7 +343,7 @@ enquanto a taxa efetivamente praticada pela autoridade monetária obedece à din
 i_t = \rho_i\, i_{t-1} + (1-\rho_i)i_t^* + \varepsilon_t,
 \label{eq:hibrida_dinamica}
 \end{equation}
-em que \(\rho_i \in [0,1)\) mede o grau de suavização da política monetária. Valores elevados de \(\rho_i\), tipicamente estimados entre 0{,}7 e 0{,}9, indicam forte persistência nos ajustes da taxa de juros, compatível com estratégias de gradualismo e gerenciamento de expectativas em um ambiente \textit{forward-looking}. Subtraindo a inflação esperada da taxa-alvo nominal, obtém-se a taxa real de juros alvo implícita,
+em que \(\rho_i \in [0,1)\) mede o grau de suavização da política monetária. Valores elevados de \(\rho_i\), tipicamente estimados entre 0{,}7 e 0{,}9, indicam forte persistência nos ajustes da taxa de juros, compatível com estratégias de gradualismo e gerenciamento de expectativas em um ambiente \textit{forward-looking}. Subtraindo a inflação esperada da taxa-alvo nominal, obtém-se a taxa real de juros alvo implícita ($r_t^*$):
 
 \begin{equation}
 r_t^* \equiv i_t^* - E_t[\pi_{t+h}] = \rho + (\phi_\pi - 1)E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}],

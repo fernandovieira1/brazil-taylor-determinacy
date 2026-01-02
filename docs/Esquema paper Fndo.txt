@@ -1,4 +1,5 @@
 
+====================================
 V1
 ====================================
 
@@ -21,16 +22,28 @@ Fechando este sistema todo, temos que:
 - A condição de Bullard--Mitra identifica quando o modelo NK básico possui equilíbrio único.
 - O método de Blanchard & Kahn é a ferramenta que os pesquisadores modernos usam para checar se a Regra de Taylor % funciona em um modelo teórico (determinância)
 
+====================================
 V2
 ====================================
 
 -------------------------------------
-1. Modelo NK
+1. Modelo NKPC
 -------------------------------------
-- O modelo NK é um “roteiro” da economia com três blocos:
-  - Firmas: escolhem preços com rigidez (Calvo) → geram a curva de Phillips nova (inflação depende do ciclo e das expectativas).
-  - Famílias: escolhem consumo hoje versus amanhã (Euler) → geram a equação IS dinâmica (hiato responde ao juro real esperado).
-  - Banco Central: ajusta a taxa de juros seguindo uma regra de resposta à inflação e ao hiato (Regra de Taylor).
+- O modelo DSGE é um “roteiro” da economia com três blocos:
+
+  (i)   Firmas (Phillips / NKPC): escolhem preços com rigidez (Calvo) → geram a curva de Phillips nova (inflação depende do ciclo e das expectativas). 
+      * A NKPC resulta de: Rigidez nominal + Demanda agregada + Condição de market clearing.
+
+  (ii)  Famílias (IS Dinâmica): escolhem consumo hoje versus amanhã (Euler) → geram a equação IS dinâmica (hiato responde ao juro real esperado).
+      * A IS NK não vem de investimento ou gasto (demanda clássica). Ela vem da equação de Euler do consumo.
+      * O juro relevante é o juro real esperado em desvio da taxa natural.
+
+  (iii) Banco Central (Taylor): ajusta a taxa de juros seguindo uma regra de resposta à inflação e ao hiato (Regra de Taylor).
+      * Sem ela, o sistema IS–NKPC é indeterminado.
+      * Com ela, surge o Princípio de Taylor e entram:
+          + Blanchard–Kahn (determinância-equilíbrio único);
+          + Bullard–Mitra (determinância única no LP: zona segura).
+      * Ela é o mecanismo de fechamento dinâmico.
 
 -------------------------------------
 2. Regra de Taylor
