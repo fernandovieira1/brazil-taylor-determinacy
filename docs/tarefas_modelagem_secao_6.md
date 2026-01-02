@@ -48,12 +48,12 @@
   - [x] IPCA / IPCA12
   - [x] Focus
   - [x] PIB
-- [ ] Checar NA e interseção temporal:
+- [x] Checar NA e interseção temporal:
   - [ ] `df_master.isna().sum()`
   - [ ] cortar amostra comum (se necessário)
 
-- [ ] Salvar base processada:
-  - [ ] `/dados/processed/master_trimestral.parquet`
+- [x] Salvar base processada:
+  - [x] `/dados/processed/master_trimestral.parquet`
 
 ---
 

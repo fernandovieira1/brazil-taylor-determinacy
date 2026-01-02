@@ -232,9 +232,9 @@ A NKPC evidencia dois mecanismos centrais. Primeiro, a inflação é um fenômen
 
 O coeficiente $\kappa$ mede a sensibilidade da inflação ao ciclo econômico e é determinado estruturalmente por:
 \begin{equation}
-\kappa \equiv \lambda \left(\frac{\sigma(1-\alpha)+\varphi+\alpha}{1-\alpha}\right),
+\kappa \equiv \lambda \left(\frac{\sigma(1-\alpha)+\varphi+\alpha}{1-\alpha}\right)
 \qquad
-\lambda \equiv \frac{(1-\theta)(1-\beta\theta)}{\theta},
+\lambda \equiv \frac{(1-\theta)(1-\beta\theta)}{\theta}
 \end{equation}
 onde $\sigma$ é o inverso da elasticidade intertemporal de substituição do consumo, $\varphi$ é o inverso da elasticidade de Frisch da oferta de trabalho e $\alpha$ mede a participação do capital na função de produção (com rendimentos constantes de escala), de modo que $1-\alpha$ corresponde à participação do trabalho.
 
@@ -249,7 +249,7 @@ A demanda agregada do modelo é descrita pela Equação IS Dinâmica, que relaci
 Formalmente, a maximização da utilidade intertemporal das famílias implica que o consumo corrente depende negativamente da taxa de juros real ex-ante e positivamente do consumo esperado para o futuro (suavização do consumo). Reescrevendo essa condição em termos de desvios do estado estacionário e expressando o produto em função de seu nível natural, chega-se à seguinte expressão para o hiato do produto:
 
 \begin{equation}
-\tilde{y}_t = E_t \tilde{y}_{t+1} - \frac{1}{\sigma} \big( i_t - E_t \pi_{t+1} - r_t^n \big),
+\tilde{y}_t = E_t \tilde{y}_{t+1} - \frac{1}{\sigma} \big( i_t - E_t \pi_{t+1} - r_t^n \big)
 \label{eq:dis}
 \end{equation}
 
@@ -281,9 +281,9 @@ A condução da política monetária no modelo Novo-Keynesiano (NK) é tipicamen
 
 O Princípio de Taylor estabelece uma condição fundamental para a estabilidade macroeconômica sob uma regra de juros: o banco central deve ajustar a taxa de juros nominal mais que proporcionalmente a variações na inflação esperada, de modo que a taxa de juros real se eleve quando há pressões inflacionárias. Formalmente, considerando a regra de juros
 \[
-i_t = \rho + \phi_\pi E_t\pi_{t+1} + \phi_y \tilde{y}_t,
+i_t = \rho + \phi_\pi E_t\pi_{t+1} + \phi_y \tilde{y}_t
 \]
-o Princípio de Taylor requer que \(\phi_\pi > 1\). Em sua forma mais simples, esta condição assegura a determinação do equilíbrio e evita flutuações auto-realizáveis (\textit{sunspot fluctuations}), ao garantir que aumentos na inflação esperada sejam acompanhados por elevações mais que proporcionais da taxa de juros nominal.
+O Princípio de Taylor requer que \(\phi_\pi > 1\). Em sua forma mais simples, esta condição assegura a determinação do equilíbrio e evita flutuações auto-realizáveis (\textit{sunspot fluctuations}), ao garantir que aumentos na inflação esperada sejam acompanhados por elevações mais que proporcionais da taxa de juros nominal.
 
 A intuição por trás deste princípio é direta: quando \(\phi_\pi < 1\), um aumento na inflação esperada leva o banco central a elevar a taxa nominal em magnitude insuficiente, resultando em queda da taxa real de juros \(r_t = i_t - E_t\pi_{t+1}\). Esta redução estimula a demanda agregada, validando e amplificando as expectativas inflacionárias iniciais. Em contraste, quando \(\phi_\pi > 1\), o banco central eleva a taxa real de juros, contraindo a demanda e contribuindo para a estabilização da inflação. Em modelos mais gerais, com resposta explícita ao hiato do produto e regras antecipativas, a condição de determinância passa a depender de combinações entre \(\phi_\pi\), \(\phi_y\), \(\kappa\) e \(\beta\), conforme discutido por \citeonline{bullard2002learning}. 
 
@@ -301,7 +301,7 @@ Consideramos três especificações principais da regra de juros, que diferem qu
 
 A formulação original de \citeonline{taylor1993} especifica a taxa de juros como função da inflação corrente e do hiato do produto corrente:
 \[
-i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t,
+i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t
 \]
 onde \(\rho\) é a taxa de juros real de equilíbrio, \(\pi_t\) é a taxa de inflação no período \(t\), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes — \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) — calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}.
 
@@ -311,32 +311,31 @@ onde \(\rho\) é a taxa de juros real de equilíbrio, \(\pi_t\) é a taxa de inf
 
 De forma alternativa, \citeonline{clarida2000monetary} argumentam que a política monetária deve ser descrita por uma regra \textit{forward-looking}, na qual o banco central responde não à inflação e ao hiato do produto correntes, mas às suas expectativas:
 \[
-i_t^* = \rho + \phi_\pi E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q} + \varepsilon_t,
+i_t^* = \rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}] + \varepsilon_t
 \]
-onde \(i_t^*\) denota a taxa de juros alvo, e \(k\) e \(q\) representam os horizontes de previsão para inflação e produto, respectivamente. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. Na prática, a literatura frequentemente assume \(k=q=1\), embora horizontes mais longos possam ser considerados.
+onde \(i_t^*\) denota a taxa de juros alvo, e \(h\) representa os horizontes de previsão para inflação e produto, respectivamente. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
 
 \paragraph{Regra com Suavização de Juros}
 \label{par:regra_taylor_suavizacao}
 
 Evidências empíricas indicam que bancos centrais ajustam suas taxas de juros de forma gradual, evitando mudanças abruptas. Para capturar este comportamento, \citeonline{clarida2000monetary} propõem uma especificação com suavização parcial:
 \[
-i_t = \theta i_{t-1} + (1-\theta)\left[\rho + \phi_\pi E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q}\right] + \varepsilon_t,
+i_t = \theta i_{t-1} + (1-\theta)\left(\rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}]\right) + \varepsilon_t
 \]
 onde \(\theta \in [0,1)\) captura o grau de suavização. Quando \(\theta = 0\), recupera-se a regra sem inércia; quando \(\theta\) é próximo de 1, observa-se forte persistência nos ajustes da taxa de juros.
 
 Complementando o que foi discutido na Seção~\ref{sec:regras_politica_estabilidade}, \citeonline{clarida2000monetary} estimam valores de \(\theta\) entre 0.7 e 0.9 para os Estados Unidos, sugerindo substancial gradualismo na condução da política monetária. A suavização pode refletir incerteza quanto aos efeitos da política, preocupação com a volatilidade dos mercados financeiros ou ainda uma estratégia ótima para o gerenciamento das expectativas em um ambiente \textit{forward-looking}.
 
-\subsubsection{Regra Híbrida e Interpretação da Taxa Real Alvo}
-\label{subsubsec:taylor_hibrida}
-\label{subsec:taylor_hibrida}
+\paragraph{Regra Híbrida e Interpretação da Taxa Real Alvo}
+\label{par:taylor_hibrida}
 
 Combinando as características anteriores, a regra híbrida mais geral pode ser escrita como:
 \[
-i_t = \theta i_{t-1} + (1-\theta)\left[\rho + \phi_\pi E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q}\right] + \varepsilon_t.
+i_t = \theta i_{t-1} + (1-\theta)\left(\rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}]\right) + \varepsilon_t
 \]
-Definindo a taxa real de juros alvo implícita na regra como \(r_t^* \equiv i_t^* - E_t\pi_{t+k}\), obtém-se:
+Definindo a taxa real de juros alvo implícita na regra como \(r_t^* \equiv i_t^* - E_t\pi_{t+h}\), obtém-se:
 \[
-r_t^* = \rho + (\phi_\pi - 1)E_t\pi_{t+k} + \phi_y E_t\tilde{y}_{t+q}.
+r_t^* = \rho + (\phi_\pi - 1)E_t\pi_{t+h} + \phi_y E_t\tilde{y}_{t+h}
 \]
 
 Na prática, e em linha com grande parte da literatura empírica, adota-se frequentemente \(k=1\), caso em que \(E_t\pi_{t+k}=E_t\pi_{t+1}\). Note-se que \(r_t^*\) não corresponde, em geral, à taxa natural de juros no sentido wickselliano (isto é, à taxa real consistente com inflação estável e com o produto em seu nível natural, determinada exclusivamente por fatores reais da economia), mas à taxa real induzida pela reação sistemática da política monetária. Esta expressão evidencia o papel central do Princípio de Taylor: quando \(\phi_\pi > 1\), um aumento na inflação esperada eleva a taxa real de juros, produzindo efeito contracionista; quando \(\phi_\pi < 1\), a política torna-se acomodatícia, com a taxa real caindo em resposta a pressões inflacionárias.
@@ -354,7 +353,7 @@ A existência de um equilíbrio único e estável no modelo Novo-Keynesiano depe
 Para o modelo NK linearizado sob uma regra de Taylor que responde a variáveis contemporâneas, uma condição padrão para determinância local e estabilidade sob aprendizagem, conforme \citeonline{bullard2002learning}, é dada por:
 
 \[
-\kappa(\phi_\pi - 1) + (1-\beta)\phi_y > 0.
+\kappa(\phi_\pi - 1) + (1-\beta)\phi_y > 0
 \]
 
 Nesta inequação, derivada da análise dos autovalores da matriz $A_T$ do sistema dinâmico, $\kappa$ representa a inclinação da Curva de Phillips Novo-Keynesiana e $\beta$ o fator de desconto intertemporal. A condição estabelece um \textit{trade-off} entre a resposta à inflação ($\phi_\pi$) e ao hiato do produto ($\phi_y$). O Princípio de Taylor, caracterizado por $\phi_\pi > 1$, é uma condição suficiente para a determinância sempre que $\phi_y \geq 0$, garantindo que a taxa de juros real suba diante de pressões inflacionárias, o que contrai a demanda agregada e estabiliza os preços.
@@ -507,6 +506,8 @@ A estratégia empírica fundamenta-se no arcabouço teórico apresentado nas Se�
 
 A base de dados foi construída a partir de fontes oficiais \footnote{O meio de captura dos dados se deu via bibliotecas Python (sidrapy e python-bcb).}. As séries referentes à política monetária e expectativas têm como origem o Sistema Gerenciador de Séries Temporais (SGS) do Banco Central do Brasil (Bacen), abrangendo o histórico da meta da taxa Selic e as medianas diárias do Sistema Expectativas de Mercado (Focus). Os dados de atividade econômica e preços provêm do Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente as séries históricas do Índice Nacional de Preços ao Consumidor Amplo (IPCA) e os números índices do Produto Interno Bruto (PIB). Complementarmente, indicadores de atividade auxiliar e métricas de hiato calculadas por instituições independentes (como o IFI) e pelo próprio corpo técnico do Banco Central foram considerados para fins de robustez. A amostra cobre o período de consolidação do regime de metas, estendendo-se de janeiro de 1999 até dezembro de 2024, englobando diversos ciclos de aperto e relaxamento monetário sob diferentes administrações da autoridade monetária, consoante contetualização feita na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}.
 
+Por este norte, cada especificação é estimada na maior subamostra equilibrada compatível com os requisitos de informação do modelo. Em particular, as regras prospectivas e híbridas são estimadas a partir do primeiro trimestre de 2000, refletindo a disponibilidade de dados sobre expectativas de inflação.
+
 % -----------------------------------------------------------
 \subsection{Variáveis}
 % -----------------------------------------------------------
@@ -574,7 +575,7 @@ Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato
 \end{equation}
 onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\), dado que o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$. Neste sentido, a condição $E(u_t \mid \mathcal{F}_{t-1}) = 0$ implica que o erro de política captura apenas choques não antecipáveis à luz da informação disponível antes da decisão do Copom.
 
-Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{subsec:taylor_hibrida}) permite interpretar
+Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{par:taylor_hibrida}) permite interpretar
 \[
 \rho = \beta_1,\qquad
 \phi_\pi = \frac{\beta_2}{1-\beta_1},\qquad
@@ -623,7 +624,7 @@ de modo que \(\phi_\pi\) e \(\phi_y\) podem ser diretamente avaliados à luz das
 \label{subsubsec:regra_hibrida_suavizacao_gmm}
 % -----------------------------------------------------------
 
-Além das especificações puramente retrospectiva e prospectiva, estima-se uma regra híbrida de política monetária que permite capturar simultaneamente a resposta da autoridade monetária à inflação corrente, às expectativas de inflação futura e ao hiato do produto, bem como a presença de suavização da taxa de juros. Essa formulação está diretamente alinhada à regra teórica híbrida discutida na Seção~\ref{subsec:taylor_hibrida} e reflete a estrutura informacional implícita nas equações \textit{forward-looking} da NKPC e da equação IS apresentadas nas Seções~\ref{subsec:nkpc} e~\ref{subsec:is_dinamica}.
+Além das especificações puramente retrospectiva e prospectiva, estima-se uma regra híbrida de política monetária que permite capturar simultaneamente a resposta da autoridade monetária à inflação corrente, às expectativas de inflação futura e ao hiato do produto, bem como a presença de suavização da taxa de juros. Essa formulação está diretamente alinhada à regra teórica híbrida discutida na Seção~\ref{par:taylor_hibrida} e reflete a estrutura informacional implícita nas equações \textit{forward-looking} da NKPC e da equação IS apresentadas nas Seções~\ref{subsec:nkpc} e~\ref{subsec:is_dinamica}.
 
 A equação estimada assume a seguinte forma:
 \begin{equation}
