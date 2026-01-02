@@ -83,7 +83,7 @@ Rafaela Dezidério Rocha
 \thispagestyle{empty}
 
 \begin{abstract}
-MUDAR DEPOIS DE TERMINAR - Este artigo investiga em que medida a política monetária brasileira, sob o regime de metas de inflação vigente desde 1999, tem seguido regras compatíveis com o Princípio de Taylor e com a determinância do equilíbrio em modelos Novo-Keynesianos. O estudo estima diferentes especificações da Regra de Taylor — \textit{backward-looking}, \textit{forward-looking} no estilo Clarida--Galí--Gertler e versões híbridas com suavização da taxa de juros — utilizando dados da taxa Selic, inflação (IPCA), hiato do produto e expectativas de inflação (Focus), no período 1999--2024. A metodologia combina MQO com erros robustos, GMM com instrumentos defasados, testes de quebras estruturais (Bai--Perron) e avaliação formal da condição de Bullard--Mitra, que relaciona os parâmetros estimados à determinância do modelo Novo-Keynesiano. Os resultados permitem identificar se, e em quais subperíodos, a reação da política monetária à inflação foi suficientemente forte ($\phi_\pi > 1$) para garantir unicidade do equilíbrio e ancoragem das expectativas. A contribuição central do artigo consiste em estabelecer um diálogo sistemático entre o arcabouço Novo-Keynesiano e a experiência brasileira recente, destacando como diferentes regimes de política monetária se relacionam com a estabilidade nominal e a credibilidade do Banco Central - MUDAR DEPOIS DE TERMINAR.
+MUDAR DEPOIS DE TERMINAR - Este artigo investiga em que medida a política monetária brasileira, sob o regime de metas de inflação vigente desde 1999, tem seguido regras compatíveis com o Princípio de Taylor e com a determinância do equilíbrio em modelos Novo-Keynesianos. O estudo estima diferentes especificações da Regra de Taylor -- \textit{backward-looking}, \textit{forward-looking} no estilo Clarida--Galí--Gertler e versões híbridas com suavização da taxa de juros -- utilizando dados da taxa Selic, inflação (IPCA), hiato do produto e expectativas de inflação (Focus), no período 1999--2024. A metodologia combina MQO com erros robustos, GMM com instrumentos defasados, testes de quebras estruturais (Bai--Perron) e avaliação formal da condição de Bullard--Mitra, que relaciona os parâmetros estimados à determinância do modelo Novo-Keynesiano. Os resultados permitem identificar se, e em quais subperíodos, a reação da política monetária à inflação foi suficientemente forte ($\phi_\pi > 1$) para garantir unicidade do equilíbrio e ancoragem das expectativas. A contribuição central do artigo consiste em estabelecer um diálogo sistemático entre o arcabouço Novo-Keynesiano e a experiência brasileira recente, destacando como diferentes regimes de política monetária se relacionam com a estabilidade nominal e a credibilidade do Banco Central - MUDAR DEPOIS DE TERMINAR.
 \end{abstract}
 
 \pagestyle{plain}
@@ -290,6 +290,7 @@ O Princípio de Taylor estabelece uma condição fundamental para a estabilidade
 
 \begin{equation}
 i_t = \rho + \phi_\pi E_t\pi_{t+1} + \phi_y \tilde{y}_t,
+\label{eq:principio_taylor}
 \end{equation}
 o Princípio de Taylor requer que \(\phi_\pi > 1\). Em sua forma mais simples, esta condição assegura a determinação do equilíbrio e evita flutuações auto-realizáveis (\textit{sunspot fluctuations}), ao garantir que aumentos na inflação esperada sejam acompanhados por elevações mais que proporcionais da taxa de juros nominal.
 
@@ -301,7 +302,7 @@ Cabe notar que, em modelos novo-keynesianos com expectativas racionais, a introd
 \subsubsection{Especificações da Regra de Taylor}
 \label{subsubsec:especificacoes_regra_taylor}
 
-Consideramos três especificações principais da regra de juros, que diferem quanto ao horizonte de previsão e ao grau de inércia da taxa de juros. \footnote{A notação das equações declaradas a seguir foi levemente modificada para manter a consistência com o que foi escrito no artigo, mas sem alteração do sentido original. Em suma, a equação da regra em~\ref{par:regra_taylor_backward} segue a equação (1) de \citeonline{taylor1993}, e as equações das regras descritas em~\ref{par:regra_taylor_forward} e em~\ref{par:taylor_hibrida} seguem respectivamente as equações (9) e (10) de \citeonline{clarida2000monetary}.}
+Consideramos três especificações principais da regra de juros, que diferem quanto ao horizonte de previsão e ao grau de inércia da taxa de juros. \footnote{A notação das equações declaradas a seguir foi levemente modificada para manter a consistência com o que foi escrito nas diferentes partes deste artigo, mas sem alteração dos sentidos originais. Em suma, a equação~\ref{eq:taylor_backward} em~\ref{par:regra_taylor_backward} segue a equação (1) de \citeonline{taylor1993}; as equações \ref{eq:taylor_forward} em~\ref{par:regra_taylor_forward}, e \ref{eq:hibrida_alvo}, \ref{eq:hibrida_dinamica} e \ref{eq:hibrida_real_alvo} em~\ref{par:taylor_hibrida} seguem respectivamente as equações (1), (2) de \citeonline{clarida2000monetary}.}
 
 \paragraph{Regra \textit{Backward-Looking}}
 \label{par:regra_taylor_backward}
@@ -311,8 +312,9 @@ A formulação original de \citeonline{taylor1993} especifica a taxa de juros co
 
 \begin{equation}
 i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t,
+\label{eq:taylor_backward}
 \end{equation}
-onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes — \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) — calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}.
+onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes -- \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) -- calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}.
 
 \paragraph{Regra \textit{Forward-Looking}}
 \label{par:regra_taylor_forward}
@@ -322,6 +324,7 @@ De forma alternativa, \citeonline{clarida2000monetary} argumentam que a polític
 
 \begin{equation}
 i_t^* = \rho + \phi_\pi E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}] + \varepsilon_t,
+\label{eq:taylor_forward}
 \end{equation}
 onde \(i_t^*\) denota a taxa de juros alvo, e \(h_\pi\) e \(h_y\) representam, respectivamente, os horizontes de previsão para inflação e produto. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
 
@@ -332,16 +335,19 @@ Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de jur
 
 \begin{equation}
 i_t^* = \rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}],
+\label{eq:hibrida_alvo}
 \end{equation}
 enquanto a taxa efetivamente praticada pela autoridade monetária obedece à dinâmica
 
 \begin{equation}
 i_t = \rho_i\, i_{t-1} + (1-\rho_i)i_t^* + \varepsilon_t,
+\label{eq:hibrida_dinamica}
 \end{equation}
 em que \(\rho_i \in [0,1)\) mede o grau de suavização da política monetária. Valores elevados de \(\rho_i\), tipicamente estimados entre 0{,}7 e 0{,}9, indicam forte persistência nos ajustes da taxa de juros, compatível com estratégias de gradualismo e gerenciamento de expectativas em um ambiente \textit{forward-looking}. Subtraindo a inflação esperada da taxa-alvo nominal, obtém-se a taxa real de juros alvo implícita,
 
 \begin{equation}
 r_t^* \equiv i_t^* - E_t[\pi_{t+h}] = \rho + (\phi_\pi - 1)E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}],
+\label{eq:hibrida_real_alvo}
 \end{equation}
 a qual não deve ser confundida com a taxa natural de juros no sentido wickselliano (ver~\ref{subsec:is_dinamica}), mas sim interpretada como a taxa real induzida pela reação sistemática da política monetária.
 
