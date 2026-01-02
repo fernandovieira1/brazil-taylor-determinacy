@@ -301,7 +301,7 @@ Cabe notar que, em modelos novo-keynesianos com expectativas racionais, a introd
 \subsubsection{Especificações da Regra de Taylor}
 \label{subsubsec:especificacoes_regra_taylor}
 
-Consideramos três especificações principais da regra de juros, que diferem quanto ao horizonte de previsão e ao grau de inércia da taxa de juros.
+Consideramos três especificações principais da regra de juros, que diferem quanto ao horizonte de previsão e ao grau de inércia da taxa de juros. \footnote{A notação das equações declaradas a seguir foi levemente modificada para manter a consistência com o que foi escrito no artigo, mas sem alteração do sentido original. Em suma, a equação da regra em~\ref{par:regra_taylor_backward} segue a equação (1) de \citeonline{taylor1993}, e as equações das regras descritas em~\ref{par:regra_taylor_forward} e em~\ref{par:taylor_hibrida} seguem respectivamente as equações (9) e (10) de \citeonline{clarida2000monetary}.}
 
 \paragraph{Regra \textit{Backward-Looking}}
 \label{par:regra_taylor_backward}
@@ -312,7 +312,7 @@ A formulação original de \citeonline{taylor1993} especifica a taxa de juros co
 \begin{equation}
 i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t,
 \end{equation}
-onde \(\rho\) é a taxa de juros real de equilíbrio, \(\pi_t\) é a taxa de inflação no período \(t\), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes — \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) — calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}.
+onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes — \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) — calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}.
 
 \paragraph{Regra \textit{Forward-Looking}}
 \label{par:regra_taylor_forward}
@@ -321,9 +321,9 @@ onde \(\rho\) é a taxa de juros real de equilíbrio, \(\pi_t\) é a taxa de inf
 De forma alternativa, \citeonline{clarida2000monetary} argumentam que a política monetária deve ser descrita por uma regra \textit{forward-looking}, na qual o banco central responde não à inflação e ao hiato do produto correntes, mas às suas expectativas:
 
 \begin{equation}
-i_t^* = \rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}] + \varepsilon_t,
+i_t^* = \rho + \phi_\pi E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}] + \varepsilon_t,
 \end{equation}
-onde \(i_t^*\) denota a taxa de juros alvo, e \(h\) representa os horizontes de previsão para inflação e produto, respectivamente. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
+onde \(i_t^*\) denota a taxa de juros alvo, e \(h_\pi\) e \(h_y\) representam, respectivamente, os horizontes de previsão para inflação e produto. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
 
 \paragraph{Regra Híbrida com Suavização (Inércia)}
 \label{par:taylor_hibrida}
@@ -336,23 +336,22 @@ i_t^* = \rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}],
 enquanto a taxa efetivamente praticada pela autoridade monetária obedece à dinâmica
 
 \begin{equation}
-i_t = \theta i_{t-1} + (1-\theta)i_t^* + \varepsilon_t,
+i_t = \rho_i\, i_{t-1} + (1-\rho_i)i_t^* + \varepsilon_t,
 \end{equation}
-em que \(\theta \in [0,1)\) mede o grau de suavização da política monetária. Valores elevados de \(\theta\), tipicamente estimados entre 0{,}7 e 0{,}9, indicam forte persistência nos ajustes da taxa de juros, compatível com estratégias de gradualismo e gerenciamento de expectativas em um ambiente \textit{forward-looking}. Subtraindo a inflação esperada da taxa-alvo nominal, obtém-se a taxa real de juros alvo implícita,
+em que \(\rho_i \in [0,1)\) mede o grau de suavização da política monetária. Valores elevados de \(\rho_i\), tipicamente estimados entre 0{,}7 e 0{,}9, indicam forte persistência nos ajustes da taxa de juros, compatível com estratégias de gradualismo e gerenciamento de expectativas em um ambiente \textit{forward-looking}. Subtraindo a inflação esperada da taxa-alvo nominal, obtém-se a taxa real de juros alvo implícita,
 
 \begin{equation}
 r_t^* \equiv i_t^* - E_t[\pi_{t+h}] = \rho + (\phi_\pi - 1)E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}],
 \end{equation}
-a qual não deve ser confundida com a taxa natural de juros no sentido wickselliano (ver~\ref{subsec:is_dinamica}), mas sim interpretada como a taxa real induzida pela reação sistemática da política monetária. 
+a qual não deve ser confundida com a taxa natural de juros no sentido wickselliano (ver~\ref{subsec:is_dinamica}), mas sim interpretada como a taxa real induzida pela reação sistemática da política monetária.
 
-Essa expressão torna explícito o Princípio de Taylor: quando \(\phi_\pi > 1\), aumentos na inflação esperada elevam a taxa real de juros, produzindo um efeito contracionista compatível com a estabilização macroeconômica; quando \(\phi_\pi < 1\), a política monetária torna-se acomodatícia, com queda da taxa real diante de pressões inflacionárias. No contexto do modelo Novo-Keynesiano, essa regra desempenha o papel de fechamento do sistema dinâmico formado pela Curva de Phillips Novo-Keynesiana e pela equação IS, sendo sua capacidade de assegurar um equilíbrio localmente único e estável condicionada aos parâmetros estimados e à estrutura expectacional do modelo. Ademais, a presença de expectativas racionais e a potencial endogeneidade das variáveis explicativas motivam a estimação dessa regra por meio de métodos baseados em momentos, como o GMM, tema explorado nas seções subsequentes ao tratar das condições de determinância à luz dos critérios de \citeonline{blanchard1980solution} e de \citeonline{bullard2002learning}.
+Essa expressão torna explícito o Princípio de Taylor: quando \(\phi_\pi > 1\), aumentos na inflação esperada elevam a taxa real de juros, produzindo um efeito contracionista compatível com a estabilização macroeconômica; quando \(\phi_\pi < 1\), a política monetária torna-se acomodatícia, com queda da taxa real diante de pressões inflacionárias. No contexto do modelo Novo-Keynesiano, essa regra desempenha o papel de fechamento do sistema dinâmico formado pela Curva de Phillips Novo-Keynesiana e pela equação IS, sendo sua capacidade de assegurar um equilíbrio localmente único e estável condicionada aos parâmetros estimados e à estrutura expectacional do modelo. Ademais, a presença de expectativas racionais e o uso de variáveis (ou expectativas) potencialmente endógenas ao conjunto de informação dos agentes motivam a estimação dessa regra por meio de métodos baseados em momentos, como o GMM, tema explorado nas seções subsequentes ao tratar das condições de determinância à luz dos critérios de \citeonline{blanchard1980solution} e de \citeonline{bullard2002learning}.
 
 \paragraph{Resumo das Especificações da Regra de Taylor}
 
-A análise empírica considera três classes de regras de política monetária, amplamente utilizadas na literatura Novo-Keynesiana. A especificação \textit{\textbf{backward-looking}} modela a taxa de juros nominal como resposta \textbf{contemporânea} à inflação observada e ao hiato do produto, capturando um comportamento reativo baseado em informações \textit{ex post}. A versão \textit{\textbf{forward-looking}}, por sua vez, incorpora \textbf{expectativas racionais}, fazendo a autoridade monetária reagir às projeções futuras de inflação e atividade econômica. 
+A análise empírica considera três classes de regras de política monetária, amplamente utilizadas na literatura Novo-Keynesiana. A especificação \textit{\textbf{backward-looking}} modela a taxa de juros nominal como resposta \textbf{contemporânea} à inflação observada e ao hiato do produto, capturando um comportamento reativo baseado em informações observadas. A versão \textit{\textbf{forward-looking}}, por sua vez, incorpora \textbf{expectativas racionais}, fazendo a autoridade monetária reagir às projeções futuras de inflação e atividade econômica. 
 
-A regra \textit{\textbf{híbrida}} com suavização generaliza essas formulações ao introduzir \textbf{inércia} na taxa de juros, por meio de um mecanismo de \textbf{ajuste parcial em torno de uma taxa-alvo implícita}. Nessa estrutura, a regra \textit{forward-looking} define o alvo da política monetária, enquanto o parâmetro de suavização governa a velocidade de convergência da taxa efetiva a esse alvo. Tal especificação, permite reconciliar o caráter prospectivo da política monetária com o gradualismo observado empiricamente, sem alterar o conteúdo informacional do Princípio de Taylor, que permanece associado à reação da taxa-alvo à inflação esperada \cite{clarida2000monetary}. 
-
+A regra \textit{\textbf{híbrida}} com suavização generaliza essas formulações ao introduzir \textbf{inércia} na taxa de juros, por meio de um mecanismo de \textbf{ajuste parcial em torno de uma taxa-alvo implícita}. Nessa estrutura, a regra \textit{forward-looking} define o alvo da política monetária, enquanto o parâmetro de suavização governa a velocidade de convergência da taxa efetiva a esse alvo. Tal especificação permite reconciliar o caráter prospectivo da política monetária com o gradualismo observado empiricamente, sem alterar o conteúdo informacional do Princípio de Taylor, que permanece associado à reação da taxa-alvo à inflação esperada \cite{clarida2000monetary}. 
 
 % -----------------------------------------------------------
 \subsection{Condições de Determinância}
