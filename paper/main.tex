@@ -296,7 +296,7 @@ O Princípio de Taylor requer que \(\phi_\pi > 1\). Em sua forma mais simples, e
 
 A intuição por trás deste princípio é direta: quando \(\phi_\pi < 1\), um aumento na inflação esperada leva o banco central a elevar a taxa nominal em magnitude insuficiente, resultando em queda da taxa real de juros \(r_t = i_t - E_t\pi_{t+1}\). Esta redução estimula a demanda agregada, validando e amplificando as expectativas inflacionárias iniciais. Em contraste, quando \(\phi_\pi > 1\), o banco central eleva a taxa real de juros, contraindo a demanda e contribuindo para a estabilização da inflação. Em modelos mais gerais, com resposta explícita ao hiato do produto e regras antecipativas, a condição de determinância passa a depender de combinações entre \(\phi_\pi\), \(\phi_y\), \(\kappa\) e \(\beta\), conforme discutido por \citeonline{bullard2002learning}. 
 
-Cabe notar que, em modelos novo-keynesianos com expectativas racionais, a introdução de uma regra de política monetária não esgota, por si só, a caracterização do equilíbrio. Embora a regra de Taylor forneça um mecanismo sistemático de reação da autoridade monetária a desvios da inflação e do produto, sua presença não garante, a priori, que o sistema dinâmico resultante admita uma única trajetória de equilíbrio consistente com as expectativas dos agentes. Em particular, em ambientes forward-looking, regras de juros insuficientemente reativas podem ser compatíveis com múltiplos equilíbrios racionais, fenômeno associado à possibilidade de trajetórias autorrealizáveis para inflação e produto.
+Cabe notar que, em modelos novo-keynesianos com expectativas racionais, a introdução de uma regra de política monetária não esgota, por si só, a caracterização do equilíbrio. Embora a regra de Taylor forneça um mecanismo sistemático de reação da autoridade monetária a desvios da inflação e do produto, sua presença não garante, a priori, que o sistema dinâmico resultante admita uma única trajetória de equilíbrio consistente com as expectativas dos agentes. Em particular, em ambientes \textit{forward-looking}, regras de juros insuficientemente reativas podem ser compatíveis com múltiplos equilíbrios racionais, fenômeno associado à possibilidade de trajetórias autorrealizáveis para inflação e produto.
 
 
 \subsubsection{Especificações da Regra de Taylor}
@@ -328,7 +328,7 @@ i_t^* = \rho + \phi_\pi E_t[\pi_{t+h}] + \phi_y E_t[\tilde{y}_{t+h}] + \varepsil
 
 onde \(i_t^*\) denota a taxa de juros alvo, e \(h\) representa os horizontes de previsão para inflação e produto, respectivamente. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
 
-\paragraph{Regra de Taylor híbrida com suavização e taxa real-alvo}
+\paragraph{Regra de Taylor Híbrida com Suavização (Inércia)}
 \label{par:taylor_hibrida}
 
 Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de juros de forma gradual, evitando variações abruptas que poderiam amplificar a volatilidade macroeconômica e financeira. Para capturar esse comportamento, \citeonline{clarida2000monetary} propõem uma regra de política monetária com ajuste parcial, na qual a taxa nominal observada converge gradualmente para uma taxa-alvo implícita. Formalmente, define-se a taxa nominal alvo como
@@ -553,7 +553,7 @@ Reconhecendo a sensibilidade das estimativas do hiato ao método empregado, a ro
 % Deixar claro em cada subseção qual objetivo (geral ou específico) está sendo tratado
 
 % -----------------------------------------------------------
-\subsection{Especificação econométrica}
+\subsection{Especificação Econométrica}
 \label{subsec:especificacao_econometrica}
 % -----------------------------------------------------------
 
@@ -562,11 +562,12 @@ Esta subseção traduz para o plano econométrico as regras de política discuti
 As subseções \ref{subsubsec:regra_backward_mqo} a \ref{subsubsec:regra_hibrida_suavizacao_gmm}, a seguir, descrevem as especificações econométricas correspondentes às diferentes regras de Taylor discutidas na Seção 3.3. Posteriormente, a Seção \ref{subsec:estrategia_estimacao} detalha de forma unificada a estratégia de estimação e os instrumentos utilizados para a identificação dos parâmetros.
 
 % -----------------------------------------------------------
-\subsubsection{Regra \textit{backward-looking} (MQO).}
+\subsubsection{Regra \textit{Backward-Looking} (MQO).}
 \label{subsubsec:regra_backward_mqo}
 % -----------------------------------------------------------
 
-Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato do produto correntes, consistentes com a regra {backward} apresentada em \ref{subsec:regra_taylor_backward}. A equação estimada é:
+Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato do produto correntes, consistentes com a regra \textit{backward} apresentada em \ref{subsec:regra_taylor_backward}. A equação estimada é:
+
 \begin{equation}
   i_t
   =
@@ -581,6 +582,7 @@ Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato
   u_t,
   \label{eq:regra_backward_mqo}
 \end{equation}
+
 onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\), dado que o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$. Neste sentido, a condição $E(u_t \mid \mathcal{F}_{t-1}) = 0$ implica que o erro de política captura apenas choques não antecipáveis à luz da informação disponível antes da decisão do Copom.
 
 Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{par:taylor_hibrida}) permite interpretar
@@ -628,7 +630,7 @@ A interpretação dos coeficientes de longo prazo segue a parametrização usual
 de modo que \(\phi_\pi\) e \(\phi_y\) podem ser diretamente avaliados à luz das condições de determinacidade apresentadas na Seção~\ref{subsec:condicoes_determinancia}.
 
 % -----------------------------------------------------------
-\subsubsection{Regra híbrida com suavização (GMM)}
+\subsubsection{Regra Híbrida com Suavização (GMM)}
 \label{subsubsec:regra_hibrida_suavizacao_gmm}
 % -----------------------------------------------------------
 
@@ -666,21 +668,21 @@ A interpretação dos coeficientes de longo prazo segue diretamente da parametri
 de modo que \(\phi_\pi = \phi_\pi^{b} + \phi_\pi^{f}\) sintetiza a intensidade total da resposta da política monetária à inflação, combinando componentes \textit{backward-looking} e \textit{forward-looking}. Esses coeficientes podem ser avaliados à luz das condições de determinância apresentadas na Seção~\ref{subsec:condicoes_determinancia}, permitindo verificar se a regra híbrida satisfaz o Princípio de Taylor no longo prazo.
 
 % -----------------------------------------------------------
-\subsection{Estratégia de estimação}
+\subsection{Estratégia de Estimação}
 \label{subsec:estrategia_estimacao}
 % -----------------------------------------------------------
 
 A escolha do estimador reflete a forma como as variáveis no lado direito se relacionam com o erro de política e com a informação disponível no instante \(t\).
 
 % -----------------------------------------------------------
-\subsubsection{MQO para a regra backward.}
+\subsubsection{MQO para a Regra \textit{Backward}.}
 \label{subsubsec:mqo_regra_backward}
 % -----------------------------------------------------------
 
 Na equação \eqref{eq:regra_backward_mqo}, assume-se que \(\pi_t\) e \(\tilde y_t\) são, no horizonte trimestral, predeterminados em relação a \(u_t\), de forma que \(E(u_t|\pi_t,\tilde y_t,i_{t-1},\mathcal F_{t-1})=0\). Sob essa hipótese, MQO fornece estimadores consistentes, e a correção HAC garante inferência robusta à autocorrelação serial na série da Selic.
 
 % -----------------------------------------------------------
-\subsubsection{GMM para regras forward e híbrida.}
+\subsubsection{GMM para Regras \textit{Forward} e Híbrida.}
 \label{subsubsec:gmm_regras_forward_hibrida}
 % -----------------------------------------------------------
 
@@ -704,10 +706,10 @@ em que \(Z_t\) é um vetor de instrumentos formado por defasagens de variáveis 
   \big)',
   \label{eq:instrumentos_simplificado}
 \end{equation}
-e \(\theta\) reúne os parâmetros de interesse em cada especificação. A validade dos instrumentos e a sobre-identificação são avaliadas pelo teste \(J\) de Hansen, padrão em aplicações de GMM com regras de Taylor forward-looking.
+e \(\theta\) reúne os parâmetros de interesse em cada especificação. A validade dos instrumentos e a sobre-identificação são avaliadas pelo teste \(J\) de Hansen, padrão em aplicações de GMM com regras de Taylor \textit{forward-looking}.
 
 % -----------------------------------------------------------
-\subsubsection{Princípio de Taylor e condição de Bullard--Mitra}
+\subsubsection{Princípio de Taylor e Condição de Bullard--Mitra}
 \label{subsubsec:principio_taylor_bullard_mitra}
 % -----------------------------------------------------------
 
@@ -716,6 +718,7 @@ Os parâmetros de reação de longo prazo \(\phi_\pi\) e \(\phi_y\), derivados d
 Contudo, como esses parâmetros representam transformações não-lineares dos coeficientes estimados (p. ex.: \(\phi_\pi = \gamma_2/(1-\gamma_1)\)), a inferência estatística direta não é imediata. Para contornar isso, emprega-se o Método Delta, que aproxima a matriz de covariância assintótica dos parâmetros estruturais via expansão de Taylor de primeira ordem, viabilizando a construção dos erros-padrão e a realização dos testes de Wald subsequentes \cite{greene2003econometric}.
 
 Sendo assim, então se avalia o cumprimento do Princípio de Taylor por meio do teste de Wald unilateral \footnote{Registre-se que o teste de Wald avalia evidência estatística, enquanto Bullard–Mitra avalia consistência estrutural do modelo.}:
+
 \begin{equation}
   H_0:\ \phi_\pi \le 1
   \qquad \text{,} \qquad
@@ -724,14 +727,16 @@ Sendo assim, então se avalia o cumprimento do Princípio de Taylor por meio do 
 \end{equation}
 
 Logo depois, a análise de estabilidade é aprofundada inserindo os pares estimados \((\hat\phi_\pi,\hat\phi_y)\) na condição de Bullard--Mitra para o modelo NK canônico:
+
 \begin{equation}
   \kappa(\hat\phi_\pi -1) + (1-\beta)\hat\phi_y > 0.
   \label{eq:bullard_mitra_empirica_simplificada}
 \end{equation}
+
 Nesta desigualdade, os parâmetros estruturais \(\kappa\) (inclinação da Curva de Phillips) e \(\beta\) (fator de desconto) são calibrados conforme os valores discutidos na Seção~\ref{subsec:condicoes_determinancia}. Essa verificação permite classificar se, em cada especificação e subperíodo amostral, a condução da política monetária foi compatível com a unicidade do equilíbrio (determinância) e com a estabilidade sob aprendizagem (\textit{E-stability}).
 
 % -----------------------------------------------------------
-\subsubsection{Testes de hipótese, determinância e instabilidade paramétrica}
+\subsubsection{Testes de Hipótese, Determinância e Instabilidade Paramétrica}
 \label{subsubsec:testes_determinancia_quebras}
 % -----------------------------------------------------------
 
