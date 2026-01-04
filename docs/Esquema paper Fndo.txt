@@ -31,14 +31,14 @@ V2
 -------------------------------------
 - O modelo DSGE é um “roteiro” da economia com três blocos:
 
-  (i)   Firmas (Phillips / NKPC): escolhem preços com rigidez (Calvo) → geram a curva de Phillips nova (inflação depende do ciclo e das expectativas). 
+  (i)   FIRMAS (Phillips / NKPC): escolhem preços com rigidez (Calvo) → geram a curva de Phillips nova (inflação depende do ciclo e das expectativas). 
       * A NKPC resulta de: Rigidez nominal + Demanda agregada + Condição de market clearing.
 
-  (ii)  Famílias (IS Dinâmica): escolhem consumo hoje versus amanhã (Euler) → geram a equação IS dinâmica (hiato responde ao juro real esperado).
+  (ii)  FAMÍLIAS (IS Dinâmica): escolhem consumo hoje versus amanhã (Euler) → geram a equação IS dinâmica (hiato responde ao juro real esperado).
       * A IS NK não vem de investimento ou gasto (demanda clássica). Ela vem da equação de Euler do consumo.
       * O juro relevante é o juro real esperado em desvio da taxa natural.
 
-  (iii) Banco Central (Taylor): ajusta a taxa de juros seguindo uma regra de resposta à inflação e ao hiato (Regra de Taylor).
+  (iii) BACEN (Taylor): ajusta a taxa de juros seguindo uma regra de resposta à inflação e ao hiato (Regra de Taylor).
       * Sem ela, o sistema IS–NKPC é indeterminado.
       * Com ela, surge o Princípio de Taylor e entram:
           + Blanchard–Kahn (determinância-equilíbrio único);
