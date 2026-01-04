@@ -19,8 +19,8 @@ O modelo NK, que gravita em torno do comportamento dos preços (inflação) e co
 - (3) banco central (juros: Princípio de Taylor e Regra de Taylor).
 
 Fechando este sistema todo, temos que:
-- A condição de Bullard--Mitra identifica quando o modelo NK básico possui equilíbrio único.
-- O método de Blanchard & Kahn é a ferramenta que os pesquisadores modernos usam para checar se a Regra de Taylor % funciona em um modelo teórico (determinância)
+- A condição de Bullard-Mitra identifica quando o modelo NK básico possui equilíbrio único.
+- O método de Blanchard-Kahn é a ferramenta que os pesquisadores modernos usam para checar se a Regra de Taylor % funciona em um modelo teórico (determinância)
 
 ====================================
 V2
@@ -68,6 +68,8 @@ V2
 - BK = teste geral, abstrato
 - Blanchard–Kahn → 
 propriedade do modelo dado
+- BK: critério geral, matemático, 
+estrutural (não testável)
 -------------------------------------
 
 - Dado o modelo completo (oferta, demanda, regra de juros), Blanchard & Kahn dão o critério geral para saber:
@@ -96,6 +98,8 @@ regras de juros
 - Bullard–Mitra → 
 propriedade do modelo + 
 regra específica + aprendizado
+- BM: critério derivado, específico, 
+empírico (testável)
 -------------------------------------
 
 - Bullard & Mitra pegam o modelo NK básico com regra de Taylor e transformam o teste de estabilidade em uma condição simples sobre:
