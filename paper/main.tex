@@ -582,20 +582,9 @@ As subseções \ref{subsubsec:regra_backward_mqo} a \ref{subsubsec:regra_hibrida
 Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato do produto correntes, consistentes com a regra \textit{backward} apresentada em \ref{subsec:regra_taylor_backward}. A equação estimada é:
 
 \begin{equation}
-  i_t
-  =
-  \beta_0
-  +
-  \beta_1 i_{t-1}
-  +
-  \beta_2 \pi_t
-  +
-  \beta_3 \tilde y_t
-  +
-  u_t,
+  i_t = \beta_0 + \beta_1 i_{t-1} + \beta_2 \pi_t + \beta_3 \tilde y_t + u_t,
   \label{eq:regra_backward_mqo}
 \end{equation}
-
 onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\), dado que o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$. Neste sentido, a condição $E(u_t \mid \mathcal{F}_{t-1}) = 0$ implica que o erro de política captura apenas choques não antecipáveis à luz da informação disponível antes da decisão do Copom. Cabe ressaltar que essa especificação \textit{backward-looking} deve ser interpretada como um exercício de referência (\textit{benchmark}), uma vez que a hipótese de predeterminação contemporânea das variáveis explicativas pode ser questionada em ambientes com forte formação de expectativas e transmissão rápida da política monetária. Assim, as evidências obtidas por MQO são complementadas pelas especificações \textit{forward-looking}, estimadas por GMM, que exploram de forma mais direta a estrutura expectacional do modelo novo-keynesiano.
 
 Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{par:taylor_hibrida}) permite interpretar
