@@ -323,7 +323,9 @@ A formulação original de \citeonline{taylor1993} especifica a taxa de juros co
 i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t,
 \label{eq:taylor_backward}
 \end{equation}
-onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes -- \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) -- calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}.
+onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes -- \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) -- calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}. Neste ponto, cabe refoçar que a regra é expressa em níveis,
+explicitando separadamente a taxa real de juros de equilíbrio e a meta de inflação. Em particular, o autor assume uma taxa real neutra de 2\% ao ano e uma meta implícita de inflação de 2\%, o que permite reescrever a regra em forma reduzida como uma função linear da inflação corrente e do hiato do produto, conforme a equação \eqref{eq:taylor_backward}.
+
 
 \paragraph{Regra \textit{Forward-Looking}}
 \label{par:regra_taylor_forward}
@@ -765,12 +767,38 @@ Por fim, para investigar a estabilidade dos parâmetros ao longo do tempo e vali
 
 % ***********************************************************
 
+% PRINCÍPIOS DE TAYLOR
+% ------------------------------
+% * Funções de reação da Selic
+%     - Modelo retrospectivo (MQO)
+%         + Correção HAC (benchmark)
+%     - Modelo prospectivo (GMM)
+%     - Modelo híbrido com suavização (GMM)
+%         + Validade dos instrumentos
+%             / Teste J de Hansen (sobre-identificação)
+% % * Parâmetros de reação de longo prazo ($\phi_\pi$, $\phi_y$)
+%     - Avaliação do Princípio de Taylor
+%         + Teste estatístico de $\phi_\pi > 1$
+% % DETERMINÂNCIA (MODELO NK)
+% ------------------------------
+% * Condição de Bullard--Mitra (estabilidade local)
+%     - Parâmetros estimados:
+%         + $\hat{\phi}_\pi$
+%         + $\hat{\phi}_y$
+%     - Verificação da condição:
+%         / $\kappa(\hat{\phi}_\pi - 1) + (1 - \beta)\hat{\phi}_y > 0$
+% % * Extensão / Robustez temporal (se der tempo)
+%     - Testes de quebras estruturais endógenas
+%       (Bai--Perron, 1998, 2003)
+
 % ===========================================================
 \section{Resultados}
 % ===========================================================
 \label{sec:resultados}
 
 Esta Seção apresenta os resultados empíricos da estimação das diferentes especificações da Regra de Taylor para a economia brasileira no período 1999--2024, bem como os testes associados ao Princípio de Taylor e à condição de determinância do equilíbrio no modelo Novo-Keynesiano. Em consonância com a estratégia empírica delineada na Seção~\ref{sec:metodologia}, os resultados são organizados de forma a distinguir entre as diferentes especificações econométricas, avaliar a robustez das estimativas a alternativas de mensuração do hiato do produto e explorar a estabilidade dos parâmetros ao longo do tempo.
+
+MQO: Como especificação de referência, utiliza-se o hiato do produto estimado pelo Banco Central do Brasil, por refletir a informação efetivamente disponível à autoridade monetária no momento da decisão. Reconhece-se, contudo, o potencial de endogeneidade dessa medida, razão pela qual especificações alternativas de hiato são exploradas como exercício de robustez.
 
 % -----------------------------------------------------------
 \subsection{Estimações da Regra de Taylor}
@@ -787,6 +815,15 @@ Em particular, as tabelas apresentam:
 \end{itemize}
 
 Os resultados são inicialmente discutidos para a amostra completa (1999--2024), permitindo uma avaliação agregada da reação sistemática da política monetária brasileira ao longo do regime de metas de inflação.
+
+\subsubsection{MQO}
+lorem ipsum
+
+\subsubsection{GMM - Forward-Looking}
+lorem ipsum
+
+\subsubsection{GMM - Híbrida}
+lorem ipsum
 
 % -----------------------------------------------------------
 \subsection{Teste do Princípio de Taylor}
@@ -870,6 +907,8 @@ Essa análise tem caráter complementar e busca ilustrar as implicações dinâm
 \section{Discussão}
 % ===========================================================
 \label{sec:discussao}
+
+<->PENSANDO EM MOVER ESSA DISCUSSÃO PARA O TÓPICO 6<->
 
 \subsection{Interpretação Econômica}
 \label{subsec:interpretacao_economica}
