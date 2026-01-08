@@ -287,7 +287,7 @@ Essa estrutura teórica destaca que a estabilização macroeconômica exige que 
 Assim sendo, esse aspecto decorre do fato de que as equações centrais do modelo novo-keynesiano são intrinsecamente prospectivas. A inflação corrente depende das expectativas de inflação futura, enquanto o hiato do produto é determinado pela expectativa do hiato à frente e pela taxa de juros real esperada. Assim, a política monetária afeta o equilíbrio macroeconômico não apenas por meio de seus efeitos contemporâneos sobre a taxa de juros nominal, mas sobretudo pela forma como influencia a formação de expectativas privadas acerca da trajetória futura da economia.
 
 % -----------------------------------------------------------
-\subsection{Regra de Taylor}
+\subsection{Regras de Taylor}
 \label{subsec:regra_taylor}
 
 A condução da política monetária no modelo Novo-Keynesiano (NK) é tipicamente descrita por meio de uma regra de juros que especifica como o banco central ajusta a taxa de juros nominal em resposta a desvios da inflação e do produto em relação aos seus níveis-alvo. \citeonline{taylor1993} propôs uma regra simples que captura o comportamento sistemático da política monetária nos Estados Unidos, estabelecendo que a taxa de juros nominal deve responder positivamente aos desvios da inflação em relação à meta e ao hiato do produto. Este \textit{framework} foi posteriormente generalizado por \citeonline{clarida2000monetary} para incorporar expectativas \textit{forward-looking} e suavização da taxa de juros, alinhando a regra de política monetária à estrutura intertemporal do modelo NK.
@@ -324,7 +324,7 @@ A formulação original de \citeonline{taylor1993} especifica a taxa de juros co
 i_t = \rho + \phi_\pi \pi_t + \phi_y \tilde{y}_t + \varepsilon_t,
 \label{eq:taylor_backward}
 \end{equation}
-onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado), \(\tilde{y}_t\) é o hiato do produto, e \(\varepsilon_t\) é um choque de política monetária. O autor propôs valores específicos para os coeficientes -- \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) -- calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}. Neste ponto, cabe refoçar que a regra é expressa em níveis,
+onde \(\rho\) representa o intercepto da regra de política monetária, associado ao nível médio da taxa real de juros no estado estacionário (\(\rho = 2\%\), calibrado); \(\phi_\pi\) representa o coeficiente de reação da taxa de juros à inflação corrente (\(\pi_t\)); \(\phi_y\) é o coeficiente de reação ao hiato do produto (\(\tilde{y}_t\)), que mede o desvio do produto em relação ao seu nível potencial; e \(\varepsilon_t\) é um choque de política monetária, capturando fatores não sistemáticos ou imprevistos que afetam a decisão do Banco Central. Assim, \(i_t\) é a taxa de juros nominal definida pela autoridade monetária no período \(t\), \(\pi_t\) é a inflação observada, e \(\tilde{y}_t\) representa o grau de ociosidade ou pressão da atividade econômica sobre os preços). O autor propôs valores específicos para os coeficientes -- \(\rho = 2\%\), \(\phi_\pi = 1.5\) e \(\phi_y = 0.5\) -- calibrados para aproximar a condução da política monetária do Federal Reserve no período 1987--1992 \cite[p.~202]{taylor1993}. Neste ponto, cabe refoçar que a regra é expressa em níveis,
 explicitando separadamente a taxa real de juros de equilíbrio e a meta de inflação. Em particular, o autor assume uma taxa real neutra de 2\% ao ano e uma meta implícita de inflação de 2\%, o que permite reescrever a regra em forma reduzida como uma função linear da inflação corrente e do hiato do produto, conforme a equação \eqref{eq:taylor_backward}.
 
 
@@ -338,7 +338,7 @@ De forma alternativa, \citeonline{clarida2000monetary} argumentam que a polític
 i_t^* = \rho + \phi_\pi E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}] + \varepsilon_t,
 \label{eq:taylor_forward}
 \end{equation}
-onde \(i_t^*\) denota a taxa de juros alvo, e \(h_\pi\) e \(h_y\) representam, respectivamente, os horizontes de previsão para inflação e produto. Esta especificação reconhece que os instrumentos de política monetária afetam a economia com defasagens consideráveis, tornando apropriado que o banco central reaja a projeções das variáveis-alvo. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
+onde \(i_t^*\) denota a taxa de juros alvo definida pelo Banco Central no período \(t\); \(\rho\) é o intercepto, associado ao nível médio da taxa real de juros no estado estacionário; \(\phi_\pi\) é o coeficiente de reação da taxa de juros à expectativa de inflação futura; \(E_t[\pi_{t+h_\pi}]\) representa a expectativa de inflação para o horizonte \(h_\pi\); \(\phi_y\) é o coeficiente de reação ao hiato do produto esperado; \(E_t[\tilde{y}_{t+h_y}]\) é a expectativa do hiato do produto para o horizonte \(h_y\); e \(\varepsilon_t\) é um choque de política monetária, capturando fatores não sistemáticos. A escolha de \(h\) pode variar conforme o contexto institucional e a disponibilidade de informações, mas frequentemente assume-se \(h=1\) ou \(h=2\) trimestres, refletindo o horizonte típico de decisão dos bancos centrais.
 
 \paragraph{Regra Híbrida com Suavização (Inércia)}
 \label{par:taylor_hibrida}
@@ -349,7 +349,7 @@ Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de jur
 i_t^* = \rho + \phi_\pi E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}],
 \label{eq:hibrida_alvo}
 \end{equation}
-enquanto a taxa efetivamente praticada pela autoridade monetária obedece à dinâmica
+onde \(i_t^*\) é a taxa de juros alvo definida pelo Banco Central; \(\rho\) representa o intercepto, associado ao nível médio da taxa real de juros no estado estacionário; \(\phi_\pi\) é o coeficiente de reação à expectativa de inflação futura; \(E_t[\pi_{t+h_\pi}]\) indica a expectativa de inflação para o horizonte \(h_\pi\); \(\phi_y\) é o coeficiente de reação ao hiato do produto esperado; \(E_t[\tilde{y}_{t+h_y}]\) corresponde à expectativa do hiato do produto para o horizonte \(h_y\), enquanto a taxa efetivamente praticada pela autoridade monetária obedece à dinâmica
 
 \begin{equation}
 i_t = \rho_i\, i_{t-1} + (1-\rho_i)i_t^* + \varepsilon_t,
@@ -591,9 +591,9 @@ Na especificação retrospectiva, o Banco Central reage à inflação e ao hiato
   i_t = \beta_0 + \beta_1 i_{t-1} + \beta_2 \pi_t + \beta_3 \tilde y_t + u_t,
   \label{eq:regra_backward_mqo}
 \end{equation}
-onde \(i_t\) é a meta da taxa Selic, \(\pi_t\) é a inflação medida pelo IPCA, \(\tilde y_t\) é o hiato do produto e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\), dado que o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$. Neste sentido, a condição $E(u_t \mid \mathcal{F}_{t-1}) = 0$ implica que o erro de política captura apenas choques não antecipáveis à luz da informação disponível antes da decisão do Copom. Cabe ressaltar que essa especificação \textit{backward-looking} deve ser interpretada como um exercício de referência (\textit{benchmark}), uma vez que a hipótese de predeterminação contemporânea das variáveis explicativas pode ser questionada em ambientes com forte formação de expectativas e transmissão rápida da política monetária. Assim, as evidências obtidas por MQO são complementadas pelas especificações \textit{forward-looking}, estimadas por GMM, que exploram de forma mais direta a estrutura expectacional do modelo novo-keynesiano.
+onde \(i_t\) é a meta da taxa Selic; \(\beta_0\) é o intercepto da equação; \(\beta_1\) mede o grau de inércia ou suavização da taxa de juros, sendo \(i_{t-1}\) a taxa Selic do período anterior; \(\beta_2\) é o coeficiente de reação à inflação corrente \(\pi_t\) (medida pelo IPCA); \(\beta_3\) é o coeficiente de reação ao hiato do produto \(\tilde y_t\); e \(u_t\) é um erro de política com \(E(u_t|\mathcal F_{t-1})=0\), dado que o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$. Neste sentido, a condição $E(u_t \mid \mathcal{F}_{t-1}) = 0$ implica que o erro de política captura apenas choques não antecipáveis à luz da informação disponível antes da decisão do Copom. 
 
-Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{par:taylor_hibrida}) permite interpretar
+Cabe ressaltar que essa especificação \textit{backward-looking} deve ser interpretada como um exercício de referência (\textit{benchmark}), uma vez que a hipótese de predeterminação contemporânea das variáveis explicativas pode ser questionada em ambientes com forte formação de expectativas e transmissão rápida da política monetária. Assim, as evidências obtidas por MQO são complementadas pelas especificações \textit{forward-looking}, estimadas por GMM, que exploram de forma mais direta a estrutura expectacional do modelo novo-keynesiano. Isto dito, a comparação com a forma teórica com suavização (Seção~\ref{par:taylor_hibrida}) permite interpretar
 \[
 \rho = \beta_1,\qquad
 \phi_\pi = \frac{\beta_2}{1-\beta_1},\qquad
@@ -612,24 +612,12 @@ Em contraste, na especificação \textit{forward-looking}, a autoridade monetár
 
 Posto isso, na especificação prospectiva a autoridade monetária reage às expectativas de inflação e de hiato do produto, em consonância com a estrutura \textit{forward-looking} da NKPC e da equação IS discutidas nas Seções~\ref{subsec:nkpc} e~\ref{subsec:is_dinamica}. Nesse sentido, estima-se a seguinte regra de juros com suavização:
 \begin{equation}
-  i_t
-  =
-  \gamma_0
-  +
-  \gamma_1 i_{t-1}
-  +
-  \gamma_2 E_t\{\pi_{t+1}\}
-  +
-  \gamma_3 E_t\{\tilde y_{t+1}\}
-  +
-  e_t,
+  i_t =  \gamma_0 + \gamma_1 i_{t-1} + \gamma_2 E_t\{\pi_{t+1}\} + \gamma_3 E_t\{\tilde y_{t+1}\} + e_t,
   \label{eq:regra_forward_gmm}
 \end{equation}
-em que o termo defasado do instrumento captura o grau de suavização da taxa de juros, enquanto as expectativas condicionais refletem a natureza prospectiva da condução da política monetária.
+onde \(i_t\) é a taxa de juros nominal definida pelo Banco Central no período \(t\); \(\gamma_0\) é o intercepto da equação; \(\gamma_1\) representa o grau de inércia ou suavização da taxa de juros, e \(i_{t-1}\) é a taxa de juros nominal observada no período anterior, refletindo o ajuste gradual da política monetária ao longo do tempo; \(\gamma_2\) é o coeficiente de reação à expectativa de inflação futura \(E_t\{\pi_{t+1}\}\); \(\gamma_3\) é o coeficiente de reação à expectativa do hiato do produto \(E_t\{\tilde y_{t+1}\}\); e \(e_t\) é um choque de política monetária, capturando fatores não sistemáticos, com \(E(e_t|\mathcal F_{t-1})=0\). Novamente, o conjunto de informação $\mathcal{F}_{t-1}$ representa o histórico de variáveis macroeconômicas e institucionais observáveis até o período $t-1$, de modo que o termo defasado do instrumento captura o grau de suavização da taxa de juros, enquanto as expectativas condicionais refletem a natureza prospectiva da condução da política monetária.
 
-Empiricamente, \(E_t\{\pi_{t+1}\}\) é aproximado pela mediana das expectativas do mercado coletadas no Relatório Focus para a inflação acumulada em doze meses, ao passo que \(E_t\{\tilde y_{t+1}\}\) é capturado por medidas de hiato prospectivo ou, em especificações alternativas, pelo hiato contemporâneo, utilizado como proxy da informação disponível à autoridade monetária no momento da decisão.
-
-A interpretação dos coeficientes de longo prazo segue a parametrização usual:
+Empiricamente, \(E_t\{\pi_{t+1}\}\) é aproximado pela mediana das expectativas do mercado coletadas no Relatório Focus para a inflação acumulada em doze meses, ao passo que \(E_t\{\tilde y_{t+1}\}\) é capturado por medidas de hiato prospectivo ou, em especificações alternativas, pelo hiato contemporâneo, utilizado como proxy da informação disponível à autoridade monetária no momento da decisão. A interpretação dos coeficientes de longo prazo segue a parametrização usual:
 \[
 \rho = \gamma_1, \qquad
 \phi_\pi = \frac{\gamma_2}{1-\gamma_1}, \qquad
@@ -817,13 +805,21 @@ Em particular, as tabelas apresentam:
 
 Os resultados são inicialmente discutidos para a amostra completa (1999--2024), permitindo uma avaliação agregada da reação sistemática da política monetária brasileira ao longo do regime de metas de inflação.
 
-\subsubsection{MQO}
+\subsubsection{MQO -- Backward-Looking}
 lorem ipsum
 
-\subsubsection{GMM - Forward-Looking}
+Embora as estimações por MQO forneçam uma caracterização informativa da resposta backward-looking da política monetária, a presença de expectativas racionais e potenciais problemas de endogeneidade requer uma abordagem que explore explicitamente as condições de momento implícitas no modelo forward-looking, motivando a utilização do método dos momentos generalizados (GMM).
+
+\subsubsection{GMM -- Forward-Looking}
 lorem ipsum
 
-\subsubsection{GMM - Híbrida}
+Dada a incerteza em torno da medição empírica do hiato do produto, estimamos a regra de Taylor prospectiva utilizando medidas alternativas para o hiato, incluindo filtros estatísticos, estimativas institucionais e indicadores sintéticos.
+
+Dadas as restrições informacionais relativas à observação de expectativas do hiato do produto, a análise forward-looking pura limita-se à especificação baseada no hiato obtido via filtro HP com lead de um período.
+
+Devido à disponibilidade de dados e à construção de variáveis prospectivas, particularmente as expectativas de inflação e as medidas do hiato do produto para o período seguinte, a amostra efetiva de estimação inicia-se no segundo trimestre de 2004. Essa restrição reflete a disponibilidade de medidas de expectativa consistentes e o comprimento mínimo da amostra exigido pelas técnicas de filtragem estatística.
+
+\subsubsection{GMM -- Híbrida}
 lorem ipsum
 
 % -----------------------------------------------------------
