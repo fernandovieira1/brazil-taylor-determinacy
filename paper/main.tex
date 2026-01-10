@@ -54,6 +54,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{tabularx}
 
 % ================== FORMATAÇÃO ==================
 \usepackage{geometry}
@@ -87,7 +88,7 @@ Rafaela Dezidério Rocha
 \thispagestyle{empty}
 
 \begin{abstract}
-<->MUDAR DEPOIS DE TERMINAR - Este artigo investiga em que medida a política monetária brasileira, sob o regime de metas de inflação vigente desde 1999, tem seguido regras compatíveis com o Princípio de Taylor e com a determinância do equilíbrio em modelos Novo-Keynesianos. O estudo estima diferentes especificações da Regra de Taylor -- \textit{backward-looking}, \textit{forward-looking} no estilo Clarida--Galí--Gertler e versões híbridas com suavização da taxa de juros -- utilizando dados da taxa Selic, inflação (IPCA), hiato do produto e expectativas de inflação (Focus), no período 1999--2024. A metodologia combina MQO com erros robustos, GMM com instrumentos defasados, testes de quebras estruturais (Bai--Perron) e avaliação formal da condição de Bullard--Mitra, que relaciona os parâmetros estimados à determinância do modelo Novo-Keynesiano. Os resultados permitem identificar se, e em quais subperíodos, a reação da política monetária à inflação foi suficientemente forte ($\phi_\pi > 1$) para garantir unicidade do equilíbrio e ancoragem das expectativas. A contribuição central do artigo consiste em estabelecer um diálogo sistemático entre o arcabouço Novo-Keynesiano e a experiência brasileira recente, destacando como diferentes regimes de política monetária se relacionam com a estabilidade nominal e a credibilidade do Banco Central <->MUDAR DEPOIS DE TERMINAR.
+\textcolor{red}{<-> MUDAR DEPOIS DE TERMINAR} - Este artigo avalia empiricamente a consistência da política monetária brasileira com o Princípio de Taylor no período 1999–2024, utilizando diferentes especificações da regra de juros estimadas por MQO e GMM. Os resultados indicam que, embora a reação da taxa de juros à inflação seja estatisticamente significativa, a elevada persistência da taxa básica e a fragilidade das respostas de longo prazo tornam a classificação do regime como determinante sensível à interpretação dos parâmetros associados à suavização da taxa de juros. Esses achados sugerem que o cumprimento empírico do Princípio de Taylor não é suficiente, por si só, para garantir determinância robusta no arcabouço Novo-Keynesiano. O estudo estima diferentes especificações da Regra de Taylor -- \textit{backward-looking}, \textit{forward-looking} no estilo Clarida--Galí--Gertler e versões híbridas com suavização da taxa de juros -- utilizando dados da taxa Selic, inflação (IPCA), hiato do produto e expectativas de inflação (Focus), no período 1999--2024. A metodologia combina MQO com erros robustos, GMM com instrumentos defasados, testes de quebras estruturais (Bai--Perron) e avaliação formal da condição de Bullard--Mitra, que relaciona os parâmetros estimados à determinância do modelo Novo-Keynesiano. Os resultados permitem identificar se, e em quais subperíodos, a reação da política monetária à inflação foi suficientemente forte ($\phi_\pi > 1$) para garantir unicidade do equilíbrio e ancoragem das expectativas. A contribuição central do artigo consiste em estabelecer um diálogo sistemático entre o arcabouço Novo-Keynesiano e a experiência brasileira recente, destacando como diferentes regimes de política monetária se relacionam com a estabilidade nominal e a credibilidade do Banco Central \textcolor{red}{<-> MUDAR DEPOIS DE TERMINAR}.
 \end{abstract}
 
 \pagestyle{plain}
@@ -148,7 +149,7 @@ Temos como \textbf{objetivo geral do artigo avaliar empiricamente se a política
     \item Estimar diferentes especificações da Regra de Taylor.
     \item Verificar se os coeficientes estimados satisfazem $\hat{\phi}_\pi > 1$.
     \item Avaliar a condição de Bullard--Mitra para os parâmetros estimados.
-    \item Explorar implicações dinâmicas por meio de simulações em modelo NK.
+    \item \textcolor{red}{ <-> Explorar implicações dinâmicas por meio de simulações em modelo NK <->}. % SE DER TEMPO
 \end{itemize}
 
 % -----------------------------------------------------------
@@ -157,7 +158,7 @@ Temos como \textbf{objetivo geral do artigo avaliar empiricamente se a política
 
 \textbf{Além desta introdução, o artigo organiza-se em outras três partes. A primeira parte reúne as Seções~\ref{sec:regras_politica_estabilidade}, \ref{sec:arcabouco_teorico} e \ref{sec:politica_monetaria_brasil_1999_2024}}: de forma contextual, a Seção~\ref{sec:regras_politica_estabilidade} revisa a literatura sobre regras monetárias e determinância, com ênfase em evidência internacional e para o Brasil, apresentando como as diferentes formulações da Regra de Taylor têm sido utilizadas e estimadas empiricamente; complementando a revisão teórica, a Seção~\ref{sec:arcabouco_teorico}, por sua vez, formaliza o arcabouço Novo-Keynesiano que fundamenta a análise, mostrando como essas mesmas regras operam dentro do modelo, em particular sua interação com a NKPC, a equação IS e a condição de Bullard--Mitra; finalmente, a Seção~\ref{sec:politica_monetaria_brasil_1999_2024} apresenta a conjuntura do regime de metas brasileiro, descrevendo presidentes do Banco Central, regimes de política monetária e fatos estilizados que moldaram a economia brasileira entre 1999 e 2024 e motivam a estratificação e métodos de análise neste trabalho. \textbf{A segunda parte compreende as Seções~\ref{sec:metodologia}, \ref{sec:resultados} e \ref{sec:discussao}}: a Seção~\ref{sec:metodologia} detalha dados e metodologia; a Seção~\ref{sec:resultados} apresenta os resultados empíricos, conforme modelagem proposta na seção anterior; e a Seção~\ref{sec:discussao} interpreta os resultados em termos econômicos e as implicações para credibilidade, dominância fiscal e estabilidade monetária. \textbf{A terceira parte contém a Seção~\ref{sec:consideracoes_finais}, com as conclusões e considerações finais.}
 
-Vale pontuar que a análise empírica desenvolvida na Seção~\ref{sec:metodologia} parte do modelo novo-keynesiano apresentado na Seção~\ref{sec:arcabouco_teorico}, tomando as condições de determinância como referência teórica para a interpretação dos parâmetros estimados. As equações estimadas representam funções de reação reduzidas da política monetária, cujo objetivo não é testar a determinância diretamente, mas verificar se o comportamento empírico da autoridade monetária é compatível com regiões do espaço paramétrico associadas à unicidade do equilíbrio.
+Vale pontuar que a análise empírica desenvolvida na Seção~\ref{sec:metodologia} parte do modelo novo-keynesiano apresentado na Seção~\ref{sec:arcabouco_teorico}, tomando as condições de determinância como referência teórica para a interpretação dos parâmetros estimados. As equações estimadas representam funções de reação reduzidas da política monetária, cujo objetivo não é testar a determinância diretamente, mas verificar se o comportamento empírico da autoridade monetária é compatível com regiões do espaço paramétrico associadas à unicidade do equilíbrio. De resto, a exposição detalhada dos fundamentos teóricos e das escolhas empíricas tem como objetivo não apenas a estimação dos parâmetros de interesse, mas também a explicitação do mecanismo de transmissão subjacente, conforme discutido ao longo do curso.
 
 
 % ===========================================================
@@ -343,7 +344,7 @@ onde \(i_t^*\) denota a taxa de juros alvo definida pelo Banco Central no perío
 \paragraph{Regra Híbrida com Suavização (Inércia)}
 \label{par:taylor_hibrida}
 
-Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de juros de forma gradual, evitando variações abruptas que poderiam amplificar a volatilidade macroeconômica e financeira. Para capturar esse comportamento, \citeonline{clarida2000monetary} propõem uma regra de política monetária com ajuste parcial, na qual a taxa nominal observada converge gradualmente para uma taxa-alvo implícita. Formalmente, define-se a taxa nominal alvo ($i_t^*$) como:
+Evidências empíricas sugerem que bancos centrais ajustam a taxa básica de juros de forma gradual, evitando variações abruptas que poderiam amplificar a volatilidade macroeconômica e financeira \cite{wagner2000central}. Para capturar esse comportamento, \citeonline{clarida2000monetary} propõem uma regra de política monetária com ajuste parcial, na qual a taxa nominal observada converge gradualmente para uma taxa-alvo implícita. Formalmente, define-se a taxa nominal alvo ($i_t^*$) como:
 
 \begin{equation}
 i_t^* = \rho + \phi_\pi E_t[\pi_{t+h_\pi}] + \phi_y E_t[\tilde{y}_{t+h_y}],
@@ -448,7 +449,7 @@ max & 3.02 & 17.24 & 45.00 & 12.41 & 179.53 \\
 \bottomrule
 \end{tabular}
 \label{tab:desc_stats}\\
-\textcolor{red}{No focus não seria bom colocar (12m) para deixar claro que deveria ser comparado com a coluna de inflação de 12m?}
+\textcolor{red}{<-> No focus não seria bom colocar (12m) para deixar claro que deveria ser comparado com a coluna de inflação de 12m? <->}
 \footnotesize
 
 \vspace{0.2cm}
@@ -493,7 +494,7 @@ Por fim, ressalta-se que a análise aqui permanece estritamente descritiva. A co
 
 Os padrões documentados nesta Seção sugerem que a condução da política monetária brasileira ao longo do regime de metas não foi invariável no tempo, apresentando diferenças sistemáticas na forma e na intensidade da resposta da taxa de juros a desvios da inflação, do hiato do produto e das expectativas. A evidência descritiva (ver Gráfico~\ref{fig:series_macro} e Tabela \ref{tab:desc_stats}) aponta para episódios em que o aperto monetário foi suficientemente agressivo para conter processos de desancoragem das expectativas inflacionárias, como no início do regime de metas, em 2002--2003, e mais recentemente no ciclo de alta iniciado em 2021, quando a taxa Selic foi elevada de forma rápida e persistente em resposta à deterioração das expectativas captadas pelo boletim Focus. 
 
-Por outro lado, os dados também indicam períodos em que choques adversos de demanda ou de oferta impuseram trade-offs mais severos à estabilização macroeconômica, como durante a crise financeira internacional de 2008--2009 e a pandemia de COVID-19, quando a política monetária operou em ambiente de elevada incerteza e forte contração do produto, bem como no episódio de 2015--2016, caracterizado por inflação elevada, recessão profunda e dificuldades adicionais de coordenação entre política monetária e fiscal. No entanto, tais inferências não são identificáveis a partir de inspeção visual das séries, uma vez que inflação, atividade, expectativas e juros são determinados de forma conjunta, dinâmica e endógena, com defasagens relevantes. Diante disso, a Seção~\ref{sec:metodologia} propõe uma estratégia de identificação formal baseada na estimação de diferentes especificações da Regra de Taylor (retrospectiva, prospectiva e híbrida) explorando segmentações temporais e possíveis quebras estruturais, com o objetivo de avaliar se os parâmetros estimados satisfazem o Princípio de Taylor e são compatíveis com as condições de determinância de \citeonline{bullard2002learning}.
+Por outro lado, os dados também indicam períodos em que choques adversos de demanda ou de oferta impuseram trade-offs mais severos à estabilização macroeconômica, como durante a crise financeira internacional de 2008--2009 e a pandemia de COVID-19, quando a política monetária operou em ambiente de elevada incerteza e forte contração do produto, bem como no episódio de 2015--2016, caracterizado por inflação elevada, recessão profunda e dificuldades adicionais de coordenação entre política monetária e fiscal. No entanto, tais inferências não são identificáveis a partir de inspeção visual das séries, uma vez que inflação, atividade, expectativas e juros são determinados de forma conjunta, dinâmica e endógena, com defasagens relevantes. Diante disso, a Seção~\ref{sec:metodologia} propõe uma estratégia de identificação formal baseada na estimação de diferentes especificações da Regra de Taylor (retrospectiva, prospectiva e híbrida) explorando segmentações temporais e possíveis quebras estruturais, com o objetivo de avaliar se os parâmetros estimados satisfazem o Princípio de Taylor e são compatíveis com as condições de determinância de \citeonline{bullard2002learning}. Amiúde, os padrões visuais dos gráficos, as informações descritas e os dados demonstrados não permitem inferir com precisão e causalidade se a política monetária foi, de fato, estabilizadora no sentido NK, pois inflação, expectativas e juros são endógenos e determinados simultaneamente, o que nos leva a testar formalmente essas hipóteses a partir da seção seguinte.
 
 % ***********************************************************
 
@@ -551,10 +552,12 @@ O conjunto de variáveis selecionado para a estimação reflete a estrutura can�
 Todas as variáveis são analisadas em \textbf{frequência trimestral}, compatibilizando a periodicidade do PIB, utilizado na construção do hiato do produto (vide subseção~\ref{subsec:indicadores_economicos}), com as séries de inflação, taxa de juros e expectativas. Essa escolha assegura coerência temporal entre as variáveis do modelo e é consistente com o horizonte de transmissão da política monetária, no qual os efeitos das decisões do Copom sobre a atividade e os preços tendem a se materializar ao longo de vários trimestres, e não em flutuações mensais de alta frequência. As séries de atividade econômica foram ajustadas sazonalmente com o objetivo de remover padrões intra-anuais sistemáticos, como efeitos de calendário, que não estão associados ao ciclo econômico nem à condução da política monetária, facilitando a identificação das flutuações cíclicas relevantes para o estudo do hiato do produto \cite{woodford2003interest, gali2015monetary}.
 
 % ARIMA
-O \textbf{ajuste sazonal} das séries de atividade econômica foi realizado por meio do procedimento X-13-ARIMA-SEATS, metodologia adotada por instituições oficiais e pela literatura empírica \citeonline{sax2018seasonal}. O método combina pré-ajustes determinísticos via modelagem regARIMA com técnicas de filtragem do tipo X-11, permitindo remover efeitos sazonais e de calendário, bem como reduzir problemas de borda e revisões excessivas das estimativas correntes.\footnote{Os detalhes formais do procedimento, incluindo a especificação do modelo regARIMA, a decomposição multiplicativa e os filtros empregados, são apresentados no Apêndice~A.}
+O \textbf{ajuste sazonal} das séries de atividade econômica foi realizado por meio do procedimento X-13-ARIMA-SEATS, metodologia adotada por instituições oficiais e pela literatura empírica \citeonline{sax2018seasonal}. O método combina pré-ajustes determinísticos via modelagem regARIMA com técnicas de filtragem do tipo X-11, permitindo remover efeitos sazonais e de calendário, bem como reduzir problemas de borda e revisões excessivas das estimativas correntes.\footnote{\textcolor{red}{<-> POs detalhes formais do procedimento, incluindo a especificação do modelo regARIMA, a decomposição multiplicativa e os filtros empregados, são apresentados no Apêndice~A. MUDAR ISSO PRA METODOLOGIA?? <->}}
 
 % Teste de Estacionariedade / Raiz Unitária
 Em seguida, avaliou-se a propriedade de \textbf{estacionariedade} das séries de inflação, taxa de juros e hiato do produto por meio dos testes de raiz unitária Augmented Dickey--Fuller (ADF) e KPSS. Esses testes são empregados de forma complementar na literatura de séries temporais macroeconômicas, uma vez que partem de hipóteses nulas opostas \cite{dickey1979distribution}. Sua utilização conjunta permite verificar se as transformações adotadas são compatíveis com a modelagem dinâmica implícita no arcabouço Novo-Keynesiano, no qual inflação e hiato são tratados como variáveis estacionárias em torno de seus valores de equilíbrio de longo prazo \cite{kwiatkowski1992testing}.
+
+\textcolor{red}{<-> Adicionar um parágrafo explicando como lidamos com casos de raiz unitária na taxa de juros. Se $\rho \approx 1$, a condição de estabilidade muda (a regra precisa ser super-inercial ou responder em diferenças). Deixar claro que estamo cientes de que a fórmula padrão $\frac{\phi}{1-\rho}$ falha nesse caso limite, como falhou no modelo híbrido <->}
 
 % Filtro HP
 Em específico, dada a natureza não observável do produto potencial, o hiato do produto foi obtido por meio de procedimentos de \textbf{filtragem estatística}. A especificação adota o filtro de \citeonline{hodrick1997postwar}, com parâmetro de suavização $\lambda = 1600$, padrão para dados trimestrais. O filtro define o componente de tendência como a solução do problema de minimização:
@@ -671,13 +674,15 @@ de modo que \(\phi_\pi = \phi_\pi^{b} + \phi_\pi^{f}\) sintetiza a intensidade t
 
 A escolha do estimador reflete a forma como as variáveis no lado direito se relacionam com o erro de política e com a informação disponível no instante \(t\).
 
+\textcolor{red}{<-> EXPLICAR QUANTOS TRIMESTRES TEM NO TOTAL E QUANTOS SOBRARAM APÓS OS LAGS E JUSTIFICAR ISSO. <->}
+
 % -----------------------------------------------------------
 \subsubsection{MQO para a Regra \textit{Backward}.}
 \label{subsubsec:mqo_regra_backward}
 % -----------------------------------------------------------
 
 Na equação \eqref{eq:regra_backward_mqo}, assume-se que \(\pi_t\) e \(\tilde y_t\) são, no horizonte trimestral, predeterminados em relação a \(u_t\), de forma que \(E(u_t|\pi_t,\tilde y_t,i_{t-1},\mathcal F_{t-1})=0\). Sob essa hipótese, MQO fornece estimadores consistentes, e a correção HAC (\textit{Heteroskedasticity- and autocorrelation-consistent estimators}) garante inferência robusta à autocorrelação serial na série da Selic. Os estimadores HAC , também conhecidos como \textit{Estimadores de variância Newey-West}, propostos pela primeira vez por \citeonline{neweyWest}, estima a matriz de covariância do modelo corrigindo para autocorrelação e heterocedasticidade.
-\textcolor{red}{Procurar artigo que justifica/prova a existência de autocorrelação e heterocedasticidade em curvas de juros para acrescentá-lo neste parágrafo.}
+\textcolor{red}{<-> Procurar artigo que justifica/prova a existência de autocorrelação e heterocedasticidade em curvas de juros para acrescentá-lo neste parágrafo. <->}
 
 % -----------------------------------------------------------
 \subsubsection{GMM para Regras \textit{Forward} e Híbrida.}
@@ -782,36 +787,128 @@ Por fim, para investigar a estabilidade dos parâmetros ao longo do tempo e vali
 %     - Testes de quebras estruturais endógenas
 %       (Bai--Perron, 1998, 2003)
 
+% ***********************************************************
+
 % ===========================================================
 \section{Resultados}
-% ===========================================================
 \label{sec:resultados}
+% ===========================================================
 
 Esta Seção apresenta os resultados empíricos da estimação das diferentes especificações da Regra de Taylor para a economia brasileira no período 1999--2024, bem como os testes associados ao Princípio de Taylor e à condição de determinância do equilíbrio no modelo Novo-Keynesiano. Em consonância com a estratégia empírica delineada na Seção~\ref{sec:metodologia}, os resultados são organizados de forma a distinguir entre as diferentes especificações econométricas, avaliar a robustez das estimativas a alternativas de mensuração do hiato do produto e explorar a estabilidade dos parâmetros ao longo do tempo.
 
-MQO: Como especificação de referência, utiliza-se o hiato do produto estimado pelo Banco Central do Brasil, por refletir a informação efetivamente disponível à autoridade monetária no momento da decisão. Reconhece-se, contudo, o potencial de endogeneidade dessa medida, razão pela qual especificações alternativas de hiato são exploradas como exercício de robustez.
+Como especificação de referência, utiliza-se o hiato do produto estimado pelo Banco Central do Brasil, por refletir a informação efetivamente disponível à autoridade monetária no momento da decisão. Reconhece-se, contudo, o potencial de endogeneidade dessa medida, razão pela qual especificações alternativas de hiato são exploradas como exercício de robustez.
 
+A Seção organiza-se em duas partes: (i) estimações das regras de Taylor; e (ii) implicações para determinância no modelo Novo-Keynesiano. Na análise principal, utilizamos os coeficientes de curto prazo $(\hat{\phi}_\pi,\hat{\phi}_y)$; medidas implícitas de longo prazo são reportadas apenas como exercício de robustez, dada a sensibilidade quando $\rho \approx 1$.
+
+% PARTE 1: ESTIMATIVAS DAS REGRAS DE TAYLOR
 % -----------------------------------------------------------
 \subsection{Estimações da Regra de Taylor}
 \label{subsec:estimacoes_regra_taylor}
 % -----------------------------------------------------------
 
-Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nas subseções~\ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Para cada especificação, reportam-se os coeficientes estimados de curto prazo, bem como os parâmetros de reação de longo prazo à inflação e ao hiato do produto, obtidos a partir da reparametrização com suavização da taxa de juros.
+%% GUIA DA NARRATIVA 
+% Pergunta respondida: Como o Banco Central reage à inflação e ao hiato? 
+% Fazer: 1) MQO, 2)GMM forward, 3) GMM híbrido + Persistência elevada e Fragilidade de multiplicadores de longo prazo
+
+Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nas subseções~\ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Para cada especificação, reportam-se os coeficientes estimados de curto prazo, bem como medidas implícitas de longo prazo derivadas da reparametrização com suavização da taxa de juros, cuja interpretação requer cautela em contextos de elevada persistência.
 
 Em particular, as tabelas apresentam:
 \begin{itemize}
     \item os coeficientes estimados das equações de juros, incluindo o termo constante e o grau de inércia da taxa de juros;
-    \item os parâmetros estruturais de longo prazo \(\hat{\phi}_\pi\) e \(\hat{\phi}_y\), acompanhados de erros-padrão e intervalos de confiança obtidos via Método Delta;
+    \item medidas implícitas de longo prazo associadas à reação à inflação e ao hiato do produto, acompanhadas de erros-padrão e intervalos de confiança obtidos via Método Delta, cuja interpretação depende criticamente do grau de persistência estimado;
     \item estatísticas de diagnóstico relevantes, incluindo, no caso das especificações estimadas por GMM, o teste de sobre-identificação de Hansen.
 \end{itemize}
 
 Os resultados são inicialmente discutidos para a amostra completa (1999--2024), permitindo uma avaliação agregada da reação sistemática da política monetária brasileira ao longo do regime de metas de inflação.
 
+backward (MQO) >> baseline empírico
+
+forward (GMM) >> ponte conceitual
+
+híbrida (GMM) >> resultado estrutural
+
+% ----------------------------------------
 \subsubsection{MQO -- Backward-Looking}
+
 lorem ipsum
 
 Embora as estimações por MQO forneçam uma caracterização informativa da resposta backward-looking da política monetária, a presença de expectativas racionais e potenciais problemas de endogeneidade requer uma abordagem que explore explicitamente as condições de momento implícitas no modelo forward-looking, motivando a utilização do método dos momentos generalizados (GMM).
 
+% ----------------------------------------------
+% TABELA: Regras de Taylor backward-looking (MQO)
+% ----------------------------------------------
+\begin{table}[!htbp]
+\centering
+\caption{Regras de Taylor backward-looking estimadas por MQO (HAC): persistência da Selic e respostas de curto prazo.}
+\label{tab:mqo_backward_resultados}
+
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.20}
+
+% coluna X alinhada à esquerda
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+% macro para coeficiente (erro-padrão)
+\newcommand{\coefse}[2]{\begin{tabular}[c]{@{}r@{}}#1\\\scriptsize(#2)\end{tabular}}
+
+\begin{tabularx}{\textwidth}{r Y r r r r r r r}
+\toprule
+\# & Spec & N & $\rho$ & $\phi_{\pi}$ & $\phi_{y}$ & $p(\rho)$ & $p(\phi_{\pi})$ & $p(\phi_{y})$ \\
+\midrule
+
+\multicolumn{9}{l}{\textit{Hiato: Filtro HP}}\\
+1  & \texttt{HP gap} ($\tilde y_{t}$)        & 82 & \coefse{0.9477}{0.017} & \coefse{0.3429}{0.038} & \coefse{0.1485}{0.054} & 0.0000 & 0.0000 & 0.0060 \\
+2  & \texttt{HP gap} ($\tilde y_{t-1}$)      & 82 & \coefse{0.9435}{0.017} & \coefse{0.3334}{0.041} & \coefse{0.1636}{0.050} & 0.0000 & 0.0000 & 0.0010 \\
+3  & \texttt{HP gap} ($\tilde y_{t-2}$)      & 82 & \coefse{0.9389}{0.020} & \coefse{0.3375}{0.046} & \coefse{0.0871}{0.037} & 0.0000 & 0.0000 & 0.0190 \\
+\addlinespace[1mm]
+
+\multicolumn{9}{l}{\textit{Hiato: BCB}}\\
+4  & \texttt{BCB gap} ($\tilde y_{t}$)       & 82 & \coefse{0.9281}{0.021} & \coefse{0.3221}{0.037} & \coefse{0.1599}{0.053} & 0.0000 & 0.0000 & 0.0030 \\
+5  & \texttt{BCB gap} ($\tilde y_{t-1}$)     & 82 & \coefse{0.9213}{0.023} & \coefse{0.3164}{0.041} & \coefse{0.1687}{0.055} & 0.0000 & 0.0000 & 0.0020 \\
+6  & \texttt{BCB gap} ($\tilde y_{t-2}$)     & 82 & \coefse{0.9233}{0.025} & \coefse{0.3275}{0.048} & \coefse{0.1150}{0.054} & 0.0000 & 0.0000 & 0.0330 \\
+\addlinespace[1mm]
+
+\multicolumn{9}{l}{\textit{Hiato: Filtro Hamilton}}\\
+7  & \texttt{Hamilton gap} ($\tilde y_{t}$)  & 82 & \coefse{0.9378}{0.018} & \coefse{0.3545}{0.028} & \coefse{0.0618}{0.015} & 0.0000 & 0.0000 & 0.0000 \\
+8  & \texttt{Hamilton gap} ($\tilde y_{t-1}$)& 82 & \coefse{0.9351}{0.019} & \coefse{0.3575}{0.031} & \coefse{0.0617}{0.018} & 0.0000 & 0.0000 & 0.0010 \\
+9  & \texttt{Hamilton gap} ($\tilde y_{t-2}$)& 82 & \coefse{0.9358}{0.021} & \coefse{0.3548}{0.037} & \coefse{0.0385}{0.023} & 0.0000 & 0.0000 & 0.0900 \\
+\addlinespace[1mm]
+
+\multicolumn{9}{l}{\textit{Hiato: IFI}}\\
+10 & \texttt{IFI gap} ($\tilde y_{t}$)       & 82 & \coefse{0.9281}{0.019} & \coefse{0.3433}{0.034} & \coefse{0.1617}{0.052} & 0.0000 & 0.0000 & 0.0020 \\
+11 & \texttt{IFI gap} ($\tilde y_{t-1}$)     & 82 & \coefse{0.9217}{0.019} & \coefse{0.3362}{0.036} & \coefse{0.1776}{0.048} & 0.0000 & 0.0000 & 0.0000 \\
+12 & \texttt{IFI gap} ($\tilde y_{t-2}$)     & 82 & \coefse{0.9236}{0.021} & \coefse{0.3396}{0.042} & \coefse{0.1228}{0.042} & 0.0000 & 0.0000 & 0.0030 \\
+\bottomrule
+\end{tabularx}
+
+\vspace{1.5mm}
+\begin{minipage}{\textwidth}
+\scriptsize
+\textit{Notas}: Estimações por MQO com erros-padrão robustos a heterocedasticidade e autocorrelação (HAC, 4 defasagens, sem correção de pequena amostra). A variável dependente é a Selic média trimestral. Reportam-se coeficientes e, entre parênteses, erros-padrão HAC. $\rho$ denota a persistência (coeficiente de $i_{t-1}$). $\phi_{\pi}$ e $\phi_{y}$ capturam respostas de curto prazo à inflação corrente (IPCA 12m no fim do trimestre) e ao hiato do produto, respectivamente.
+
+\vspace{5mm}
+\textit{\underline{Dicionário das variáveis/colunas}}:
+\begin{itemize}
+  \item $\#$: Identificador da especificação estimada.
+  \item \textit{Spec}: Medida do hiato do produto utilizada na regra de Taylor e seu horizonte temporal.
+  \item $N$: Número de observações trimestrais utilizadas na estimação.
+  \item $\rho$: Coeficiente de persistência da taxa de juros (coeficiente da Selic defasada $i_{t-1}$).
+  \item $\phi_{\pi}$: Resposta de curto prazo da taxa de juros à inflação corrente (IPCA acumulado em 12 meses no fim do trimestre).
+  \item $\phi_{y}$: Resposta de curto prazo da taxa de juros ao hiato do produto.
+  \item $p(\rho)$: Valor-p associado ao teste de significância do coeficiente de persistência da taxa de juros.
+  \item $p(\phi_{\pi})$: Valor-p associado ao teste de significância da resposta à inflação.
+  \item $p(\phi_{y})$: Valor-p associado ao teste de significância da resposta ao hiato do produto.
+\end{itemize}
+
+\end{minipage}
+\end{table}
+% ----------------------------------------------
+% Fim da tabela MQO Backward-Looking
+
+
+lorem ipsum
+
+% ----------------------------------------
 \subsubsection{GMM -- Forward-Looking}
 lorem ipsum
 
@@ -821,31 +918,134 @@ Dadas as restrições informacionais relativas à observação de expectativas d
 
 Devido à disponibilidade de dados e à construção de variáveis prospectivas, particularmente as expectativas de inflação e as medidas do hiato do produto para o período seguinte, a amostra efetiva de estimação inicia-se no segundo trimestre de 2004. Essa restrição reflete a disponibilidade de medidas de expectativa consistentes e o comprimento mínimo da amostra exigido pelas técnicas de filtragem estatística.
 
+% Um parágrafo curto e honesto, do tipo:
+% o que foi estimado;
+% por que só uma especificação;
+% qual o principal resultado qualitativo.
+% Um parágrafo explícito de limitação, mencionando:
+% rejeição no Hansen;
+% sensibilidade a instrumentos;
+% papel exploratório.
+% Uma frase de transição forte para a híbrida.
+% Embora a especificação forward-looking pura produza coeficientes estatisticamente significativos para a inflação esperada, os resultados mostram-se sensíveis à escolha dos instrumentos e não passam nos testes de sobre-identificação. Essa evidência sugere que uma modelagem que incorpore explicitamente a persistência da taxa de juros — como na regra híbrida — é empiricamente mais adequada para capturar o comportamento sistemático da política monetária brasileira.
+
+% ----------------------------------------
 \subsubsection{GMM -- Híbrida}
 lorem ipsum
 
-% -----------------------------------------------------------
-\subsection{Teste do Princípio de Taylor}
-\label{subsec:teste_principio_taylor}
-% -----------------------------------------------------------
-
-Com base nos parâmetros de reação de longo prazo estimados, avalia-se o cumprimento do Princípio de Taylor por meio do teste de Wald unilateral, conforme descrito na Seção~\ref{subsubsec:principio_taylor_bullard_mitra}. Em particular, testa-se a hipótese nula de que o coeficiente de reação à inflação não excede a unidade, contra a alternativa de que a política monetária reage de forma mais que proporcional a desvios da inflação em relação à meta.
-
-A análise considera:
 \begin{itemize}
-    \item a significância estatística de \(\hat{\phi}_\pi\);
-    \item os intervalos de confiança associados, construídos a partir do Método Delta;
-    \item a consistência dos resultados entre diferentes especificações econométricas da regra de Taylor.
+\item \textbf{Conjunto de modelos.}
+Foram consideradas múltiplas medidas do hiato do produto (HP, Hamilton, IFI, BCB e tendências lineares e quadráticas), bem como diferentes defasagens dos termos esperados, com o objetivo de avaliar a robustez qualitativa dos resultados.
+
+\item \textbf{Resultados principais.}
+O parâmetro de persistência $\rho$ é estatisticamente significativo em todas as especificações, frequentemente assumindo valores próximos à unidade.
+
+\item \textbf{Interpretação.}
+Os resultados indicam que a política monetária reage sistematicamente às expectativas de inflação no curto prazo, enquanto a resposta ao hiato do produto é menos robusta.
+
+\item \textbf{Limitação.}
+Em especificações que incorporam elevada persistência da taxa de juros, multiplicadores implícitos de longo prazo derivados da dinâmica da regra tornam-se altamente sensíveis à proximidade de $\rho$ em relação à unidade. Assim, inferências sobre respostas de longo prazo devem ser tratadas com cautela.
+
+\item \textbf{Robustez.}
+Especificações alternativas que modelam explicitamente a persistência do erro de política monetária como um processo AR(1), sem termo de suavização explícito na regra, indicam que parte da persistência observada pode decorrer de autocorrelação serial do erro, e não de suavização deliberada da política monetária.
+
+\item \textbf{Implicações.}
+A evidência empírica sustenta uma resposta positiva da taxa real-alvo à inflação esperada. Inferências sobre reações de longo prazo e condições de determinância dependem criticamente da interpretação dos termos associados à persistência e devem ser feitas com parcimônia.
 \end{itemize}
 
-Essa evidência permite avaliar se, do ponto de vista estatístico, a condução da política monetária brasileira esteve alinhada ao Princípio de Taylor no período analisado.
+% ----------------------------------------------
+% TABELA: Regras de Taylor híbridas (GMM)
+% ----------------------------------------------
+\begin{table}[!htbp]
+\centering
+\caption{Regras de Taylor híbridas estimadas por GMM (one-step): coeficientes de curto prazo e persistência da taxa de juros.}
+\label{tab:gmm_hibrido_resultados}
 
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.20}
+
+% coluna X alinhada à esquerda (como na MQO)
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{tabularx}{\textwidth}{r Y r r r r r r r r}
+\toprule
+\# & Spec & N & \#Z & $\rho$ & $\phi_{\pi}$ & $\phi_{y}$ &
+$p(\rho)$ & $p(\phi_{\pi})$ & $p(\phi_{y})$ \\
+\midrule
+
+\multicolumn{10}{l}{\textit{Hiato: BCB}}\\
+1 & \texttt{BCB gap} ($\tilde y_{t-1}$)      & 82 & 5 & 1.0031 & 0.8367 & -0.1222 & 0.0000 & 0.0000 & 0.2576 \\
+2 & \texttt{BCB gap} ($\tilde y_{t-2}$)      & 82 & 5 & 1.0394 & 0.9166 & -0.2594 & 0.0000 & 0.0000 & 0.0218 \\
+\addlinespace[1mm]
+
+\multicolumn{10}{l}{\textit{Hiato: Filtro Hamilton}}\\
+3 & \texttt{Hamilton gap} ($\tilde y_{t-1}$) & 82 & 5 & 0.9595 & 0.7359 &  0.0495 & 0.0000 & 0.0000 & 0.0604 \\
+4 & \texttt{Hamilton gap} ($\tilde y_{t-2}$) & 82 & 5 & 0.9700 & 0.7643 &  0.0214 & 0.0000 & 0.0000 & 0.4076 \\
+\addlinespace[1mm]
+
+\multicolumn{10}{l}{\textit{Hiato: Filtro HP}}\\
+5 & \texttt{HP gap} ($\tilde y_{t-1}$)       & 82 & 5 & 0.9704 & 0.7341 &  0.0719 & 0.0000 & 0.0000 & 0.3990 \\
+6 & \texttt{HP gap} ($\tilde y_{t-2}$)       & 82 & 5 & 0.9817 & 0.7843 & -0.0074 & 0.0000 & 0.0000 & 0.9145 \\
+\addlinespace[1mm]
+
+\multicolumn{10}{l}{\textit{Hiato: IFI}}\\
+7 & \texttt{IFI gap} ($\tilde y_{t-1}$)      & 82 & 5 & 0.9861 & 0.7851 & -0.0274 & 0.0000 & 0.0000 & 0.7701 \\
+8 & \texttt{IFI gap} ($\tilde y_{t-2}$)      & 82 & 5 & 1.0139 & 0.8383 & -0.1218 & 0.0000 & 0.0000 & 0.1566 \\
+\bottomrule
+\end{tabularx}
+
+\vspace{1.5mm}
+\begin{minipage}{\textwidth}
+\scriptsize
+\textit{Notas}: Estimações via GMM one-step. $\rho$ denota a persistência da taxa de juros (suavização). $\phi_{\pi}$ e $\phi_{y}$ representam respostas de curto prazo à inflação esperada e ao hiato do produto, respectivamente. Resultados indicam elevada persistência da taxa de juros. A interpretação de multiplicadores de longo prazo derivados de $\rho$ requer cautela, pois valores próximos à unidade podem refletir persistência do erro de política monetária, e não suavização deliberada.
+
+\vspace{5mm}
+\textit{\underline{Dicionário das variáveis/colunas}}:
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item $\#$: Identificador da especificação estimada.
+  \item \textit{Spec}: Medida do hiato do produto utilizada na regra de Taylor e seu horizonte temporal.
+  \item $N$: Número de observações trimestrais utilizadas na estimação.
+  \item $\#Z$: Número de instrumentos utilizados na estimação GMM.
+  \item $\rho$: Coeficiente de persistência da taxa de juros, associado ao termo de suavização da política monetária.
+  \item $\phi_{\pi}$: Resposta de curto prazo da taxa de juros à inflação esperada.
+  \item $\phi_{y}$: Resposta de curto prazo da taxa de juros ao hiato do produto.
+  \item $p(\rho)$: Valor-p associado ao teste de significância do coeficiente de persistência da taxa de juros.
+  \item $p(\phi_{\pi})$: Valor-p associado ao teste de significância da resposta à inflação esperada.
+  \item $p(\phi_{y})$: Valor-p associado ao teste de significância da resposta ao hiato do produto.
+\end{itemize}
+
+\end{minipage}
+\end{table}
+% ----------------------------------------------
+% Fim da tabela GMM Híbrida
+
+lorem ipsum
+
+% PARTE 2: DETERMINÂNCIA DO EQUILÍBRIO
 % -----------------------------------------------------------
 \subsection{Determinância e Condição de Bullard--Mitra}
 \label{subsec:resultados_bullard_mitra}
 % -----------------------------------------------------------
 
-Para além da evidência estatística fornecida pelo teste de Wald, a análise é aprofundada por meio da verificação da condição de determinância do equilíbrio no modelo Novo-Keynesiano. Seguindo Bullard e Mitra (2002), os pares estimados \((\hat{\phi}_\pi,\hat{\phi}_y)\) são inseridos na condição necessária e suficiente para a unicidade do equilíbrio e para a estabilidade sob aprendizagem.
+%% GUIA DA NARRATIVA 
+% Pergunta respondida: Essas regras são compatíveis com unicidade do equilíbrio? 
+% Aqui entram dois passos explícitos: 
+% (i) Passo metodológico 
+% * Como transformar coeficientes econométricos em parâmetros estruturais? 
+% * curto prazo vs longo prazo 
+% * problema de $\rho \approx 1$ 
+% * cautela explícita % (ii) Passo estrutural (Bullard–Mitra) % Dado esse mapeamento, há determinância? 
+% * agora sim entra o teste 
+% * agora sim entram os pares $(\phi_\pi,\phi_y)$
+
+\paragraph{Mapeamento dos coeficientes estimados.}
+Antes de avaliar a determinância, explicitamos o mapeamento entre os coeficientes estimados das regras de Taylor e os parâmetros relevantes do modelo Novo-Keynesiano. Distinguimos entre respostas de curto prazo à inflação e ao hiato do produto, $(\hat{\phi}_\pi,\hat{\phi}_y)$, e medidas implícitas de longo prazo derivadas da presença de persistência na taxa de juros.
+
+Em especificações com suavização explícita, valores de $\rho$ próximos à unidade tornam os multiplicadores de longo prazo altamente sensíveis, de modo que sua interpretação requer cautela. Na análise principal, utilizamos os coeficientes de curto prazo $(\hat{\phi}_\pi,\hat{\phi}_y)$; medidas implícitas de longo prazo são reportadas apenas como exercício de robustez. Assim, a condição de Bullard--Mitra é avaliada a partir dos pares $(\hat{\phi}_\pi,\hat{\phi}_y)$ estimados em cada especificação e, complementarmente, a partir de versões implícitas de longo prazo quando aplicável.
+
+\paragraph{Condição de Bullard--Mitra.}
+Com base nesse mapeamento, os pares estimados $(\hat{\phi}_\pi,\hat{\phi}_y)$ são inseridos na condição necessária e suficiente para a unicidade do equilíbrio e para a estabilidade sob aprendizagem, conforme proposto por Bullard e Mitra (2002).
 
 Essa abordagem permite distinguir entre:
 \begin{itemize}
@@ -855,103 +1055,25 @@ Essa abordagem permite distinguir entre:
 
 Os resultados são apresentados para cada especificação da regra de Taylor, permitindo avaliar se a política monetária brasileira foi compatível com um regime determinante ao longo da amostra completa.
 
-% -----------------------------------------------------------
-\subsection{Robustez às Medidas do Hiato do Produto}
-\label{subsec:robustez_hiato}
-% -----------------------------------------------------------
-
-Reconhecendo a incerteza inerente à mensuração do hiato do produto, esta subseção avalia a robustez dos resultados empíricos a diferentes procedimentos de extração do componente cíclico do produto. Em particular, as estimações são replicadas utilizando medidas de hiato obtidas a partir do filtro Hodrick--Prescott, do filtro de Hamilton, de tendências determinísticas lineares e quadráticas, bem como estimativas institucionais produzidas pela IFI e pelo Banco Central do Brasil.
-
-A comparação entre essas especificações permite verificar:
-\begin{itemize}
-    \item a estabilidade qualitativa dos coeficientes estimados;
-    \item a sensibilidade do cumprimento do Princípio de Taylor ao método de mensuração do hiato;
-    \item a robustez das conclusões sobre determinância frente a diferentes medidas do produto potencial.
-\end{itemize}
-
-% -----------------------------------------------------------
-\subsection{Resultados por Regimes de Política Monetária}
-\label{subsec:resultados_regimes_politica_monetaria}
-% -----------------------------------------------------------
-
-Por fim, investiga-se a estabilidade temporal da condução da política monetária por meio da estimação das regras de Taylor em subperíodos associados às diferentes presidências do Banco Central do Brasil (Fraga, Meirelles, Tombini, Goldfajn e Campos Neto). Essa segmentação permite analisar se a intensidade da reação da política monetária à inflação e ao hiato do produto variou sistematicamente ao longo do tempo.
-
-Em cada regime, são avaliados:
-\begin{itemize}
-    \item os coeficientes de reação estimados;
-    \item o cumprimento do Princípio de Taylor;
-    \item a compatibilidade da regra monetária com a condição de determinância do modelo.
-\end{itemize}
-
-Quando pertinente, os resultados são confrontados com evidência de quebras estruturais endógenas, conforme discutido na Seção~\ref{subsubsec:testes_determinancia_quebras}, de modo a avaliar a coerência entre mudanças institucionais e alterações estatisticamente identificáveis na condução da política monetária.
-
+%% FAZER VIRAR APÊNDICE (?) / ESTUDAR DEPOIS
 % -----------------------------------------------------------
 \subsection{Implicações Dinâmicas e Simulações (Dynare)}
 \label{subsec:simulacoes_opcional}
 % -----------------------------------------------------------
 
+%% Tudo que está aqui ainda é rascunho
+A principal contribuição deste artigo é mostrar que a avaliação empírica da política monetária brasileira à luz do Princípio de Taylor exige cautela adicional quando se incorporam mecanismos de suavização da taxa de juros. Argumenta-se que, em um contexto de elevada persistência, a distinção entre respostas de curto e longo prazo torna-se crucial para a análise de determinância no modelo Novo-Keynesiano, de modo que a simples verificação de coeficientes superiores à unidade não garante, por si só, um equilíbrio único e estável.
+
 Como extensão da análise empírica, explora-se o comportamento dinâmico do modelo Novo-Keynesiano sob diferentes configurações da regra monetária estimada. Para esse fim, os parâmetros estimados são incorporados a um modelo NK calibrado para a economia brasileira, permitindo a análise das respostas a choques monetários e a comparação entre regimes determinantes e indeterminantes. As simulações dinâmicas utilizam exclusivamente os valores estimados dos parâmetros da regra de política monetária, tratados como exógenos ao modelo, com o objetivo de ilustrar as implicações dinâmicas associadas a regimes determinantes e indeterminantes.
 
 Essa análise tem caráter complementar e busca ilustrar as implicações dinâmicas das estimativas obtidas, sem pretensão de avaliar a optimalidade da política monetária. As simulações são conduzidas no ambiente Dynare, que facilita a resolução numérica de modelos DSGE e a geração de funções de resposta ao impulso. A análise concentra-se em:
-
 \begin{itemize}
     \item comparação das respostas da inflação, do hiato do produto e da taxa de juros a choques monetários sob diferentes regras de Taylor;
     \item avaliação das diferenças dinâmicas entre regimes determinantes e indeterminantes;
     \item ilustração das implicações práticas do cumprimento ou violação do Princípio de Taylor.
 \end{itemize}
 
-% ***********************************************************
-
-% ===========================================================
-\section{Discussão}
-% ===========================================================
-\label{sec:discussao}
-
-<->PENSANDO EM MOVER ESSA DISCUSSÃO PARA O TÓPICO 6<->
-
-\subsection{Interpretação Econômica}
-\label{subsec:interpretacao_economica}
-
-\begin{itemize}
-    \item Implicações de $\phi_\pi > 1$ para credibilidade e eficácia da política monetária.
-    \item Relação entre reação da taxa de juros, estabilização da inflação e volatilidade do hiato do produto.
-\end{itemize}
-
-\subsection{Discussão dos Resultados por Regimes}
-\label{subsec:discussao_resultados_regimes}
-
-\begin{itemize}
-    \item Interpretação econômica das diferenças entre regimes.
-    \item Relação entre arcabouço institucional, composição do Copom e parâmetros estimados.
-    \item Possíveis explicações para mudanças na força da reação à inflação.
-    \item Implicações para credibilidade, transparência e comunicação da política monetária.
-    \item Comparação com a literatura brasileira de política monetária por períodos.
-\end{itemize}
-
-\subsection{Comparação com a Literatura}
-\label{subsec:comparacao_literatura}
-
-\begin{itemize}
-    \item Convergência ou divergência dos resultados com estudos prévios para o Brasil.
-    \item Diferenças metodológicas em relação à literatura internacional (CGG, Bullard--Mitra etc.).
-\end{itemize}
-
-\subsection{Implicações de Política}
-\label{subsec:implicacoes_politica}
-
-\begin{itemize}
-    \item Relevância da forte reação à inflação em regimes de metas.
-    \item Papel da comunicação, \textit{forward guidance} e credibilidade na sustentação de $\phi_\pi > 1$.
-\end{itemize}
-
-\subsection{Limitações}
-\label{subsec:limitacoes}
-
-\begin{itemize}
-    \item Medição do hiato do produto.
-    \item Qualidade e horizonte das expectativas de inflação.
-    \item Simplicidade da regra estimada frente a modelos DSGE completos.
-\end{itemize}
+O exercício ilustra como pequenas variações na especificação da regra de política monetária podem ter implicações substantivas para a determinância do equilíbrio, reforçando a centralidade das expectativas racionais e do princípio de Taylor no arcabouço novo-keynesiano.
 
 % ***********************************************************
 
