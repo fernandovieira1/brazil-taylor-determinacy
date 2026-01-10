@@ -50,11 +50,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-% ================== PACOTES MATEMÁTICOS E GRÁFICOS ==================
+% ================== PACOTES MATEMÁTICOS, TABELAS E GRÁFICOS ==================
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{float}
 
 % ================== FORMATAÇÃO ==================
 \usepackage{geometry}
@@ -837,7 +838,7 @@ Embora as estimações por MQO forneçam uma caracterização informativa da res
 % ----------------------------------------------
 % TABELA: Regras de Taylor backward-looking (MQO)
 % ----------------------------------------------
-\begin{table}[!htbp]
+\begin{table}[H]
 \centering
 \caption{Regras de Taylor backward-looking estimadas por MQO (HAC): persistência da Selic e respostas de curto prazo.}
 \label{tab:mqo_backward_resultados}
@@ -956,7 +957,7 @@ A evidência empírica sustenta uma resposta positiva da taxa real-alvo à infla
 % ----------------------------------------------
 % TABELA: Regras de Taylor híbridas (GMM)
 % ----------------------------------------------
-\begin{table}[!htbp]
+\begin{table}[H]
 \centering
 \caption{Regras de Taylor híbridas estimadas por GMM (one-step): coeficientes de curto prazo e persistência da taxa de juros.}
 \label{tab:gmm_hibrido_resultados}
