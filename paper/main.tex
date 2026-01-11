@@ -797,9 +797,9 @@ Por fim, para investigar a estabilidade dos parâmetros ao longo do tempo e vali
 
 Esta Seção apresenta os resultados empíricos da estimação das diferentes especificações da Regra de Taylor para a economia brasileira no período 1999--2024, bem como os testes associados ao Princípio de Taylor e à condição de determinância do equilíbrio no modelo Novo-Keynesiano. Em consonância com a estratégia empírica delineada na Seção~\ref{sec:metodologia}, os resultados são organizados de forma a distinguir entre as diferentes especificações econométricas, avaliar a robustez das estimativas a alternativas de mensuração do hiato do produto e explorar a estabilidade dos parâmetros ao longo do tempo.
 
-Como especificação de referência, utiliza-se o hiato do produto estimado pelo Banco Central do Brasil, por refletir a informação efetivamente disponível à autoridade monetária no momento da decisão. Reconhece-se, contudo, o potencial de endogeneidade dessa medida, razão pela qual especificações alternativas de hiato são exploradas como exercício de robustez.
+A especificação de referência adota o hiato do produto estimado pelo Banco Central do Brasil, por refletir a informação efetivamente disponível à autoridade monetária no momento da tomada de decisões de política. Com o objetivo de avaliar a robustez dos resultados e mitigar potenciais problemas de endogeneidade, a análise é replicada com medidas alternativas do hiato, incluindo as estimativas da \cite{ifi_hiato_produto} e aquelas obtidas por meio dos filtros de Hamilton \cite{hamilton2018filtering} e Hodrick–Prescott \cite{hodrick1997postwar}, contextualizdas na subseção~\ref{subsec:indicadores_economicos}.
 
-A Seção organiza-se em duas partes: (i) estimações das regras de Taylor; e (ii) implicações para determinância no modelo Novo-Keynesiano. Na análise principal, utilizamos os coeficientes de curto prazo $(\hat{\phi}_\pi,\hat{\phi}_y)$; medidas implícitas de longo prazo são reportadas apenas como exercício de robustez, dada a sensibilidade quando $\rho \approx 1$.
+A Seção organiza-se em duas partes: (i) estimações das regras de Taylor; e (ii) implicações para a determinância do equilíbrio no modelo Novo-Keynesiano. 
 
 % PARTE 1: ESTIMATIVAS DAS REGRAS DE TAYLOR
 % -----------------------------------------------------------
@@ -811,29 +811,21 @@ A Seção organiza-se em duas partes: (i) estimações das regras de Taylor; e (
 % Pergunta respondida: Como o Banco Central reage à inflação e ao hiato? 
 % Fazer: 1) MQO, 2)GMM forward, 3) GMM híbrido + Persistência elevada e Fragilidade de multiplicadores de longo prazo
 
-Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nas subseções~\ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Para cada especificação, reportam-se os coeficientes estimados de curto prazo, bem como medidas implícitas de longo prazo derivadas da reparametrização com suavização da taxa de juros, cuja interpretação requer cautela em contextos de elevada persistência.
+Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nas subseções~\ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Essas três especificações são analisadas de forma comparável, com ênfase na resposta sistemática da taxa de juros à inflação e ao hiato do produto, bem como no grau de persistência da política monetária. Em todas as estimações, a leitura dos resultados privilegia os coeficientes de curto prazo, que capturam diretamente a reação contemporânea da autoridade monetária às condições macroeconômicas observadas ou esperadas.
 
-Em particular, as tabelas apresentam:
-\begin{itemize}
-    \item os coeficientes estimados das equações de juros, incluindo o termo constante e o grau de inércia da taxa de juros;
-    \item medidas implícitas de longo prazo associadas à reação à inflação e ao hiato do produto, acompanhadas de erros-padrão e intervalos de confiança obtidos via Método Delta, cuja interpretação depende criticamente do grau de persistência estimado;
-    \item estatísticas de diagnóstico relevantes, incluindo, no caso das especificações estimadas por GMM, o teste de sobre-identificação de Hansen.
-\end{itemize}
+As estimações \textit{backward-looking}, obtidas por MQO com correção HAC, fornecem um ponto de partida empírico para caracterizar a resposta retrospectiva da política monetária brasileira, permitindo identificar regularidades básicas associadas à persistência da taxa de juros e à reação à inflação e ao hiato do produto. As especificações \textit{forward-looking}, estimadas via GMM, incorporam explicitamente expectativas racionais e permitem avaliar em que medida a autoridade monetária reage a variáveis prospectivas, em particular à inflação esperada. Por fim, a regra híbrida combina esses dois elementos ao incluir um termo de suavização da taxa de juros, oferecendo uma representação mais flexível e empiricamente plausível do comportamento da política monetária, especialmente em contextos de elevada persistência observada na Selic.
 
-Os resultados são inicialmente discutidos para a amostra completa (1999--2024), permitindo uma avaliação agregada da reação sistemática da política monetária brasileira ao longo do regime de metas de inflação.
-
-backward (MQO) >> baseline empírico
-
-forward (GMM) >> ponte conceitual
-
-híbrida (GMM) >> resultado estrutural
+Para todas as especificações, a análise principal concentra-se nos coeficientes de curto prazo $(\hat{\phi}_\pi,\hat{\phi}_y)$, que governam a dinâmica local do sistema e são diretamente relevantes para a interpretação econômica das regras estimadas. Medidas implícitas de longo prazo são reportadas apenas como exercício de robustez, uma vez que, em ambientes caracterizados por elevada persistência da taxa de juros $(\rho \approx 1)$, tais medidas tornam-se altamente sensíveis e potencialmente pouco informativas. Essa estratégia permite distinguir com maior clareza entre evidência estatística de reação sistemática à inflação e ao hiato do produto e inferências estruturais que dependem criticamente da interpretação dos termos associados à persistência, preparando o terreno para a análise de determinância desenvolvida na subseção seguinte (\cite{clarida2000monetary}, \cite{woodford2003interest}, \cite{rudebusch2005monetary}).
 
 % ----------------------------------------
 \subsubsection{MQO -- Backward-Looking}
+\label{mqo_backward_estimacao}
 
-lorem ipsum
+\textcolor{red}{<-> curto vs longo prazo, falta calcular e decidir: entra onde? quais as implicações? <-> }
 
-Embora as estimações por MQO forneçam uma caracterização informativa da resposta backward-looking da política monetária, a presença de expectativas racionais e potenciais problemas de endogeneidade requer uma abordagem que explore explicitamente as condições de momento implícitas no modelo forward-looking, motivando a utilização do método dos momentos generalizados (GMM).
+As estimações da regra de Taylor \textit{backward-looking} por MQO, apresentadas na Tabela~\ref{tab:mqo_backward_resultados}, fornecem um retrato inicial da resposta retrospectiva da política monetária brasileira no período 1999--2024. Um resultado robusto e transversal a todas as especificações é a elevada persistência da taxa Selic, capturada pelo coeficiente $\rho$, que assume valores sistematicamente elevados, entre aproximadamente $0{,}92$ e $0{,}95$, independentemente da medida de hiato do produto utilizada. Essa evidência é consistente com a caracterização histórica da política monetária brasileira como fortemente gradualista, refletindo tanto preocupações com estabilidade financeira quanto estratégias de gerenciamento de expectativas em um ambiente macroeconômico marcado por elevada volatilidade e episódios recorrentes de incerteza, conforme discutido na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}.
+
+No que diz respeito à resposta à inflação, os coeficientes de curto prazo $\hat{\phi}_{\pi}$ são positivos, estatisticamente significativos em todas as especificações e relativamente estáveis entre diferentes medidas e defasagens do hiato do produto. Os valores estimados situam-se tipicamente no intervalo entre $0{,}32$ e $0{,}36$, indicando que, no curto prazo, aumentos da inflação observada estão associados a elevações sistemáticas da taxa nominal de juros. Esse resultado sugere que a autoridade monetária reagiu de forma consistente aos desvios inflacionários, em linha com o regime de metas, atendendo ao objetivo operacional de estabilização nominal. Contudo, esses coeficientes refletem respostas contemporâneas e não permitem, por si sós, inferir o cumprimento do Princípio de Taylor no sentido estrutural, uma vez que a elevada persistência da taxa de juros implica que a tradução dessas respostas em termos de elasticidades de longo prazo depende criticamente da interpretação do parâmetro $\rho$.
 
 % ----------------------------------------------
 % TABELA: Regras de Taylor backward-looking (MQO)
@@ -906,53 +898,37 @@ Embora as estimações por MQO forneçam uma caracterização informativa da res
 % ----------------------------------------------
 % Fim da tabela MQO Backward-Looking
 
+A resposta ao hiato do produto, capturada por $\hat{\phi}_{y}$, apresenta maior heterogeneidade, mas permanece positiva e estatisticamente significativa na maior parte das especificações, sobretudo quando se utilizam medidas institucionais ou filtros que produzem hiatos menos voláteis (BCB, IFI e HP). Os coeficientes estimados situam-se, em geral, entre $0{,}10$ e $0{,}18$, sugerindo que a política monetária brasileira incorporou, ainda que de forma secundária, informações sobre o estado cíclico da economia em suas decisões. Esse resultado é compatível com a prática institucional do regime de metas, no qual a estabilização do produto atua como objetivo complementar, condicionado à preservação da estabilidade de preços, e dialoga com a evidência histórica de respostas contracíclicas em episódios como a crise financeira internacional de 2008--2009 e a pandemia de Covid-19.
 
-lorem ipsum
+Em conjunto, os resultados das estimações \textit{backward-looking} indicam que a política monetária brasileira exibiu uma resposta sistemática à inflação e, em menor grau, ao hiato do produto, mas operou em um regime de elevada persistência da taxa de juros. Essa combinação tem implicações diretas para o problema de pesquisa deste artigo. Embora os coeficientes de curto prazo apontem para uma postura não acomodatícia diante de pressões inflacionárias, a proximidade de $\rho$ em relação à unidade torna frágeis as inferências baseadas em multiplicadores de longo prazo derivados mecanicamente como $\phi/(1-\rho)$. No contexto do modelo Novo-Keynesiano, isso significa que a evidência de reação contemporânea à inflação não é suficiente, por si só, para assegurar determinância robusta do equilíbrio, reforçando a necessidade de uma análise que incorpore explicitamente expectativas e trate a endogeneidade inerente à condução da política monetária.
+
+Embora as estimações por MQO forneçam uma caracterização informativa da resposta backward-looking da política monetária, a presença de expectativas racionais e potenciais problemas de endogeneidade requer uma abordagem que explore explicitamente as condições de momento implícitas no modelo forward-looking, motivando a utilização do método dos momentos generalizados (GMM).
 
 % ----------------------------------------
 \subsubsection{GMM -- Forward-Looking}
-lorem ipsum
+\label{gmm_forward_estimacao}
 
-Dada a incerteza em torno da medição empírica do hiato do produto, estimamos a regra de Taylor prospectiva utilizando medidas alternativas para o hiato, incluindo filtros estatísticos, estimativas institucionais e indicadores sintéticos.
+\textcolor{red}{<-> curto vs longo prazo, falta calcular e decidir: entra onde? quais as implicações? <-> }
 
-Dadas as restrições informacionais relativas à observação de expectativas do hiato do produto, a análise forward-looking pura limita-se à especificação baseada no hiato obtido via filtro HP com lead de um período.
+A Tabela~\ref{tab:gmm_forward_resultados} apresenta os resultados da estimação da regra de Taylor \textit{forward-looking} por GMM, conforme a especificação descrita na Seção~\ref{sec:metodologia}. A estimação baseia-se em uma única equação prospectiva, na qual a taxa Selic reage à inflação esperada e ao hiato do produto esperado para o período seguinte, aproximado pelo hiato obtido via filtro HP com \textit{lead} de um período. Essa restrição decorre da indisponibilidade de séries observáveis e consistentes de expectativas do hiato do produto ao longo de toda a amostra, conforme discutido na Subseção~\ref{subsec:indicadores_economicos}. Em função da disponibilidade das expectativas de inflação, a amostra efetiva inicia-se em 2004T2, totalizando 82 observações trimestrais.
 
-Devido à disponibilidade de dados e à construção de variáveis prospectivas, particularmente as expectativas de inflação e as medidas do hiato do produto para o período seguinte, a amostra efetiva de estimação inicia-se no segundo trimestre de 2004. Essa restrição reflete a disponibilidade de medidas de expectativa consistentes e o comprimento mínimo da amostra exigido pelas técnicas de filtragem estatística.
+Os resultados indicam forte persistência da taxa de juros, com coeficiente estimado para a Selic defasada de $\hat{\rho}=0{,}8648$ (erro-padrão $0{,}021$, $p<0{,}001$), evidenciando elevada inércia na condução da política monetária mesmo quando expectativas são explicitamente incorporadas à regra. A resposta à inflação esperada é positiva, estatisticamente significativa e economicamente relevante, com $\hat{\phi}_{\pi}=0{,}5483$ ($p<0{,}001$), sugerindo que o Banco Central do Brasil reage de forma sistemática às expectativas inflacionárias, em linha com o regime de metas de inflação discutido na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}. Ademais, o coeficiente associado ao hiato do produto esperado é igualmente positivo e significativo, $\hat{\phi}_{y}=0{,}2963$ ($p=0{,}001$), indicando que condições cíclicas antecipadas também influenciam as decisões de política monetária no curto prazo. Esses resultados são qualitativamente consistentes com o arcabouço formal do modelo Novo-Keynesiano apresentado na Seção~\ref{sec:arcabouco_formal}, no qual expectativas racionais desempenham papel central na determinação da dinâmica macroeconômica.
 
-% Um parágrafo curto e honesto, do tipo:
-% o que foi estimado;
-% por que só uma especificação;
-% qual o principal resultado qualitativo.
-% Um parágrafo explícito de limitação, mencionando:
-% rejeição no Hansen;
-% sensibilidade a instrumentos;
-% papel exploratório.
-% Uma frase de transição forte para a híbrida.
-% Embora a especificação forward-looking pura produza coeficientes estatisticamente significativos para a inflação esperada, os resultados mostram-se sensíveis à escolha dos instrumentos e não passam nos testes de sobre-identificação. Essa evidência sugere que uma modelagem que incorpore explicitamente a persistência da taxa de juros — como na regra híbrida — é empiricamente mais adequada para capturar o comportamento sistemático da política monetária brasileira.
+Do ponto de vista do problema de pesquisa e dos objetivos delineados nas Subseções~\ref{subsec:problema_pesquisa} e~\ref{subsec:objetivos}, a evidência empírica sugere que a política monetária brasileira incorpora informações prospectivas relevantes, particularmente no que se refere às expectativas de inflação. No entanto, a combinação de coeficientes contemporâneos moderados com elevada persistência da taxa de juros indica que grande parte do ajuste ocorre de forma gradual, por meio da suavização da Selic, e não por respostas agressivas imediatas às variáveis esperadas. Essa característica é coerente com a leitura histórica do período pós-1999, marcado por episódios recorrentes de incerteza macroeconômica, preocupações com credibilidade e estabilidade financeira, e uso intensivo da taxa de juros como instrumento de ancoragem das expectativas.
+
+Apesar da significância estatística dos coeficientes estimados, a especificação \textit{forward-looking} pura apresenta limitações econométricas importantes. O teste de sobre-identificação de Hansen rejeita a validade conjunta dos instrumentos ($J=10{,}26$, $p=0{,}0165$), indicando sensibilidade dos resultados à escolha do conjunto instrumental e possíveis problemas de especificação. Essa evidência limita o uso da regra prospectiva estrita como base para inferências estruturais robustas sobre a condução da política monetária e, em particular, para a avaliação direta do Princípio de Taylor e da condição de determinância. Em conjunto, esses resultados motivam a estimação de uma regra híbrida, que incorpora explicitamente tanto expectativas quanto mecanismos de suavização da taxa de juros, buscando uma representação empiricamente mais adequada do comportamento sistemático da política monetária brasileira, conforme desenvolvido na subseção seguinte.
 
 % ----------------------------------------
 \subsubsection{GMM -- Híbrida}
-lorem ipsum
+\label{gmm_hibrida_estimacao}
 
-\begin{itemize}
-\item \textbf{Conjunto de modelos.}
-Foram consideradas múltiplas medidas do hiato do produto (HP, Hamilton, IFI, BCB e tendências lineares e quadráticas), bem como diferentes defasagens dos termos esperados, com o objetivo de avaliar a robustez qualitativa dos resultados.
+\textcolor{red}{<-> curto vs longo prazo, falta calcular e decidir: entra onde? quais as implicações? <-> }
 
-\item \textbf{Resultados principais.}
-O parâmetro de persistência $\rho$ é estatisticamente significativo em todas as especificações, frequentemente assumindo valores próximos à unidade.
+Os resultados da estimação da regra de Taylor híbrida por GMM, apresentados na Tabela~\ref{tab:gmm_hibrido_resultados}, oferecem a caracterização mais completa da condução da política monetária brasileira no período 1999--2024, ao combinar resposta contemporânea à inflação observada, reação às expectativas de inflação e suavização da taxa de juros. O primeiro resultado a destacar é a elevada persistência da taxa Selic, capturada pelo coeficiente $\rho$, que assume valores próximos da unidade e é estatisticamente significativo em todas as especificações. Esse padrão confirma, de forma robusta, o comportamento gradualista da política monetária brasileira, amplamente documentado na literatura e discutido na Seção~\ref{sec:politica_monetaria_brasil_1999_2024}, refletindo tanto preocupações com estabilidade financeira quanto a tentativa de gerenciar expectativas em um ambiente macroeconômico historicamente volátil.
 
-\item \textbf{Interpretação.}
-Os resultados indicam que a política monetária reage sistematicamente às expectativas de inflação no curto prazo, enquanto a resposta ao hiato do produto é menos robusta.
+No que se refere à reação à inflação, a regra híbrida revela um aspecto central para a interpretação econômica dos resultados. Os coeficientes associados à inflação corrente e à inflação esperada são, em geral, positivos e estatisticamente significativos, indicando que a autoridade monetária respondeu sistematicamente a pressões inflacionárias tanto observadas quanto antecipadas. No entanto, a decomposição da resposta inflacionária entre componentes \textit{backward-looking} e \textit{forward-looking} sugere que uma parcela relevante da reação ocorre por meio da expectativa de inflação futura, o que é consistente com a estrutura prospectiva do modelo Novo-Keynesiano formalizado na Seção~\ref{sec:arcabouco_teorico}. Esse resultado reforça a interpretação de que o Banco Central do Brasil operou, ao longo do regime de metas, com forte atenção ao canal das expectativas, alinhando-se à lógica das regras à la Clarida--Galí--Gertler.
 
-\item \textbf{Limitação.}
-Em especificações que incorporam elevada persistência da taxa de juros, multiplicadores implícitos de longo prazo derivados da dinâmica da regra tornam-se altamente sensíveis à proximidade de $\rho$ em relação à unidade. Assim, inferências sobre respostas de longo prazo devem ser tratadas com cautela.
-
-\item \textbf{Robustez.}
-Especificações alternativas que modelam explicitamente a persistência do erro de política monetária como um processo AR(1), sem termo de suavização explícito na regra, indicam que parte da persistência observada pode decorrer de autocorrelação serial do erro, e não de suavização deliberada da política monetária.
-
-\item \textbf{Implicações.}
-A evidência empírica sustenta uma resposta positiva da taxa real-alvo à inflação esperada. Inferências sobre reações de longo prazo e condições de determinância dependem criticamente da interpretação dos termos associados à persistência e devem ser feitas com parcimônia.
-\end{itemize}
+Apesar dessa reação estatisticamente significativa à inflação, a elevada persistência da taxa de juros implica que a tradução dos coeficientes estimados em termos de resposta de longo prazo é quantitativamente frágil. Em particular, quando $\rho$ se aproxima da unidade, os multiplicadores de longo prazo derivados da razão $\phi/(1-\rho)$ tornam-se extremamente sensíveis a pequenas variações nos coeficientes estimados, reduzindo sua robustez interpretativa. Esse ponto é crucial para o problema de pesquisa deste artigo: ainda que a política monetária reaja à inflação no curto prazo, a combinação entre alta inércia e resposta inflacionária moderada levanta dúvidas sobre a intensidade efetiva da reação real de juros diante de choques inflacionários persistentes. Assim, a evidência empírica sugere que o cumprimento estrito do Princípio de Taylor não pode ser avaliado apenas pela significância estatística dos coeficientes inflacionários, mas requer uma análise estrutural mais cuidadosa da dinâmica implícita da regra estimada.
 
 % ----------------------------------------------
 % TABELA: Regras de Taylor híbridas (GMM)
@@ -1021,7 +997,11 @@ $p(\rho)$ & $p(\phi_{\pi})$ & $p(\phi_{y})$ \\
 % ----------------------------------------------
 % Fim da tabela GMM Híbrida
 
-lorem ipsum
+Quanto à resposta ao hiato do produto, os coeficientes estimados são, em geral, positivos, mas de menor magnitude e menos robustos entre especificações, especialmente quando comparados à resposta à inflação. Esse resultado é consistente com a interpretação histórica de que, no regime de metas brasileiro, a estabilização da inflação prevaleceu como objetivo primário da política monetária, enquanto a resposta cíclica à atividade desempenhou papel secundário e contingente. Do ponto de vista do arcabouço Novo-Keynesiano, essa evidência sugere que a estabilização do produto ocorreu predominantemente como consequência indireta da ancoragem das expectativas inflacionárias, e não como objetivo explícito de primeira ordem na função de reação da autoridade monetária.
+
+Em síntese, os resultados da regra híbrida indicam que a política monetária brasileira apresentou reação estatisticamente significativa à inflação e forte persistência da taxa de juros, compatíveis com um regime de metas operacionalmente ativo, mas potencialmente frágil em termos de resposta real de longo prazo. Essa combinação de alta inércia e reação inflacionária moderada é diretamente relevante para o objetivo central do artigo, pois levanta a questão de saber se os parâmetros estimados situam a economia brasileira na região de determinância do modelo Novo-Keynesiano ou se, ao contrário, deixam espaço para indeterminação e instabilidade expectacional.
+
+À luz dessas evidências, a subseção seguinte aprofunda a análise ao avaliar formalmente se os parâmetros estimados satisfazem o Princípio de Taylor em termos estruturais e se são compatíveis com a condição de determinância de Bullard--Mitra. Essa etapa é essencial para conectar os resultados econométricos apresentados nesta Seção às implicações dinâmicas do modelo Novo-Keynesiano, permitindo verificar se a condução empírica da política monetária brasileira foi suficiente para garantir unicidade do equilíbrio e ancoragem das expectativas ao longo do período analisado.
 
 % PARTE 2: DETERMINÂNCIA DO EQUILÍBRIO
 % -----------------------------------------------------------

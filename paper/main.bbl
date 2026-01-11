@@ -235,6 +235,11 @@ MAGKS Joint Discussion Paper Series in Economics, 2014.}
 {ORPHANIDES, A. Monetary policy rules based on real-time data.
 \emph{American Economic Review}, American Economic Association, v.~91, n.~4, p. 964--985, 2001.}
 
+\bibitem[Rudebusch 2005]{rudebusch2005monetary}
+\abntrefinfo{Rudebusch}{RUDEBUSCH}{2005}
+{RUDEBUSCH, G.~D. Monetary policy inertia: fact or fiction?
+\emph{FRB of San Francisco Working Paper}, n. 2005-19, 2005.}
+
 \bibitem[Sax e Eddelbuettel 2018]{sax2018seasonal}
 \abntrefinfo{Sax e Eddelbuettel}{SAX; EDDELBUETTEL}{2018}
 {SAX, C.; EDDELBUETTEL, D. Seasonal adjustment by x-13arima-seats in r.
