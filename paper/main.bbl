@@ -101,6 +101,11 @@ Dispon{\'\i}vel em: \url{http://www.planalto.gov.br/ccivil\_03/decreto/d3088.htm
 {CLARIDA, R.; GAL{\'I}, J.; GERTLER, M. Monetary policy rules and macroeconomic stability: Evidence and some theory.
 \emph{The Quarterly Journal of Economics}, MIT Press, v.~115, n.~1, p. 147--180, 2000.}
 
+\bibitem[Coibion e Gorodnichenko 2012]{coibion2012target}
+\abntrefinfo{Coibion e Gorodnichenko}{COIBION; GORODNICHENKO}{2012}
+{COIBION, O.; GORODNICHENKO, Y. Why are target interest rate changes so persistent?
+\emph{American Economic Journal: Macroeconomics}, American Economic Association, v.~4, n.~4, p. 126--162, 2012.}
+
 \bibitem[{Comitê de Datação de Ciclos Econômicos (CODACE)} 2020]{codace2020}
 \abntrefinfo{{Comitê de Datação de Ciclos Econômicos (CODACE)}}{{Comitê de Datação de Ciclos Econômicos (CODACE)}}{2020}
 {{Comitê de Datação de Ciclos Econômicos (CODACE)}. \emph{Comunicado de Datação de Ciclos Mensais Brasileiros - Junho de 2020}. 2020.
@@ -234,6 +239,11 @@ MAGKS Joint Discussion Paper Series in Economics, 2014.}
 \abntrefinfo{Orphanides}{ORPHANIDES}{2001}
 {ORPHANIDES, A. Monetary policy rules based on real-time data.
 \emph{American Economic Review}, American Economic Association, v.~91, n.~4, p. 964--985, 2001.}
+
+\bibitem[Rotemberg e Woodford 1997]{rotemberg1997optimization}
+\abntrefinfo{Rotemberg e Woodford}{ROTEMBERG; WOODFORD}{1997}
+{ROTEMBERG, J.~J.; WOODFORD, M. An optimization-based econometric framework for the evaluation of monetary policy.
+\emph{NBER macroeconomics annual}, MIT Press, v.~12, p. 297--346, 1997.}
 
 \bibitem[Rudebusch 2005]{rudebusch2005monetary}
 \abntrefinfo{Rudebusch}{RUDEBUSCH}{2005}
