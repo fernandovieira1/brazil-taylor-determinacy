@@ -641,19 +641,7 @@ Além das especificações puramente retrospectiva e prospectiva, estima-se uma 
 
 A equação estimada assume a seguinte forma:
 \begin{equation}
-  i_t
-  =
-  \delta_0
-  +
-  \delta_1 i_{t-1}
-  +
-  \delta_2 \pi_t
-  +
-  \delta_3 E_t\{\pi_{t+1}\}
-  +
-  \delta_4 \tilde y_t
-  +
-  v_t,
+  i_t = \delta_0 + \delta_1 i_{t-1} + \delta_2 \pi_t + \delta_3 E_t\{\pi_{t+1}\} + \delta_4 \tilde y_t + v_t,
   \label{eq:regra_hibrida_gmm}
 \end{equation}
 em que \(i_t\) representa a meta da taxa Selic, \(\pi_t\) é a inflação corrente medida pelo IPCA, \(E_t\{\pi_{t+1}\}\) denota a expectativa condicional de inflação, \(\tilde y_t\) é o hiato do produto e \(v_t\) corresponde a um choque de política monetária.
@@ -797,11 +785,13 @@ Por fim, para investigar a estabilidade dos parâmetros ao longo do tempo e vali
 \label{sec:resultados}
 % ===========================================================
 
-Esta Seção apresenta os resultados empíricos da estimação das diferentes especificações da Regra de Taylor para a economia brasileira no período 1999--2024, bem como os testes associados ao Princípio de Taylor e à condição de determinância do equilíbrio no modelo Novo-Keynesiano. Em consonância com a estratégia empírica delineada na Seção~\ref{sec:metodologia}, os resultados são organizados de forma a \textbf{(a)} distinguir entre as diferentes especificações econométricas e \textbf{(b)} avaliar a robustez das estimativas a alternativas de mensuração do hiato do produto. \textcolor{magenta}{<-> explicar por que 2004 e não 1999 como ponto de quebra <->}
+Esta Seção apresenta os resultados empíricos da estimação das diferentes especificações da Regra de Taylor para a economia brasileira, bem como os testes associados ao Princípio de Taylor e à condição de determinância do equilíbrio no modelo Novo-Keynesiano. Em consonância com a estratégia empírica delineada na Seção~\ref{sec:metodologia}, os resultados são organizados de forma a \textbf{(a)} distinguir entre as diferentes especificações econométricas e \textbf{(b)} avaliar a robustez das estimativas a alternativas de mensuração do hiato do produto.
+
+A análise abrange o período de consolidação do Regime de Metas (1999--2024) para as especificações retrospectivas. Para as especificações prospectivas e híbridas, a amostra inicia-se em 2004, garantindo a consistência das séries de expectativas de mercado (Relatório Focus) e evitando a volatilidade excessiva do período de transição cambial (2002--2003).\footnote{A restrição da amostra para as estimações GMM justifica-se pela necessidade de séries longas e estáveis para os instrumentos de expectativas, conforme ponderado na Seção~\ref{subsec:bases_de_dados}.}
 
 A análise adota como referência o hiato do produto estimado pelo Banco Central do Brasil, por refletir a informação efetivamente disponível à autoridade monetária no momento da tomada de decisões. Contudo, com o objetivo de avaliar a robustez dos resultados e mitigar potenciais problemas de endogeneidade, a análise é replicada com medidas alternativas, incluindo as estimativas da \cite{ifi_hiato_produto} e aquelas obtidas por meio dos filtros de Hamilton \cite{hamilton2018filtering} e Hodrick–Prescott \cite{hodrick1997postwar}, contextualizadas na subseção~\ref{subsec:indicadores_economicos}.
 
-A Seção organiza-se em duas partes: \textbf{(i)} estimações das regras de Taylor (Seção~\ref{subsec:estimacoes_regra_taylor}); e \textbf{(ii)} implicações para a determinância do equilíbrio no modelo NK (Seção~\ref{subsec:determinancia_bullard_mitra}) \textcolor{magenta}{<-> se inserir * resultados LP, * resultados dynare, * interpretação econômica geral dos resultados (econometria + dynare + teoria + contexto brasil 1999--2024), ADEQUAR AQUI, conforme \ref{subsec:estrategia_estimacao} <->}. 
+A Seção organiza-se em duas partes: \textbf{(i)} estimações das regras de Taylor (Seção~\ref{subsec:estimacoes_regra_taylor}); e \textbf{(ii)} implicações para a determinância do equilíbrio no modelo NK (Seção~\ref{subsec:determinancia_bullard_mitra}), culminando na análise dinâmica via simulação.
 
 % PARTE 1: ESTIMATIVAS DAS REGRAS DE TAYLOR
 % -----------------------------------------------------------
@@ -809,7 +799,7 @@ A Seção organiza-se em duas partes: \textbf{(i)} estimações das regras de Ta
 \label{subsec:estimacoes_regra_taylor}
 % -----------------------------------------------------------
 
-Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nas subseções~\ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Essas três especificações são analisadas de forma comparável, com ênfase na resposta sistemática da taxa de juros à inflação e ao hiato do produto, bem como no grau de persistência da política monetária. Em todas as estimações, a leitura dos resultados privilegia os coeficientes de curto prazo, que capturam diretamente a reação contemporânea da autoridade monetária às condições macroeconômicas observadas ou esperadas.
+Inicialmente, apresentam-se as estimações das regras de Taylor \textit{backward-looking}, \textit{forward-looking} e híbrida, conforme especificado nos tópicos \ref{subsec:regra_taylor_backward}, \ref{subsubsec:regra_forward_gmm} e \ref{subsubsec:regra_hibrida_suavizacao_gmm}. Essas três especificações são analisadas de forma comparável, com ênfase na resposta sistemática da taxa de juros à inflação e ao hiato do produto, bem como no grau de persistência da política monetária. Em todas as estimações, a leitura dos resultados privilegia os coeficientes de curto prazo, que capturam diretamente a reação contemporânea da autoridade monetária às condições macroeconômicas observadas ou esperadas.
 
 As estimações \textit{backward-looking}, obtidas por MQO com correção HAC, fornecem um ponto de partida empírico para caracterizar a resposta retrospectiva da política monetária brasileira, permitindo identificar regularidades básicas associadas à persistência da taxa de juros e à reação à inflação e ao hiato do produto. As especificações \textit{forward-looking}, estimadas via GMM, incorporam explicitamente expectativas racionais e permitem avaliar em que medida a autoridade monetária reage a variáveis prospectivas, em particular à inflação esperada. Por fim, a regra híbrida combina esses dois elementos ao incluir um termo de suavização da taxa de juros, oferecendo uma representação mais flexível e empiricamente plausível do comportamento da política monetária, especialmente em contextos de elevada persistência observada na Selic.
 
@@ -914,7 +904,7 @@ Em síntese, as estimativas MQO apontam para um Banco Central que (i) opera com 
 \subsubsection{\textbf{Forward-Looking (GMM)}}
 \label{gmm_forward_estimacao}
 
-A Tabela~\ref{tab:gmm_forward_resultados} apresenta os resultados da estimação da regra de Taylor \textit{forward-looking} via Método dos Momentos Generalizados (GMM). Diferentemente da análise retrospectiva (MQO), esta etapa concentra-se em uma única especificação de referência. Essa restrição metodológica deve-se à indisponibilidade de séries históricas longas e consistentes para as expectativas de mercado do hiato do produto, o que impôs o uso do hiato HP referente a $t+1$ como \textit{proxy} para a atividade esperada, conforme detalhado nas seções \ref{subsec:indicadores_economicos} e \ref{subsubsec:gmm_regras_forward_hibrida}.
+A Tabela~\ref{tab:gmm_forward_resultados} apresenta os resultados da estimação da regra de Taylor \textit{forward-looking} via Método dos Momentos Generalizados (GMM). Diferentemente da análise retrospectiva (MQO), esta etapa concentra-se em uma única especificação de referência. Essa restrição metodológica deve-se à indisponibilidade de séries históricas longas e consistentes para as expectativas de mercado do hiato do produto, o que impôs o uso do hiato HP referente a $t+1$ como \textit{proxy} para a atividade esperada (vide \ref{subsec:indicadores_economicos} e \ref{subsubsec:gmm_regras_forward_hibrida}).
 
 \paragraph{Dinâmica de Curto Prazo e Expectativas}
 A introdução de componentes prospectivos altera a magnitude da resposta da autoridade monetária em comparação ao modelo retrospectivo.
@@ -1061,8 +1051,6 @@ Em suma, a regra híbrida confirma que a política monetária brasileira é cara
 \subsection{Determinância e Condição de Bullard--Mitra}
 \label{subsec:determinancia_bullard_mitra}
 
-\textcolor{magenta}{<-> faltou menção aos resultados delta + E-stability e REE não citados <->}
-
 A avaliação da consistência da política monetária com a estabilidade macroeconômica, objetivo central deste estudo, requer o confronto dos parâmetros estimados com as condições de unicidade do equilíbrio no modelo Novo-Keynesiano. Tradicionalmente, conforme explanado em \ref{subsec:especificacao_econometrica}, essa verificação baseia-se na resposta de longo prazo da autoridade monetária à inflação ($\phi_{\pi}^{LP}$), calculada algebricamente a partir dos coeficientes da regra de Taylor com suavização:
 \begin{equation}
 \phi_{\pi}^{LP} = \frac{\phi_{\pi}}{1 - \rho}
@@ -1070,23 +1058,25 @@ A avaliação da consistência da política monetária com a estabilidade macroe
 \end{equation}
 Conforme discutido neste artigo em \ref{subsec:regras_politica_monetaria}, \ref{subsec:determinancia_estabilidade}, \ref{subsec:evidencias_internacionais}, \ref{subsec:evidencias_brasil}, \ref{subsubsec:principio_taylor}, \ref{sec:metodologia} e \ref{subsec:determinancia_bullard_mitra}, a condição canônica para a determinância exige que $\phi_{\pi}^{LP} > 1$, assegurando que a taxa de juros real se eleve em resposta a choques inflacionários (\cite{taylor1993}, \cite{clarida2000monetary}).
 
-Entretanto, os resultados empíricos apresentados na subseção anterior impõem uma restrição severa à aplicação direta dessa métrica. As estimações da regra híbrida (Tabela~\ref{tab:gmm_hibrido_resultados}) e os testes de robustez via GLSAR \textcolor{magenta}{<-> explicar isso na seção arcabouço ou metodologia <->} indicam que o parâmetro de persistência situa-se sistematicamente na vizinhança da unidade ($\hat{\rho} \approx 1$), exibindo comportamento de raiz unitária ou quase-raiz unitária. Matematicamente, à medida que $\rho \to 1$, o denominador da Equação \ref{eq:long_run_multiplier} tende a zero, fazendo com que o multiplicador calculado assuma valores explosivos e economicamente não-interpretáveis.
+Entretanto, os resultados empíricos apresentados na subseção anterior impõem uma restrição severa à aplicação direta dessa métrica. As estimações da regra híbrida (Tabela~\ref{tab:gmm_hibrido_resultados}), corroboradas por testes de robustez via Mínimos Quadrados Generalizados (GLS) com erros autorregressivos, indicam que o parâmetro de persistência situa-se sistematicamente na vizinhança da unidade ($\hat{\rho} \approx 1$), exibindo comportamento de raiz unitária ou quase-raiz unitária. Matematicamente, à medida que $\rho \to 1$, o denominador da Equação \ref{eq:long_run_multiplier} tende a zero, fazendo com que o multiplicador calculado assuma valores explosivos e economicamente não-interpretáveis.
 
 Esse fenômeno estatístico sugere que o Banco Central do Brasil operou sob um regime que a literatura denomina de \textbf{super-inercial}. Neste contexto, a análise de determinância não pode se restringir ao cálculo estático do multiplicador de longo prazo, devendo recorrer às condições dinâmicas estabelecidas por \cite{bullard2002learning} e \cite{rotemberg1997optimization} para regras com elevada suavização.
 
 \subsubsection{Estabilidade em Regimes Super-Inerciais}
 
-Segundo \cite{woodford2003interest} \textcolor{magenta}{<-> citar a página <->}, quando a política monetária exibe persistência elevada ($\rho \geq 1$), a condição necessária e suficiente para a determinância do equilíbrio deixa de ser uma resposta contemporânea agressiva ($\phi_{\pi} > 1$) e passa a depender da credibilidade da manutenção de taxas de juros elevadas no futuro.
+Segundo \citeonline[p.~255--256]{woodford2003interest}, em modelos Novo-Keynesianos com regras de juros inerciais, a condição de determinância deve ser interpretada em termos da resposta cumulativa da política monetária a um choque inflacionário permanente. O autor demonstra (Proposição 4.4) que, quando a regra exibe persistência elevada ou ``super-inércia'' ($\rho \geq 1$), a condição necessária e suficiente para a unicidade do equilíbrio é satisfeita mesmo com coeficientes de reação contemporânea moderados ($\phi_{\pi} < 1$), uma vez que a promessa de manter as taxas de juros elevadas por um longo horizonte garante a elevação necessária da taxa real \textit{ex-ante}.
 
 A lógica econômica subjacente é intertemporal: em uma regra super-inercial, um aumento na inflação hoje eleva a taxa de juros nominal corrente em apenas $\phi_{\pi}$ (estimado neste trabalho entre $0{,}73$ e $0{,}92$, portanto $< 1$). No entanto, devido ao coeficiente $\rho \approx 1$, esse aperto inicial não é revertido nos períodos subsequentes; ele é carregado e amplificado pela dinâmica da regra. Agentes racionais, antecipando que a taxa de juros nominal permanecerá elevada por um horizonte longo, revisam suas expectativas de inflação para baixo imediatamente, elevando a taxa de juros real \textit{ex-ante} acumulada.
 
 Nesse arcabouço, a evidência econométrica de que $\hat{\phi}_{\pi} \in (0, 1)$ combinada com $\hat{\rho} \approx 1$ é compatível, em tese, com a determinância do equilíbrio. O Banco Central do Brasil teria logrado ancorar as expectativas não por meio de choques abruptos na taxa Selic, mas através de um compromisso implícito de que os apertos monetários, uma vez iniciados, seriam duradouros (\cite{coibion2012target}).
 
-\subsubsection{Limitações da Análise Algébrica e Necessidade de Simulação}
+\subsubsection{Limitações da Análise Algébrica}
 
-Embora a teoria sugira que a super-inércia possa compensar uma resposta contemporânea moderada, a verificação empírica dessa hipótese não é trivial. A desigualdade de Bullard-Mitra apresentada em \ref{subsec:condicoes_determinancia} e \ref{subsubsec:principio_taylor_bullard_mitra} depende implicitamente de multiplicadores finitos de longo prazo. Diante da singularidade matemática gerada pela raiz unitária estimada, a simples substituição dos parâmetros na inequação analítica torna-se inconclusiva.
+Embora a teoria sugira que a super-inércia possa compensar uma resposta contemporânea moderada, a verificação empírica dessa hipótese não é trivial. A desigualdade de Bullard-Mitra apresentada em \ref{subsec:condicoes_determinancia} depende implicitamente de multiplicadores finitos de longo prazo. Diante da singularidade matemática gerada pela raiz unitária estimada, a simples substituição dos parâmetros na inequação analítica torna-se inconclusiva tanto para a unicidade do Equilíbrio de Expectativas Racionais (REE) quanto para a estabilidade sob aprendizagem (\textit{E-stability}).
 
-Para superar essa limitação e responder definitivamente ao problema de pesquisa, faz-se necessário avaliar as \textbf{implicações dinâmicas} dos parâmetros estimados. A subseção a seguir utiliza um modelo DSGE Novo-Keynesiano calibrado para a economia brasileira e simulado via Dynare. O objetivo é submeter o sistema de equações estruturais (NKPC, IS Dinâmica e Regras Estimadas) ao critério de estabilidade de Blanchard-Kahn, verificando computacionalmente se a combinação de parâmetros $(\hat{\rho} \approx 1, \hat{\phi}_{\pi} < 1)$ obtida empiricamente é suficiente para gerar trajetórias convergentes e um equilíbrio determinado, validando o cumprimento do Princípio de Taylor por vias dinâmicas.
+Essa distinção é crucial: ainda que um equilíbrio exista (determinância), a presença de inércia extrema pode dificultar a convergência das expectativas dos agentes para esse equilíbrio caso a regra não seja suficientemente clara (\cite{bullard2002learning}). Para superar essa limitação e responder definitivamente ao problema de pesquisa, faz-se necessário avaliar as \textbf{implicações dinâmicas} dos parâmetros estimados. 
+
+A subseção a seguir utiliza um modelo DSGE Novo-Keynesiano calibrado para a economia brasileira e simulado via Dynare. Confome explicado em \ref{subsec:determinancia_estabilidade}, o objetivo é submeter o sistema de equações estruturais (NKPC, IS Dinâmica e Regras Estimadas) ao critério de estabilidade de \citeonline{blanchard1980solution}, verificando computacionalmente se a combinação de parâmetros $(\hat{\rho} \approx 1, \hat{\phi}_{\pi} < 1)$ obtida empiricamente é suficiente para gerar trajetórias convergentes, validando o cumprimento do Princípio de Taylor por vias dinâmicas.
 
 % -----------------------------------------------------------
 \subsection{Implicações Dinâmicas e Simulações (Dynare)}
