@@ -1062,6 +1062,7 @@ Entretanto, os resultados empíricos apresentados na subseção anterior impõem
 
 Esse fenômeno estatístico sugere que o Banco Central do Brasil operou sob um regime que a literatura denomina de \textbf{super-inercial}. Neste contexto, a análise de determinância não pode se restringir ao cálculo estático do multiplicador de longo prazo, devendo recorrer às condições dinâmicas estabelecidas por \cite{bullard2002learning} e \cite{rotemberg1997optimization} para regras com elevada suavização.
 
+% -----------------------------------------------------------
 \subsubsection{Estabilidade em Regimes Super-Inerciais}
 
 Segundo \citeonline[p.~255--256]{woodford2003interest}, em modelos Novo-Keynesianos com regras de juros inerciais, a condição de determinância deve ser interpretada em termos da resposta cumulativa da política monetária a um choque inflacionário permanente. O autor demonstra (Proposição 4.4) que, quando a regra exibe persistência elevada ou ``super-inércia'' ($\rho \geq 1$), a condição necessária e suficiente para a unicidade do equilíbrio é satisfeita mesmo com coeficientes de reação contemporânea moderados ($\phi_{\pi} < 1$), uma vez que a promessa de manter as taxas de juros elevadas por um longo horizonte garante a elevação necessária da taxa real \textit{ex-ante}.
@@ -1070,6 +1071,7 @@ A lógica econômica subjacente é intertemporal: em uma regra super-inercial, u
 
 Nesse arcabouço, a evidência econométrica de que $\hat{\phi}_{\pi} \in (0, 1)$ combinada com $\hat{\rho} \approx 1$ é compatível, em tese, com a determinância do equilíbrio. O Banco Central do Brasil teria logrado ancorar as expectativas não por meio de choques abruptos na taxa Selic, mas através de um compromisso implícito de que os apertos monetários, uma vez iniciados, seriam duradouros (\cite{coibion2012target}).
 
+% -----------------------------------------------------------
 \subsubsection{Limitações da Análise Algébrica}
 
 Embora a teoria sugira que a super-inércia possa compensar uma resposta contemporânea moderada, a verificação empírica dessa hipótese não é trivial. A desigualdade de Bullard-Mitra apresentada em \ref{subsec:condicoes_determinancia} depende implicitamente de multiplicadores finitos de longo prazo. Diante da singularidade matemática gerada pela raiz unitária estimada, a simples substituição dos parâmetros na inequação analítica torna-se inconclusiva tanto para a unicidade do Equilíbrio de Expectativas Racionais (REE) quanto para a estabilidade sob aprendizagem (\textit{E-stability}).
@@ -1080,22 +1082,44 @@ A subseção a seguir utiliza um modelo DSGE Novo-Keynesiano calibrado para a ec
 
 % -----------------------------------------------------------
 \subsection{Implicações Dinâmicas e Simulações (Dynare)}
-\label{subsec:simulacoes_opcional}
-% -----------------------------------------------------------
+\label{subsec:simulacoes_dynare}
 
-%% Tudo que está aqui ainda é rascunho
-A principal contribuição deste artigo é mostrar que a avaliação empírica da política monetária brasileira à luz do Princípio de Taylor exige cautela adicional quando se incorporam mecanismos de suavização da taxa de juros. Argumenta-se que, em um contexto de elevada persistência, a distinção entre respostas de curto e longo prazo torna-se crucial para a análise de determinância no modelo Novo-Keynesiano, de modo que a simples verificação de coeficientes superiores à unidade não garante, por si só, um equilíbrio único e estável.
+\textcolor{magenta}{<-> APERFEIÇOAR TEXTO + TENTAR FAZER LOOP NO DYNARE COM VÁRIOS RESULTADOS DAS TABELAS ANTERIORES + GRÁFICOS EM PNG E NÃO PDF <->}
 
-Como extensão da análise empírica, explora-se o comportamento dinâmico do modelo Novo-Keynesiano sob diferentes configurações da regra monetária estimada. Para esse fim, os parâmetros estimados são incorporados a um modelo NK calibrado para a economia brasileira, permitindo a análise das respostas a choques monetários e a comparação entre regimes determinantes e indeterminantes. As simulações dinâmicas utilizam exclusivamente os valores estimados dos parâmetros da regra de política monetária, tratados como exógenos ao modelo, com o objetivo de ilustrar as implicações dinâmicas associadas a regimes determinantes e indeterminantes.
+Diante da impossibilidade de validar a determinância apenas por critérios algébricos estáticos dada a super-inércia estimada, esta subseção explora o comportamento dinâmico do modelo Novo-Keynesiano calibrado para a economia brasileira. O objetivo é verificar computacionalmente se a combinação de parâmetros $(\hat{\rho} \approx 0{,}98, \hat{\phi}_{\pi} \approx 0{,}85)$ obtida empiricamente é suficiente para satisfazer as condições de estabilidade de \citeonline{blanchard1980solution}.
 
-Essa análise tem caráter complementar e busca ilustrar as implicações dinâmicas das estimativas obtidas, sem pretensão de avaliar a optimalidade da política monetária. As simulações são conduzidas no ambiente Dynare, que facilita a resolução numérica de modelos DSGE e a geração de funções de resposta ao impulso. A análise concentra-se em:
-\begin{itemize}
-    \item comparação das respostas da inflação, do hiato do produto e da taxa de juros a choques monetários sob diferentes regras de Taylor;
-    \item avaliação das diferenças dinâmicas entre regimes determinantes e indeterminantes;
-    \item ilustração das implicações práticas do cumprimento ou violação do Princípio de Taylor.
-\end{itemize}
+Para este exercício, utilizou-se um modelo DSGE canônico de pequena escala, calibrado com parâmetros estruturais padrão para a economia brasileira ($\beta=0{,}99$, $\sigma=1{,}5$, $\kappa=0{,}08$), e alimentado com a regra de Taylor híbrida estimada na Seção anterior.
 
-O exercício ilustra como pequenas variações na especificação da regra de política monetária podem ter implicações substantivas para a determinância do equilíbrio, reforçando a centralidade das expectativas racionais e do princípio de Taylor no arcabouço novo-keynesiano.
+\paragraph{Resultados de Estabilidade}
+As simulações computacionais confirmam que o modelo satisfaz as condições de Blanchard-Kahn. O sistema converge para um equilíbrio único e estável, afastando a hipótese de indeterminação ou trajetórias explosivas. Esse resultado corrobora a tese teórica de \citeonline{woodford2003interest}: em regimes super-inerciais, a promessa de persistência da taxa de juros compensa uma resposta contemporânea moderada à inflação.
+
+\paragraph{Funções de Resposta ao Impulso (IRFs)}
+A análise das Funções de Resposta ao Impulso (Figura~\ref{fig:irf_dynare}) ilustra o mecanismo de transmissão. Diante de um choque inflacionário de custo ($e_{\pi}$), a taxa de juros nominal (linha inferior) eleva-se gradualmente, mas de forma persistente. Embora o aumento inicial seja menor que o choque inflacionário (dado $\phi_{\pi} < 1$), a trajetória da taxa de juros permanece acima do estado estacionário por um longo horizonte (mais de 10 trimestres). Essa inércia gera uma elevação acumulada da taxa de juros real \textit{ex-ante}, suficiente para contrair o hiato do produto (linha central) e forçar o retorno da inflação à meta (linha superior).
+
+\begin{figure}[H]
+    \centering
+    \caption{Funções de Resposta ao Impulso: Choque de Inflação (Oferta)}
+    \label{fig:irf_epi}
+    % Caminho relativo para a figura do choque de inflação
+    \includegraphics[width=0.85\textwidth]{../scripts/modelo_nk/graphs/modelo_nk_IRF_e_pi.pdf}
+    \footnotesize
+    \vspace{0.2cm}
+    \textit{Fonte: Elaboração própria a partir de simulações no Dynare (2025).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Funções de Resposta ao Impulso: Choque de Política Monetária}
+    \label{fig:irf_ei}
+    % Caminho relativo para a figura do choque de juros
+    \includegraphics[width=0.85\textwidth]{../scripts/modelo_nk/graphs/modelo_nk_IRF_e_i.pdf}
+    \footnotesize
+    \vspace{0.2cm}
+    \textit{Fonte: Elaboração própria a partir de simulações no Dynare (2025).}
+\end{figure}
+
+
+Portanto, a evidência econométrica e a simulação dinâmica convergem para a mesma conclusão: a política monetária brasileira no período analisado operou em uma região de determinância, sustentada fundamentalmente pelo canal da inércia e pela gestão de expectativas, mitigando a necessidade de choques nominais abruptos.
 
 % ***********************************************************
 
