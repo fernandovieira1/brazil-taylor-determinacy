@@ -69,16 +69,19 @@ EXECUÇÃO
 * (x) Seção 6 (código) / Codificar e Rodar modelos (Python) - De 27/12/2025 a 04/01/2026.
     - De tão complexo, criei To Do próprio (tarefas_modelagem_secao_6.md)
 
-* ( ) Seção 6 (escrita) / Resultados - De 05/01 a 11/01/2026.
+%%% Talvez juntar seções 6 e 7 %%% FEITO
 
-%%% Talvez juntar seções 6 e 7 %%%
-
-* ( ) Seção 7 / Discussão - De 05/01 a 11/01/2026.
-* ( ) Seção 8 / Considerações Finais - De 12/01 a 14/01/2026.
+* (x) Seção 6 (escrita) / Resultados - De 05/01 a 11/01/2026.
+* (x) Seção 7 / Discussão - De 05/01 a 11/01/2026.
+* (x) Seção 8 / Considerações Finais - De 12/01 a 14/01/2026.
+% Encerrado em 14/01/2026
 
 FINALIZAÇÃO
 ---------------------
-* ( ) Versão final do Abstract - De 12/01 a 14/01/2026.
+* (x) Versão final do Abstract - De 12/01 a 14/01/2026.
 * ( ) Revisão e Formatação final - 15/01/2026.
+        [x] v_alpha (texto preliminar final completo)                      - 14/01/2026
+        [ ] v_beta (leitura 1 e ajustes finais + retificações em magenta)  - 
+        [ ] v_omega (leitura final 2 + revisão latex)                      - 
 
-* ( ) Envio - 16/01/2026.
+* ENVIO - 16 ou 17/01/2026.

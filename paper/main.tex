@@ -89,8 +89,12 @@ Rafaela Dezidério Rocha
 \thispagestyle{empty}
 
 \begin{abstract}
-\textcolor{magenta}{<-> MUDAR DEPOIS DE TERMINAR} - Este artigo avalia empiricamente a consistência da política monetária brasileira com o Princípio de Taylor no período 1999–2024, utilizando diferentes especificações da regra de juros estimadas por MQO e GMM. Os resultados indicam que, embora a reação da taxa de juros à inflação seja estatisticamente significativa, a elevada persistência da taxa básica e a fragilidade das respostas de longo prazo tornam a classificação do regime como determinante sensível à interpretação dos parâmetros associados à suavização da taxa de juros. Esses achados sugerem que o cumprimento empírico do Princípio de Taylor não é suficiente, por si só, para garantir determinância robusta no arcabouço Novo-Keynesiano. O estudo estima diferentes especificações da Regra de Taylor -- \textit{backward-looking}, \textit{forward-looking} no estilo Clarida--Galí--Gertler e versões híbridas com suavização da taxa de juros -- utilizando dados da taxa Selic, inflação (IPCA), hiato do produto e expectativas de inflação (Focus), no período 1999--2024. A metodologia combina MQO com erros robustos, GMM com instrumentos defasados, testes de quebras estruturais (Bai--Perron) e avaliação formal da condição de Bullard--Mitra, que relaciona os parâmetros estimados à determinância do modelo Novo-Keynesiano. Os resultados permitem identificar se, e em quais subperíodos, a reação da política monetária à inflação foi suficientemente forte ($\phi_\pi > 1$) para garantir unicidade do equilíbrio e ancoragem das expectativas. A contribuição central do artigo consiste em estabelecer um diálogo sistemático entre o arcabouço Novo-Keynesiano e a experiência brasileira recente, destacando como diferentes regimes de política monetária se relacionam com a estabilidade nominal e a credibilidade do Banco Central \textcolor{magenta}{<-> MUDAR DEPOIS DE TERMINAR}.
+Este artigo investiga a consistência da política monetária brasileira com o Princípio de Taylor e a determinância do equilíbrio macroeconômico sob o Regime de Metas de Inflação (1999--2024). Estimam-se regras de Taylor \textit{backward}, \textit{forward} e híbridas via GMM, utilizando dados de expectativas de mercado (Relatório Focus) e medidas alternativas de hiato do produto. Os resultados econométricos apontam para um regime ``super-inercial'', caracterizado por um coeficiente de persistência próximo à unidade ($\rho \approx 0{,}99$) e uma resposta contemporânea à inflação inferior a um ($\phi_\pi < 1$), o que inviabiliza a verificação da estabilidade por critérios algébricos estáticos. Para superar essa limitação, realiza-se uma análise dinâmica utilizando um modelo Novo-Keynesiano simulado no Dynare. As simulações confirmam que a política monetária brasileira operou em região de determinância, satisfazendo as condições de Blanchard-Kahn. Exercícios contrafactuais demonstram que a estabilidade não decorreu de respostas agressivas de curto prazo, mas sim da gestão de expectativas via inércia da taxa de juros, validando a hipótese teórica de Woodford para regimes de alta suavização. O estudo caracteriza a experiência brasileira como uma ``ortodoxia inercial'', onde a credibilidade na persistência do aperto monetário compensou a moderação na resposta inicial aos choques inflacionários.
+
+\vspace{0.5cm}
+\noindent \textbf{Palavras-chave:} Regra de Taylor; Política Monetária; Determinância; Super-Inércia; Modelo Novo-Keynesiano.
 \end{abstract}
+
 
 \pagestyle{plain}
 
@@ -1081,63 +1085,70 @@ Essa distinção é crucial: ainda que um equilíbrio exista (determinância), a
 A subseção a seguir utiliza um modelo DSGE Novo-Keynesiano calibrado para a economia brasileira e simulado via Dynare. Confome explicado em \ref{subsec:determinancia_estabilidade}, o objetivo é submeter o sistema de equações estruturais (NKPC, IS Dinâmica e Regras Estimadas) ao critério de estabilidade de \citeonline{blanchard1980solution}, verificando computacionalmente se a combinação de parâmetros $(\hat{\rho} \approx 1, \hat{\phi}_{\pi} < 1)$ obtida empiricamente é suficiente para gerar trajetórias convergentes, validando o cumprimento do Princípio de Taylor por vias dinâmicas.
 
 % -----------------------------------------------------------
-\subsection{Implicações Dinâmicas e Simulações (Dynare)}
+\subsection{Implicações Dinâmicas (Simulações Dynare)}
 \label{subsec:simulacoes_dynare}
 
-\textcolor{magenta}{<-> APERFEIÇOAR TEXTO + TENTAR FAZER LOOP NO DYNARE COM VÁRIOS RESULTADOS DAS TABELAS ANTERIORES + GRÁFICOS EM PNG E NÃO PDF <->}
+Diante da impossibilidade de validar a determinância apenas por critérios algébricos estáticos dada a super-inércia estimada ($\hat{\rho} \approx 1$), esta subseção explora o comportamento dinâmico do modelo Novo-Keynesiano calibrado para a economia brasileira. O objetivo é duplo: \textbf{(i)} verificar computacionalmente se os parâmetros estimados satisfazem as condições de estabilidade de \citeonline{blanchard1980solution}; e \textbf{(ii)} isolar o papel da inércia na garantia dessa estabilidade por meio de um exercício contrafactual.
 
-Diante da impossibilidade de validar a determinância apenas por critérios algébricos estáticos dada a super-inércia estimada, esta subseção explora o comportamento dinâmico do modelo Novo-Keynesiano calibrado para a economia brasileira. O objetivo é verificar computacionalmente se a combinação de parâmetros $(\hat{\rho} \approx 0{,}98, \hat{\phi}_{\pi} \approx 0{,}85)$ obtida empiricamente é suficiente para satisfazer as condições de estabilidade de \citeonline{blanchard1980solution}.
+Para este exercício, utilizou-se um modelo DSGE canônico de pequena escala, calibrado com parâmetros estruturais padrão para a economia brasileira ($\beta=0{,}99$, $\sigma=1{,}5$, $\kappa=0{,}08$). A regra de política monetária foi alimentada com a média aritmética dos coeficientes obtidos na estimação híbrida (Tabela~\ref{tab:gmm_hibrido_resultados}), resultando no vetor de parâmetros de simulação: $\hat{\rho} = 0{,}99$, $\hat{\phi}_{\pi} = 0{,}80$ e $\hat{\phi}_{y} = -0{,}05$. Essa escolha busca capturar a tendência central do regime de política monetária no período analisado.
 
-Para este exercício, utilizou-se um modelo DSGE canônico de pequena escala, calibrado com parâmetros estruturais padrão para a economia brasileira ($\beta=0{,}99$, $\sigma=1{,}5$, $\kappa=0{,}08$), e alimentado com a regra de Taylor híbrida estimada na Seção anterior.
+\subsubsection{Cenário Base e Estabilidade}
+As simulações confirmam que, mesmo com um coeficiente de reação contemporânea à inflação inferior à unidade ($\phi_{\pi} < 1$) e uma resposta negativa ao hiato, o modelo satisfaz as condições de Blanchard-Kahn. O sistema converge para um equilíbrio único e estável, afastando a hipótese de indeterminação ou trajetórias explosivas.
 
-\paragraph{Resultados de Estabilidade}
-As simulações computacionais confirmam que o modelo satisfaz as condições de Blanchard-Kahn. O sistema converge para um equilíbrio único e estável, afastando a hipótese de indeterminação ou trajetórias explosivas. Esse resultado corrobora a tese teórica de \citeonline{woodford2003interest}: em regimes super-inerciais, a promessa de persistência da taxa de juros compensa uma resposta contemporânea moderada à inflação.
+\subsubsection{Dinâmica de Ajuste (IRFs)}
+A análise das Funções de Resposta ao Impulso revela os dois mecanismos que sustentam esse equilíbrio: a reação estabilizadora e a potência do canal inercial.
 
-\paragraph{Funções de Resposta ao Impulso (IRFs)}
-A análise das Funções de Resposta ao Impulso (Figura~\ref{fig:irf_dynare}) ilustra o mecanismo de transmissão. Diante de um choque inflacionário de custo ($e_{\pi}$), a taxa de juros nominal (linha inferior) eleva-se gradualmente, mas de forma persistente. Embora o aumento inicial seja menor que o choque inflacionário (dado $\phi_{\pi} < 1$), a trajetória da taxa de juros permanece acima do estado estacionário por um longo horizonte (mais de 10 trimestres). Essa inércia gera uma elevação acumulada da taxa de juros real \textit{ex-ante}, suficiente para contrair o hiato do produto (linha central) e forçar o retorno da inflação à meta (linha superior).
+A Figura~\ref{fig:irf_epi} (Choque de Inflação) demonstra a \textbf{reação}: diante de um aumento de custos, a taxa de juros nominal eleva-se e permanece persistentemente acima do estado estacionário. A autoridade monetária não necessita elevar os juros abruptamente no curto prazo, pois o compromisso de mantê-los elevados no futuro (super-inércia) é suficiente para elevar a taxa real acumulada e forçar a convergência da inflação.
 
 \begin{figure}[H]
     \centering
     \caption{Funções de Resposta ao Impulso: Choque de Inflação (Oferta)}
     \label{fig:irf_epi}
-    % Caminho relativo para a figura do choque de inflação
-    \includegraphics[width=0.85\textwidth]{../scripts/modelo_nk/graphs/modelo_nk_IRF_e_pi.pdf}
+    \includegraphics[width=0.95\textwidth]{../paper/graficos/dyn-model2_choq_inf_oferta.png}
     \footnotesize
-    \vspace{0.2cm}
+    \vspace{0.1cm}
     \textit{Fonte: Elaboração própria a partir de simulações no Dynare (2025).}
 \end{figure}
+
+A Figura~\ref{fig:irf_ei} (Choque de Política Monetária) ilustra a \textbf{transmissão}: um aperto exógeno na taxa de juros exibe decaimento extremamente lento (painel inferior).
 
 \begin{figure}[H]
     \centering
-    \caption{Funções de Resposta ao Impulso: Choque de Política Monetária}
+    \caption{Funções de Resposta ao Impulso: Choque de Política Monetária (Juros)}
     \label{fig:irf_ei}
-    % Caminho relativo para a figura do choque de juros
-    \includegraphics[width=0.85\textwidth]{../scripts/modelo_nk/graphs/modelo_nk_IRF_e_i.pdf}
+    \includegraphics[width=0.95\textwidth]{../paper/graficos/dyn-model2_choq_pol_monet.png}
     \footnotesize
-    \vspace{0.2cm}
+    \vspace{0.1cm}
     \textit{Fonte: Elaboração própria a partir de simulações no Dynare (2025).}
 \end{figure}
 
+Essa persistência maximiza o efeito contracionista sobre o hiato e a inflação (painéis central e superior), confirmando que, sob um regime super-inercial, cada ponto base de aumento na Selic possui um "multiplicador intertemporal" elevado sobre a demanda agregada.
 
-Portanto, a evidência econométrica e a simulação dinâmica convergem para a mesma conclusão: a política monetária brasileira no período analisado operou em uma região de determinância, sustentada fundamentalmente pelo canal da inércia e pela gestão de expectativas, mitigando a necessidade de choques nominais abruptos.
+\subsubsection{O Papel da Inércia}
+Como afirmado, para testar a robustez desse resultado, realizou-se um exercício contrafactual removendo-se exclusivamente o componente de suavização da regra de Taylor ($\rho=0$), mantendo-se constantes os coeficientes de reação contemporânea. O resultado indicou a violação das condições de Blanchard-Kahn (\textit{indeterminacy}), evidenciando que, na ausência do mecanismo de inércia, a regra estimada seria incapaz de ancorar as expectativas.
+
+Portanto, a simulação dinâmica valida a hipótese levantada na Seção~\ref{subsec:determinancia_bullard_mitra}: a política monetária brasileira operou em uma região de determinância, mas não pela via clássica do Princípio de Taylor estático ($\phi_{\pi} > 1$), e sim pela via intertemporal. Como sentenciam \citeonline[p.~256]{woodford2003interest}, em regimes inerciais, a condição de estabilidade se mantém, pois \textit{``the Taylor principle continues to be a crucial condition for determinacy, once understood to refer to cumulative responses to a permanent inflation increase''}. Posto assim, a super-inércia observada ($\hat{\rho} \approx 1$) garantiu que, mesmo com respostas curtas moderadas, a reação cumulativa fosse suficiente para ancorar as expectativas e o equilíbrio.
 
 % ***********************************************************
 
 % ===========================================================
 \section{Considerações Finais}
-% ===========================================================
 \label{sec:consideracoes_finais}
+% ===========================================================
 
-\begin{itemize}
-    \item Responder ao problema de pesquisa, sintetizando em que medida a política monetária brasileira satisfez o Princípio de Taylor e a condição de determinância.
-    \item Avaliar a compatibilidade do regime de metas com a determinância ao longo dos diferentes regimes de política monetária.
-    \item Destacar a contribuição teórica e empírica do artigo para o debate sobre estabilidade nominal, credibilidade e dominância fiscal.
-    \item Sugerir extensões (DSGE estimado, interação fiscal-monetária, comparações internacionais).
-\end{itemize}
+Este artigo investigou a conduta da política monetária brasileira sob o Regime de Metas de Inflação (1999--2024), com o objetivo central de verificar se a atuação do Banco Central satisfez as condições teóricas de determinância do equilíbrio macroeconômico. A análise estruturou-se em torno da estimação de diferentes especificações da Regra de Taylor (\textit{backward}, \textit{forward} e híbrida) e da subsequente simulação de um modelo Novo-Keynesiano dinâmico, buscando conciliar a evidência econométrica de respostas contemporâneas moderadas com a estabilidade de preços observada no período.
 
-Acrescentar:
-- Limitações: inserir dólar, preços de produtos agrícolas, outros choques\dots
-- Refazer os testes econométricos por períodos dos mandatos dos presidentes do BC.
+Em relação ao problema de pesquisa, os resultados indicam que a política monetária brasileira foi consistente com o Princípio de Taylor e garantiu a determinância do equilíbrio, ainda que por mecanismos distintos da interpretação canônica estática. As estimativas econométricas revelaram que, embora o coeficiente de reação contemporânea à inflação se situe frequentemente abaixo da unidade ($\hat{\phi}_{\pi} < 1$) no curto prazo, a regra de juros caracteriza-se por um grau extremo de suavização ($\hat{\rho} \approx 0{,}99$). Dado isto, as simulações computacionais confirmaram que essa ``super-inércia'' atuou como o mecanismo fundamental de ancoragem: a promessa crível de manter as taxas de juros elevadas por longos períodos compensou a menor agressividade da resposta inicial, gerando uma elevação acumulada da taxa real \textit{ex-ante} suficiente para estabilizar a inflação e o produto, conforme preconizado pela teoria de \citeonline{woodford2003interest}.
+
+Não menos importante, a avaliação dos diferentes regimes sugere que a compatibilidade com a determinância foi uma característica robusta do período, a despeito de variações na ênfase dada ao hiato do produto ou da volatilidade dos choques exógenos. A evidência de que o modelo estimado converge para um equilíbrio único e estável (validada pelas condições de Blanchard-Kahn), enquanto o cenário contrafactual sem inércia resulta em indeterminação, reforça a interpretação de que o gradualismo não foi sinônimo de leniência, mas sim de uma estratégia intertemporal de gestão de expectativas. Nesse sentido, o regime brasileiro pode ser caracterizado como uma ``ortodoxia inercial'', onde a credibilidade na persistência da política desempenhou papel tão ou mais relevante que a magnitude dos choques contemporâneos na Selic.
+
+As tentativas de contribuições deste estudo para o debate sobre estabilidade nominal residem na demonstração empírica de que a simples observação de coeficientes de Taylor inferiores a 1 não implica, necessariamente, violação do mandato de estabilidade ou risco de dominância fiscal, desde que acompanhados de elevada persistência. Isso pode oferecer uma interpretação analítica para períodos em que o Banco Central parece reagir timidamente a choques inflacionários no curto prazo, mas mantém o aperto monetário por horizontes prolongados. Ademais, ao integrar econometria robusta (GMM) com simulação dinâmica (Dynare), o trabalho buscou superar as limitações das análises puramente algébricas, eventualmente inconclusivas diante de raízes unitárias nas regras de juros.
+
+Por fim, reconhecem-se limitações que abrem frentes para pesquisas futuras. O modelo utilizado abstraiu de canais relevantes para uma economia emergente, como a taxa de câmbio, o preço de commodities e a interação explícita com a política fiscal, elementos que poderiam enriquecer a análise da dinâmica inflacionária. Extensões naturais incluem a estimação de um modelo DSGE de médio porte para capturar esses mecanismos de transmissão, bem como a aplicação de testes de quebra estrutural (como Bai-Perron) para investigar nuances na conduta da política monetária entre diferentes mandatos presidenciais do Banco Central. Não obstante, a evidência central de que a inércia foi o pilar da determinância no Brasil, principalmente se testes e perspectivas adicionais forem realizados, pode ser um achado oportuno para se avaliar as implicações de condução e comunicação da política monetária.
+
+
+% ***********************************************************% ===========================================================
+% REFERÊNCIAS
 
 \clearpage
 \pagenumbering{Roman}
