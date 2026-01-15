@@ -439,7 +439,7 @@ Antes de discutir os episódios, convém explicitar uma dimensão operacional do
 \caption{Estatísticas Descritivas das Variáveis Macroeconômicas (1999--2024)}
 \begin{tabular}{lrrrrr}
 \toprule
- & IPCA (Mensal) & IPCA (12m) & Selic (Meta) & Focus & PIB (Indice) \\
+ & IPCA (Mensal) & IPCA (12m) & Selic (Meta) & Focus (12m) & PIB (Indice) \\
 \midrule
 count & 9437.00 & 9437.00 & 9434.00 & 9132.00 & 9437.00 \\
 mean & 0.51 & 6.25 & 12.69 & 5.63 & 143.19 \\
@@ -452,7 +452,6 @@ max & 3.02 & 17.24 & 45.00 & 12.41 & 179.53 \\
 \bottomrule
 \end{tabular}
 \label{tab:desc_stats}\\
-\textcolor{magenta}{<-> No focus não seria bom colocar (12m) para deixar claro que deveria ser comparado com a coluna de inflação de 12m? <->}
 \footnotesize
 
 \vspace{0.2cm}
@@ -673,7 +672,8 @@ A escolha do estimador reflete a forma como as variáveis no lado direito se rel
 % -----------------------------------------------------------
 
 Na equação \eqref{eq:regra_backward_mqo}, assume-se que \(\pi_t\) e \(\tilde y_t\) são, no horizonte trimestral, predeterminados em relação a \(u_t\), de forma que \(E(u_t|\pi_t,\tilde y_t,i_{t-1},\mathcal F_{t-1})=0\). Sob essa hipótese, MQO fornece estimadores consistentes, e a correção HAC (\textit{Heteroskedasticity- and autocorrelation-consistent estimators}) garante inferência robusta à autocorrelação serial na série da Selic. Os estimadores HAC , também conhecidos como \textit{Estimadores de variância Newey-West}, propostos pela primeira vez por \citeonline{neweyWest}, estima a matriz de covariância do modelo corrigindo para autocorrelação e heterocedasticidade.
-\textcolor{magenta}{<-> Procurar artigo que justifica/prova a existência de autocorrelação e heterocedasticidade em curvas de juros para acrescentá-lo neste parágrafo. <->}
+\\
+O uso dos estimadores HAC nas curvas de juros é essencial, pois diversos estudos empíricos, como os de \citeonline{Hamilton1988} e \citeonline{Driffill1992}, demonstraram a presença de médias e volatilidades estocásticas para as curvas de juros.
 
 % -----------------------------------------------------------
 \subsubsection{GMM para Regras \textit{Forward} e Híbrida.}
