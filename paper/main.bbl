@@ -117,6 +117,11 @@ Dispon{\'\i}vel em: \url{https://portalibre.fgv.br/codace}.}
 {DICKEY, D.~A.; FULLER, W.~A. Distribution of the estimators for autoregressive time series with a unit root.
 \emph{Journal of the American Statistical Association}, v.~74, n.~366, p. 427--431, 1979.}
 
+\bibitem[Driffill 1992]{Driffill1992}
+\abntrefinfo{Driffill}{DRIFFILL}{1992}
+{DRIFFILL, J. Changes in regime and the term structure.
+\emph{Journal of Economic Dynamics and Control.}, v.~16, p. 165--173, 1992.}
+
 \bibitem[Gal{\'\i} 2015]{gali2015monetary}
 \abntrefinfo{Gal{\'\i}}{GAL{\'I}}{2015}
 {GAL{\'I}, J. \emph{Monetary Policy, Inflation, and the Business Cycle: An Introduction to the New Keynesian Framework and Its Applications}. 2. ed. Princeton: Princeton University Press, 2015.}
@@ -129,6 +134,11 @@ Dispon{\'\i}vel em: \url{https://portalibre.fgv.br/codace}.}
 \bibitem[Greene 2003]{greene2003econometric}
 \abntrefinfo{Greene}{GREENE}{2003}
 {GREENE, W.~H. \emph{Econometric Analysis}. 5. ed. Upper Saddle River, NJ: Prentice Hall, 2003.}
+
+\bibitem[Hamilton 1988]{Hamilton1988}
+\abntrefinfo{Hamilton}{HAMILTON}{1988}
+{HAMILTON, J.~D. Rational expectations econometric analysis of changes in regime: An investigation of the term structure of interest rates.
+\emph{Journal of Economic Dynamics and Control.}, v.~12, p. 385--423, 1988.}
 
 \bibitem[Hamilton 2018]{hamilton2018filtering}
 \abntrefinfo{Hamilton}{HAMILTON}{2018}

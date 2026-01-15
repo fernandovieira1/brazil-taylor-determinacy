@@ -4,7 +4,7 @@ Análise empírica e teórica sobre se a política monetária brasileira tem sat
 
 Este repositório contém os materiais de replicação do artigo:
 
-**“Determinacy and Monetary Policy in Brazil: An Empirical Assessment of the Taylor Principle (1999–2024)”**  
+**“Determinância e Política Monetária no Brasil: Uma Avaliação Empírica do Princípio de Taylor (1999--2024)”**
 
 Fernando Souza de Vieira — *FEA-RP/USP*
 
@@ -25,29 +25,20 @@ A análise combina:
 
 - Estimação empírica de regras de Taylor (MQO, GMM)
 - Avaliação analítica das condições de determinacy
-- Testes de quebras estruturais
-- Simulações em Dynare (opcional)
-- Código-fonte LaTeX completo do artigo
+- Simulações em Dynare
 
 ---
 
 ## Estrutura do Repositório
 
-```
-bases/ # Bases de dados brutas e processadas
-docs/ # Notas, ideias e documentação auxiliar
-dynare/ # Modelos NK em Dynare (.mod)
-paper/ # Artigo em LaTeX (texto, tabelas, figuras)
-python/ # Scripts Python (estimação, testes, utilidades)
-R/ # Scripts R (estimação, testes econométricos)
-testes/ # Scripts e arquivos de teste (sanity checks)
-notebooks/ # Exploração inicial (Jupyter)
-```
+Os arquivos principais estão organizados nas seguintes pastas/diretórios:
 
-
-**Observação:**  
-A pasta `testes/` contém apenas código de verificação e experimentação.  
-Os resultados reportados no artigo utilizam apenas os scripts finais em `python/`, `R/` e `dynare/`.
+```
+dados/ # Bases de dados utilizadas
+docs/ # Arquivos auxiliares
+paper/ # Código Latex, gráficos e tabelas utilizadas
+scripts/ # algoritmos utilizados para obter e tratar as bases de dados, modelos econométricos e simulações Dynare
+```
 
 ---
 
@@ -60,32 +51,26 @@ Todos os dados utilizados são de acesso público:
 - FGV/IBRE: medidas alternativas de hiato
 - Pesquisa Focus: inflação esperada
 
-| Série                      | Código / Fonte | Uso no Artigo     |
-| -------------------------- | -------------- | ----------------- |
-| Selic – Meta               | SGS 4390       | Regra de Taylor   |
-| Selic – Efetiva            | SGS 4189       | Robustez          |
-| IPCA                       | IBGE / SIDRA   | Inflação          |
-| Expectativas de IPCA (12m) | Focus / BCB    | Regra prospectiva |
-| PIB Real                   | IBGE 1620      | Hiato do produto  |
-| Hiato do Produto (BCB)     | SGS 3904       | Robustez          |
-| IBC-Br                     | SGS 24363      | Proxy mensal      |
-| Meta de Inflação           | BCB            | Desvio da meta    |
-
-Scripts de download e tratamento encontram-se em `python/`, `R/` e `notebooks/`.
+| Série                     | Código / Fonte | Uso no Artigo     |
+| -------------------------- | --------------- | ----------------- |
+| Selic – Meta              | SGS 4390        | Regra de Taylor   |
+| Selic – Efetiva           | SGS 4189        | Robustez          |
+| IPCA                       | IBGE / SIDRA    | Inflação        |
+| Expectativas de IPCA (12m) | Focus / BCB     | Regra prospectiva |
+| PIB Real                   | IBGE 1620       | Hiato do produto  |
+| Hiato do Produto (BCB)     | SGS 3904        | Robustez          |
+| IBC-Br                     | SGS 24363       | Proxy mensal      |
+| Meta de Inflação         | BCB             | Desvio da meta    |
 
 ---
 
 ## Metodologia
 
 ### 1. Estimação da Regra de Taylor
-- Backward-looking
-- Forward-looking (CGG)
-- Híbrida com suavização da taxa de juros
 
-Técnicas:
-- MQO com erros Newey–West
-- GMM com instrumentos internos
-- Estimação por subsamostras
+- Backward-looking (MQO)
+- Forward-looking (GMM)
+- Híbrida (GMM)
 
 ### 2. Testes de Determinacy
 
@@ -97,11 +82,8 @@ Com base nos parâmetros estimados:
 
 seguindo Bullard & Mitra (2002).
 
-### 3. Quebras Estruturais
-- Testes de Bai–Perron
-- Datas institucionais relevantes
+### 3. Dynare
 
-### 4. Dynare (Opcional)
 Simulações do modelo NK sob diferentes regras de política monetária.
 
 ---
@@ -116,15 +98,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Scripts principais encontram-se em python/.
-
-### R
+Scripts principais encontram-se em python/.R
 
 Scripts econométricos estão em `R/`.
 
 ### Dynare
 
-Modelos em `dynare/` (Octave ou MATLAB).
+Modelos em `dynare/` # construídos e executados em Octave, mas compatíveis (*.mod) com MATLAB).
 
 ---
 
@@ -132,6 +112,8 @@ Modelos em `dynare/` (Octave ou MATLAB).
 
 O artigo completo está em:
 `paper/main.tex`
+
+O histórico de construção do artigo pode ser consultado via commits.
 
 ---
 
