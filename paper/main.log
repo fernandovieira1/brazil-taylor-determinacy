@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.14)  17 JAN 2026 03:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.14)  17 JAN 2026 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -818,64 +818,64 @@ Class memoir Warning: Do not use \footnote in \maketitle.
 pdfTeX warning (ext4): destination with the same identifier (name{table.0.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.472 
+l.481 
       ]
-<graficos/series_macroeconomicas.png, id=359, 1011.78pt x 1084.05pt>
+<graficos/series_macroeconomicas.png, id=360, 1011.78pt x 1084.05pt>
 File: graficos/series_macroeconomicas.png Graphic file (type png)
 <use graficos/series_macroeconomicas.png>
-Package pdftex.def Info: graficos/series_macroeconomicas.png  used on input line 476.
+Package pdftex.def Info: graficos/series_macroeconomicas.png  used on input line 485.
 (pdftex.def)             Requested size: 455.24411pt x 487.76837pt.
-<graficos/hiato_produto.png, id=381, 1011.78pt x 505.89pt>
+<graficos/hiato_produto.png, id=382, 1011.78pt x 505.89pt>
 File: graficos/hiato_produto.png Graphic file (type png)
 <use graficos/hiato_produto.png>
-Package pdftex.def Info: graficos/hiato_produto.png  used on input line 492.
+Package pdftex.def Info: graficos/hiato_produto.png  used on input line 501.
 (pdftex.def)             Requested size: 455.24411pt x 227.62523pt.
  [21] [22
 pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.498 
+l.507 
        <./graficos/series_macroeconomicas.png>] [23
 pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.502 
+l.511 
        <./graficos/hiato_produto.png>] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36
 pdfTeX warning (ext4): destination with the same identifier (name{table.0.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.891 
+l.900 
       ] [37] [38
 pdfTeX warning (ext4): destination with the same identifier (name{table.0.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.954 \paragraph
+l.963 \paragraph
                 {Considerações sobre os resultados}] [39] [40
 pdfTeX warning (ext4): destination with the same identifier (name{table.0.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1042 
+l.1051 
        ] [41] [42] [43]
-<../paper/graficos/dyn-model2_choq_inf_oferta.png, id=744, 1633.10126pt x 753.81625pt>
+<../paper/graficos/dyn-model2_choq_inf_oferta.png, id=745, 1633.10126pt x 753.81625pt>
 File: ../paper/graficos/dyn-model2_choq_inf_oferta.png Graphic file (type png)
 <use ../paper/graficos/dyn-model2_choq_inf_oferta.png>
-Package pdftex.def Info: ../paper/graficos/dyn-model2_choq_inf_oferta.png  used on input line 1106.
+Package pdftex.def Info: ../paper/graficos/dyn-model2_choq_inf_oferta.png  used on input line 1115.
 (pdftex.def)             Requested size: 432.48051pt x 199.62233pt.
-<../paper/graficos/dyn-model2_choq_pol_monet.png, id=746, 1633.10126pt x 753.81625pt>
+<../paper/graficos/dyn-model2_choq_pol_monet.png, id=747, 1633.10126pt x 753.81625pt>
 File: ../paper/graficos/dyn-model2_choq_pol_monet.png Graphic file (type png)
 <use ../paper/graficos/dyn-model2_choq_pol_monet.png>
-Package pdftex.def Info: ../paper/graficos/dyn-model2_choq_pol_monet.png  used on input line 1118.
+Package pdftex.def Info: ../paper/graficos/dyn-model2_choq_pol_monet.png  used on input line 1127.
 (pdftex.def)             Requested size: 432.48051pt x 199.62233pt.
  [44
 pdfTeX warning (ext4): destination with the same identifier (name{figure.0.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1123 
+l.1132 
         <../paper/graficos/dyn-model2_choq_inf_oferta.png (PNG copy)>] [45
 pdfTeX warning (ext4): destination with the same identifier (name{figure.0.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1139 
+l.1148 
         <../paper/graficos/dyn-model2_choq_pol_monet.png (PNG copy)>] [46] [47] (./main.bbl
 bibitemlist
 [1
@@ -888,18 +888,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 18604 strings out of 467538
- 292717 string characters out of 5419551
- 792239 words of memory out of 5000000
- 47030 multiletter control sequences out of 15000+600000
+ 18608 strings out of 467538
+ 292838 string characters out of 5419551
+ 791300 words of memory out of 5000000
+ 47034 multiletter control sequences out of 15000+600000
  659210 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,107p,2547b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (51 pages, 2155076 bytes).
+Output written on main.pdf (51 pages, 2155290 bytes).
 PDF statistics:
- 1244 PDF objects out of 1440 (max. 8388607)
- 1083 compressed objects within 11 object streams
+ 1245 PDF objects out of 1440 (max. 8388607)
+ 1084 compressed objects within 11 object streams
  220 named destinations out of 1000 (max. 500000)
  557 words of extra memory for PDF output out of 10000 (max. 10000000)
 
