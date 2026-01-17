@@ -82,6 +82,6 @@ FINALIZAÇÃO
 * ( ) Revisão e Formatação final - 15/01/2026.
         [x] v_alpha (texto preliminar final completo)                      - 14/01/2026
         [x] v_beta (leitura 1 e ajustes finais + retificações em magenta)  - 15/01/2026
-        [ ] v_omega (leitura final 2 + revisão latex)                      - 
+        [x] v_omega (leitura final 2 + revisão latex)                      - 17/01/2026
 
-* ENVIO - 16 ou 17/01/2026.
+* ENVIO - 17/01/2026.
